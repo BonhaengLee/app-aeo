@@ -1,0 +1,12 @@
+{
+  "name": "app-aeo",
+  "version": "0.1.0",
+  "description": "Measure how often ChatGPT, Claude, Perplexity and Gemini recommend your app — App Store / Google Play answer-engine optimization (AEO), with an MCP server and App Store listing lint.",
+  "type": "module",
+  "license": "MIT",
+  "bin": { "app-aeo": "bin/app-aeo.mjs", "app-aeo-mcp": "mcp/server.mjs" },
+  "files": ["bin", "src", "mcp", "skills", "examples", "README.md", "LICENSE"],
+  "engines": { "node": ">=20" },
+  "scripts": { "test": "node test/selftest.mjs" },
+  "keywords": ["aso", "aeo", "geo", "app-store", "google-play", "llm", "mcp", "chatgpt", "perplexity", "ai-visibility"]
+}

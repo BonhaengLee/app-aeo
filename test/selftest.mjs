@@ -1,0 +1,229 @@
+// No network, no LLM calls. `node test/selftest.mjs` — exit 0 when every case passes.
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { analyse, findMention, listItemStarts, listRankAt, listedNames, storeLinks, aliasesOf, brandOf } from '../src/extract.mjs';
+import { aggregate, wilson, renderMarkdown } from '../src/report.mjs';
+import { planJobs, runCheck, validateConfig, promptSetHash, trend } from '../src/run.mjs';
+import { ProviderError, ask, classifyHttp, classifyCliError, parseProviderSpec } from '../src/providers.mjs';
+import { lint, length, validateListing } from '../src/lint.mjs';
+import { RateLimitedError, lookup, suggestPrompts } from '../src/store.mjs';
+import { handle } from '../mcp/server.mjs';
+import { parseArgv, slug } from '../bin/app-aeo.mjs';
+
+let pass = 0, fail = 0;
+async function t(name, fn) {
+  try { await fn(); pass += 1; } catch (e) { fail += 1; console.log(`FAIL ${name}\n  ${e.message.split('\n').join('\n  ')}`); }
+}
+
+const ANSWER = `Here are good options:
+
+1. **Streaks** — polished, [App Store](https://apps.apple.com/us/app/streaks/id963034692)
+2. **Habitify** — great reminders
+3. **HabitKit** — visual grids https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070
+4. **Loop Habit Tracker** — Android, https://play.google.com/store/apps/details?id=org.isoron.uhabits
+
+Streaks is my top pick.`;
+const STREAKS = { name: 'Streaks', appStoreId: '963034692' };
+const HABITIFY = { name: 'Habitify', aliases: ['Habitify - Habit Tracker'] };
+const LOOP = { name: 'Loop', playId: 'org.isoron.uhabits' };
+
+// extract
+await t('storeLinks finds apple and play ids in order', () => {
+  assert.deepEqual(storeLinks(ANSWER).map((l) => `${l.store}:${l.id}`), ['apple:963034692', 'apple:6443918070', 'play:org.isoron.uhabits']);
+});
+await t('brandOf picks the brand, not the generic phrase', () => {
+  assert.equal(brandOf('Habit Tracker - HabitKit', 'habit tracker'), 'HabitKit');
+  assert.equal(brandOf('Habitify: Habit Tracker', 'habit tracker'), 'Habitify');
+  assert.equal(brandOf('Streaks', 'habit tracker'), 'Streaks');
+  assert.equal(brandOf('Daily Planner - Simple App', 'habit tracker'), 'Daily Planner');
+});
+await t('no automatic generic alias: "Habit Tracker - HabitKit" does not match plain "habit tracker"', () => {
+  assert.deepEqual(aliasesOf({ name: 'Habit Tracker - HabitKit' }), ['Habit Tracker - HabitKit']);
+  assert.equal(findMention('the best habit tracker is up to you', { name: 'Habit Tracker - HabitKit' }), null);
+  assert.equal(findMention(ANSWER, HABITIFY).matchedBy, 'name:Habitify');
+});
+await t('word boundary: "Streak" does not match "Streaks"', () => {
+  assert.equal(findMention('I keep a streak going with Streaksy', { name: 'Streaks' }), null);
+});
+await t('link-only mention counts and is flagged linked', () => {
+  const m = findMention('try https://apps.apple.com/kr/app/x/id963034692 now', STREAKS);
+  assert.equal(m.linked, true);
+  assert.equal(m.matchedBy, 'link:apple:963034692');
+});
+await t('Korean name matched without ASCII boundary issues', () => {
+  assert.notEqual(findMention('추천: 1. 루틴메이트 2. 마이루틴', { name: '마이루틴' }), null);
+  assert.equal(findMention('추천: 마이루틴플러스', { name: '마이루틴' }), null);
+});
+await t('list rank = list item number', () => {
+  const starts = listItemStarts(ANSWER);
+  assert.equal(starts.length, 4);
+  assert.equal(listRankAt(starts, ANSWER.indexOf('HabitKit')), 3);
+  assert.equal(listRankAt(starts, 0), null);
+});
+await t('analyse orders known apps and reports unknown ones', () => {
+  const a = analyse(ANSWER, STREAKS, [HABITIFY, LOOP]);
+  assert.deepEqual(a.mentions.map((m) => [m.name, m.listRank, m.linked]), [['Streaks', 1, true], ['Habitify', 2, false], ['Loop', 4, true]]);
+  assert.deepEqual(a.otherLinks, [{ store: 'apple', id: '6443918070' }]);
+  assert.deepEqual(a.otherNames, ['HabitKit']);
+  assert.equal(a.target.listRank, 1);
+});
+await t('listedNames reads bold names incl. [link] form', () => {
+  assert.deepEqual(listedNames('1. **[Way of Life](https://x)** — a\n2. **Done** — b'), ['Way of Life', 'Done']);
+  assert.deepEqual(listedNames('- **Simple and polished:** Streaks\n- **Free with a generous tier:** Habitify'), []);
+});
+
+// report
+await t('wilson interval brackets the rate', () => {
+  const [lo, hi] = wilson(5, 10);
+  assert.ok(lo > 0.23 && lo < 0.25 && hi > 0.75 && hi < 0.77, `${lo} ${hi}`);
+  assert.deepEqual(wilson(0, 0), [null, null]);
+});
+const cfg = { target: STREAKS, competitors: [HABITIFY], prompts: ['p1', 'p2'], providers: ['claude-cli', 'codex-cli'] };
+const okRow = (provider, prompt, text) => ({ provider, prompt, repeat: 1, ok: true, model: 'm', analysis: analyse(text, cfg.target, cfg.competitors) });
+await t('failed calls are excluded from the denominator, not counted as "not mentioned"', () => {
+  const rows = [okRow('claude-cli', 'p1', 'Streaks'), { provider: 'claude-cli', prompt: 'p2', repeat: 1, ok: false, errorKind: 'rate_limited' }];
+  const agg = aggregate(rows, cfg);
+  assert.equal(agg.perProvider[0].target.rate, 1);
+  assert.equal(agg.perProvider[0].failed, 1);
+  assert.ok(agg.warnings.some((w) => w.includes('excluded from rates')));
+});
+await t('share of voice and small-sample warning', () => {
+  const agg = aggregate([okRow('codex-cli', 'p1', 'Habitify and Streaks'), okRow('codex-cli', 'p2', 'Habitify')], cfg);
+  assert.equal(agg.perProvider[0].shareOfVoice, 1 / 3);
+  assert.ok(agg.warnings[0].startsWith('Only 2 prompts'));
+  const md = renderMarkdown(agg);
+  assert.match(md, /Overall mention rate: 50%/);
+  assert.match(md, /\| p2 \| 0\/1 \|/);
+  assert.doesNotMatch(md, /\| p1 \| 1\/1 \|/);
+});
+
+// run
+await t('validateConfig rejects bad input', () => {
+  assert.deepEqual(validateConfig(cfg), []);
+  assert.ok(validateConfig({ ...cfg, providers: ['nope'] })[0].startsWith('unknown provider'));
+  assert.ok(validateConfig({ ...cfg, prompts: [] }).length === 1);
+  assert.ok(validateConfig({ ...cfg, providers: ['openai'] })[0].includes('needs a model'));
+});
+await t('planJobs round-robins prompts across engines', () => {
+  assert.deepEqual(planJobs({ ...cfg, repeats: 2 }).slice(0, 3).map((j) => `${j.provider}|${j.prompt}|${j.repeat}`), ['claude-cli|p1|1', 'codex-cli|p1|1', 'claude-cli|p2|1']);
+});
+await t('promptSetHash ignores order', () => assert.equal(promptSetHash(['a', 'b']), promptSetHash(['b', 'a'])));
+
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'app-aeo-test-'));
+await t('run: rate limit halts that engine only, exit 10, resume fills the gap', async () => {
+  let codexCalls = 0;
+  const askImpl = async (provider, prompt) => {
+    if (provider === 'codex-cli') { codexCalls += 1; throw new ProviderError('rate_limited', '429'); }
+    return { text: prompt === 'p1' ? '1. Streaks\n2. Habitify' : 'Habitify', model: 'sonnet', ms: 1 };
+  };
+  const r = await runCheck(cfg, { outDir: tmp, log: () => {}, askImpl });
+  assert.equal(r.exitCode, 10);
+  assert.equal(codexCalls, 1, 'second codex call must not happen after rate limit');
+  assert.deepEqual(r.halted, [['codex-cli', 'rate_limited']]);
+  assert.equal(r.agg.perProvider.find((p) => p.provider === 'claude-cli').target.rate, 0.5);
+  const r2 = await runCheck(cfg, { outDir: tmp, resumeDir: r.dir, log: () => {}, askImpl: async () => ({ text: 'Streaks', model: 'x', ms: 1 }) });
+  assert.equal(r2.calls, 2, 'only the two failed codex jobs are re-asked');
+  assert.equal(r2.exitCode, 0);
+  assert.equal(r2.agg.answers, 4);
+});
+await t('run: budget cut → exit 10; nothing answered → exit 1', async () => {
+  const r = await runCheck(cfg, { outDir: tmp, maxCalls: 1, log: () => {}, askImpl: async () => ({ text: 'x', model: 'm', ms: 1 }) });
+  assert.equal(r.exitCode, 10);
+  const r2 = await runCheck(cfg, { outDir: path.join(tmp, 'b'), log: () => {}, askImpl: async () => { throw new ProviderError('failed', 'boom'); } });
+  assert.equal(r2.exitCode, 1);
+});
+await t('trend reads previous runs', () => {
+  const tr = trend(tmp);
+  assert.ok(tr.points.length >= 2);
+  assert.match(tr.markdown, /Mention-rate trend — Streaks/);
+});
+
+// providers
+await t('parseProviderSpec', () => {
+  assert.deepEqual(parseProviderSpec('claude-cli:sonnet'), { type: 'claude-cli', model: 'sonnet', id: 'claude-cli:sonnet' });
+  assert.equal(parseProviderSpec('openrouter:openai/gpt-4o-mini').model, 'openai/gpt-4o-mini');
+});
+await t('HTTP 429/401/402 classified as halting kinds', () => {
+  assert.equal(classifyHttp(429), 'rate_limited');
+  assert.equal(classifyHttp(401), 'auth');
+  assert.equal(classifyHttp(402), 'quota');
+  assert.equal(classifyHttp(500, 'oops'), 'failed');
+  assert.equal(classifyCliError('Claude usage limit reached'), 'rate_limited');
+});
+await t('openai-compatible provider: answer, citations, and 429 → ProviderError', async () => {
+  process.env.PERPLEXITY_API_KEY = 'test';
+  const okFetch = async () => ({ ok: true, status: 200, text: async () => JSON.stringify({ model: 'sonar', choices: [{ message: { content: 'Use Streaks' } }], citations: ['https://a', 'https://a'] }) });
+  const r = await ask('perplexity:sonar', 'q', { fetchImpl: okFetch });
+  assert.equal(r.text, 'Use Streaks');
+  assert.deepEqual(r.citations, ['https://a']);
+  const limited = async () => ({ ok: false, status: 429, text: async () => 'slow down' });
+  await assert.rejects(ask('perplexity:sonar', 'q', { fetchImpl: limited }), (e) => e instanceof ProviderError && e.kind === 'rate_limited');
+  delete process.env.PERPLEXITY_API_KEY;
+  await assert.rejects(ask('perplexity:sonar', 'q', { fetchImpl: okFetch }), (e) => e.kind === 'auth');
+});
+await t('claude-cli provider parses JSON result and surfaces is_error', async () => {
+  const run = async () => ({ code: 0, stdout: JSON.stringify({ result: 'Streaks!', is_error: false, modelUsage: { 'claude-sonnet-x': {} }, total_cost_usd: 0.01 }), stderr: '' });
+  const r = await ask('claude-cli:sonnet', 'q', { run });
+  assert.equal(r.text, 'Streaks!');
+  assert.equal(r.model, 'claude-sonnet-x');
+  const bad = async () => ({ code: 1, stdout: JSON.stringify({ is_error: true, result: 'usage limit reached' }), stderr: '' });
+  await assert.rejects(ask('claude-cli', 'q', { run: bad }), (e) => e.kind === 'rate_limited');
+});
+
+// lint
+await t('lint counts graphemes (Korean is not over-counted)', () => {
+  assert.equal(length('한글'.normalize('NFD')), 2);
+  const [r] = lint({ locale: 'ko', name: '최고의 습관 앱', keywords: '습관, 습관,루틴' });
+  const msgs = r.issues.map((i) => `${i.level}:${i.field}`);
+  assert.ok(msgs.includes('warn:name'), 'claim word 최고 warned');
+  assert.equal(r.issues.filter((i) => i.field === 'keywords').length, 3, JSON.stringify(r.issues));
+});
+await t('lint errors on over-limit and avoided names', () => {
+  const [r] = lint({ locale: 'en', name: 'x'.repeat(31), subtitle: 'Like Streaks but better' }, ['Streaks']);
+  assert.deepEqual(r.issues.filter((i) => i.level === 'error').map((i) => i.field), ['name', 'subtitle']);
+  assert.equal(validateListing([{ name: 'x' }]), '[0] missing locale');
+});
+
+// store
+await t('suggestPrompts: 10 + 2 per competitor, ko locale', () => {
+  const ps = suggestPrompts({ category: '습관 관리', competitors: ['Streaks'], locale: 'ko', year: 2026 });
+  assert.equal(ps.length, 12);
+  assert.ok(ps.includes('2026년 습관 관리 앱 순위 알려줘.'));
+});
+await t('lookup keeps missing ids as null and 429 throws', async () => {
+  const fetchImpl = async () => ({ ok: true, status: 200, text: async () => JSON.stringify({ results: [{ trackId: 1, trackName: 'A' }] }) });
+  const r = await lookup(['1', '2'], { fetchImpl, gapMs: 0 });
+  assert.equal(r[0].name, 'A');
+  assert.equal(r[1], null);
+  await assert.rejects(lookup(['1'], { fetchImpl: async () => ({ ok: false, status: 429 }), gapMs: 0 }), RateLimitedError);
+});
+
+// MCP
+await t('MCP initialize / tools/list / tools/call / unknown method', async () => {
+  const init = await handle({ jsonrpc: '2.0', id: 1, method: 'initialize', params: { protocolVersion: '2025-06-18' } });
+  assert.equal(init.result.protocolVersion, '2025-06-18');
+  const list = await handle({ jsonrpc: '2.0', id: 2, method: 'tools/list' });
+  assert.ok(list.result.tools.some((x) => x.name === 'run_app_aeo_check'));
+  const lintRes = await handle({ jsonrpc: '2.0', id: 3, method: 'tools/call', params: { name: 'lint_app_listing', arguments: { listing: { locale: 'en', name: 'Best App' } } } });
+  assert.match(lintRes.result.content[0].text, /ranking\/price claim/);
+  assert.equal((await handle({ jsonrpc: '2.0', id: 4, method: 'nope' })).error.code, -32601);
+  assert.equal(await handle({ jsonrpc: '2.0', method: 'notifications/initialized' }), null);
+});
+await t('MCP run_app_aeo_check with injected engine', async () => {
+  const res = await handle({ jsonrpc: '2.0', id: 5, method: 'tools/call', params: { name: 'run_app_aeo_check', arguments: { target: STREAKS, prompts: ['p'], providers: ['claude-cli'], outDir: path.join(tmp, 'mcp') } } }, { askImpl: async () => ({ text: 'Streaks', model: 'm', ms: 1 }) });
+  assert.match(res.result.content[0].text, /Overall mention rate: 100%/);
+  assert.equal(res.result.isError, false);
+});
+
+// CLI helpers
+await t('parseArgv and slug', () => {
+  assert.deepEqual(parseArgv(['check', 'c.json', '--max-calls', '5', '--dry-run', '--competitor', 'A', '--competitor=B']), { pos: ['check', 'c.json'], opt: { '--max-calls': '5', '--dry-run': true, '--competitor': ['A', 'B'] } });
+  assert.equal(slug('Habitify - Habit Tracker'), 'habitify-habit-tracker');
+  assert.throws(() => parseArgv(['--out']), /needs a value/);
+});
+
+fs.rmSync(tmp, { recursive: true, force: true });
+console.log(`=== app-aeo selftest: PASS ${pass} / FAIL ${fail} ===`);
+process.exitCode = fail ? 1 : 0;

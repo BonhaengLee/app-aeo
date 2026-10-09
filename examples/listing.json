@@ -1,0 +1,4 @@
+[
+  { "locale": "en-US", "name": "Streaks", "subtitle": "The #1 habit tracker", "keywords": "habit, tracker,routine,streaks", "avoid": ["Habitify"] },
+  { "locale": "ko", "name": "스트릭스", "subtitle": "습관 만들기", "keywords": "습관,루틴,습관" }
+]

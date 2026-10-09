@@ -1,0 +1,27 @@
+{
+  "country": "us",
+  "target": { "name": "Streaks", "aliases": [], "appStoreId": "963034692" },
+  "competitors": [
+    { "name": "Habitify", "aliases": ["Habitify: Habit Tracker"], "appStoreId": "1111447047" },
+    { "name": "HabitKit", "aliases": ["Habit Tracker - HabitKit"], "appStoreId": "6443918070" }
+  ],
+  "prompts": [
+    "What is the best habit tracker app for iPhone?",
+    "What is the best habit tracker app for Android?",
+    "Recommend a free habit tracker app.",
+    "Which habit tracker app do you recommend for a beginner?",
+    "I need a simple habit tracker app without ads. What should I install?",
+    "What are the top 5 habit tracker apps in 2026?",
+    "Is there a habit tracker app that works offline?",
+    "Which habit tracker app has the best widgets?",
+    "Compare the most popular habit tracker apps.",
+    "What app should I use for habit tracker?",
+    "What are good alternatives to Habitify?",
+    "Is there something better than Habitify?",
+    "What are good alternatives to HabitKit?",
+    "Is there something better than HabitKit?"
+  ],
+  "providers": ["claude-cli:sonnet", "codex-cli"],
+  "repeats": 1,
+  "maxCalls": 120
+}
