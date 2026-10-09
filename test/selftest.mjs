@@ -349,7 +349,8 @@ await t('R1: --resume with a different config is refused', async () => {
 await t('R3: config fingerprint separates experiments, ignores prompt order', async () => {
   const { configFingerprint } = await import('../src/run.mjs');
   assert.equal(configFingerprint(cfg), configFingerprint({ ...cfg, prompts: [...cfg.prompts].reverse() }));
-  assert.notEqual(configFingerprint(cfg), configFingerprint({ ...cfg, repeats: 3 }));
+  assert.equal(configFingerprint(cfg), configFingerprint({ ...cfg, repeats: 3, providers: ['claude-cli'] }), 'extending repeats/engines keeps the same experiment');
+  assert.notEqual(configFingerprint(cfg), configFingerprint({ ...cfg, prompts: ['p1', 'p3'] }));
   assert.notEqual(configFingerprint(cfg), configFingerprint({ ...cfg, competitors: [{ name: 'Habitify', aliases: ['X'] }] }));
 });
 await t('R4: rag answers with zero search results are flagged', () => {
@@ -390,6 +391,110 @@ await t('R12: MCP rejects non-2.0 / method-less requests', async () => {
   assert.equal((await handle({ jsonrpc: '1.0', id: 1, method: 'ping' })).error.code, -32600);
   assert.equal((await handle({ id: 1, method: 'ping' })).error.code, -32600);
   assert.equal((await handle({ jsonrpc: '2.0', id: 1, method: 7 })).error.code, -32600);
+});
+
+// reliability gate
+const { cohenKappa, spearmanBrown, lengthFactor, splitHalfRank, precision, gateVerdict, GATE } = await import('../src/reliability.mjs');
+const { parseJudge, judgePrompt, audit: auditRun, sampleRows } = await import('../src/judge.mjs');
+await t('kappa / Spearman–Brown / length factor known values', () => {
+  assert.equal(cohenKappa([[true, true], [false, false], [true, true], [false, false]]), 1);
+  assert.equal(cohenKappa([[true, false], [false, true]]), -1);
+  assert.ok(Math.abs(cohenKappa([[true, true], [true, true], [true, false], [false, false], [false, false], [false, true]]) - 1 / 3) < 1e-9);
+  assert.ok(Math.abs(spearmanBrown(0.6, 2) - 0.75) < 1e-9);
+  assert.ok(Math.abs(lengthFactor(0.5, 0.8) - 4) < 1e-9);
+  assert.equal(lengthFactor(0, 0.8), Infinity);
+});
+const mk = (repeat, prompt, text) => ({ ...okRow('e', prompt, text), repeat });
+await t('R1: identical halves → PASS; too few frequently named apps → INDETERMINATE, never PASS', () => {
+  const texts = ['Streaks, Habitify, Habitica, Loop', 'Streaks, Habitify, Habitica', 'Streaks, Habitify', 'Streaks'];
+  const rows = [1, 2].flatMap((rep) => texts.flatMap((x, i) => [mk(rep, `p${i}`, x), mk(rep, `q${i}`, x), mk(rep, `r${i}`, x)]));
+  const ok = splitHalfRank(rows, { ...cfg, competitors: [HABITIFY, { name: 'Habitica' }, { name: 'Loop' }] });
+  assert.equal(ok.status, 'PASS');
+  assert.equal(ok.reliability, 1);
+  const few = splitHalfRank([mk(1, 'p', 'Streaks'), mk(2, 'p', 'Streaks')], cfg);
+  assert.equal(few.status, 'INDETERMINATE');
+  assert.equal(splitHalfRank([mk(1, 'p', 'Streaks')], cfg).status, 'INDETERMINATE', 'one repeat cannot be split');
+});
+await t('R1: unrelated halves FAIL and ask for more data', () => {
+  const comps = [HABITIFY, { name: 'Habitica' }, { name: 'Loop' }];
+  const h1 = ['Streaks Habitify', 'Streaks Habitify', 'Streaks Habitify', 'Streaks Habitify', 'Streaks Habitify', 'Habitica', 'Loop'];
+  const h2 = ['Habitica Loop', 'Habitica Loop', 'Habitica Loop', 'Habitica Loop', 'Habitica Loop', 'Streaks', 'Habitify'];
+  const rows = [...h1.map((x, i) => mk(1, `p${i}`, x)), ...h2.map((x, i) => mk(2, `p${i}`, x))];
+  const r = splitHalfRank(rows, { ...cfg, competitors: comps });
+  assert.equal(r.status, 'FAIL');
+  assert.ok(r.moreDataFactor > 1);
+});
+await t('R2: precision PASS on uniform prompts, FAIL with prompts-needed on split prompts', () => {
+  const same = Array.from({ length: 10 }, (_, i) => mk(1, `p${i}`, 'Streaks'));
+  assert.equal(precision(same, cfg).status, 'PASS');
+  const split = Array.from({ length: 10 }, (_, i) => mk(1, `p${i}`, i % 2 ? 'Streaks' : 'none'));
+  const f = precision(split, cfg);
+  assert.equal(f.status, 'FAIL');
+  assert.ok(f.promptsNeeded > 10);
+});
+await t('gate verdict: all PASS → RELIABLE; any FAIL → NOT RELIABLE; missing audit → INDETERMINATE', () => {
+  const P = { status: 'PASS', reliability: 0.9, halfWidth: 0.05 };
+  assert.equal(gateVerdict({ rank: P, prec: P, audit: { kappa: 0.9 } }).status, 'RELIABLE');
+  assert.equal(gateVerdict({ rank: P, prec: { status: 'FAIL' }, audit: { kappa: 0.9 } }).status, 'NOT RELIABLE');
+  assert.equal(gateVerdict({ rank: P, prec: P, audit: null }).status, 'INDETERMINATE');
+  assert.equal(gateVerdict({ rank: P, prec: P, audit: { kappa: 0.5 } }).status, 'NOT RELIABLE');
+});
+await t('judge: prompt lists apps; parser requires a boolean per app per answer', () => {
+  const apps = [STREAKS, HABITIFY];
+  assert.match(judgePrompt([{ text: 'x' }], apps), /- Habitify \(also written: Habitify - Habit Tracker\)/);
+  assert.deepEqual(parseJudge('```json\n{"answers":[{"id":1,"mentioned":{"Streaks":true,"Habitify":false}}]}\n```', 1, apps), [{ Streaks: true, Habitify: false }]);
+  assert.throws(() => parseJudge('{"answers":[{"id":1,"mentioned":{"Streaks":true}}]}', 1, apps), /no boolean for "Habitify"/);
+  assert.throws(() => parseJudge('no json', 1, apps), /no JSON/);
+});
+await t('audit: κ from judge vs extractor; disagreements kept; failed batches reported', async () => {
+  const rows = Array.from({ length: 10 }, (_, i) => okRow('e', `p${i}`, i < 5 ? 'Streaks and Habitify' : 'Streaks'));
+  const truthful = async (spec, prompt) => {
+    const ids = [...prompt.matchAll(/<answer id="(\d+)">\n([\s\S]*?)\n<\/answer>/g)];
+    return { text: JSON.stringify({ answers: ids.map(([, id, body]) => ({ id: Number(id), mentioned: { Streaks: /Streaks/.test(body), Habitify: /Habitify/.test(body) } })) }) };
+  };
+  const a = await auditRun(rows, cfg, { askImpl: truthful, n: 10 });
+  assert.equal(a.kappa, 1);
+  assert.equal(a.disagreements.length, 0);
+  const contrarian = async (spec, prompt) => { const r = await truthful(spec, prompt); return { text: r.text.replaceAll('"Habitify":true', '"Habitify":"x"').replaceAll('"Habitify":false', '"Habitify":true').replaceAll('"Habitify":"x"', '"Habitify":false') }; };
+  const b = await auditRun(rows, cfg, { askImpl: contrarian, n: 10 });
+  assert.ok(b.kappa < 0.8);
+  assert.equal(b.disagreements.length, 10);
+  const broken = await auditRun(rows, cfg, { askImpl: async () => ({ text: 'nope' }), n: 10 });
+  assert.equal(broken.kappa, null);
+  assert.equal(broken.failedBatches, 2);
+});
+await t('adaptive gate: stable engine passes R1 at 2 repeats, audit runs, gate leads the report', async () => {
+  const { runAdaptive } = await import('../src/run.mjs');
+  const comps = [HABITIFY, { name: 'Habitica' }, { name: 'Loop' }];
+  const c = { ...cfg, competitors: comps, providers: ['claude-cli'], prompts: Array.from({ length: 12 }, (_, i) => `q${i}`), repeats: 2 };
+  const stable = (q) => ['Streaks Habitify Habitica', 'Streaks Habitify', 'Streaks Loop', 'Streaks'][Number(q.slice(1)) % 4];
+  const askImpl = async (provider, prompt, o) => {
+    if (prompt.startsWith('You are coding')) {
+      const ids = [...prompt.matchAll(/<answer id="(\d+)">\n([\s\S]*?)\n<\/answer>/g)];
+      return { text: JSON.stringify({ answers: ids.map(([, id, body]) => ({ id: Number(id), mentioned: Object.fromEntries([cfg.target, ...comps].map((ap) => [ap.name, new RegExp(ap.name).test(body)])) })) }) };
+    }
+    return { text: stable(prompt), model: 'm', ms: 1 };
+  };
+  const g = await runAdaptive(c, { outDir: path.join(tmp, 'adapt'), log: () => {}, askImpl, judgeImpl: askImpl, concurrency: 2 });
+  assert.equal(g.gates[0].repeats, 2);
+  assert.equal(g.gates[0].parts[0].status, 'PASS');
+  assert.equal(g.gates[0].parts[2].status, 'PASS', 'audit ran and agreed');
+  assert.ok(fs.readFileSync(path.join(g.dir, 'report.md'), 'utf8').startsWith('## Reliability gate'));
+  assert.ok(fs.existsSync(path.join(g.dir, 'audit.json')));
+});
+
+await t('adaptive gate: an unstable engine gets more repeats (up to maxRepeats) and is reported NOT RELIABLE', async () => {
+  const { runAdaptive } = await import('../src/run.mjs');
+  const comps = [HABITIFY, { name: 'Habitica' }, { name: 'Loop' }];
+  const c = { ...cfg, competitors: comps, providers: ['claude-cli'], prompts: Array.from({ length: 12 }, (_, i) => `q${i}`), repeats: 2 };
+  const pool = ['Streaks Habitify Habitica Loop', 'Habitica Loop', 'Streaks', 'Habitify Loop', 'Habitica'];
+  const { mulberry32 } = await import('../src/report.mjs');
+  const rnd = mulberry32(42);
+  const askImpl = async (provider, prompt) => (prompt.startsWith('You are coding') ? { text: '{}' } : { text: pool[Math.floor(rnd() * pool.length)], model: 'm', ms: 1 });
+  const g = await runAdaptive(c, { outDir: path.join(tmp, 'adapt2'), log: () => {}, askImpl, judgeImpl: askImpl, concurrency: 1, maxRepeats: 6 });
+  assert.ok(g.gates[0].repeats > 2, `repeats grew to ${g.gates[0].repeats}`);
+  assert.notEqual(g.gates[0].status, 'RELIABLE');
+  assert.equal(g.exitCode, 10);
 });
 
 // doctor

@@ -99,16 +99,19 @@ export function suggestPrompts({ category, competitors = [], locale = 'en', year
  */
 export async function autocompletePrompts({ category, competitors = [], locale = 'en', fetchImpl = fetch, max = 20 }) {
   const ko = locale.startsWith('ko');
-  const seeds = ko ? [`${category} 앱 추천`, `${category} 앱`, `${category} 어플`, ...competitors.map((c) => `${c} 대신`)]
-    : [`best ${category} app`, `${category} app for`, `${category} app free`, `${category} app without`, ...competitors.map((c) => `${c} alternative`)];
+  const base = ko ? [`${category} 앱 추천`, `${category} 앱`, `${category} 어플`, `${category} 어플 추천`, ...competitors.map((c) => `${c} 대신`)]
+    : [`best ${category} app`, `${category} app for`, `${category} app free`, `${category} app without`, `${category} app with`, `${category} app that`, ...competitors.map((c) => `${c} alternative`)];
+  // Need more than ~20? Expand seeds with letter suffixes ("best habit tracker app a…z") — still real autocomplete queries.
+  const letters = max > 20 ? (ko ? ['ㄱ', 'ㄴ', 'ㄷ', 'ㅁ', 'ㅂ', 'ㅅ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅎ'] : 'abcdefghiklmnoprstuw'.split('')) : [];
+  const seeds = [...base, ...letters.flatMap((l) => [`best ${category} app ${l}`, `${category} app for ${l}`].map((x) => (ko ? `${category} 앱 ${l}` : x)))];
   const perSeed = [];
-  for (const seed of seeds) {
+  for (const seed of [...new Set(seeds)]) {
     const url = `https://suggestqueries.google.com/complete/search?client=firefox&hl=${ko ? 'ko' : 'en'}&q=${encodeURIComponent(seed)}`;
     const res = await fetchImpl(url);
     if (res.status === 429 || res.status === 403) throw new RateLimitedError(url);
     if (!res.ok) throw new Error(`${url} HTTP ${res.status}`);
     const j = JSON.parse(await res.text());
-    perSeed.push((j[1] ?? []).map((q) => q.trim()).filter((q) => q.split(/\s+/).length >= 3 && !/\b(reddit|windows|mac|pc|laptop|chrome|notion|excel|printable|journal|download|template)\b/i.test(q)));
+    perSeed.push((j[1] ?? []).map((q) => q.trim()).filter((q) => q.split(/\s+/).length >= 3 && !/\b(reddit|windows|mac|pc|laptop|chrome|notion|excel|printable|journal|download|template|apk|mod|login|github|open source code|tutorial|figma|flutter|react|swift|kotlin)\b/i.test(q)));
     await new Promise((r) => setTimeout(r, 300));
   }
   // Round-robin across seeds so one seed's near-duplicates ("... free", "... free iphone") don't fill the set.

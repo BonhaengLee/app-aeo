@@ -3,7 +3,8 @@
 // Exit codes: 0 complete · 10 partial (failed calls, halted engine, or budget cut) · 1 nothing answered / lint error · 2 bad input
 import fs from 'node:fs';
 import path from 'node:path';
-import { runCheck, trend, validateConfig, configFingerprint, DEFAULT_MAX_CALLS } from '../src/run.mjs';
+import { runCheck, runAdaptive, gateRun, renderGate, latestRows, trend, validateConfig, configFingerprint, DEFAULT_MAX_CALLS } from '../src/run.mjs';
+import { audit as runAudit } from '../src/judge.mjs';
 import { hydrate, lookup, search, suggestPrompts } from '../src/store.mjs';
 import { lint, renderLint, validateListing } from '../src/lint.mjs';
 import { PROVIDERS } from '../src/providers.mjs';
@@ -16,6 +17,9 @@ const HELP = `app-aeo — measure how often answer engines recommend your app
 
 Usage
   app-aeo doctor [--live]                      (which free engines work here; --live asks each one tiny question)
+  app-aeo check <config.json> --gate [--max-repeats 6] [--judge claude-cli] [--no-audit]   (recommended: adds repeats until reliable, audits coding, prints the gate)
+  app-aeo audit <run-dir> [--judge claude-cli] [--n 40]     (independent LLM re-coding → Cohen's κ)
+  app-aeo gate <run-dir>                                    (reliability verdict per engine for an existing run)
   app-aeo check <config.json> [--out DIR] [--resume RUN_DIR] [--max-calls N] [--timeout-ms N] [--dry-run] [--json]
   app-aeo trend <runs-dir> [--json]
   app-aeo validate <run-dir> [<run-dir-2>] [--popularity] [--engine SPEC]   (test–retest and/or mention vs real usage)
@@ -23,7 +27,7 @@ Usage
   app-aeo lookup <appStoreId ...> [--country us]
   app-aeo search <term> [--country us]
   app-aeo lint <listing.json> [--avoid "Brand A,Brand B"] [--json]
-  app-aeo init <config.json> --category "..." --app-id <appStoreId> [--competitor-id ID ...] [--locale en|ko] [--country us]
+  app-aeo init <config.json> --category "..." --app-id <appStoreId> [--competitor-id ID ...] [--locale en|ko] [--country us] [--prompts 20]
 
 Engines (config "providers"): ${Object.keys(PROVIDERS).join(', ')}
   claude-cli / codex-cli use the CLIs you are logged into (no API key). Others read *_API_KEY env vars.
@@ -46,7 +50,7 @@ export function parseArgv(argv) {
     const a = argv[i];
     if (a.startsWith('--')) {
       const [k, inline] = a.split(/=(.*)/s, 2);
-      const isFlag = ['--dry-run', '--json', '--help', '--popularity', '--autocomplete', '--live', '--no-autocomplete'].includes(k);
+      const isFlag = ['--dry-run', '--json', '--help', '--popularity', '--autocomplete', '--live', '--no-autocomplete', '--gate', '--no-audit'].includes(k);
       const v = isFlag ? true : inline ?? argv[++i];
       if (!isFlag && v === undefined) throw new Error(`${k} needs a value`);
       if (multi.has(k)) (opt[k] ??= []).push(v); else opt[k] = v;
@@ -79,7 +83,14 @@ async function main(argv) {
     const outDir = opt['--out'] ?? path.join('aeo-runs', slug(target.name));
     const maxCalls = opt['--max-calls'] ? Number(opt['--max-calls']) : undefined;
     if (maxCalls !== undefined && !(Number.isInteger(maxCalls) && maxCalls > 0)) { console.error('--max-calls must be a positive integer'); return 2; }
-    const r = await runCheck(cfg, { outDir, resumeDir: opt['--resume'], maxCalls, dryRun: !!opt['--dry-run'], timeoutMs: opt['--timeout-ms'] ? Number(opt['--timeout-ms']) : undefined });
+    const common = { outDir, resumeDir: opt['--resume'], maxCalls, dryRun: !!opt['--dry-run'], timeoutMs: opt['--timeout-ms'] ? Number(opt['--timeout-ms']) : undefined };
+    if (opt['--gate'] && !opt['--dry-run']) {
+      const g = await runAdaptive(cfg, { ...common, maxRepeats: opt['--max-repeats'] ? Number(opt['--max-repeats']) : undefined, judge: opt['--judge'], audit: !opt['--no-audit'] });
+      console.log(opt['--json'] ? JSON.stringify({ dir: g.dir, gates: g.gates, agg: g.agg }, null, 2) : fs.readFileSync(path.join(g.dir, 'report.md'), 'utf8'));
+      console.error(`report: ${path.join(g.dir, 'report.md')}`);
+      return g.exitCode;
+    }
+    const r = await runCheck(cfg, common);
     if (r.agg) {
       if (opt['--json']) console.log(JSON.stringify({ dir: r.dir, agg: r.agg }, null, 2));
       else console.log(fs.readFileSync(path.join(r.dir, 'report.md'), 'utf8'));
@@ -99,6 +110,20 @@ async function main(argv) {
     const out = opt['--autocomplete'] ? await autocompletePrompts(args) : suggestPrompts(args);
     console.log(JSON.stringify(out, null, 2));
     return 0;
+  }
+  if (cmd === 'audit' || cmd === 'gate') {
+    if (pos.length !== 1) { console.error(`usage: app-aeo ${cmd} <run-dir>`); return 2; }
+    const cfg = readJson(path.join(pos[0], 'config.json'));
+    if (cmd === 'audit') {
+      const rows = latestRows(path.join(pos[0], 'responses.jsonl')).filter((r) => r.ok);
+      const byProvider = {};
+      for (const id of [...new Set(rows.map((r) => r.provider))]) byProvider[id] = await runAudit(rows.filter((r) => r.provider === id), cfg, { judge: opt['--judge'], n: opt['--n'] ? Number(opt['--n']) : undefined, log: (m) => console.error(m) });
+      fs.writeFileSync(path.join(pos[0], 'audit.json'), JSON.stringify({ byProvider }, null, 2));
+      for (const [id, a] of Object.entries(byProvider)) console.log(`${id}: κ=${a.kappa == null ? '—' : a.kappa.toFixed(2)} agreement=${a.agreement == null ? '—' : (a.agreement * 100).toFixed(0) + '%'} pairs=${a.pairs} disagreements=${a.disagreements.length}${a.reason ? ` (${a.reason})` : ''}`);
+    }
+    const gates = gateRun(pos[0], cfg);
+    console.log(opt['--json'] ? JSON.stringify(gates, null, 2) : renderGate(gates));
+    return gates.every((g) => g.status === 'RELIABLE') ? 0 : 10;
   }
   if (cmd === 'doctor') {
     const d = inspect();
@@ -158,7 +183,8 @@ async function main(argv) {
     if (!d.recommended.providers.length) { console.error(renderDoctor(d)); return 1; }
     const promptArgs = { category: opt['--category'], competitors: cs.map((c) => brandOf(c.name, opt['--category'])), locale: opt['--locale'] ?? 'en' };
     let prompts;
-    try { prompts = opt['--no-autocomplete'] ? suggestPrompts(promptArgs) : await autocompletePrompts(promptArgs); }
+    const nPrompts = opt['--prompts'] ? Number(opt['--prompts']) : 20;
+    try { prompts = opt['--no-autocomplete'] ? suggestPrompts(promptArgs) : await autocompletePrompts({ ...promptArgs, max: nPrompts }); }
     catch (e) { console.error(`autocomplete unavailable (${e.message}) — using templates`); prompts = suggestPrompts(promptArgs); }
     const cfg = {
       country,

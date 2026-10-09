@@ -1,0 +1,22 @@
+[
+  { "id": "meditation", "country": "us", "locale": "en", "category": "meditation",
+    "target": { "name": "Insight Timer", "aliases": ["Insight Timer: Meditate, Sleep"], "appStoreId": "337472899" },
+    "competitors": [
+      { "name": "Calm", "aliases": [], "appStoreId": "571800810" },
+      { "name": "Headspace", "aliases": ["Headspace: Sleep & Meditation"], "appStoreId": "493145008" } ] },
+  { "id": "budgeting", "country": "us", "locale": "en", "category": "budgeting",
+    "target": { "name": "Monarch Money", "aliases": ["Monarch: Budget & Track Money", "Monarch"], "appStoreId": "1459319842" },
+    "competitors": [
+      { "name": "YNAB", "aliases": ["You Need A Budget"], "appStoreId": "1010865877" },
+      { "name": "Rocket Money", "aliases": ["Rocket Money - Bills & Budgets"], "appStoreId": "1130616675" } ] },
+  { "id": "language", "country": "us", "locale": "en", "category": "language learning",
+    "target": { "name": "Babbel", "aliases": ["Babbel - Language Learning"], "appStoreId": "829587759" },
+    "competitors": [
+      { "name": "Duolingo", "aliases": ["Duolingo: Language Lessons"], "appStoreId": "570060128" },
+      { "name": "Busuu", "aliases": ["Busuu: Language Learning App"], "appStoreId": "379968583" } ] },
+  { "id": "ko-gagyebu", "country": "kr", "locale": "ko", "category": "가계부",
+    "target": { "name": "편한가계부", "aliases": [], "appStoreId": "560481810" },
+    "competitors": [
+      { "name": "뱅크샐러드", "aliases": ["Banksalad"], "appStoreId": "1195804784" },
+      { "name": "위플 가계부", "aliases": ["위플가계부", "Weple Money", "위플"], "appStoreId": "467936485" } ] }
+]
