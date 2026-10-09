@@ -72,6 +72,7 @@ await t('analyse orders known apps and reports unknown ones', () => {
 await t('listedNames reads bold names incl. [link] form', () => {
   assert.deepEqual(listedNames('1. **[Way of Life](https://x)** — a\n2. **Done** — b'), ['Way of Life', 'Done']);
   assert.deepEqual(listedNames('- **Simple and polished:** Streaks\n- **Free with a generous tier:** Habitify'), []);
+  assert.deepEqual(listedNames('- **Notion or a spreadsheet** — x\n- **Android: Loop Habit Tracker.** y\n- **iOS: Streaks** z'), ['Streaks']);
 });
 
 // report

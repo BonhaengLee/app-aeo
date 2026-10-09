@@ -92,7 +92,9 @@ export function listedNames(text) {
     const name = m[1].trim();
     // "**Simple and polished:**" is a section label, not an app name.
     if (/[:：]$/.test(name) || name.split(/\s+/).length > 5) continue;
-    out.push(name);
+    // "Notion or a spreadsheet", "Android: Loop Habit Tracker." — alternatives and platform labels, not one app.
+    if (/\s(or|and|\/|또는|나)\s/i.test(name) || /\.$/.test(name)) continue;
+    out.push(name.replace(/^(?:iOS|iPhone|Android|Web|Mac)\s*:\s*/i, ''));
   }
   return [...new Set(out)];
 }
