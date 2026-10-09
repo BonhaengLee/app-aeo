@@ -5,7 +5,11 @@
 Web AEO/GEO tools track brands and websites. This one tracks **apps**: App Store ids, Play packages, store links in answers, and the generic-title trap ("Habit Tracker - HabitKit").
 
 - **CLI + MCP server + Agent Skills**, zero dependencies, Node ≥ 20
-- **Free to run**: the default engine is **Gemini 2.5 Flash grounded in Google Search**. On the Gemini API free tier this is free for up to 500 grounded answers a day; you only need a free Google AI Studio key. If you already pay for Claude Code, `claude-cli` adds a model-memory baseline at no extra cost.
+- **Free to run, with a catch** (Gemini API pricing and deprecation pages, checked 2026-10-10):
+  - `gemini-search:gemini-2.5-flash` is grounded in Google Search and free up to 500 answers/day. But Google now limits 2.5 models to projects that already used them, so a new key may be refused.
+  - Gemini 3.x Flash and Flash-Lite are free on the free tier, but **without** search grounding (memory mode).
+  - Grounding for Gemini 3+ needs billing. It includes 5,000 search requests/month, and tokens are charged.
+  - Run `check --dry-run` first; a refused engine stops at the first call (auth/quota) instead of producing empty data.
 - **Prompts from real searches**: `prompts --autocomplete` builds the prompt set from Google autocomplete for your category (free, no key)
 - **Checks its own validity**: `validate` measures test–retest agreement between runs, and whether engine picks track real App Store usage
 - **Honest numbers**: every rate comes with n and a 95% Wilson interval. Failed calls are excluded, never counted as "not mentioned". Runs with fewer than 10 prompts are flagged
