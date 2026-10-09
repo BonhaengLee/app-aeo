@@ -1,6 +1,8 @@
 // Turn a run's answers into numbers. Only counts what was observed: failed calls are reported as failures and are
 // never counted as "not mentioned". Rates carry a 95% Wilson interval because answer engines are noisy and runs are small.
 
+import { parseProviderSpec } from './providers.mjs';
+
 export const MIN_PROMPTS = 10;
 export const MIN_ANSWERS_PER_PROVIDER = 30;
 
@@ -45,7 +47,9 @@ const mean = (xs) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : nu
  * @param {{target:{name}, competitors:Array<{name}>}} cfg
  */
 export function aggregate(rows, cfg) {
-  const providers = [...new Set(rows.map((r) => r.provider))];
+  // Report engines in config order (not in whatever order answers arrived).
+  const order = (cfg.providers ?? []).map((sp) => { try { return parseProviderSpec(sp).id; } catch { return sp; } });
+  const providers = [...new Set(rows.map((r) => r.provider))].sort((a, b) => (order.indexOf(a) + 1 || 1e9) - (order.indexOf(b) + 1 || 1e9));
   const prompts = [...new Set(rows.map((r) => r.prompt))];
   const appNames = [cfg.target.name, ...(cfg.competitors ?? []).map((c) => c.name)];
   const perProvider = providers.map((p) => {

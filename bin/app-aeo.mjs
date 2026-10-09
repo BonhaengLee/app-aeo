@@ -10,10 +10,12 @@ import { PROVIDERS } from '../src/providers.mjs';
 import { brandOf } from '../src/extract.mjs';
 import { loadRun, popularity, renderValidation, testRetest } from '../src/validate.mjs';
 import { autocompletePrompts } from '../src/store.mjs';
+import { inspect, probe, renderDoctor } from '../src/doctor.mjs';
 
 const HELP = `app-aeo — measure how often answer engines recommend your app
 
 Usage
+  app-aeo doctor [--live]                      (which free engines work here; --live asks each one tiny question)
   app-aeo check <config.json> [--out DIR] [--resume RUN_DIR] [--max-calls N] [--timeout-ms N] [--dry-run] [--json]
   app-aeo trend <runs-dir> [--json]
   app-aeo validate <run-dir> [<run-dir-2>] [--popularity] [--engine SPEC]   (test–retest and/or mention vs real usage)
@@ -44,7 +46,7 @@ export function parseArgv(argv) {
     const a = argv[i];
     if (a.startsWith('--')) {
       const [k, inline] = a.split(/=(.*)/s, 2);
-      const isFlag = ['--dry-run', '--json', '--help', '--popularity', '--autocomplete'].includes(k);
+      const isFlag = ['--dry-run', '--json', '--help', '--popularity', '--autocomplete', '--live', '--no-autocomplete'].includes(k);
       const v = isFlag ? true : inline ?? argv[++i];
       if (!isFlag && v === undefined) throw new Error(`${k} needs a value`);
       if (multi.has(k)) (opt[k] ??= []).push(v); else opt[k] = v;
@@ -98,6 +100,12 @@ async function main(argv) {
     console.log(JSON.stringify(out, null, 2));
     return 0;
   }
+  if (cmd === 'doctor') {
+    const d = inspect();
+    const live = opt['--live'] ? await probe(d.recommended.providers) : null;
+    console.log(opt['--json'] ? JSON.stringify({ ...d, live }, null, 2) : renderDoctor(d, live));
+    return d.recommended.providers.length ? (live && live.some((x) => !x.ok) ? 10 : 0) : 1;
+  }
   if (cmd === 'validate') {
     if (pos.length < 1 || pos.length > 2) { console.error('usage: app-aeo validate <run-dir> [<run-dir-2>] [--popularity]'); return 2; }
     const cfg = readJson(path.join(pos[0], 'config.json'));
@@ -141,15 +149,22 @@ async function main(argv) {
     if (missing.length) { console.error(`not found in ${country}: ${missing.join(', ')}`); return 2; }
     const [t, ...cs] = found;
     const asApp = (x) => { const b = brandOf(x.name, opt['--category']); return { name: b, aliases: b === x.name ? [] : [x.name], appStoreId: x.appStoreId }; };
+    const d = inspect();
+    if (!d.recommended.providers.length) { console.error(renderDoctor(d)); return 1; }
+    const promptArgs = { category: opt['--category'], competitors: cs.map((c) => brandOf(c.name, opt['--category'])), locale: opt['--locale'] ?? 'en' };
+    let prompts;
+    try { prompts = opt['--no-autocomplete'] ? suggestPrompts(promptArgs) : await autocompletePrompts(promptArgs); }
+    catch (e) { console.error(`autocomplete unavailable (${e.message}) — using templates`); prompts = suggestPrompts(promptArgs); }
     const cfg = {
       country,
       target: asApp(t),
       competitors: cs.map(asApp),
-      prompts: suggestPrompts({ category: opt['--category'], competitors: cs.map((c) => brandOf(c.name, opt['--category'])), locale: opt['--locale'] ?? 'en' }),
-      // gemini-search: free tier, grounded in Google Search (closest to consumer AI answers). claude-cli: memory baseline.
-      providers: process.env.GEMINI_API_KEY ? ['gemini-search:gemini-2.5-flash', 'claude-cli:sonnet'] : ['claude-cli:sonnet'],
-      repeats: 3,
-      maxCalls: DEFAULT_MAX_CALLS,
+      prompts,
+      // From `doctor`: host-agent search engines first (free inside your plan), then free-tier chains.
+      providers: d.recommended.providers,
+      ...(d.recommended.ground ? { ground: d.recommended.ground } : {}),
+      repeats: 2,
+      maxCalls: Math.max(DEFAULT_MAX_CALLS, prompts.length * d.recommended.providers.length * 2),
     };
     fs.writeFileSync(pos[0], JSON.stringify(cfg, null, 2) + '\n');
     console.log(`wrote ${pos[0]} — ${cfg.prompts.length} prompts × ${cfg.providers.length} engines. Edit aliases/prompts, then: app-aeo check ${pos[0]} --dry-run`);

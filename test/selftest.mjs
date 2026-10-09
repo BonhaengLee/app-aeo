@@ -138,7 +138,7 @@ await t('run: rate limit halts that engine only, exit 10, resume fills the gap',
     if (provider === 'codex-cli') { codexCalls += 1; throw new ProviderError('rate_limited', '429'); }
     return { text: prompt === 'p1' ? '1. Streaks\n2. Habitify' : 'Habitify', model: 'sonnet', ms: 1 };
   };
-  const r = await runCheck(cfg, { outDir: tmp, log: () => {}, askImpl });
+  const r = await runCheck(cfg, { outDir: tmp, log: () => {}, askImpl, concurrency: 1 });
   assert.equal(r.exitCode, 10);
   assert.equal(codexCalls, 1, 'second codex call must not happen after rate limit');
   assert.deepEqual(r.halted, [['codex-cli', 'rate_limited']]);
@@ -147,6 +147,34 @@ await t('run: rate limit halts that engine only, exit 10, resume fills the gap',
   assert.equal(r2.calls, 2, 'only the two failed codex jobs are re-asked');
   assert.equal(r2.exitCode, 0);
   assert.equal(r2.agg.answers, 4);
+});
+await t('run: with a worker pool, no NEW call starts after a rate limit', async () => {
+  const many = { ...cfg, providers: ['claude-cli'], prompts: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'] };
+  let n = 0;
+  const askImpl = async () => { n += 1; await new Promise((r) => setTimeout(r, 5)); throw new ProviderError('rate_limited', '429'); };
+  const r = await runCheck(many, { outDir: path.join(tmp, 'pool'), log: () => {}, askImpl, concurrency: 3 });
+  assert.equal(n, 3, 'only the 3 calls already in flight may run');
+  assert.equal(r.exitCode, 1);
+});
+await t('run: rag mode grounds memory engines once per prompt (cached across repeats), search engines untouched', async () => {
+  const c = { ...cfg, providers: ['groq:m', 'claude-search'], prompts: ['p1', 'p2'], repeats: 2, ground: 'tavily' };
+  let searches = 0;
+  const seen = [];
+  const searchImpl = async (q) => { searches += 1; return [{ title: 'T', url: `https://x/${q}`, content: 'Streaks is great' }]; };
+  const askImpl = async (provider, prompt) => { seen.push([provider, prompt]); return { text: 'Streaks', model: 'm', ms: 1, grounded: provider === 'claude-search' }; };
+  const r = await runCheck(c, { outDir: path.join(tmp, 'rag'), log: () => {}, askImpl, searchImpl });
+  assert.equal(searches, 2, 'one search per prompt, reused by repeats');
+  assert.ok(seen.filter(([p]) => p === 'groq:m').every(([, q]) => q.startsWith('Web search results')), 'memory engine got the rag prompt');
+  assert.ok(seen.filter(([p]) => p === 'claude-search').every(([, q]) => q === 'p1' || q === 'p2'), 'search engine got the raw question');
+  assert.deepEqual(r.agg.perProvider.map((p) => [p.provider, p.mode, p.grounded]), [['groq:m', 'rag', 4], ['claude-search', 'search', 4]]);
+});
+await t('run: grounding quota halts rag engines with a reason, not empty answers', async () => {
+  const c = { ...cfg, providers: ['groq:m'], prompts: ['p1', 'p2', 'p3'], ground: 'tavily' };
+  let asked = 0;
+  const r = await runCheck(c, { outDir: path.join(tmp, 'ragq'), log: () => {}, concurrency: 1, askImpl: async () => { asked += 1; return { text: 'x', model: 'm', ms: 1 }; }, searchImpl: async () => { throw new ProviderError('quota', 'HTTP 432'); } });
+  assert.equal(asked, 0);
+  assert.equal(r.exitCode, 1);
+  assert.deepEqual(r.halted, [['groq:m', 'quota']]);
 });
 await t('run: budget cut → exit 10; nothing answered → exit 1', async () => {
   const r = await runCheck(cfg, { outDir: tmp, maxCalls: 1, log: () => {}, askImpl: async () => ({ text: 'x', model: 'm', ms: 1 }) });
@@ -165,6 +193,26 @@ await t('parseProviderSpec', () => {
   assert.deepEqual(parseProviderSpec('claude-cli:sonnet'), { type: 'claude-cli', model: 'sonnet', id: 'claude-cli:sonnet', mode: 'memory' });
   assert.equal(parseProviderSpec('gemini-search:gemini-2.5-flash').mode, 'search');
   assert.equal(parseProviderSpec('openrouter:openai/gpt-4o-mini').model, 'openai/gpt-4o-mini');
+});
+await t('fallback chain: exhausted link is skipped for the rest of the run; mixed modes rejected', async () => {
+  process.env.GROQ_API_KEY = 'k'; process.env.CEREBRAS_API_KEY = 'k';
+  const hits = [];
+  const fetchImpl = async (url) => { hits.push(url.includes('groq') ? 'groq' : 'cerebras'); return url.includes('groq') ? { ok: false, status: 429, text: async () => 'limit' } : { ok: true, status: 200, text: async () => JSON.stringify({ model: 'gpt-oss', choices: [{ message: { content: 'Streaks' } }] }) }; };
+  const spec = 'groq:openai/gpt-oss-120b|cerebras:gpt-oss-120b';
+  const { newChainState } = await import('../src/providers.mjs');
+  const state = newChainState();
+  const a = await ask(spec, 'q', { fetchImpl, chainState: state });
+  const b = await ask(spec, 'q', { fetchImpl, chainState: state });
+  assert.deepEqual([a.via, b.via], ['cerebras:gpt-oss-120b', 'cerebras:gpt-oss-120b']);
+  assert.deepEqual(hits, ['groq', 'cerebras', 'cerebras'], 'groq must not be retried after its 429');
+  assert.throws(() => parseProviderSpec('claude-search|groq:x'), /mixes modes/);
+  delete process.env.GROQ_API_KEY; delete process.env.CEREBRAS_API_KEY;
+});
+await t('codexEvents counts web_search events and URLs; claudeSearchCount sums modelUsage', async () => {
+  const { codexEvents, claudeSearchCount } = await import('../src/providers.mjs');
+  const ev = codexEvents('{"type":"item.completed","item":{"type":"web_search","query":"x"}}\n{"type":"item.completed","item":{"type":"agent_message","text":"see https://apps.apple.com/us/app/x/id1"}}\nnot json');
+  assert.deepEqual(ev, { searches: 1, urls: ['https://apps.apple.com/us/app/x/id1'] });
+  assert.equal(claudeSearchCount({ modelUsage: { a: { webSearchRequests: 0 }, b: { webSearchRequests: 2 } } }), 2);
 });
 await t('HTTP 429/401/402 classified as halting kinds', () => {
   assert.equal(classifyHttp(429), 'rate_limited');
@@ -197,9 +245,14 @@ await t('gemini-search sends google_search tool and keeps grounding sources', as
 });
 await t('claude-cli provider parses JSON result and surfaces is_error', async () => {
   let argsSeen;
-  const spy = async (cmd, args) => { argsSeen = args; return { code: 0, stdout: JSON.stringify({ result: 'ok', modelUsage: {} }), stderr: '' }; };
-  await ask('claude-cli', 'q', { run: spy });
+  const spy = async (cmd, args) => { argsSeen = args; return { code: 0, stdout: JSON.stringify({ result: 'ok', modelUsage: { m: { webSearchRequests: 1 } } }), stderr: '' }; };
+  const mem = await ask('claude-cli', 'q', { run: spy });
   assert.equal(argsSeen[argsSeen.indexOf('--system-prompt') + 1], 'You are a helpful assistant.', 'coding-agent system prompt must be replaced');
+  assert.equal(argsSeen[argsSeen.indexOf('--tools') + 1], '', 'memory mode has no tools');
+  assert.equal(mem.grounded, false);
+  const se = await ask('claude-search', 'q', { run: spy });
+  assert.equal(argsSeen[argsSeen.indexOf('--tools') + 1], 'WebSearch');
+  assert.equal(se.grounded, true);
   const run = async () => ({ code: 0, stdout: JSON.stringify({ result: 'Streaks!', is_error: false, modelUsage: { 'claude-sonnet-x': {} }, total_cost_usd: 0.01 }), stderr: '' });
   const r = await ask('claude-cli:sonnet', 'q', { run });
   assert.equal(r.text, 'Streaks!');
@@ -260,6 +313,19 @@ await t('testRetest: identical runs → rho 1; popularity never guesses unmatche
   assert.deepEqual(viaId.matched.map((m) => [m.name, m.appStoreId]), [['Streaks', '963034692']], 'configured ids are looked up, not searched');
   assert.deepEqual(viaId.unmatched, ['Habitica', 'Habitify'], 'apps without an id and without a search hit stay unmatched');
   assert.deepEqual(pop.unmatched, ['Habitica']);
+});
+
+// doctor
+await t('doctor: recommends only ready engines; chains keep only links with keys; rag only with tavily + a free chain', async () => {
+  const { inspect } = await import('../src/doctor.mjs');
+  const home = fs.mkdtempSync(path.join(os.tmpdir(), 'aeo-home-'));
+  const none = inspect({ env: {}, home, binImpl: () => false });
+  assert.deepEqual(none.recommended, { providers: [], ground: undefined });
+  fs.mkdirSync(path.join(home, '.codex')); fs.writeFileSync(path.join(home, '.codex', 'auth.json'), '{}');
+  const d = inspect({ env: { CEREBRAS_API_KEY: 'k', TAVILY_API_KEY: 't' }, home, binImpl: (b) => b === 'codex' });
+  assert.deepEqual(d.recommended, { providers: ['codex-search', 'cerebras:gpt-oss-120b'], ground: 'tavily' });
+  const noTav = inspect({ env: { TAVILY_API_KEY: 't' }, home, binImpl: (b) => b === 'claude' });
+  assert.deepEqual(noTav.recommended, { providers: ['claude-search'], ground: undefined }, 'tavily alone does not enable rag');
 });
 
 // MCP

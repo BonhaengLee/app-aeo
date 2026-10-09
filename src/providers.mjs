@@ -28,15 +28,27 @@ export class ProviderError extends Error {
   constructor(kind, message) { super(message); this.name = 'ProviderError'; this.kind = kind; }
 }
 
-/** "claude-cli:sonnet" → {type:'claude-cli', model:'sonnet', id:'claude-cli:sonnet'} */
-export function parseProviderSpec(spec) {
-  const s = String(spec ?? '').trim();
+/** "claude-cli:sonnet" → {type:'claude-cli', model:'sonnet', id:'claude-cli:sonnet', mode:'memory'} */
+function parseOne(s) {
   const i = s.indexOf(':');
   const type = i < 0 ? s : s.slice(0, i);
   const model = i < 0 ? '' : s.slice(i + 1);
   if (!PROVIDERS[type]) throw new ProviderError('config', `unknown provider "${type}" (known: ${Object.keys(PROVIDERS).join(', ')})`);
   if (PROVIDERS[type].needsModel && !model) throw new ProviderError('config', `provider "${type}" needs a model, e.g. ${type}:${PROVIDERS[type].example}`);
   return { type, model, id: model ? `${type}:${model}` : type, mode: PROVIDERS[type].mode ?? 'memory' };
+}
+
+/**
+ * A spec with "|" is a free-tier fallback chain: "groq:openai/gpt-oss-120b|cerebras:gpt-oss-120b|openrouter:openai/gpt-oss-120b:free".
+ * Links should serve the same model family; a rate-limited/exhausted link is skipped for the rest of the run.
+ */
+export function parseProviderSpec(spec) {
+  const s = String(spec ?? '').trim();
+  if (!s.includes('|')) return parseOne(s);
+  const links = s.split('|').map((x) => parseOne(x.trim()));
+  const modes = new Set(links.map((l) => l.mode));
+  if (modes.size > 1) throw new ProviderError('config', `chain "${s}" mixes modes (${[...modes].join(', ')}) — keep one mode per chain`);
+  return { type: 'chain', model: '', id: links.map((l) => l.id).join('|'), mode: links[0].mode, links };
 }
 
 export function classifyHttp(status, body = '') {
@@ -66,17 +78,28 @@ function runChild(cmd, args, { input = '', cwd, env, timeoutMs = DEFAULT_TIMEOUT
   });
 }
 
-async function askClaudeCli(prompt, { model, timeoutMs, run = runChild }) {
-  // Replace Claude Code's coding-agent system prompt: we want the answer a general assistant gives, not a coding agent.
-  const args = ['-p', '--output-format', 'json', '--tools', '', '--setting-sources', '', '--strict-mcp-config', '--no-session-persistence', '--system-prompt', NEUTRAL_SYSTEM];
-  if (model) args.push('--model', model);
-  const r = await run('claude', args, { input: prompt, cwd: os.tmpdir(), timeoutMs });
-  if (r.timedOut) throw new ProviderError('timeout', `claude-cli timed out after ${timeoutMs}ms`);
-  let j;
-  try { j = JSON.parse(r.stdout); } catch { throw new ProviderError(classifyCliError(r.stdout + r.stderr), `claude-cli rc=${r.code}: ${(r.stderr || r.stdout).slice(0, 300)}`); }
-  if (j.is_error || r.code !== 0 || typeof j.result !== 'string') throw new ProviderError(classifyCliError(JSON.stringify(j)), `claude-cli error: ${String(j.result ?? j.subtype ?? r.stderr).slice(0, 300)}`);
-  const resolved = Object.keys(j.modelUsage ?? {})[0] ?? model ?? null;
-  return { text: j.result, model: resolved, citations: [], costUsd: j.total_cost_usd ?? null };
+export const SEARCH_SYSTEM = 'You are a helpful assistant. Search the web when current information would help.';
+
+/** Sum of web searches Claude Code reports in modelUsage (per-model counters). */
+export const claudeSearchCount = (j) => Object.values(j.modelUsage ?? {}).reduce((n, u) => n + (u.webSearchRequests ?? 0), 0) + (j.usage?.server_tool_use?.web_search_requests ?? 0);
+
+function claudeAsker({ search }) {
+  return async (prompt, { model, timeoutMs, run = runChild }) => {
+    // Replace Claude Code's coding-agent system prompt: we want the answer a general assistant gives, not a coding agent.
+    const args = ['-p', '--output-format', 'json', '--setting-sources', '', '--strict-mcp-config', '--no-session-persistence'];
+    if (search) args.push('--tools', 'WebSearch', '--allowedTools', 'WebSearch', '--system-prompt', SEARCH_SYSTEM);
+    else args.push('--tools', '', '--system-prompt', NEUTRAL_SYSTEM);
+    if (model) args.push('--model', model);
+    const label = search ? 'claude-search' : 'claude-cli';
+    const r = await run('claude', args, { input: prompt, cwd: os.tmpdir(), timeoutMs });
+    if (r.timedOut) throw new ProviderError('timeout', `${label} timed out after ${timeoutMs}ms`);
+    let j;
+    try { j = JSON.parse(r.stdout); } catch { throw new ProviderError(classifyCliError(r.stdout + r.stderr), `${label} rc=${r.code}: ${(r.stderr || r.stdout).slice(0, 300)}`); }
+    if (j.is_error || r.code !== 0 || typeof j.result !== 'string') throw new ProviderError(classifyCliError(JSON.stringify(j)), `${label} error: ${String(j.result ?? j.subtype ?? r.stderr).slice(0, 300)}`);
+    const resolved = Object.keys(j.modelUsage ?? {})[0] ?? model ?? null;
+    const searches = claudeSearchCount(j);
+    return { text: j.result, model: resolved, citations: [], grounded: search && searches > 0, searches, costUsd: j.total_cost_usd ?? null };
+  };
 }
 
 let codexHome = null;
@@ -90,23 +113,42 @@ export function isolatedCodexHome(src = process.env.CODEX_HOME || path.join(os.h
   return codexHome;
 }
 
-async function askCodexCli(prompt, { model, timeoutMs, run = runChild }) {
-  const home = isolatedCodexHome();
-  const work = fs.mkdtempSync(path.join(os.tmpdir(), 'app-aeo-codex-'));
-  const out = path.join(work, 'answer.txt');
-  const args = ['exec', '--skip-git-repo-check', '--ephemeral', '-s', 'read-only', '-o', out];
-  if (model) args.push('-m', model);
-  args.push('-');
-  try {
-    const r = await run('codex', args, { input: prompt, cwd: work, env: { CODEX_HOME: home }, timeoutMs });
-    if (r.timedOut) throw new ProviderError('timeout', `codex-cli timed out after ${timeoutMs}ms`);
-    const text = fs.existsSync(out) ? fs.readFileSync(out, 'utf8').trim() : '';
-    if (r.code !== 0 || !text) throw new ProviderError(classifyCliError(r.stderr + r.stdout), `codex-cli rc=${r.code}: ${(r.stderr || r.stdout).slice(-300)}`);
-    const m = /^model:\s*(\S+)/m.exec(r.stderr + '\n' + r.stdout);
-    return { text, model: m?.[1] ?? model ?? null, citations: [], costUsd: null };
-  } finally {
-    fs.rmSync(work, { recursive: true, force: true });
+/** Count web_search events and collect cited URLs from `codex exec --json` output (one JSON event per line). */
+export function codexEvents(jsonl) {
+  let searches = 0;
+  const urls = new Set();
+  for (const line of String(jsonl).split('\n')) {
+    if (!line.trim()) continue;
+    let ev;
+    try { ev = JSON.parse(line); } catch { continue; }
+    const s = JSON.stringify(ev);
+    if (/"type":"web_search"/.test(s)) searches += 1;
+    for (const m of s.matchAll(/https?:\/\/[^"\s)\\]+/g)) urls.add(m[0]);
   }
+  return { searches, urls: [...urls] };
+}
+
+function codexAsker({ search }) {
+  return async (prompt, { model, timeoutMs, run = runChild }) => {
+    const home = isolatedCodexHome();
+    const work = fs.mkdtempSync(path.join(os.tmpdir(), 'app-aeo-codex-'));
+    const out = path.join(work, 'answer.txt');
+    const args = [...(search ? ['--search'] : []), 'exec', '--skip-git-repo-check', '--ephemeral', '-s', 'read-only', '--json', '-o', out];
+    if (model) args.push('-m', model);
+    args.push('-');
+    const label = search ? 'codex-search' : 'codex-cli';
+    try {
+      const r = await run('codex', args, { input: prompt, cwd: work, env: { CODEX_HOME: home }, timeoutMs });
+      if (r.timedOut) throw new ProviderError('timeout', `${label} timed out after ${timeoutMs}ms`);
+      const text = fs.existsSync(out) ? fs.readFileSync(out, 'utf8').trim() : '';
+      if (r.code !== 0 || !text) throw new ProviderError(classifyCliError(r.stderr + r.stdout), `${label} rc=${r.code}: ${(r.stderr || r.stdout).slice(-300)}`);
+      const ev = codexEvents(r.stdout);
+      const m = /"model":"([^"]+)"/.exec(r.stdout) ?? /^model:\s*(\S+)/m.exec(r.stderr);
+      return { text, model: m?.[1] ?? model ?? null, citations: ev.urls.filter((u) => !/openai\.com|chatgpt\.com/.test(u)), grounded: search && ev.searches > 0, searches: ev.searches, costUsd: null };
+    } finally {
+      fs.rmSync(work, { recursive: true, force: true });
+    }
+  };
 }
 
 function needKey(name) {
@@ -163,23 +205,50 @@ function geminiAsker({ grounded }) {
 }
 
 export const PROVIDERS = Object.freeze({
-  'claude-cli': { ask: askClaudeCli, needsModel: false, example: 'sonnet', local: true, mode: 'memory' },
-  'codex-cli': { ask: askCodexCli, needsModel: false, example: 'gpt-5', local: true, mode: 'agent' },
-  openrouter: { ask: openAiCompatible('https://openrouter.ai/api/v1/chat/completions', 'OPENROUTER_API_KEY'), needsModel: true, example: 'openai/gpt-4o-mini' },
-  openai: { ask: openAiCompatible('https://api.openai.com/v1/chat/completions', 'OPENAI_API_KEY'), needsModel: true, example: 'gpt-4o-mini' },
-  perplexity: { ask: openAiCompatible('https://api.perplexity.ai/chat/completions', 'PERPLEXITY_API_KEY'), needsModel: true, example: 'sonar', mode: 'search' },
-  anthropic: { ask: askAnthropic, needsModel: true, example: 'claude-sonnet-4-5' },
+  // Host-agent engines: free inside the user's existing Claude Code / Codex plan. *-search ground answers in live web search.
+  'claude-search': { ask: claudeAsker({ search: true }), needsModel: false, example: 'sonnet', local: true, bin: 'claude', mode: 'search' },
+  'codex-search': { ask: codexAsker({ search: true }), needsModel: false, example: 'gpt-5', local: true, bin: 'codex', mode: 'search' },
+  'claude-cli': { ask: claudeAsker({ search: false }), needsModel: false, example: 'sonnet', local: true, bin: 'claude', mode: 'memory' },
+  'codex-cli': { ask: codexAsker({ search: false }), needsModel: false, example: 'gpt-5', local: true, bin: 'codex', mode: 'agent' },
+  // Official free tiers (OpenAI-compatible). Model-memory answers unless the run config sets "ground": "tavily" (→ rag).
+  groq: { ask: openAiCompatible('https://api.groq.com/openai/v1/chat/completions', 'GROQ_API_KEY'), needsModel: true, example: 'openai/gpt-oss-120b', key: 'GROQ_API_KEY', free: true },
+  cerebras: { ask: openAiCompatible('https://api.cerebras.ai/v1/chat/completions', 'CEREBRAS_API_KEY'), needsModel: true, example: 'gpt-oss-120b', key: 'CEREBRAS_API_KEY', free: true },
+  mistral: { ask: openAiCompatible('https://api.mistral.ai/v1/chat/completions', 'MISTRAL_API_KEY'), needsModel: true, example: 'mistral-small-latest', key: 'MISTRAL_API_KEY', free: true },
+  'gemini-openai': { ask: openAiCompatible('https://generativelanguage.googleapis.com/v1beta/openai/chat/completions', 'GEMINI_API_KEY'), needsModel: true, example: 'gemini-3.5-flash', key: 'GEMINI_API_KEY', free: true },
+  nvidia: { ask: openAiCompatible('https://integrate.api.nvidia.com/v1/chat/completions', 'NVIDIA_API_KEY'), needsModel: true, example: 'openai/gpt-oss-120b', key: 'NVIDIA_API_KEY', free: true },
+  openrouter: { key: 'OPENROUTER_API_KEY', free: true, ask: openAiCompatible('https://openrouter.ai/api/v1/chat/completions', 'OPENROUTER_API_KEY'), needsModel: true, example: 'openai/gpt-4o-mini' },
+  openai: { key: 'OPENAI_API_KEY', ask: openAiCompatible('https://api.openai.com/v1/chat/completions', 'OPENAI_API_KEY'), needsModel: true, example: 'gpt-4o-mini' },
+  perplexity: { key: 'PERPLEXITY_API_KEY', ask: openAiCompatible('https://api.perplexity.ai/chat/completions', 'PERPLEXITY_API_KEY'), needsModel: true, example: 'sonar', mode: 'search' },
+  anthropic: { key: 'ANTHROPIC_API_KEY', ask: askAnthropic, needsModel: true, example: 'claude-sonnet-4-5' },
   // Free tier: Gemini 2.5 Flash answers grounded in Google Search, 500 requests/day at no charge (ai.google.dev pricing, checked 2026-10-10).
-  'gemini-search': { ask: geminiAsker({ grounded: true }), needsModel: true, example: 'gemini-2.5-flash', mode: 'search' },
-  gemini: { ask: geminiAsker({ grounded: false }), needsModel: true, example: 'gemini-2.5-flash', mode: 'memory' },
+  'gemini-search': { key: 'GEMINI_API_KEY', free: true, ask: geminiAsker({ grounded: true }), needsModel: true, example: 'gemini-2.5-flash', mode: 'search' },
+  gemini: { key: 'GEMINI_API_KEY', free: true, ask: geminiAsker({ grounded: false }), needsModel: true, example: 'gemini-2.5-flash', mode: 'memory' },
 });
 
-/** Ask one provider. `deps` lets tests inject run/fetch. */
-export async function ask(spec, prompt, { timeoutMs = DEFAULT_TIMEOUT_MS, ...deps } = {}) {
+/** Per-run state for fallback chains (index of the first link not yet exhausted). */
+export const newChainState = () => new Map();
+
+/** Ask one provider (or chain). `deps` lets tests inject run/fetch. */
+export async function ask(spec, prompt, { timeoutMs = DEFAULT_TIMEOUT_MS, chainState = newChainState(), ...deps } = {}) {
   const p = typeof spec === 'string' ? parseProviderSpec(spec) : spec;
   const started = Date.now();
-  const r = await PROVIDERS[p.type].ask(prompt, { model: p.model, timeoutMs, ...deps });
-  return { ...r, ms: Date.now() - started };
+  if (p.type !== 'chain') {
+    const r = await PROVIDERS[p.type].ask(prompt, { model: p.model, timeoutMs, ...deps });
+    return { ...r, via: p.id, ms: Date.now() - started };
+  }
+  let lastErr = null;
+  for (let i = chainState.get(p.id) ?? 0; i < p.links.length; i += 1) {
+    const link = p.links[i];
+    try {
+      const r = await PROVIDERS[link.type].ask(prompt, { model: link.model, timeoutMs, ...deps });
+      return { ...r, via: link.id, ms: Date.now() - started };
+    } catch (e) {
+      if (!(e instanceof ProviderError) || !HALTING_KINDS.has(e.kind)) throw e;
+      lastErr = e;
+      chainState.set(p.id, Math.max(chainState.get(p.id) ?? 0, i + 1));
+    }
+  }
+  throw new ProviderError(lastErr?.kind ?? 'quota', `all ${p.links.length} links exhausted: ${lastErr?.message ?? 'no link left'}`);
 }
 
 /** Errors after which asking the same provider again in this run is pointless. */

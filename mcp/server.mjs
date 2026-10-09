@@ -7,6 +7,8 @@ import readline from 'node:readline';
 import { runCheck, trend, validateConfig } from '../src/run.mjs';
 import { hydrate, lookup, search, suggestPrompts } from '../src/store.mjs';
 import { lint, renderLint, validateListing } from '../src/lint.mjs';
+import { inspect, renderDoctor } from '../src/doctor.mjs';
+import { loadRun, popularity, renderValidation, testRetest } from '../src/validate.mjs';
 
 const VERSION = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version;
 const SUPPORTED = ['2025-06-18', '2025-03-26', '2024-11-05'];
@@ -25,7 +27,9 @@ export const TOOLS = [
         target: appSchema,
         competitors: { type: 'array', items: appSchema },
         prompts: { type: 'array', items: { type: 'string' }, minItems: 1 },
-        providers: { type: 'array', items: { type: 'string' }, description: 'e.g. ["claude-cli:sonnet","codex-cli","perplexity:sonar"]' },
+        providers: { type: 'array', items: { type: 'string' }, description: 'From app_aeo_doctor, e.g. ["claude-search","codex-search","groq:openai/gpt-oss-120b|cerebras:gpt-oss-120b"]' },
+        ground: { type: 'string', enum: ['tavily'], description: 'Ground memory-mode engines in free Tavily search results (rag mode).' },
+        concurrency: { type: 'integer', minimum: 1, maximum: 8 },
         repeats: { type: 'integer', minimum: 1, maximum: 10 },
         maxCalls: { type: 'integer', minimum: 1, description: 'Hard cap on engine calls for this run (default 120).' },
         outDir: { type: 'string', description: 'Directory for runs (default ./aeo-runs/<target-slug>).' },
@@ -33,6 +37,8 @@ export const TOOLS = [
       },
     },
   },
+  { name: 'app_aeo_doctor', description: 'List engines usable here for free (Claude Code / Codex web search, free-tier keys, Tavily grounding) and the recommended provider list. Call this first.', inputSchema: { type: 'object', properties: {} } },
+  { name: 'validate_app_aeo_runs', description: 'Check measurement validity: test–retest between two runs of the same config, and/or whether mention rates track App Store rating counts. Report the verdict as given.', inputSchema: { type: 'object', required: ['runDir'], properties: { runDir: { type: 'string' }, runDir2: { type: 'string' }, popularity: { type: 'boolean' }, engine: { type: 'string' }, country: { type: 'string' } } } },
   { name: 'get_app_aeo_trend', description: 'Mention-rate history across previous runs in a runs directory.', inputSchema: { type: 'object', required: ['runsDir'], properties: { runsDir: { type: 'string' } } } },
   { name: 'lint_app_listing', description: 'Check App Store listing text (name, subtitle, promoText, keywords, description) against character limits and common rejection patterns. Input: one locale object or an array.', inputSchema: { type: 'object', required: ['listing'], properties: { listing: {}, avoid: { type: 'array', items: { type: 'string' } } } } },
   { name: 'lookup_app_store', description: 'Public App Store metadata (name, seller, genre, rating, rating count, price) for App Store ids.', inputSchema: { type: 'object', required: ['ids'], properties: { ids: { type: 'array', items: { type: 'string' } }, country: { type: 'string' } } } },
@@ -45,8 +51,8 @@ const text = (t, isError = false) => ({ content: [{ type: 'text', text: typeof t
 export async function callTool(name, args = {}, deps = {}) {
   switch (name) {
     case 'run_app_aeo_check': {
-      let cfg = { target: args.target, competitors: args.competitors ?? [], prompts: args.prompts, providers: args.providers, repeats: args.repeats ?? 1, maxCalls: args.maxCalls };
-      if (cfg.maxCalls == null) delete cfg.maxCalls;
+      let cfg = { target: args.target, competitors: args.competitors ?? [], prompts: args.prompts, providers: args.providers, repeats: args.repeats ?? 2, maxCalls: args.maxCalls, ground: args.ground, concurrency: args.concurrency, country: args.country };
+      for (const k of Object.keys(cfg)) if (cfg[k] == null) delete cfg[k];
       const errs = validateConfig(cfg);
       if (errs.length) return text(`invalid input:\n- ${errs.join('\n- ')}`, true);
       const [target, ...competitors] = await hydrate([cfg.target, ...cfg.competitors], { country: args.country ?? 'us' });
@@ -56,6 +62,16 @@ export async function callTool(name, args = {}, deps = {}) {
       return text(`run dir: ${r.dir}\nexit: ${r.exitCode === 0 ? 'complete' : r.exitCode === 10 ? 'partial' : 'failed'}\n\n${md}`, r.exitCode === 1);
     }
     case 'get_app_aeo_trend': return text(trend(args.runsDir).markdown);
+    case 'app_aeo_doctor': { const d = inspect(); return text(renderDoctor(d)); }
+    case 'validate_app_aeo_runs': {
+      const cfgRun = JSON.parse(fs.readFileSync(path.join(args.runDir, 'config.json'), 'utf8'));
+      const rowsA = loadRun(args.runDir);
+      const retest = args.runDir2 ? testRetest(rowsA, loadRun(args.runDir2), cfgRun, { provider: args.engine }) : null;
+      const ctry = args.country ?? cfgRun.country ?? 'us';
+      const pop = args.popularity ? await popularity(rowsA, cfgRun, (term) => search(term, { country: ctry, limit: 10 }), { provider: args.engine, lookupImpl: (ids) => lookup(ids, { country: ctry }) }) : null;
+      if (!retest && !pop) return text('nothing to validate: give runDir2 and/or popularity:true', true);
+      return text(renderValidation({ retest, pop, runs: [args.runDir, args.runDir2].filter(Boolean) }));
+    }
     case 'lint_app_listing': {
       const why = validateListing(args.listing);
       if (why) return text(`invalid listing: ${why}`, true);

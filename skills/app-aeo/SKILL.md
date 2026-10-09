@@ -1,25 +1,47 @@
 ---
 name: app-aeo
-description: Measure and improve how often answer engines (ChatGPT, Claude, Perplexity, Gemini) recommend a specific mobile app for recommendation-style questions. Use when the user asks "does ChatGPT recommend my app", "AI visibility for my app", "app AEO/GEO", or wants to compare their app's AI mention rate with competitors.
+description: Measure how often AI assistants recommend a specific mobile app for real recommendation questions, compare with competitors, and check whether the measurement is trustworthy — for free, using the user's own Claude Code / Codex web search plus optional free-tier API keys. Use when the user asks "does ChatGPT/AI recommend my app", "AI visibility / AEO / GEO for my app", or why AI suggests competitors instead.
 ---
 
-# App AEO check
+# App AEO — agent workflow
 
-Use the `app-aeo` MCP tools (or the `app-aeo` CLI) — never estimate mention rates from memory.
+You (the agent) drive the `app-aeo` CLI (or the MCP tools of the same names). Never estimate mention rates yourself. Report only what the tool measured.
 
-## Workflow
-1. **Identify the app.** Get the App Store id (or Play package). If only a name is given, call `search_app_store` and confirm the right result with the user. Use `lookup_app_store` for the exact title.
-2. **Pick the brand name.** Store titles often start with a generic phrase ("Habit Tracker - HabitKit"). Match on the brand ("HabitKit") and put the full title in `aliases`. A generic alias inflates the rate.
-3. **Pick 2–5 competitors** the user actually competes with (ask, or take top `search_app_store` results for the category).
-4. **Build prompts.** Start from `suggest_aeo_prompts` (10 category prompts + 2 per competitor), then add the user's real use cases. Use at least 10 prompts. Write them in the language the user's customers ask in (`locale: "ko"` for Korean).
-5. **Run** `run_app_aeo_check` with at least 2 engines. Keep `maxCalls` explicit (prompts × engines × repeats).
-6. **Report** only what the run measured:
-   - Give the mention rate with its 95% interval and n. With fewer than 30 answers per engine, say the interval is wide.
-   - Failed calls are excluded from rates. Say how many failed and why.
-   - List the prompts where the app was left out, and the unlisted apps the engines recommended instead.
-7. **Improve.** Use `lint_app_listing` on the current listing. Suggestions must tie a missing prompt to a concrete listing or web change: name the feature the engines associate with the winners and check whether the app's description says it. Re-run with the **same prompt set** later and compare with `get_app_aeo_trend`.
+## 1. What is available here (free)
+Run `app-aeo doctor` (add `--live` to ask each engine one tiny question).
+- **`claude-search` / `codex-search`**: the user's own Claude Code or Codex answers with live web search. Free inside their existing plan. This is the primary signal.
+- **Free-tier chains**: Groq, Cerebras, NVIDIA, OpenRouter `:free`, Gemini, Mistral, used if their keys are set. These answer from memory, or in `rag` mode when `TAVILY_API_KEY` is set (free 1,000 searches/month).
+- If nothing is ready, tell the user which **one** free option is fastest for them (usually: log in to Codex or Claude Code), and stop.
 
-## Guardrails
-- A mention rate is not market share and not traffic. Do not translate it into installs or revenue.
-- Answers vary between runs. Do not claim an improvement unless the new interval clears the old one, or the same prompt set was re-run with `repeats` ≥ 3.
-- Do not change the prompt set and compare against the old trend. The trend output flags differing prompt sets.
+## 2. Set up the measurement
+1. Identify the app:
+   - Find its App Store id with `app-aeo search "<name>"` and confirm it with the user if there are several.
+   - Pick 2–5 real competitors with the user, or take the top results for the category.
+2. Run `app-aeo init cfg.json --category "<category in the users' words>" --app-id <id> --competitor-id <id> ...`
+   - The prompts come from real Google autocomplete queries.
+   - The engines come from `doctor`. `repeats` is 2.
+3. Open `cfg.json`. Check that `target.name` is the **brand** ("HabitKit", not "Habit Tracker"). Add the user's own real use-case questions if they have any. Keep 10 or more prompts.
+
+## 3. Measure twice, then validate
+Run `app-aeo check cfg.json --out runsA` and `app-aeo check cfg.json --out runsB`. They can run in parallel.
+
+Then run `app-aeo validate runsA/<run> runsB/<run> --popularity --engine <spec>` for each search engine. It checks two things:
+- **Test–retest**: do the two runs rank the frequently named apps the same way? (ρ ≥ 0.5, p < 0.05)
+- **Convergent validity**: do the apps this engine recommends track real App Store usage (rating counts)?
+
+## 4. Report — rules
+- Lead with the target's mention rate per engine, with its interval. Say which mode each engine is in: search, rag or memory.
+- State the validation verdicts **as they came out**:
+  - If the retest failed, the numbers are noise. Say so and do not give advice from them.
+  - If popularity failed, say the engine's picks don't track the real market for this category. Rates can still be compared over time, but don't call them market signals.
+- Show the prompts where the app was missing, and the apps recommended instead (with the sources engines cited, if any).
+- **Never:**
+  - turn a mention rate into installs, revenue or market share;
+  - claim an improvement without the same prompt set and repeats;
+  - mix modes into one number;
+  - present `rag` or memory engines as "what ChatGPT says".
+
+## 5. Improve (optional)
+- Run `app-aeo lint listing.json` on the current App Store text. It is deterministic.
+- For each missing prompt, name the attribute the winning apps are cited for (free, no ads, Android, offline, …). Check whether the app's listing or website says it.
+- Re-measure later with the **same** `cfg.json` and compare with `app-aeo trend`.
