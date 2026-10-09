@@ -102,8 +102,8 @@ export function aggregate(rows, cfg) {
     if (p.answers < MIN_ANSWERS_PER_PROVIDER) warnings.push(`${p.provider}: ${p.answers} answers (< ${MIN_ANSWERS_PER_PROVIDER}); the 95% interval is wide.`);
     if (!p.stability) warnings.push(`${p.provider}: no repeats — run-to-run variation unknown. Use repeats ≥ 3 before comparing runs.`);
     else if (p.stability.rate < 0.8) warnings.push(`${p.provider}: only ${(p.stability.rate * 100).toFixed(0)}% of prompts gave the same yes/no across repeats — single answers from this engine are noisy.`);
-    if (p.mode === 'search' && p.answers && p.grounded < p.answers) warnings.push(`${p.provider}: ${p.answers - p.grounded}/${p.answers} answers were not grounded in search results.`);
-    if (p.mode !== 'search') warnings.push(`${p.provider}: ${p.mode}-mode engine — answers come from model memory/agent behaviour, not today's web. Not what consumer chat apps with search show.`);
+    if ((p.mode === 'search' || p.mode === 'rag') && p.answers && p.grounded < p.answers) warnings.push(`${p.provider}: ${p.answers - p.grounded}/${p.answers} answers had no search results behind them (${p.mode} mode).`);
+    if (p.mode !== 'search' && p.mode !== 'rag') warnings.push(`${p.provider}: ${p.mode}-mode engine — answers come from model memory/agent behaviour, not today's web. Not what consumer chat apps with search show.`);
     if (p.failed) warnings.push(`${p.provider}: ${p.failed} failed call(s) [${p.failures.join(', ')}] — excluded from rates, not counted as "not mentioned".`);
   }
   return {
@@ -123,7 +123,7 @@ export function renderMarkdown(agg, meta = {}) {
   const L = [];
   L.push(`# App AEO report — ${agg.target}`);
   if (meta.startedAt) L.push(`\nRun ${meta.startedAt}${meta.finishedAt ? ` → ${meta.finishedAt}` : ''} · ${agg.prompts} prompts · ${agg.answers} answers · ${agg.failed} failed calls`);
-  L.push(`\n**Overall mention rate: ${pct(agg.overall.rate)}** (${agg.overall.mentioned}/${agg.answers}, 95% CI ${pct(agg.overall.ci[0])}–${pct(agg.overall.ci[1])})`);
+  // No pooled headline: pooling engines mixes modes, and an answer-level interval would treat repeats as independent.
   L.push('\n## By answer engine\n');
   L.push('| Engine | Mode | Model | Prompts × answers | Mention rate (95% CI over prompts) | Same answer on repeat | Avg position | Store link | Share of voice | Failed |');
   L.push('|---|---|---|---|---|---|---|---|---|---|');

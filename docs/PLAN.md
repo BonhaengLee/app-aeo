@@ -19,15 +19,15 @@
 | gpt4free (★66.8k, GPL-3.0) | ✅ | some | **Excluded**: unofficial web endpoints, ToS violations, breaks often. Cannot ship in a public tool |
 
 ## Batches
-1. ⬜ **Engines.**
+1. ✅ **Engines.**
    - `claude-search` and `codex-search` (search mode), with grounding detected from usage/events.
    - Free-tier presets: `groq`, `cerebras`, `mistral`, `gemini-openai`, `openrouter`, `nvidia`.
-2. ⬜ **Free router.** A provider spec `a|b|c` is a fallback chain. A halting error (429/quota/auth) moves the run to the next link for good. The report records which link answered.
-3. ⬜ **RAG grounding.** `"ground": "tavily"` searches once per prompt (cached in the run dir) and gives the snippets to memory-mode engines → mode `rag`.
-4. ⬜ **Concurrency per engine** (`concurrency`, default 2) so search-mode CLIs finish in minutes.
-5. ⬜ **`doctor`.** Lists usable engines (CLI installed and logged in, keys present) and prints a ready config.
-6. ⬜ **Skill rewritten for agent use.** Flow: doctor → init (autocomplete prompts) → check ×2 → validate → report only what passed.
-7. ⬜ **Review.**
+2. ✅ **Free router.** A provider spec `a|b|c` is a fallback chain. A halting error (429/quota/auth) moves the run to the next link for good. The report records which link answered.
+3. ✅ **RAG grounding.** `"ground": "tavily"` searches once per prompt (cached in the run dir) and gives the snippets to memory-mode engines → mode `rag`.
+4. ✅ **Concurrency per engine** (`concurrency`, default 2) so search-mode CLIs finish in minutes.
+5. ✅ **`doctor`.** Lists usable engines (CLI installed and logged in, keys present) and prints a ready config.
+6. ✅ **Skill rewritten for agent use.** Flow: doctor → init (autocomplete prompts) → check ×2 → validate → report only what passed.
+7. ✅ **Review.**
    - Selftests, including differential checks.
    - Live A/B runs with claude-search + codex-search.
    - `validate` (retest + popularity).
@@ -38,3 +38,12 @@
 - Live: two runs complete with 0 failed calls, or failures reported as such.
 - Validate: printed for each search engine. The verdict is written down as it came out, pass **or fail**.
 - Codex review: every finding either fixed or answered with a reason.
+
+## Result (2026-10-10 02:45 KST)
+- Selftest 52/52. All 10 regression tests for review findings fail on the pre-fix code.
+- Live: two runs × 80 answers, 0 failed, all grounded.
+- Validate:
+  - claude-search: retest ❌ (ρ 0.40) / usage ✅ (ρ 0.91, p 0.010)
+  - codex-search: retest ✅ (ρ 1.00, p 0.015) / usage ❌ (n=5)
+- Codex review: 12 findings → 12 fixed. #6 (chain race) is mitigated: calls already in flight cannot be recalled.
+- Not live-tested: free-tier HTTP keys and Tavily. No keys on this machine; mocks only.

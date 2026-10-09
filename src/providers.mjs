@@ -184,7 +184,9 @@ function openAiCompatible(url, keyEnv) {
     const text = j.choices?.[0]?.message?.content;
     if (typeof text !== 'string' || !text.trim()) throw new ProviderError('failed', `${url}: empty answer`);
     const citations = [...(j.citations ?? []), ...(j.search_results ?? []).map((s) => s.url)].filter((u) => typeof u === 'string');
-    return { text, model: j.model ?? model, citations: [...new Set(citations)], costUsd: j.usage?.cost ?? null };
+    const cited = [...new Set(citations)];
+    // Search-backed APIs (Perplexity) return citations; a non-empty list is the grounding evidence.
+    return { text, model: j.model ?? model, citations: cited, grounded: cited.length > 0, costUsd: j.usage?.cost ?? null };
   };
 }
 
@@ -246,6 +248,9 @@ export async function ask(spec, prompt, { timeoutMs, chainState = newChainState(
   }
   let lastErr = null;
   for (let i = chainState.get(p.id) ?? 0; i < p.links.length; i += 1) {
+    // Another worker may have exhausted links while this one waited; re-read before each attempt.
+    i = Math.max(i, chainState.get(p.id) ?? 0);
+    if (i >= p.links.length) break;
     const link = p.links[i];
     try {
       const r = await PROVIDERS[link.type].ask(prompt, { model: link.model, timeoutMs, ...deps });

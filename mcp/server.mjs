@@ -4,7 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import readline from 'node:readline';
-import { runCheck, trend, validateConfig } from '../src/run.mjs';
+import { runCheck, trend, validateConfig, configFingerprint } from '../src/run.mjs';
 import { hydrate, lookup, search, suggestPrompts } from '../src/store.mjs';
 import { lint, renderLint, validateListing } from '../src/lint.mjs';
 import { inspect, renderDoctor } from '../src/doctor.mjs';
@@ -65,6 +65,10 @@ export async function callTool(name, args = {}, deps = {}) {
     case 'app_aeo_doctor': { const d = inspect(); return text(renderDoctor(d)); }
     case 'validate_app_aeo_runs': {
       const cfgRun = JSON.parse(fs.readFileSync(path.join(args.runDir, 'config.json'), 'utf8'));
+      if (args.runDir2) {
+        const cfgB = JSON.parse(fs.readFileSync(path.join(args.runDir2, 'config.json'), 'utf8'));
+        if ((cfgRun.fingerprint ?? configFingerprint(cfgRun)) !== (cfgB.fingerprint ?? configFingerprint(cfgB))) return text('the two runs are different experiments (config fingerprints differ); test–retest needs the same config', true);
+      }
       const rowsA = loadRun(args.runDir);
       const retest = args.runDir2 ? testRetest(rowsA, loadRun(args.runDir2), cfgRun, { provider: args.engine }) : null;
       const ctry = args.country ?? cfgRun.country ?? 'us';
@@ -89,6 +93,7 @@ export async function handle(msg, deps = {}) {
   const reply = (result) => ({ jsonrpc: '2.0', id, result });
   const fail = (code, message) => ({ jsonrpc: '2.0', id, error: { code, message } });
   if (id === undefined || id === null) return null; // notification
+  if (msg.jsonrpc !== '2.0' || typeof method !== 'string') return { jsonrpc: '2.0', id, error: { code: -32600, message: 'Invalid Request' } };
   try {
     if (method === 'initialize') {
       const want = params?.protocolVersion;

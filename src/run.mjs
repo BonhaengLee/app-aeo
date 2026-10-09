@@ -23,7 +23,29 @@ export function validateConfig(cfg) {
   if (cfg.maxCalls != null && !(Number.isInteger(cfg.maxCalls) && cfg.maxCalls >= 1)) errs.push('maxCalls must be a positive integer');
   if (cfg.concurrency != null && !(Number.isInteger(cfg.concurrency) && cfg.concurrency >= 1 && cfg.concurrency <= 8)) errs.push('concurrency must be an integer 1..8');
   if (cfg.ground != null && cfg.ground !== 'tavily') errs.push('ground must be "tavily" (or omitted)');
+  if (Array.isArray(cfg.prompts)) {
+    const seen = new Set();
+    for (const q of cfg.prompts) { const k = String(q).trim().toLowerCase(); if (seen.has(k)) errs.push(`duplicate prompt: "${q}" — use "repeats" instead`); seen.add(k); }
+  }
+  if (isApp(cfg.target)) {
+    // One alias must point to one app; a shared alias would count one sentence as two apps' mentions.
+    const owner = new Map();
+    for (const a of [cfg.target, ...(Array.isArray(cfg.competitors) ? cfg.competitors : [])]) {
+      for (const n of [a.name, ...(a.aliases ?? [])].filter(Boolean)) {
+        const k = String(n).normalize('NFC').trim().toLowerCase();
+        if (owner.has(k) && owner.get(k) !== a) errs.push(`name/alias "${n}" is used by more than one app`);
+        owner.set(k, a);
+      }
+    }
+  }
   return errs;
+}
+
+/** Everything that defines the experiment. Two runs are comparable (and resumable) only if this matches. */
+export function configFingerprint(cfg) {
+  const app = (a) => ({ name: a.name, aliases: [...(a.aliases ?? [])].sort(), appStoreId: a.appStoreId ?? null, playId: a.playId ?? null });
+  const core = { target: app(cfg.target), competitors: (cfg.competitors ?? []).map(app), prompts: [...cfg.prompts].sort(), providers: cfg.providers.map((x) => parseProviderSpec(x).id).sort(), repeats: cfg.repeats ?? 1, ground: cfg.ground ?? null, country: cfg.country ?? 'us' };
+  return crypto.createHash('sha256').update(JSON.stringify(core)).digest('hex').slice(0, 16);
 }
 
 export const jobKey = (j) => `${j.provider}\u0000${j.repeat}\u0000${j.prompt}`;
@@ -48,6 +70,23 @@ export function readRows(file) {
   return fs.readFileSync(file, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l));
 }
 
+export class ConfigMismatchError extends Error { constructor(m) { super(m); this.name = 'ConfigMismatchError'; this.code = 2; } }
+
+/** Single writer per run directory: a second process resuming the same dir would duplicate calls and race on reports. */
+export function acquireLock(dir) {
+  const lock = path.join(dir, '.lock');
+  try { fs.writeFileSync(lock, String(process.pid), { flag: 'wx' }); }
+  catch (e) {
+    if (e.code !== 'EEXIST') throw e;
+    const pid = Number(fs.readFileSync(lock, 'utf8'));
+    let alive = false;
+    try { process.kill(pid, 0); alive = true; } catch {}
+    if (alive && pid !== process.pid) { const err = new Error(`${dir} is in use by process ${pid}`); err.code = 2; throw err; }
+    fs.writeFileSync(lock, String(process.pid));
+  }
+  return () => { try { if (fs.readFileSync(lock, 'utf8') === String(process.pid)) fs.unlinkSync(lock); } catch {} };
+}
+
 const stamp = (d = new Date()) => d.toISOString().replace(/[:]/g, '').replace(/\.(\d+)Z$/, '.$1Z');
 /** Fresh run directory — never reuse an existing one (that would silently resume another run). */
 function freshDir(outDir) {
@@ -68,7 +107,16 @@ export async function runCheck(cfg, o) {
   const dir = o.resumeDir ?? freshDir(o.outDir);
   fs.mkdirSync(dir, { recursive: true });
   const file = path.join(dir, 'responses.jsonl');
-  fs.writeFileSync(path.join(dir, 'config.json'), JSON.stringify(cfg, null, 2));
+  const cfgFile = path.join(dir, 'config.json');
+  const fp = configFingerprint(cfg);
+  if (o.resumeDir && fs.existsSync(cfgFile)) {
+    const prev = JSON.parse(fs.readFileSync(cfgFile, 'utf8'));
+    const prevFp = prev.fingerprint ?? configFingerprint(prev);
+    if (prevFp !== fp) throw new ConfigMismatchError(`--resume ${dir}: config differs from the one that started this run (${prevFp} ≠ ${fp}). Start a new run instead.`);
+  }
+  const unlock = acquireLock(dir);
+  try {
+  fs.writeFileSync(cfgFile, JSON.stringify({ ...cfg, fingerprint: fp }, null, 2));
   const done = new Set(readRows(file).filter((r) => r.ok).map(jobKey));
   const all = planJobs(cfg);
   const todo = all.filter((j) => !done.has(jobKey(j)));
@@ -77,6 +125,7 @@ export async function runCheck(cfg, o) {
   log(`app-aeo: ${all.length} jobs, ${done.size} already answered, ${todo.length} to do, budget ${budget} → ${planned.length} calls`);
   if (todo.length > budget) log(`app-aeo: budget cuts ${todo.length - budget} calls — raise --max-calls or accept a partial run`);
   if (o.dryRun) { for (const j of planned) log(`  would ask ${j.provider} #${j.repeat}: ${j.prompt}`); return { dir, exitCode: 0, agg: null, calls: 0, halted: [] }; }
+  // (dry runs return inside the lock's try → finally releases it)
 
   const startedAt = new Date().toISOString();
   const halted = new Map();
@@ -135,6 +184,7 @@ export async function runCheck(cfg, o) {
   const exitCode = okCount === 0 ? 1 : incomplete ? 10 : 0;
   log(`=== app-aeo: PASS ${okCount} / FAIL ${failCount} ===`);
   return { dir, exitCode, agg, calls, halted: [...halted.entries()] };
+  } finally { unlock(); }
 }
 
 /** Collect report.json files under runsDir (each run is a subdirectory), oldest first. */

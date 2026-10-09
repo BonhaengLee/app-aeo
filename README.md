@@ -1,125 +1,99 @@
 # app-aeo
 
-**Does ChatGPT recommend your app?** `app-aeo` asks answer engines the questions your users ask — *"what's the best habit tracker for iPhone?"* — and measures how often they name **your app** (by name or store link), where it ranks, and which apps they recommend instead.
+**Do AI assistants recommend your app?** `app-aeo` asks the questions your users actually search for, such as *"habit tracker app without subscription"*. It asks AI engines that search the web, and measures how often they name **your app**, where it ranks, and which apps they recommend instead. It then **checks whether that measurement is trustworthy** before you act on it.
 
-Web AEO/GEO tools track brands and websites. This one tracks **apps**: App Store ids, Play packages, store links in answers, and the generic-title trap ("Habit Tracker - HabitKit").
+It is built for an AI agent to drive. Install the skill, ask "does AI recommend my app?", and the agent runs the CLI.
 
-- **CLI + MCP server + Agent Skills**, zero dependencies, Node ≥ 20
-- **Free to run, with a catch** (Gemini API pricing and deprecation pages, checked 2026-10-10):
-  - `gemini-search:gemini-2.5-flash` is grounded in Google Search and free up to 500 answers/day. But Google now limits 2.5 models to projects that already used them, so a new key may be refused.
-  - Gemini 3.x Flash and Flash-Lite are free on the free tier, but **without** search grounding (memory mode).
-  - Grounding for Gemini 3+ needs billing. It includes 5,000 search requests/month, and tokens are charged.
-  - Run `check --dry-run` first; a refused engine stops at the first call (auth/quota) instead of producing empty data.
-- **Prompts from real searches**: `prompts --autocomplete` builds the prompt set from Google autocomplete for your category (free, no key)
-- **Checks its own validity**: `validate` measures test–retest agreement between runs, and whether engine picks track real App Store usage
-- **Honest numbers**: every rate comes with n and a 95% Wilson interval. Failed calls are excluded, never counted as "not mentioned". Runs with fewer than 10 prompts are flagged
-- **Resumable, budgeted runs**: `maxCalls` is a hard cap. A rate limit stops that engine immediately instead of returning empty answers
-- **App Store listing lint**: character limits counted as users see them (Korean/Japanese/emoji safe), plus claim, emoji and keyword-waste checks
+- **$0 to run.** The main engines are your own **Claude Code** and **Codex** with live web search, inside the plan you already have. Optional free-tier keys add more engines; Tavily's free search can ground them.
+- **Real questions.** Prompts come from Google autocomplete for your category.
+- **Self-validating.** Every result can be checked two ways: the same config is re-run (test–retest), and mention rates are compared with real App Store usage (convergent validity). Verdicts are printed as they come out.
+- **Honest numbers.**
+  - Intervals are bootstrapped over prompts, so repeats don't fake precision.
+  - Failed calls never count as "not mentioned".
+  - Answers that didn't actually search are flagged.
+- CLI + MCP server + Agent Skills, zero dependencies, Node ≥ 20. MIT.
 
-## Quick start
+## Quick start (agent or terminal)
 
 ```sh
-git clone <this repo> && cd app-aeo   # not on npm yet
+node bin/app-aeo.mjs doctor                 # which free engines work on this machine
+node bin/app-aeo.mjs init cfg.json --category "habit tracker" --app-id 963034692 --competitor-id 1111447047 --competitor-id 6443918070
+node bin/app-aeo.mjs check cfg.json --out runsA &
+node bin/app-aeo.mjs check cfg.json --out runsB &
+wait
+node bin/app-aeo.mjs validate runsA/<run> runsB/<run> --popularity --engine claude-search
 ```
 
-```sh
-# 1. Build a config from App Store ids (target first, then competitors)
-node bin/app-aeo.mjs init habit.json --category "habit tracker" --app-id 963034692 --competitor-id 1111447047 --competitor-id 6443918070
+`init` fills in the prompts (Google autocomplete), the engines (from `doctor`) and `repeats: 2`. Check that `target.name` is the brand ("HabitKit", not "Habit Tracker - HabitKit").
 
-# Free engine: create a key at https://aistudio.google.com/apikey (Google account; free tier)
-export GEMINI_API_KEY=...
+## Engines
 
-# 2. See what would be asked
-node bin/app-aeo.mjs check habit.json --dry-run
+| Spec | Mode | Cost | Notes |
+|---|---|---|---|
+| `claude-search[:model]` | search | Free inside your Claude Code plan | Web search enabled. The system prompt is replaced with a consumer-assistant role (not a coding agent). Grounding is detected from `webSearchRequests` |
+| `codex-search[:model]` | search | Free inside your Codex plan | `codex --search`, isolated `CODEX_HOME`, consumer-role `developer_instructions`. Grounding is detected from `web_search` events |
+| `groq:` `cerebras:` `nvidia:` `openrouter:…:free` `gemini-openai:` `mistral:` | memory, or **rag** with `"ground": "tavily"` | Free tiers (keys) | Chain them with `a\|b\|c`: when one link hits 429 or quota, the rest of the run uses the next link |
+| `perplexity:` `openai:` `anthropic:` `gemini:` `gemini-search:` | search or memory | Paid or limited | Supported if you have keys |
 
-# 3. Run it (14 prompts × 2 engines = 28 calls)
-node bin/app-aeo.mjs check habit.json
+Tool choices:
+- **Not included: gpt4free-style gateways.** They drive consumer web apps through unofficial endpoints. That violates the services' terms and breaks often.
+- **Groq compound is gone.** Its built-in search was shut down on 2026-09-21.
+- **Gemini 3.x free tier** has no search grounding.
 
-# 4. Is it trustworthy for this category? (second run, then compare)
-node bin/app-aeo.mjs check habit.json
-node bin/app-aeo.mjs validate aeo-runs/streaks/<runA> aeo-runs/streaks/<runB> --popularity
+## Measured on 2026-10-10, not assumed
 
-# 5. Later, same prompt set again → trend
-node bin/app-aeo.mjs trend aeo-runs/streaks
-```
+Setup: habit-tracker category, target Streaks, 20 Google-autocomplete prompts × 2 repeats, two independent runs per engine, 160 answers, **0 failed calls, every answer search-grounded**.
 
-Each run writes `aeo-runs/<app>/<timestamp>/`:
+| | claude-search | codex-search |
+|---|---|---|
+| Target mention rate, run A → B (95% CI over prompts) | 88% (75–98) → 90% (78–100) | 45% (25–65) → 40% (23–60) |
+| Same yes/no on repeat | 85% / 90% of prompts | 90% / 70% of prompts |
+| **Test–retest** (rank of apps named in ≥5% of answers) | ❌ ρ = 0.40, p = 0.23 (11 apps) | ✅ ρ = 1.00, p = 0.015 (5 apps) |
+| **Convergent validity** (mention rate vs App Store rating count) | ✅ ρ = 0.91, p = 0.010 (7 apps) | ❌ ρ = 0.70, p = 0.23 (5 apps, too few to decide) |
 
-| File | Contents |
+What this shows:
+- **The target's own rate is stable run to run** for both engines: 88→90% and 45→40%, inside each other's intervals.
+- **Engines disagree a lot with each other** (88% vs ~43%). "What AI recommends" depends on the assistant, so report per engine and never pooled.
+- Claude's picks **track real usage** (✅), but the long tail of rarely named apps reshuffles between runs (❌).
+- Codex's picks are **reproducible** (✅), but it names too few apps for the usage check to reach significance.
+- Criteria were fixed before the runs (5% floor, ρ ≥ 0.5, p < 0.05) and were not tuned afterwards. More prompts or repeats raise the power.
+
+History:
+- **Earlier failure:** a run without web search (Claude, memory only) was reproducible but did **not** track usage (ρ = −0.20). That is why search mode is the default.
+- **Three harness defects** surfaced in live runs and were fixed, each with a regression test:
+  - Codex answered *"I can help you build an iPhone habit tracker"*. A consumer-role instruction fixed it.
+  - Codex searched in only 34/80 answers. A search instruction fixed it; all answers are now grounded.
+  - Section labels ("Android user?", "Kotlin + Jetpack Compose") were counted as apps.
+
+**Not shown by anyone, including this tool:**
+- that editing a listing or page raises the mention rate;
+- that a higher mention rate raises installs;
+- that these engines match what the ChatGPT or Gemini consumer apps show.
+
+Treat improvements as hypotheses. Re-run the **same** config and compare with `trend`.
+
+## Commands
+
+| Command | What it does |
 |---|---|
-| `responses.jsonl` | Every answer verbatim, plus model, latency, citations and the extracted mentions. Append-only, so `--resume <dir>` re-asks only failed or missing jobs |
-| `report.md` | The report: mention rate per engine, competitors, prompts that left the app out, unlisted apps recommended instead, caveats |
-| `report.json` | Same data for scripts and dashboards |
+| `doctor [--live]` | Free engines available here; `--live` asks each one a tiny question |
+| `init <cfg> --category … --app-id … [--competitor-id …] [--locale ko] [--no-autocomplete]` | Builds a config |
+| `check <cfg> [--out DIR] [--resume RUN] [--max-calls N] [--dry-run]` | Runs it. Resume refuses a changed config; one writer per run directory |
+| `validate <runA> [<runB>] [--popularity] [--engine SPEC]` | Test–retest and/or usage check. Refuses to compare runs of different configs |
+| `trend <runs-dir>` | Mention-rate history; flags changed prompt sets |
+| `prompts --category … [--autocomplete]` · `search <term>` · `lookup <id…>` | Helpers |
+| `lint <listing.json>` | App Store listing check (limits by user-perceived characters, claims, keyword waste) |
 
 Exit codes:
 
 | Code | Meaning |
 |---|---|
 | `0` | Complete |
-| `10` | Partial: a failed call, a halted engine, or a budget cut |
+| `10` | Partial |
 | `1` | Nothing answered |
 | `2` | Bad input |
 
-The last line is always `=== app-aeo: PASS n / FAIL m ===`.
-
-## Engines
-
-| Spec | Needs | Notes |
-|---|---|---|
-| `claude-cli[:model]` | `claude` CLI logged in | Tools off, your settings/CLAUDE.md not loaded |
-| `codex-cli[:model]` | `codex` CLI logged in | Isolated `CODEX_HOME` so your AGENTS.md doesn't leak into answers |
-| `perplexity:<model>` | `PERPLEXITY_API_KEY` | Citations are kept |
-| `openai:<model>` | `OPENAI_API_KEY` | |
-| `anthropic:<model>` | `ANTHROPIC_API_KEY` | |
-| `gemini:<model>` | `GEMINI_API_KEY` | Grounding URLs kept when present |
-| `openrouter:<model>` | `OPENROUTER_API_KEY` | Any OpenRouter model |
-
-Every engine has a **mode** that is shown in the report:
-
-| Mode | Engines | What it reflects |
-|---|---|---|
-| `search` | `gemini-search`, `perplexity` | The answer is grounded in a live web search. This is the closest thing to what people see in consumer chat apps |
-| `memory` | `claude-cli` (system prompt replaced with a neutral one), `gemini`, `openai`, `anthropic`, `openrouter` | Model knowledge only |
-| `agent` | `codex-cli` | A coding agent; useful only as a reference |
-
-Do not mix modes when you report one number.
-
-## How much to trust it — measured, not assumed
-
-Real runs on 2026-10-09 measured the habit-tracker category: 20 Google-autocomplete prompts × 3 repeats, two independent runs, engine `claude-cli:sonnet` in memory mode.
-
-| Check | Result | Meaning |
-|---|---|---|
-| Same yes/no for the target across 3 repeats | 85% of prompts (17/20) in both runs | Single answers flip about 1 in 7 times. Use `repeats: 3` |
-| Target rate, run A vs run B | 82% vs 85%. Bootstrap CIs over prompts: 65–95% and 70–97% | Reproducible within the interval |
-| Ranking of frequently named apps, run A vs B | Spearman ρ = 0.86, p = 0.0002 (18 apps) | Reproducible |
-| Mention rate vs App Store rating count | ρ = −0.20, p = 0.52 (13 apps) | **Memory-mode picks did not track real iOS usage.** It favoured Android/open-source apps (Loop, Habitica) over high-usage ones (Productive, Fabulous) |
-
-So the measurement is **reliable**: it repeats. But a memory-mode engine is **not a market signal**, which is why the default is `search` mode. Run `app-aeo validate <runA> <runB> --popularity` on your own category before acting on the numbers.
-
-Not yet shown by anyone, including this tool:
-- that changing a store listing or web page moves the mention rate;
-- that the mention rate moves installs.
-
-Treat improvement claims as hypotheses, and test them with the same prompt set, `repeats` ≥ 3, and a before/after comparison.
-
-## Config
-
-```json
-{
-  "country": "us",
-  "target": { "name": "Streaks", "aliases": [], "appStoreId": "963034692" },
-  "competitors": [{ "name": "HabitKit", "aliases": ["Habit Tracker - HabitKit"], "appStoreId": "6443918070" }],
-  "prompts": ["What is the best habit tracker app for iPhone?", "..."],
-  "providers": ["claude-cli:sonnet", "codex-cli"],
-  "repeats": 1,
-  "maxCalls": 120
-}
-```
-
-- **`name`** is the brand that must appear as a whole word. Put full store titles in `aliases`. `init` picks the brand for you: the title segment that isn't just category words.
-- **`prompts`**: use 10 or more, in your users' language. `app-aeo prompts --category "habit tracker" --autocomplete` takes them from real Google autocomplete queries (Korean autocomplete is sparse, so it tops the set up with templates). `--locale ko` gives a Korean set.
-- **Mentions**: a mention is a whole-word name or alias match, or an App Store / Play link to the app. Position is the list item number when the answer is a list. Otherwise it is the order of first mention among known apps.
+The last line of `check` is `=== app-aeo: PASS n / FAIL m ===`.
 
 ## MCP server
 
@@ -131,44 +105,27 @@ Tools:
 
 | Tool | What it does |
 |---|---|
+| `app_aeo_doctor` | Free engines available here |
 | `run_app_aeo_check` | Run a measurement |
-| `get_app_aeo_trend` | Show the trend across past runs |
-| `lint_app_listing` | Lint App Store listing text |
+| `validate_app_aeo_runs` | Test–retest and usage check |
+| `get_app_aeo_trend` | Mention-rate history |
+| `lint_app_listing` | App Store listing check |
 | `lookup_app_store` | Look up apps by id |
 | `search_app_store` | Search the App Store |
-| `suggest_aeo_prompts` | Generate a starter prompt set |
+| `suggest_aeo_prompts` | Starter prompt set |
 
-## Agent Skills
+## Skills
 
-- `skills/app-aeo/SKILL.md` runs the measurement workflow with guardrails: no invented shares, no comparing different prompt sets, and failures reported.
-- `skills/aso-lint/SKILL.md` runs the listing check before submission.
-
-## Listing lint
-
-```sh
-node bin/app-aeo.mjs lint listing.json --avoid "Competitor,Brand"
-```
-
-**Errors:**
-- a field is over its limit: name 30, subtitle 30, promo 170, keywords 100, description 4000;
-- the name or description is empty;
-- the metadata contains another app's or company's name.
-
-**Warnings:**
-- a ranking or price claim (`#1`, `best`, `free`, `최고`, `1위`, `無料`, …);
-- emoji or ALL-CAPS words in the name or subtitle;
-- wasted keyword characters: a space after a comma, duplicates, or words already in the name or subtitle.
-
-## What this is not
-
-- **Not market share or traffic.** A mention rate is how often these engines named the app, for these prompts, on that day.
-- **Not keyword search volume.** Apple publishes popularity only through Apple Ads, and Google Play has no public volume source. Tools that show volume for Play are estimating.
-- **Not deterministic.** Answers change between runs. Use `repeats` ≥ 3 and the same prompt set before claiming an improvement.
+- `skills/app-aeo/SKILL.md` is the agent workflow: doctor → init → measure twice → validate → report only what passed.
+- `skills/aso-lint/SKILL.md` is the listing check.
 
 ## Development
 
 ```sh
-node test/selftest.mjs   # no network, no LLM calls
+node test/selftest.mjs   # 52 cases, no network
 ```
+
+- Every fix from the live runs and from an independent Codex code review has a regression test.
+- Each regression test was confirmed to fail on the pre-fix code.
 
 MIT. `src/lint.mjs` adapts the listing-check method from [replica-skill](https://github.com/Jakeschincariol/replica-skill) (MIT).

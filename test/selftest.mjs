@@ -98,7 +98,8 @@ await t('share of voice and small-sample warning', () => {
   assert.equal(agg.perProvider[0].shareOfVoice, 1 / 3);
   assert.ok(agg.warnings[0].startsWith('Only 2 prompts'));
   const md = renderMarkdown(agg);
-  assert.match(md, /Overall mention rate: 50%/);
+  assert.doesNotMatch(md, /Overall mention rate/, 'no pooled headline (mixes engines; repeats are not independent)');
+  assert.match(md, /\| codex-cli \|.*\| 50% \(/);
   assert.match(md, /\| p2 \| 0\/1 \|/);
   assert.doesNotMatch(md, /\| p1 \| 1\/1 \|/);
 });
@@ -337,6 +338,60 @@ await t('popularity: prefix titles do not match ("Save" ≠ "Save My Doggy"); on
   assert.ok(!pop2.matched.some((m) => m.name === 'Save'), 'prefix title must not match');
 });
 
+// Codex review regressions (2026-10-10)
+await t('R1: --resume with a different config is refused', async () => {
+  const r = await runCheck(cfg, { outDir: path.join(tmp, 'r1'), log: () => {}, askImpl: async () => ({ text: 'Streaks', model: 'm', ms: 1 }) });
+  const { ConfigMismatchError } = await import('../src/run.mjs');
+  await assert.rejects(runCheck({ ...cfg, target: { name: 'Other' } }, { resumeDir: r.dir, log: () => {}, askImpl: async () => ({ text: 'x', model: 'm', ms: 1 }) }), ConfigMismatchError);
+  const ok = await runCheck(cfg, { resumeDir: r.dir, log: () => {}, askImpl: async () => ({ text: 'x', model: 'm', ms: 1 }) });
+  assert.equal(ok.calls, 0, 'same config resumes, nothing left to ask');
+});
+await t('R3: config fingerprint separates experiments, ignores prompt order', async () => {
+  const { configFingerprint } = await import('../src/run.mjs');
+  assert.equal(configFingerprint(cfg), configFingerprint({ ...cfg, prompts: [...cfg.prompts].reverse() }));
+  assert.notEqual(configFingerprint(cfg), configFingerprint({ ...cfg, repeats: 3 }));
+  assert.notEqual(configFingerprint(cfg), configFingerprint({ ...cfg, competitors: [{ name: 'Habitify', aliases: ['X'] }] }));
+});
+await t('R4: rag answers with zero search results are flagged', () => {
+  const rows = [{ ...okRow('groq:m', 'p1', 'Streaks'), mode: 'rag', grounded: false }];
+  assert.ok(aggregate(rows, { ...cfg, providers: ['groq:m'] }).warnings.some((w) => w.includes('no search results behind them (rag mode)')));
+});
+await t('R5/R7: duplicate prompts and shared aliases are rejected', () => {
+  assert.ok(validateConfig({ ...cfg, prompts: ['a', 'A '] }).some((e) => e.startsWith('duplicate prompt')));
+  assert.ok(validateConfig({ ...cfg, target: { name: 'T', aliases: ['Shared'] }, competitors: [{ name: 'R', aliases: ['shared'] }] }).some((e) => e.includes('used by more than one app')));
+});
+await t('R8: a closing paragraph after a list is not credited to the last item', () => {
+  const a = analyse('1. Other\n2. Something else\n\nStreaks is my pick.', STREAKS, []);
+  assert.equal(a.target.listRank, null);
+  const b = analyse('1. Other\n2. Streaks\n   still item two\n3. Third', STREAKS, []);
+  assert.equal(b.target.listRank, 2);
+});
+await t('R9: perplexity citations mark the answer grounded', async () => {
+  process.env.PERPLEXITY_API_KEY = 'k';
+  const r = await ask('perplexity:sonar', 'q', { fetchImpl: async () => ({ ok: true, status: 200, text: async () => JSON.stringify({ choices: [{ message: { content: 'x' } }], citations: ['https://a'] }) }) });
+  assert.equal(r.grounded, true);
+  delete process.env.PERPLEXITY_API_KEY;
+});
+await t('R10: a live lock on the run dir blocks a second writer', async () => {
+  const { acquireLock } = await import('../src/run.mjs');
+  const d = fs.mkdtempSync(path.join(os.tmpdir(), 'aeo-lock-'));
+  fs.writeFileSync(path.join(d, '.lock'), String(process.ppid));
+  assert.throws(() => acquireLock(d), /in use by process/);
+  fs.writeFileSync(path.join(d, '.lock'), '999999');
+  const unlock = acquireLock(d);
+  assert.equal(fs.readFileSync(path.join(d, '.lock'), 'utf8'), String(process.pid), 'stale lock is taken over');
+  unlock();
+  assert.equal(fs.existsSync(path.join(d, '.lock')), false);
+});
+await t('R11: plain (non-bold) list names count as recommended apps; labels do not', () => {
+  assert.deepEqual(listedNames('1. Habitica — useful\n2. Loop Habit Tracker — free\n3. Why it matters: x\n4. Best pick - y'), ['Habitica', 'Loop Habit Tracker']);
+});
+await t('R12: MCP rejects non-2.0 / method-less requests', async () => {
+  assert.equal((await handle({ jsonrpc: '1.0', id: 1, method: 'ping' })).error.code, -32600);
+  assert.equal((await handle({ id: 1, method: 'ping' })).error.code, -32600);
+  assert.equal((await handle({ jsonrpc: '2.0', id: 1, method: 7 })).error.code, -32600);
+});
+
 // doctor
 await t('doctor: recommends only ready engines; chains keep only links with keys; rag only with tavily + a free chain', async () => {
   const { inspect } = await import('../src/doctor.mjs');
@@ -363,7 +418,7 @@ await t('MCP initialize / tools/list / tools/call / unknown method', async () =>
 });
 await t('MCP run_app_aeo_check with injected engine', async () => {
   const res = await handle({ jsonrpc: '2.0', id: 5, method: 'tools/call', params: { name: 'run_app_aeo_check', arguments: { target: STREAKS, prompts: ['p'], providers: ['claude-cli'], outDir: path.join(tmp, 'mcp') } } }, { askImpl: async () => ({ text: 'Streaks', model: 'm', ms: 1 }) });
-  assert.match(res.result.content[0].text, /Overall mention rate: 100%/);
+  assert.match(res.result.content[0].text, /\| claude-cli \| memory \|.*\| 100% /);
   assert.equal(res.result.isError, false);
 });
 

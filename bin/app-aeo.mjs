@@ -3,7 +3,7 @@
 // Exit codes: 0 complete · 10 partial (failed calls, halted engine, or budget cut) · 1 nothing answered / lint error · 2 bad input
 import fs from 'node:fs';
 import path from 'node:path';
-import { runCheck, trend, validateConfig, DEFAULT_MAX_CALLS } from '../src/run.mjs';
+import { runCheck, trend, validateConfig, configFingerprint, DEFAULT_MAX_CALLS } from '../src/run.mjs';
 import { hydrate, lookup, search, suggestPrompts } from '../src/store.mjs';
 import { lint, renderLint, validateListing } from '../src/lint.mjs';
 import { PROVIDERS } from '../src/providers.mjs';
@@ -111,6 +111,11 @@ async function main(argv) {
     const cfg = readJson(path.join(pos[0], 'config.json'));
     const engine = opt['--engine'];
     const rowsA = loadRun(pos[0]);
+    if (pos[1]) {
+      const cfgB = readJson(path.join(pos[1], 'config.json'));
+      const [fa, fb] = [cfg.fingerprint ?? configFingerprint(cfg), cfgB.fingerprint ?? configFingerprint(cfgB)];
+      if (fa !== fb) { console.error(`validate: the two runs are different experiments (config ${fa} ≠ ${fb}); test–retest needs the same config.`); return 2; }
+    }
     const retest = pos[1] ? testRetest(rowsA, loadRun(pos[1]), cfg, { provider: engine }) : null;
     const pop = opt['--popularity'] ? await popularity(rowsA, cfg, (term) => search(term, { country: cfg.country ?? country, limit: 10 }), { provider: engine, lookupImpl: (ids) => lookup(ids, { country: cfg.country ?? country }) }) : null;
     if (!retest && !pop) { console.error('nothing to do: give a second run dir and/or --popularity'); return 2; }

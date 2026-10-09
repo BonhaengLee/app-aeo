@@ -76,11 +76,19 @@ export function listItemStarts(text) {
   return starts;
 }
 
-/** 1-based list item index containing offset, or null when the text has fewer than 2 items. */
-export function listRankAt(starts, offset) {
+/** 1-based list item index containing offset, or null (not in a list, or the text has fewer than 2 items).
+ *  An item ends at the next item or at a blank line followed by non-list text, so a closing paragraph
+ *  ("Streaks is my pick.") is not credited to the last item. */
+export function listRankAt(starts, offset, text = null) {
   if (starts.length < 2 || offset < starts[0]) return null;
   let idx = 0;
   for (let i = 0; i < starts.length; i += 1) if (starts[i] <= offset) idx = i;
+  if (text != null) {
+    const t = nfc(text);
+    const end = idx + 1 < starts.length ? starts[idx + 1] : t.length;
+    const para = t.slice(starts[idx], end).search(/\n[ \t]*\n(?![ \t]*(?:\d{1,2}[.)]|[-*•])[ \t]|[ \t]{2,})/);
+    if (para >= 0 && offset >= starts[idx] + para) return null;
+  }
   return idx + 1;
 }
 
@@ -98,6 +106,13 @@ export function listedNames(text) {
     // "One-time purchase", "Room database". App names don't end in "?", don't contain arrows/plus, and start uppercase.
     if (/[?？→←⇒+=]/.test(name) || !/^[\p{Lu}\p{Lo}\d]/u.test(name)) continue;
     if (/\b(user|users|budget|database|devices?|purchase|subscription|option|options|pick|picks|need|want|use|if|best|free|paid|cheap|simple|bottom line|verdict|summary|winner|overall|alternative|alternatives|recommendation|recommendations|platform|price|pricing|features?|pros|cons|tip|tips|note)\b/i.test(name)) continue;
+    out.push(name);
+  }
+  // Plain list items: "1. Habitica — useful" / "- Loop Habit Tracker: free". Same filters as bold names.
+  for (const m of t.matchAll(/^[ \t]*(?:\d{1,2}[.)]|[-*•])[ \t]+(?!\*\*)([\p{Lu}\p{Lo}\d][^\n—–:*]{1,40}?)[ \t]+(?:—|–|-|:)[ \t]/gmu)) {
+    const name = m[1].trim();
+    if (/\s(or|and|\/|또는|나)\s/i.test(name) || /[.?？→←⇒+=]/.test(name) || name.split(/\s+/).length > 4) continue;
+    if (/\b(user|users|budget|database|devices?|purchase|subscription|option|options|pick|picks|need|want|use|if|best|free|paid|cheap|simple|bottom line|verdict|summary|winner|overall|alternative|alternatives|recommendation|recommendations|platform|price|pricing|features?|pros|cons|tip|tips|note|step|why|how|what)\b/i.test(name)) continue;
     out.push(name);
   }
   return [...new Set(out)];
@@ -118,7 +133,7 @@ export function analyse(text, target, competitors = []) {
     name: x.name,
     role: x.role,
     order: i + 1,
-    listRank: listRankAt(starts, x.hit.offset),
+    listRank: listRankAt(starts, x.hit.offset, text),
     linked: x.hit.linked,
     matchedBy: x.hit.matchedBy,
   }));

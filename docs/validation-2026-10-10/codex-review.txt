@@ -1,0 +1,96 @@
+1. **High — Resume accepts a different configuration and silently reuses incompatible answers.**  
+   `src/run.mjs:71-74`  
+   Reproduce: run target A, then run `check` with `--resume <A-run-dir>` using target B but the same provider/prompt strings. `config.json` is overwritten with B; prior successful rows are considered done and are re-analysed as B’s measurement. No config hash/equality check prevents this.
+
+2. **High — Overall 95% Wilson interval treats correlated repeats as independent observations.**  
+   `src/report.mjs:98-114,126`  
+   Reproduce: use 10 prompts with `repeats: 3`, where each prompt’s three answers are identical. The reported overall Wilson interval uses `n=30`, despite only 10 prompt-level units. It is materially narrower than a prompt-cluster bootstrap interval and contradicts the report’s own repeat-correlation rationale.
+
+3. **High — Test–retest can compare different experiments while claiming reproducibility.**  
+   `bin/app-aeo.mjs:111-115`; `src/validate.mjs:72-81`  
+   Reproduce: run A and B with different prompts, target/competitor aliases, repeats, or provider settings, then call `validate A B`. Only A’s `config.json` is loaded; B’s config is never inspected. The tool returns a Spearman result labelled test–retest.
+
+4. **Medium — Empty grounding results are accepted as successful RAG measurements without a caveat.**  
+   `src/run.mjs:97-104`; `src/report.mjs:105-106,136`  
+   Reproduce: make Tavily return HTTP 200 with `{"results":[]}` for every prompt. The model is still called with an empty RAG context, rows are `ok: true`, and the report labels the provider `rag`. Unlike `search` mode, no warning reports that every answer had zero grounding sources.
+
+5. **Medium — Duplicate prompts create duplicate jobs but collapse on resume, changing the experiment.**  
+   `src/run.mjs:19,29,42,72-74`  
+   Reproduce with `prompts: ["recommend X", "recommend X"]` and `repeats: 1`. A new run sends two calls and aggregation treats them as repeat-like responses for one prompt. On resume, both map to the same `jobKey`, so neither is rerun. The effective denominator and stability result differ between the original and resumed run.
+
+6. **Medium — Fallback-chain state races under per-provider concurrency.**  
+   `src/providers.mjs:248-257`; `src/run.mjs:115-121`  
+   Reproduce a chain with concurrency 3 where the first link returns 429 after all three calls have started. Each call reads the old chain index before any writes `chainState`, so all three retry the exhausted link. This violates the documented “skipped for the rest of the run” behavior and can amplify rate-limit failures.
+
+7. **Medium — Shared aliases count one textual mention as mentions of multiple apps.**  
+   `src/extract.mjs:112-124`; `src/run.mjs:13-26`  
+   Reproduce with target `{name:"Target", aliases:["Shared"]}` and competitor `{name:"Rival", aliases:["Shared"]}`, then answer `"Shared is good."`. `analyse()` records both target and competitor as mentioned. Configuration validation permits duplicate names/aliases, inflating mention totals and corrupting share of voice.
+
+8. **Medium — Narrative mentions after a list are assigned the last list item’s rank.**  
+   `src/extract.mjs:79-85,112-124`  
+   Reproduce: `"1. Other\n2. Something else\n\nTarget is my pick."` The target receives `listRank: 2`, although it is not in any list item. This biases reported average position.
+
+9. **Medium — Perplexity responses are always recorded as ungrounded.**  
+   `src/providers.mjs:181-188,228`; `src/run.mjs:103`; `src/report.mjs:105`  
+   Reproduce any successful `perplexity:<model>` call with citations. `openAiCompatible()` never returns `grounded`, so `runCheck()` stores `grounded: false` for every response and emits “answers were not grounded in search results,” despite Perplexity being configured as `search` mode.
+
+10. **Medium — Concurrent processes resuming the same run directory can overwrite report/config state.**  
+    `src/run.mjs:69-72,112,124-131`  
+    Reproduce by starting two `check --resume <same-dir>` processes simultaneously. Both read the same completion set, both issue the missing calls, both overwrite `config.json`, `report.json`, and `report.md`; the last writer can leave a report built before the other process’s rows were visible. There is no lock or single-writer coordination.
+
+11. **Low — Unlisted apps in ordinary list formatting are silently omitted from “apps recommended instead.”**  
+    `src/extract.mjs:87-103`; `src/report.mjs:89-93,145-146`; `README.md:51`  
+    Reproduce with `"1. Habitica — useful\n2. Loop Habit Tracker — free"` and no store links. `listedNames()` requires bold names, so both apps are absent and the report can say “None detected,” contrary to the README’s claim that it reports apps engines recommend instead.
+
+12. **Low — MCP accepts malformed JSON-RPC requests as valid requests.**  
+    `mcp/server.mjs:87-103`  
+    Reproduce by sending `{"jsonrpc":"1.0","id":1,"method":"ping"}` or `{"id":1,"method":"ping"}`. The server returns a successful JSON-RPC 2.0 response instead of `-32600 Invalid Request`; it never validates the request’s `jsonrpc` field or method type.
+
+1. **High — Resume accepts a different configuration and silently reuses incompatible answers.**  
+   `src/run.mjs:71-74`  
+   Reproduce: run target A, then run `check` with `--resume <A-run-dir>` using target B but the same provider/prompt strings. `config.json` is overwritten with B; prior successful rows are considered done and are re-analysed as B’s measurement. No config hash/equality check prevents this.
+
+2. **High — Overall 95% Wilson interval treats correlated repeats as independent observations.**  
+   `src/report.mjs:98-114,126`  
+   Reproduce: use 10 prompts with `repeats: 3`, where each prompt’s three answers are identical. The reported overall Wilson interval uses `n=30`, despite only 10 prompt-level units. It is materially narrower than a prompt-cluster bootstrap interval and contradicts the report’s own repeat-correlation rationale.
+
+3. **High — Test–retest can compare different experiments while claiming reproducibility.**  
+   `bin/app-aeo.mjs:111-115`; `src/validate.mjs:72-81`  
+   Reproduce: run A and B with different prompts, target/competitor aliases, repeats, or provider settings, then call `validate A B`. Only A’s `config.json` is loaded; B’s config is never inspected. The tool returns a Spearman result labelled test–retest.
+
+4. **Medium — Empty grounding results are accepted as successful RAG measurements without a caveat.**  
+   `src/run.mjs:97-104`; `src/report.mjs:105-106,136`  
+   Reproduce: make Tavily return HTTP 200 with `{"results":[]}` for every prompt. The model is still called with an empty RAG context, rows are `ok: true`, and the report labels the provider `rag`. Unlike `search` mode, no warning reports that every answer had zero grounding sources.
+
+5. **Medium — Duplicate prompts create duplicate jobs but collapse on resume, changing the experiment.**  
+   `src/run.mjs:19,29,42,72-74`  
+   Reproduce with `prompts: ["recommend X", "recommend X"]` and `repeats: 1`. A new run sends two calls and aggregation treats them as repeat-like responses for one prompt. On resume, both map to the same `jobKey`, so neither is rerun. The effective denominator and stability result differ between the original and resumed run.
+
+6. **Medium — Fallback-chain state races under per-provider concurrency.**  
+   `src/providers.mjs:248-257`; `src/run.mjs:115-121`  
+   Reproduce a chain with concurrency 3 where the first link returns 429 after all three calls have started. Each call reads the old chain index before any writes `chainState`, so all three retry the exhausted link. This violates the documented “skipped for the rest of the run” behavior and can amplify rate-limit failures.
+
+7. **Medium — Shared aliases count one textual mention as mentions of multiple apps.**  
+   `src/extract.mjs:112-124`; `src/run.mjs:13-26`  
+   Reproduce with target `{name:"Target", aliases:["Shared"]}` and competitor `{name:"Rival", aliases:["Shared"]}`, then answer `"Shared is good."`. `analyse()` records both target and competitor as mentioned. Configuration validation permits duplicate names/aliases, inflating mention totals and corrupting share of voice.
+
+8. **Medium — Narrative mentions after a list are assigned the last list item’s rank.**  
+   `src/extract.mjs:79-85,112-124`  
+   Reproduce: `"1. Other\n2. Something else\n\nTarget is my pick."` The target receives `listRank: 2`, although it is not in any list item. This biases reported average position.
+
+9. **Medium — Perplexity responses are always recorded as ungrounded.**  
+   `src/providers.mjs:181-188,228`; `src/run.mjs:103`; `src/report.mjs:105`  
+   Reproduce any successful `perplexity:<model>` call with citations. `openAiCompatible()` never returns `grounded`, so `runCheck()` stores `grounded: false` for every response and emits “answers were not grounded in search results,” despite Perplexity being configured as `search` mode.
+
+10. **Medium — Concurrent processes resuming the same run directory can overwrite report/config state.**  
+    `src/run.mjs:69-72,112,124-131`  
+    Reproduce by starting two `check --resume <same-dir>` processes simultaneously. Both read the same completion set, both issue the missing calls, both overwrite `config.json`, `report.json`, and `report.md`; the last writer can leave a report built before the other process’s rows were visible. There is no lock or single-writer coordination.
+
+11. **Low — Unlisted apps in ordinary list formatting are silently omitted from “apps recommended instead.”**  
+    `src/extract.mjs:87-103`; `src/report.mjs:89-93,145-146`; `README.md:51`  
+    Reproduce with `"1. Habitica — useful\n2. Loop Habit Tracker — free"` and no store links. `listedNames()` requires bold names, so both apps are absent and the report can say “None detected,” contrary to the README’s claim that it reports apps engines recommend instead.
+
+12. **Low — MCP accepts malformed JSON-RPC requests as valid requests.**  
+    `mcp/server.mjs:87-103`  
+    Reproduce by sending `{"jsonrpc":"1.0","id":1,"method":"ping"}` or `{"id":1,"method":"ping"}`. The server returns a successful JSON-RPC 2.0 response instead of `-32600 Invalid Request`; it never validates the request’s `jsonrpc` field or method type.
+
