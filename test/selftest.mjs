@@ -85,7 +85,7 @@ await t('wilson interval brackets the rate', () => {
   assert.deepEqual(wilson(0, 0), [null, null]);
 });
 const cfg = { target: STREAKS, competitors: [HABITIFY], prompts: ['p1', 'p2'], providers: ['claude-cli', 'codex-cli'] };
-const okRow = (provider, prompt, text) => ({ provider, prompt, repeat: 1, ok: true, model: 'm', analysis: analyse(text, cfg.target, cfg.competitors) });
+const okRow = (provider, prompt, text) => ({ provider, prompt, repeat: 1, ok: true, model: 'm', text, analysis: analyse(text, cfg.target, cfg.competitors) });
 await t('failed calls are excluded from the denominator, not counted as "not mentioned"', () => {
   const rows = [okRow('claude-cli', 'p1', 'Streaks'), { provider: 'claude-cli', prompt: 'p2', repeat: 1, ok: false, errorKind: 'rate_limited' }];
   const agg = aggregate(rows, cfg);
@@ -325,6 +325,16 @@ await t('testRetest: identical runs → rho 1; popularity never guesses unmatche
   assert.deepEqual(viaId.matched.map((m) => [m.name, m.appStoreId]), [['Streaks', '963034692']], 'configured ids are looked up, not searched');
   assert.deepEqual(viaId.unmatched, ['Habitica', 'Habitify'], 'apps without an id and without a search hit stay unmatched');
   assert.deepEqual(pop.unmatched, ['Habitica']);
+});
+
+await t('popularity: prefix titles do not match ("Save" ≠ "Save My Doggy"); one-off names are excluded', async () => {
+  const rows = Array.from({ length: 30 }, (_, i) => okRow('x', `p${i}`, i === 0 ? '1. **Save** a\n2. **Habitica** b' : i < 10 ? '1. **Habitica** b\n2. **Streaks** c' : 'Streaks'));
+  const store = { save: [{ name: 'Save My Doggy - Dog Rescue', ratingCount: 52614 }], habitica: [{ name: 'Habitica: Gamified Taskmanager', ratingCount: 3484 }], streaks: [{ name: 'Streaks', ratingCount: 27349 }] };
+  const pop = await popularity(rows, cfg, async (term) => store[term.toLowerCase()] ?? []);
+  assert.deepEqual(pop.matched.map((m) => m.name), ['Streaks', 'Habitica']);
+  assert.deepEqual(pop.unmatched, [], '"Save" (1/30 answers) is below the 5% floor, so it is not even a candidate');
+  const pop2 = await popularity([okRow('x', 'p', '1. **Save** a\n2. **Habitica** b')], cfg, async (term) => store[term.toLowerCase()] ?? []);
+  assert.ok(!pop2.matched.some((m) => m.name === 'Save'), 'prefix title must not match');
 });
 
 // doctor

@@ -58,7 +58,8 @@ export function appRates(rows, cfg, { provider } = {}) {
   const counts = new Map();
   const display = new Map();
   for (const r of ok) {
-    const a = r.analysis ?? analyse(r.text, cfg.target, cfg.competitors ?? []);
+    // Re-extract from the stored text so extractor fixes apply to old runs too.
+    const a = analyse(r.text, cfg.target, cfg.competitors ?? []);
     const seen = new Set();
     for (const m of a.mentions) seen.add(m.name);
     for (const n of a.otherNames) seen.add(n);
@@ -86,7 +87,9 @@ export function testRetest(rowsA, rowsB, cfg, opts = {}) {
  */
 export async function popularity(rows, cfg, searchImpl, { top = 15, provider, lookupImpl } = {}) {
   const R = appRates(rows, cfg, { provider });
-  const picked = R.apps.slice(0, top);
+  // Same pre-registered rule as the retest core: only apps named in ≥ MIN_SHARE of answers. One-off names are noise
+  // (and in real runs were often section labels like "Save" / "Open" that matched unrelated store apps).
+  const picked = R.apps.filter((a) => a.rate >= MIN_SHARE).slice(0, top);
   const known = new Map([cfg.target, ...(cfg.competitors ?? [])].filter((x) => x.appStoreId).map((x) => [key(x.name), String(x.appStoreId)]));
   const matched = [], unmatched = [];
   for (const app of picked) {
@@ -95,7 +98,8 @@ export async function popularity(rows, cfg, searchImpl, { top = 15, provider, lo
     if (!hit) {
       // Several store apps share a brand ("Loop", "HabitKit" clones). The one people mean is the most-rated; a
       // first-result match picked 2- and 0-rating clones in a real run.
-      const results = (await searchImpl(app.name)).filter((x) => key(brandOf(x.name)) === app.key || key(x.name) === app.key || key(x.name).startsWith(app.key + ' '));
+      // Exact brand or exact title only — a prefix match paired "Save" with "Save My Doggy" (52k ratings) in a real run.
+      const results = (await searchImpl(app.name)).filter((x) => key(brandOf(x.name)) === app.key || key(x.name) === app.key || key(x.name.split(/\s[-–—:|]\s|:\s/)[0]) === app.key);
       hit = results.sort((x, y) => (y.ratingCount ?? -1) - (x.ratingCount ?? -1))[0] ?? null;
     }
     if (hit && hit.ratingCount != null) matched.push({ ...app, store: hit.name, appStoreId: hit.appStoreId, ratingCount: hit.ratingCount });
