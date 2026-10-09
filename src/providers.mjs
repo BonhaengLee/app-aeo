@@ -22,6 +22,8 @@ export const DEFAULT_TIMEOUT_MS = 240_000;
 // launchd/cron start with an almost empty PATH; CLIs installed by Homebrew/npm must stay reachable.
 export const CHILD_PATH = [...new Set(['/opt/homebrew/bin', '/usr/local/bin', '/usr/bin', '/bin', ...String(process.env.PATH ?? '').split(':')].filter(Boolean))].join(':');
 
+export const NEUTRAL_SYSTEM = 'You are a helpful assistant.';
+
 export class ProviderError extends Error {
   constructor(kind, message) { super(message); this.name = 'ProviderError'; this.kind = kind; }
 }
@@ -34,7 +36,7 @@ export function parseProviderSpec(spec) {
   const model = i < 0 ? '' : s.slice(i + 1);
   if (!PROVIDERS[type]) throw new ProviderError('config', `unknown provider "${type}" (known: ${Object.keys(PROVIDERS).join(', ')})`);
   if (PROVIDERS[type].needsModel && !model) throw new ProviderError('config', `provider "${type}" needs a model, e.g. ${type}:${PROVIDERS[type].example}`);
-  return { type, model, id: model ? `${type}:${model}` : type };
+  return { type, model, id: model ? `${type}:${model}` : type, mode: PROVIDERS[type].mode ?? 'memory' };
 }
 
 export function classifyHttp(status, body = '') {
@@ -65,7 +67,8 @@ function runChild(cmd, args, { input = '', cwd, env, timeoutMs = DEFAULT_TIMEOUT
 }
 
 async function askClaudeCli(prompt, { model, timeoutMs, run = runChild }) {
-  const args = ['-p', '--output-format', 'json', '--tools', '', '--setting-sources', '', '--strict-mcp-config', '--no-session-persistence'];
+  // Replace Claude Code's coding-agent system prompt: we want the answer a general assistant gives, not a coding agent.
+  const args = ['-p', '--output-format', 'json', '--tools', '', '--setting-sources', '', '--strict-mcp-config', '--no-session-persistence', '--system-prompt', NEUTRAL_SYSTEM];
   if (model) args.push('--model', model);
   const r = await run('claude', args, { input: prompt, cwd: os.tmpdir(), timeoutMs });
   if (r.timedOut) throw new ProviderError('timeout', `claude-cli timed out after ${timeoutMs}ms`);
@@ -143,23 +146,32 @@ async function askAnthropic(prompt, { model, timeoutMs, fetchImpl }) {
   return { text, model: j.model ?? model, citations: [], costUsd: null };
 }
 
-async function askGemini(prompt, { model, timeoutMs, fetchImpl }) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
-  const j = await postJson(url, { 'x-goog-api-key': needKey('GEMINI_API_KEY') }, { contents: [{ role: 'user', parts: [{ text: prompt }] }] }, { timeoutMs, fetchImpl });
-  const text = (j.candidates?.[0]?.content?.parts ?? []).map((p) => p.text ?? '').join('\n');
-  if (!text.trim()) throw new ProviderError('failed', 'gemini: empty answer');
-  const citations = (j.candidates?.[0]?.groundingMetadata?.groundingChunks ?? []).map((c) => c.web?.uri).filter(Boolean);
-  return { text, model, citations, costUsd: null };
+function geminiAsker({ grounded }) {
+  return async (prompt, { model, timeoutMs, fetchImpl }) => {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
+    const body = { contents: [{ role: 'user', parts: [{ text: prompt }] }] };
+    if (grounded) body.tools = [{ google_search: {} }];
+    const j = await postJson(url, { 'x-goog-api-key': needKey('GEMINI_API_KEY') }, body, { timeoutMs, fetchImpl });
+    const cand = j.candidates?.[0];
+    const text = (cand?.content?.parts ?? []).map((p) => p.text ?? '').join('\n');
+    if (!text.trim()) throw new ProviderError('failed', `gemini: empty answer (finishReason=${cand?.finishReason ?? '?'})`);
+    const gm = cand?.groundingMetadata ?? {};
+    // Grounding URIs are redirect links; the title is the source domain, which is what we want to count.
+    const citations = (gm.groundingChunks ?? []).map((c) => c.web?.title || c.web?.uri).filter(Boolean);
+    return { text, model, citations: [...new Set(citations)], searchQueries: gm.webSearchQueries ?? [], grounded: grounded && (gm.groundingChunks ?? []).length > 0, costUsd: null };
+  };
 }
 
 export const PROVIDERS = Object.freeze({
-  'claude-cli': { ask: askClaudeCli, needsModel: false, example: 'sonnet', local: true },
-  'codex-cli': { ask: askCodexCli, needsModel: false, example: 'gpt-5', local: true },
+  'claude-cli': { ask: askClaudeCli, needsModel: false, example: 'sonnet', local: true, mode: 'memory' },
+  'codex-cli': { ask: askCodexCli, needsModel: false, example: 'gpt-5', local: true, mode: 'agent' },
   openrouter: { ask: openAiCompatible('https://openrouter.ai/api/v1/chat/completions', 'OPENROUTER_API_KEY'), needsModel: true, example: 'openai/gpt-4o-mini' },
   openai: { ask: openAiCompatible('https://api.openai.com/v1/chat/completions', 'OPENAI_API_KEY'), needsModel: true, example: 'gpt-4o-mini' },
-  perplexity: { ask: openAiCompatible('https://api.perplexity.ai/chat/completions', 'PERPLEXITY_API_KEY'), needsModel: true, example: 'sonar' },
+  perplexity: { ask: openAiCompatible('https://api.perplexity.ai/chat/completions', 'PERPLEXITY_API_KEY'), needsModel: true, example: 'sonar', mode: 'search' },
   anthropic: { ask: askAnthropic, needsModel: true, example: 'claude-sonnet-4-5' },
-  gemini: { ask: askGemini, needsModel: true, example: 'gemini-2.5-flash' },
+  // Free tier: Gemini 2.5 Flash answers grounded in Google Search, 500 requests/day at no charge (ai.google.dev pricing, checked 2026-10-10).
+  'gemini-search': { ask: geminiAsker({ grounded: true }), needsModel: true, example: 'gemini-2.5-flash', mode: 'search' },
+  gemini: { ask: geminiAsker({ grounded: false }), needsModel: true, example: 'gemini-2.5-flash', mode: 'memory' },
 });
 
 /** Ask one provider. `deps` lets tests inject run/fetch. */

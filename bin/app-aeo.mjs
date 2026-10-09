@@ -8,13 +8,16 @@ import { hydrate, lookup, search, suggestPrompts } from '../src/store.mjs';
 import { lint, renderLint, validateListing } from '../src/lint.mjs';
 import { PROVIDERS } from '../src/providers.mjs';
 import { brandOf } from '../src/extract.mjs';
+import { loadRun, popularity, renderValidation, testRetest } from '../src/validate.mjs';
+import { autocompletePrompts } from '../src/store.mjs';
 
 const HELP = `app-aeo — measure how often answer engines recommend your app
 
 Usage
   app-aeo check <config.json> [--out DIR] [--resume RUN_DIR] [--max-calls N] [--timeout-ms N] [--dry-run] [--json]
   app-aeo trend <runs-dir> [--json]
-  app-aeo prompts --category "habit tracker" [--competitor NAME ...] [--locale en|ko]
+  app-aeo validate <run-dir> [<run-dir-2>] [--popularity] [--engine SPEC]   (test–retest and/or mention vs real usage)
+  app-aeo prompts --category "habit tracker" [--competitor NAME ...] [--locale en|ko] [--autocomplete]
   app-aeo lookup <appStoreId ...> [--country us]
   app-aeo search <term> [--country us]
   app-aeo lint <listing.json> [--avoid "Brand A,Brand B"] [--json]
@@ -27,8 +30,8 @@ Config
   { "target": {"name": "...", "aliases": [], "appStoreId": "", "playId": ""},
     "competitors": [{"name": "..."}],
     "prompts": ["..."],            // 10+ recommended
-    "providers": ["claude-cli:sonnet", "codex-cli"],
-    "repeats": 1, "maxCalls": ${DEFAULT_MAX_CALLS} }
+    "providers": ["gemini-search:gemini-2.5-flash", "claude-cli:sonnet"],
+    "repeats": 3, "maxCalls": ${DEFAULT_MAX_CALLS} }
 
 Runs are written to <out>/<timestamp>/ (responses.jsonl, report.md, report.json). Default --out: ./aeo-runs/<target-slug>
 Last line of check: === app-aeo: PASS n / FAIL m ===`;
@@ -41,7 +44,7 @@ export function parseArgv(argv) {
     const a = argv[i];
     if (a.startsWith('--')) {
       const [k, inline] = a.split(/=(.*)/s, 2);
-      const isFlag = ['--dry-run', '--json', '--help'].includes(k);
+      const isFlag = ['--dry-run', '--json', '--help', '--popularity', '--autocomplete'].includes(k);
       const v = isFlag ? true : inline ?? argv[++i];
       if (!isFlag && v === undefined) throw new Error(`${k} needs a value`);
       if (multi.has(k)) (opt[k] ??= []).push(v); else opt[k] = v;
@@ -90,7 +93,20 @@ async function main(argv) {
   }
   if (cmd === 'prompts') {
     if (!opt['--category']) { console.error('--category is required'); return 2; }
-    console.log(JSON.stringify(suggestPrompts({ category: opt['--category'], competitors: opt['--competitor'] ?? [], locale: opt['--locale'] ?? 'en' }), null, 2));
+    const args = { category: opt['--category'], competitors: opt['--competitor'] ?? [], locale: opt['--locale'] ?? 'en' };
+    const out = opt['--autocomplete'] ? await autocompletePrompts(args) : suggestPrompts(args);
+    console.log(JSON.stringify(out, null, 2));
+    return 0;
+  }
+  if (cmd === 'validate') {
+    if (pos.length < 1 || pos.length > 2) { console.error('usage: app-aeo validate <run-dir> [<run-dir-2>] [--popularity]'); return 2; }
+    const cfg = readJson(path.join(pos[0], 'config.json'));
+    const engine = opt['--engine'];
+    const rowsA = loadRun(pos[0]);
+    const retest = pos[1] ? testRetest(rowsA, loadRun(pos[1]), cfg, { provider: engine }) : null;
+    const pop = opt['--popularity'] ? await popularity(rowsA, cfg, (term) => search(term, { country: cfg.country ?? country, limit: 10 }), { provider: engine, lookupImpl: (ids) => lookup(ids, { country: cfg.country ?? country }) }) : null;
+    if (!retest && !pop) { console.error('nothing to do: give a second run dir and/or --popularity'); return 2; }
+    console.log(opt['--json'] ? JSON.stringify({ retest, pop }, null, 2) : renderValidation({ retest, pop, runs: pos }));
     return 0;
   }
   if (cmd === 'lookup') {
@@ -130,8 +146,9 @@ async function main(argv) {
       target: asApp(t),
       competitors: cs.map(asApp),
       prompts: suggestPrompts({ category: opt['--category'], competitors: cs.map((c) => brandOf(c.name, opt['--category'])), locale: opt['--locale'] ?? 'en' }),
-      providers: ['claude-cli:sonnet', 'codex-cli'],
-      repeats: 1,
+      // gemini-search: free tier, grounded in Google Search (closest to consumer AI answers). claude-cli: memory baseline.
+      providers: process.env.GEMINI_API_KEY ? ['gemini-search:gemini-2.5-flash', 'claude-cli:sonnet'] : ['claude-cli:sonnet'],
+      repeats: 3,
       maxCalls: DEFAULT_MAX_CALLS,
     };
     fs.writeFileSync(pos[0], JSON.stringify(cfg, null, 2) + '\n');

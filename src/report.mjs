@@ -14,6 +14,29 @@ export function wilson(k, n, z = 1.96) {
   return [Math.max(0, c - h), Math.min(1, c + h)];
 }
 
+/** Deterministic PRNG so the same run always reports the same interval. */
+export function mulberry32(seed) {
+  let a = seed >>> 0;
+  return () => { a = (a + 0x6d2b79f5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+}
+
+/**
+ * Mean of per-prompt rates with a 95% percentile bootstrap over prompts.
+ * Prompts — not answers — are the sampling unit: repeats of one prompt are correlated, so treating them as
+ * independent answers would make the interval falsely narrow.
+ */
+export function promptBootstrap(rates, { B = 2000, seed = 7 } = {}) {
+  const xs = rates.filter((x) => x != null);
+  if (!xs.length) return { mean: null, ci: [null, null], prompts: 0 };
+  const m = xs.reduce((a, b) => a + b, 0) / xs.length;
+  if (xs.length === 1) return { mean: m, ci: [null, null], prompts: 1 };
+  const rnd = mulberry32(seed);
+  const means = [];
+  for (let b = 0; b < B; b += 1) { let sum = 0; for (let i = 0; i < xs.length; i += 1) sum += xs[Math.floor(rnd() * xs.length)]; means.push(sum / xs.length); }
+  means.sort((a, b) => a - b);
+  return { mean: m, ci: [means[Math.floor(0.025 * B)], means[Math.ceil(0.975 * B) - 1]], prompts: xs.length };
+}
+
 const pct = (x) => (x == null ? '—' : `${(x * 100).toFixed(0)}%`);
 const mean = (xs) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null);
 
@@ -36,8 +59,19 @@ export function aggregate(rows, cfg) {
     });
     const totalMentions = apps.reduce((a, b) => a + b.mentioned, 0);
     const target = apps[0];
+    // Prompt-level view: per-prompt mention rate across repeats → bootstrap over prompts; stability across repeats.
+    const byPrompt = prompts.map((q) => ok.filter((r) => r.prompt === q)).filter((xs) => xs.length);
+    const promptRates = byPrompt.map((xs) => xs.filter((r) => r.analysis.target).length / xs.length);
+    const repeated = byPrompt.filter((xs) => xs.length >= 2);
+    const agree = repeated.filter((xs) => { const k = xs.filter((r) => r.analysis.target).length; return k === 0 || k === xs.length; }).length;
+    target.byPrompt = promptBootstrap(promptRates);
+    const stability = repeated.length ? { prompts: repeated.length, agreeing: agree, rate: agree / repeated.length } : null;
+    const grounded = ok.filter((r) => r.grounded).length;
     return {
       provider: p,
+      mode: mine[0]?.mode ?? null,
+      grounded,
+      stability,
       models: [...new Set(ok.map((r) => r.model).filter(Boolean))],
       answers: ok.length,
       failed: failed.length,
@@ -62,6 +96,10 @@ export function aggregate(rows, cfg) {
   if (prompts.length < MIN_PROMPTS) warnings.push(`Only ${prompts.length} prompts (< ${MIN_PROMPTS}). Treat rates as anecdotes, not measurements.`);
   for (const p of perProvider) {
     if (p.answers < MIN_ANSWERS_PER_PROVIDER) warnings.push(`${p.provider}: ${p.answers} answers (< ${MIN_ANSWERS_PER_PROVIDER}); the 95% interval is wide.`);
+    if (!p.stability) warnings.push(`${p.provider}: no repeats — run-to-run variation unknown. Use repeats ≥ 3 before comparing runs.`);
+    else if (p.stability.rate < 0.8) warnings.push(`${p.provider}: only ${(p.stability.rate * 100).toFixed(0)}% of prompts gave the same yes/no across repeats — single answers from this engine are noisy.`);
+    if (p.mode === 'search' && p.answers && p.grounded < p.answers) warnings.push(`${p.provider}: ${p.answers - p.grounded}/${p.answers} answers were not grounded in search results.`);
+    if (p.mode !== 'search') warnings.push(`${p.provider}: ${p.mode}-mode engine — answers come from model memory/agent behaviour, not today's web. Not what consumer chat apps with search show.`);
     if (p.failed) warnings.push(`${p.provider}: ${p.failed} failed call(s) [${p.failures.join(', ')}] — excluded from rates, not counted as "not mentioned".`);
   }
   return {
@@ -83,12 +121,15 @@ export function renderMarkdown(agg, meta = {}) {
   if (meta.startedAt) L.push(`\nRun ${meta.startedAt}${meta.finishedAt ? ` → ${meta.finishedAt}` : ''} · ${agg.prompts} prompts · ${agg.answers} answers · ${agg.failed} failed calls`);
   L.push(`\n**Overall mention rate: ${pct(agg.overall.rate)}** (${agg.overall.mentioned}/${agg.answers}, 95% CI ${pct(agg.overall.ci[0])}–${pct(agg.overall.ci[1])})`);
   L.push('\n## By answer engine\n');
-  L.push('| Engine | Model | Answers | Mentioned | Rate (95% CI) | Avg position | Store link | Share of voice | Failed |');
-  L.push('|---|---|---|---|---|---|---|---|---|');
+  L.push('| Engine | Mode | Model | Prompts × answers | Mention rate (95% CI over prompts) | Same answer on repeat | Avg position | Store link | Share of voice | Failed |');
+  L.push('|---|---|---|---|---|---|---|---|---|---|');
   for (const p of agg.perProvider) {
     const t = p.target;
-    L.push(`| ${p.provider} | ${p.models.join(', ') || '—'} | ${p.answers} | ${t.mentioned} | ${pct(t.rate)} (${pct(t.ci[0])}–${pct(t.ci[1])}) | ${t.avgRank == null ? '—' : t.avgRank.toFixed(1)} | ${t.linked} | ${pct(p.shareOfVoice)} | ${p.failed} |`);
+    const bp = t.byPrompt;
+    const st = p.stability ? `${pct(p.stability.rate)} (${p.stability.agreeing}/${p.stability.prompts})` : 'no repeats';
+    L.push(`| ${p.provider} | ${p.mode ?? '—'} | ${p.models.join(', ') || '—'} | ${bp.prompts} × ${p.answers} | ${pct(bp.mean)} (${pct(bp.ci[0])}–${pct(bp.ci[1])}) | ${st} | ${t.avgRank == null ? '—' : t.avgRank.toFixed(1)} | ${t.linked} | ${pct(p.shareOfVoice)} | ${p.failed} |`);
   }
+  L.push('\n_Mode: **search** = answer grounded in a live web search (closest to consumer chat apps) · **memory** = model knowledge only · **agent** = coding-agent CLI. Interval = bootstrap over prompts, so repeats do not fake precision._');
   L.push('\n## Competitors (mention rate per engine)\n');
   const names = agg.perProvider[0]?.apps.map((a) => a.name) ?? [];
   L.push(`| App | ${agg.perProvider.map((p) => p.provider).join(' | ')} |`);

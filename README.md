@@ -5,7 +5,9 @@
 Web AEO/GEO tools track brands and websites. This one tracks **apps**: App Store ids, Play packages, store links in answers, and the generic-title trap ("Habit Tracker - HabitKit").
 
 - **CLI + MCP server + Agent Skills**, zero dependencies, Node ≥ 20
-- **No API key needed to start**: uses the `claude` and `codex` CLIs you're already logged into. Perplexity, OpenAI, Anthropic, Gemini and OpenRouter are supported with your own keys
+- **Free to run**: the default engine is **Gemini 2.5 Flash grounded in Google Search**. On the Gemini API free tier this is free for up to 500 grounded answers a day; you only need a free Google AI Studio key. If you already pay for Claude Code, `claude-cli` adds a model-memory baseline at no extra cost.
+- **Prompts from real searches**: `prompts --autocomplete` builds the prompt set from Google autocomplete for your category (free, no key)
+- **Checks its own validity**: `validate` measures test–retest agreement between runs, and whether engine picks track real App Store usage
 - **Honest numbers**: every rate comes with n and a 95% Wilson interval. Failed calls are excluded, never counted as "not mentioned". Runs with fewer than 10 prompts are flagged
 - **Resumable, budgeted runs**: `maxCalls` is a hard cap. A rate limit stops that engine immediately instead of returning empty answers
 - **App Store listing lint**: character limits counted as users see them (Korean/Japanese/emoji safe), plus claim, emoji and keyword-waste checks
@@ -20,13 +22,20 @@ git clone <this repo> && cd app-aeo   # not on npm yet
 # 1. Build a config from App Store ids (target first, then competitors)
 node bin/app-aeo.mjs init habit.json --category "habit tracker" --app-id 963034692 --competitor-id 1111447047 --competitor-id 6443918070
 
+# Free engine: create a key at https://aistudio.google.com/apikey (Google account; free tier)
+export GEMINI_API_KEY=...
+
 # 2. See what would be asked
 node bin/app-aeo.mjs check habit.json --dry-run
 
 # 3. Run it (14 prompts × 2 engines = 28 calls)
 node bin/app-aeo.mjs check habit.json
 
-# 4. Later, same prompt set again → trend
+# 4. Is it trustworthy for this category? (second run, then compare)
+node bin/app-aeo.mjs check habit.json
+node bin/app-aeo.mjs validate aeo-runs/streaks/<runA> aeo-runs/streaks/<runB> --popularity
+
+# 5. Later, same prompt set again → trend
 node bin/app-aeo.mjs trend aeo-runs/streaks
 ```
 
@@ -61,7 +70,34 @@ The last line is always `=== app-aeo: PASS n / FAIL m ===`.
 | `gemini:<model>` | `GEMINI_API_KEY` | Grounding URLs kept when present |
 | `openrouter:<model>` | `OPENROUTER_API_KEY` | Any OpenRouter model |
 
-Answers from API models without web search reflect training data. Answers from search-backed engines reflect today's web. Measure both, and label which is which when you report.
+Every engine has a **mode** that is shown in the report:
+
+| Mode | Engines | What it reflects |
+|---|---|---|
+| `search` | `gemini-search`, `perplexity` | The answer is grounded in a live web search. This is the closest thing to what people see in consumer chat apps |
+| `memory` | `claude-cli` (system prompt replaced with a neutral one), `gemini`, `openai`, `anthropic`, `openrouter` | Model knowledge only |
+| `agent` | `codex-cli` | A coding agent; useful only as a reference |
+
+Do not mix modes when you report one number.
+
+## How much to trust it — measured, not assumed
+
+Real runs on 2026-10-09 measured the habit-tracker category: 20 Google-autocomplete prompts × 3 repeats, two independent runs, engine `claude-cli:sonnet` in memory mode.
+
+| Check | Result | Meaning |
+|---|---|---|
+| Same yes/no for the target across 3 repeats | 85% of prompts (17/20) in both runs | Single answers flip about 1 in 7 times. Use `repeats: 3` |
+| Target rate, run A vs run B | 82% vs 85%. Bootstrap CIs over prompts: 65–95% and 70–97% | Reproducible within the interval |
+| Ranking of frequently named apps, run A vs B | Spearman ρ = 0.86, p = 0.0002 (18 apps) | Reproducible |
+| Mention rate vs App Store rating count | ρ = −0.20, p = 0.52 (13 apps) | **Memory-mode picks did not track real iOS usage.** It favoured Android/open-source apps (Loop, Habitica) over high-usage ones (Productive, Fabulous) |
+
+So the measurement is **reliable**: it repeats. But a memory-mode engine is **not a market signal**, which is why the default is `search` mode. Run `app-aeo validate <runA> <runB> --popularity` on your own category before acting on the numbers.
+
+Not yet shown by anyone, including this tool:
+- that changing a store listing or web page moves the mention rate;
+- that the mention rate moves installs.
+
+Treat improvement claims as hypotheses, and test them with the same prompt set, `repeats` ≥ 3, and a before/after comparison.
 
 ## Config
 
@@ -78,7 +114,7 @@ Answers from API models without web search reflect training data. Answers from s
 ```
 
 - **`name`** is the brand that must appear as a whole word. Put full store titles in `aliases`. `init` picks the brand for you: the title segment that isn't just category words.
-- **`prompts`**: use 10 or more, in your users' language. `app-aeo prompts --category "가계부" --locale ko` gives a Korean starter set.
+- **`prompts`**: use 10 or more, in your users' language. `app-aeo prompts --category "habit tracker" --autocomplete` takes them from real Google autocomplete queries (Korean autocomplete is sparse, so it tops the set up with templates). `--locale ko` gives a Korean set.
 - **Mentions**: a mention is a whole-word name or alias match, or an App Store / Play link to the app. Position is the list item number when the answer is a list. Otherwise it is the order of first mention among known apps.
 
 ## MCP server

@@ -4,12 +4,13 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { analyse, findMention, listItemStarts, listRankAt, listedNames, storeLinks, aliasesOf, brandOf } from '../src/extract.mjs';
-import { aggregate, wilson, renderMarkdown } from '../src/report.mjs';
+import { aggregate, wilson, renderMarkdown, promptBootstrap } from '../src/report.mjs';
 import { planJobs, runCheck, validateConfig, promptSetHash, trend } from '../src/run.mjs';
 import { ProviderError, ask, classifyHttp, classifyCliError, parseProviderSpec } from '../src/providers.mjs';
 import { lint, length, validateListing } from '../src/lint.mjs';
 import { RateLimitedError, lookup, suggestPrompts } from '../src/store.mjs';
 import { handle } from '../mcp/server.mjs';
+import { spearman, testRetest, popularity, appRates } from '../src/validate.mjs';
 import { parseArgv, slug } from '../bin/app-aeo.mjs';
 
 let pass = 0, fail = 0;
@@ -100,6 +101,24 @@ await t('share of voice and small-sample warning', () => {
   assert.doesNotMatch(md, /\| p1 \| 1\/1 \|/);
 });
 
+await t('bootstrap is over prompts: 3 repeats of 2 prompts ≠ 6 independent answers', () => {
+  const b = promptBootstrap([1, 0]);
+  assert.equal(b.mean, 0.5);
+  assert.equal(b.prompts, 2);
+  assert.deepEqual(b.ci, [0, 1], 'two prompts that disagree can only bound the rate to [0,1]');
+  assert.deepEqual(promptBootstrap([0.5]).ci, [null, null]);
+});
+await t('stability counts prompts whose repeats agree; no-repeat runs are flagged', () => {
+  const rows = [
+    { ...okRow('claude-cli', 'p1', 'Streaks'), repeat: 1 }, { ...okRow('claude-cli', 'p1', 'Streaks'), repeat: 2 },
+    { ...okRow('claude-cli', 'p2', 'Streaks'), repeat: 1 }, { ...okRow('claude-cli', 'p2', 'nothing'), repeat: 2 },
+  ];
+  const p = aggregate(rows, cfg).perProvider[0];
+  assert.deepEqual(p.stability, { prompts: 2, agreeing: 1, rate: 0.5 });
+  assert.equal(p.target.byPrompt.mean, 0.75);
+  assert.ok(aggregate([okRow('claude-cli', 'p1', 'x')], cfg).warnings.some((w) => w.includes('no repeats')));
+});
+
 // run
 await t('validateConfig rejects bad input', () => {
   assert.deepEqual(validateConfig(cfg), []);
@@ -143,7 +162,8 @@ await t('trend reads previous runs', () => {
 
 // providers
 await t('parseProviderSpec', () => {
-  assert.deepEqual(parseProviderSpec('claude-cli:sonnet'), { type: 'claude-cli', model: 'sonnet', id: 'claude-cli:sonnet' });
+  assert.deepEqual(parseProviderSpec('claude-cli:sonnet'), { type: 'claude-cli', model: 'sonnet', id: 'claude-cli:sonnet', mode: 'memory' });
+  assert.equal(parseProviderSpec('gemini-search:gemini-2.5-flash').mode, 'search');
   assert.equal(parseProviderSpec('openrouter:openai/gpt-4o-mini').model, 'openai/gpt-4o-mini');
 });
 await t('HTTP 429/401/402 classified as halting kinds', () => {
@@ -164,7 +184,22 @@ await t('openai-compatible provider: answer, citations, and 429 → ProviderErro
   delete process.env.PERPLEXITY_API_KEY;
   await assert.rejects(ask('perplexity:sonar', 'q', { fetchImpl: okFetch }), (e) => e.kind === 'auth');
 });
+await t('gemini-search sends google_search tool and keeps grounding sources', async () => {
+  process.env.GEMINI_API_KEY = 'test';
+  let sent;
+  const fetchImpl = async (url, init) => { sent = JSON.parse(init.body); return { ok: true, status: 200, text: async () => JSON.stringify({ candidates: [{ content: { parts: [{ text: 'Streaks' }] }, groundingMetadata: { webSearchQueries: ['best habit app'], groundingChunks: [{ web: { uri: 'https://vertexaisearch/x', title: 'zapier.com' } }] } }] }) }; };
+  const r = await ask('gemini-search:gemini-2.5-flash', 'q', { fetchImpl });
+  assert.deepEqual(sent.tools, [{ google_search: {} }]);
+  assert.deepEqual([r.grounded, r.citations, r.searchQueries], [true, ['zapier.com'], ['best habit app']]);
+  await ask('gemini:gemini-2.5-flash', 'q', { fetchImpl });
+  assert.equal(sent.tools, undefined, 'memory-mode gemini must not search');
+  delete process.env.GEMINI_API_KEY;
+});
 await t('claude-cli provider parses JSON result and surfaces is_error', async () => {
+  let argsSeen;
+  const spy = async (cmd, args) => { argsSeen = args; return { code: 0, stdout: JSON.stringify({ result: 'ok', modelUsage: {} }), stderr: '' }; };
+  await ask('claude-cli', 'q', { run: spy });
+  assert.equal(argsSeen[argsSeen.indexOf('--system-prompt') + 1], 'You are a helpful assistant.', 'coding-agent system prompt must be replaced');
   const run = async () => ({ code: 0, stdout: JSON.stringify({ result: 'Streaks!', is_error: false, modelUsage: { 'claude-sonnet-x': {} }, total_cost_usd: 0.01 }), stderr: '' });
   const r = await ask('claude-cli:sonnet', 'q', { run });
   assert.equal(r.text, 'Streaks!');
@@ -199,6 +234,32 @@ await t('lookup keeps missing ids as null and 429 throws', async () => {
   assert.equal(r[0].name, 'A');
   assert.equal(r[1], null);
   await assert.rejects(lookup(['1'], { fetchImpl: async () => ({ ok: false, status: 429 }), gapMs: 0 }), RateLimitedError);
+});
+
+// validate
+await t('spearman: perfect, inverse, ties, too few', () => {
+  assert.equal(spearman([1, 2, 3, 4, 5], [2, 4, 6, 8, 10]).rho, 1);
+  assert.equal(spearman([1, 2, 3, 4, 5], [5, 4, 3, 2, 1]).rho, -1);
+  const s1 = spearman([1, 2, 3, 4, 5, 6, 7, 8], [1, 2, 3, 4, 5, 6, 7, 8]);
+  assert.ok(s1.p < 0.01, `p=${s1.p}`);
+  assert.equal(spearman([1, 2], [1, 2]).rho, null);
+  assert.equal(spearman([1, 1, 1], [1, 2, 3]).rho, null, 'constant input has no rank correlation');
+});
+await t('appRates counts each app once per answer, incl. engine-added names', () => {
+  const rows = [okRow('x', 'p1', '1. **Streaks** a\n2. **Habitica** b\nStreaks again'), okRow('x', 'p2', 'Habitify')];
+  const r = appRates(rows, cfg);
+  assert.deepEqual(r.apps.map((a) => [a.name, a.rate]), [['Streaks', 0.5], ['Habitica', 0.5], ['Habitify', 0.5]]);
+});
+await t('testRetest: identical runs → rho 1; popularity never guesses unmatched apps', async () => {
+  const rows = [okRow('x', 'p1', '1. **Streaks** a\n2. **Habitica** b'), okRow('x', 'p2', 'Streaks and Habitify'), okRow('x', 'p3', 'Streaks')];
+  assert.equal(testRetest(rows, rows, cfg).rho, 1);
+  const store = { streaks: [{ name: 'Streaks Clone', ratingCount: 1 }, { name: 'Streaks', ratingCount: 9000, appStoreId: '1' }, { name: 'Streaks', ratingCount: 2, appStoreId: '9' }], habitify: [{ name: 'Habitify: Habit Tracker', ratingCount: 900, appStoreId: '2' }], habitica: [{ name: 'Something Else', ratingCount: 5 }] };
+  const pop = await popularity(rows, cfg, async (term) => store[term.toLowerCase()] ?? []);
+  assert.deepEqual(pop.matched.map((m) => [m.name, m.ratingCount]), [['Streaks', 9000], ['Habitify', 900]], 'same-brand clone with fewer ratings must not win');
+  const viaId = await popularity(rows, cfg, async () => [], { lookupImpl: async (ids) => ids.map((id) => ({ name: 'Streaks', appStoreId: id, ratingCount: 27000 })) });
+  assert.deepEqual(viaId.matched.map((m) => [m.name, m.appStoreId]), [['Streaks', '963034692']], 'configured ids are looked up, not searched');
+  assert.deepEqual(viaId.unmatched, ['Habitica', 'Habitify'], 'apps without an id and without a search hit stay unmatched');
+  assert.deepEqual(pop.unmatched, ['Habitica']);
 });
 
 // MCP

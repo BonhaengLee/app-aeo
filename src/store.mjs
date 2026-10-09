@@ -92,3 +92,31 @@ export function suggestPrompts({ category, competitors = [], locale = 'en', year
   const fill = (s, comp = '') => s.replaceAll('{cat}', category).replaceAll('{year}', String(year)).replaceAll('{comp}', comp);
   return [...base.map((s) => fill(s)), ...competitors.flatMap((c) => alt.map((s) => fill(s, c)))];
 }
+
+/**
+ * Prompts grounded in what people actually search: Google autocomplete for category seeds (free, no key).
+ * Returned as-is (people paste search-style questions into chat apps too), deduped, plus the template set as fallback.
+ */
+export async function autocompletePrompts({ category, competitors = [], locale = 'en', fetchImpl = fetch, max = 20 }) {
+  const ko = locale.startsWith('ko');
+  const seeds = ko ? [`${category} 앱 추천`, `${category} 앱`, `${category} 어플`, ...competitors.map((c) => `${c} 대신`)]
+    : [`best ${category} app`, `${category} app for`, `${category} app free`, `${category} app without`, ...competitors.map((c) => `${c} alternative`)];
+  const perSeed = [];
+  for (const seed of seeds) {
+    const url = `https://suggestqueries.google.com/complete/search?client=firefox&hl=${ko ? 'ko' : 'en'}&q=${encodeURIComponent(seed)}`;
+    const res = await fetchImpl(url);
+    if (res.status === 429 || res.status === 403) throw new RateLimitedError(url);
+    if (!res.ok) throw new Error(`${url} HTTP ${res.status}`);
+    const j = JSON.parse(await res.text());
+    perSeed.push((j[1] ?? []).map((q) => q.trim()).filter((q) => q.split(/\s+/).length >= 3 && !/\b(reddit|windows|mac|pc|laptop|chrome|notion|excel|printable|journal|download|template)\b/i.test(q)));
+    await new Promise((r) => setTimeout(r, 300));
+  }
+  // Round-robin across seeds so one seed's near-duplicates ("... free", "... free iphone") don't fill the set.
+  const picked = [];
+  const seen = new Set();
+  const norm = (q) => q.toLowerCase().replace(/\b(ios|iphone|apple)\b/g, 'iphone').replace(/\bfor\b/g, '').replace(/\s+/g, ' ').trim();
+  for (let i = 0; picked.length < max && perSeed.some((xs) => i < xs.length); i += 1) {
+    for (const xs of perSeed) { const q = xs[i]; if (q && !seen.has(norm(q)) && picked.length < max) { seen.add(norm(q)); picked.push(q); } }
+  }
+  return picked.length >= 10 ? picked : [...picked, ...suggestPrompts({ category, competitors, locale }).slice(0, max - picked.length)];
+}

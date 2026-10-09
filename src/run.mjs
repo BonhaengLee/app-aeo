@@ -30,7 +30,7 @@ export const promptSetHash = (prompts) => crypto.createHash('sha256').update([..
 export function planJobs(cfg) {
   const repeats = cfg.repeats ?? 1;
   const jobs = [];
-  for (let r = 1; r <= repeats; r += 1) for (const prompt of cfg.prompts) for (const provider of cfg.providers) jobs.push({ provider: parseProviderSpec(provider).id, prompt, repeat: r });
+  for (let r = 1; r <= repeats; r += 1) for (const prompt of cfg.prompts) for (const provider of cfg.providers) { const p = parseProviderSpec(provider); jobs.push({ provider: p.id, mode: p.mode, prompt, repeat: r }); }
   return jobs;
 }
 
@@ -82,7 +82,7 @@ export async function runCheck(cfg, o) {
       let row;
       try {
         const r = await askImpl(provider, j.prompt, { timeoutMs: o.timeoutMs });
-        row = { ...j, ok: true, at: new Date().toISOString(), model: r.model, ms: r.ms, costUsd: r.costUsd ?? null, citations: r.citations ?? [], text: r.text, analysis: analyse(r.text, cfg.target, cfg.competitors ?? []) };
+        row = { ...j, ok: true, at: new Date().toISOString(), model: r.model, ms: r.ms, costUsd: r.costUsd ?? null, citations: r.citations ?? [], searchQueries: r.searchQueries ?? [], grounded: !!r.grounded, text: r.text, analysis: analyse(r.text, cfg.target, cfg.competitors ?? []) };
         log(`  ${provider} #${j.repeat} ${row.analysis.target ? 'MENTIONED' : '-'} ${j.prompt.slice(0, 70)}`);
       } catch (e) {
         const kind = e instanceof ProviderError ? e.kind : 'failed';
