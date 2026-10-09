@@ -46,8 +46,13 @@ export function brandOf(title, category = '') {
   return brand ?? segs[0] ?? nfc(title).trim();
 }
 
+/** A one-word Title-case Latin brand ("Calm", "Streaks", "Loop") is also an ordinary word. Match it only with a capital
+ *  (or ALL CAPS): in the benchmark the LLM judge caught "a calm, playful meditation app" counted as the app Calm. */
+export const isWordLikeBrand = (alias) => /^[A-Z][a-z]+$/.test(alias);
+
 function aliasRegex(alias) {
-  return new RegExp(`(?<![\\p{L}\\p{N}])${escapeRe(alias)}(?![\\p{L}\\p{N}])`, 'giu');
+  const body = isWordLikeBrand(alias) ? `(?:${escapeRe(alias)}|${escapeRe(alias.toUpperCase())})` : escapeRe(alias);
+  return new RegExp(`(?<![\\p{L}\\p{N}])${body}(?![\\p{L}\\p{N}])`, isWordLikeBrand(alias) ? 'gu' : 'giu');
 }
 
 /** First offset where `app` is mentioned, or null. */

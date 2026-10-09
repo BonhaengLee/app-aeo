@@ -51,6 +51,7 @@ export async function audit(rows, cfg, { judge = 'claude-cli', askImpl = askProv
   const apps = [cfg.target, ...(cfg.competitors ?? [])];
   const sample = sampleRows(rows.filter((r) => r.ok), n);
   const pairs = [];
+  const codes = [];
   const disagreements = [];
   let failedBatches = 0;
   for (let i = 0; i < sample.length; i += AUDIT_BATCH) {
@@ -71,6 +72,7 @@ export async function audit(rows, cfg, { judge = 'claude-cli', askImpl = askProv
         const ext = a.mentions.some((m) => m.name === app.name);
         const jud = coded[k][app.name];
         pairs.push([ext, jud]);
+        codes.push({ provider: row.provider, prompt: row.prompt, repeat: row.repeat, app: app.name, judge: jud, extractor: ext });
         if (ext !== jud) disagreements.push({ provider: row.provider, prompt: row.prompt, app: app.name, extractor: ext, judge: jud, excerpt: excerptAround(row.text, app) });
       }
     });
@@ -79,7 +81,8 @@ export async function audit(rows, cfg, { judge = 'claude-cli', askImpl = askProv
   const agreement = pairs.length ? pairs.filter(([x, y]) => x === y).length / pairs.length : null;
   const judged = pairs.length / Math.max(1, apps.length);
   const reason = !pairs.length ? 'judge produced no usable codes' : failedBatches ? `${failedBatches} judge batch(es) failed — κ over ${judged} answers` : null;
-  return { judge, kappa: pairs.length ? kappa : null, agreement, pairs: pairs.length, judged, failedBatches, disagreements, reason };
+  // `codes` keeps every judge decision so κ can be recomputed if the extractor changes, without asking the judge again.
+  return { judge, kappa: pairs.length ? kappa : null, agreement, pairs: pairs.length, judged, failedBatches, disagreements, codes, reason };
 }
 
 function excerptAround(text, app) {

@@ -53,6 +53,15 @@ await t('link-only mention counts and is flagged linked', () => {
   assert.equal(m.linked, true);
   assert.equal(m.matchedBy, 'link:apple:963034692');
 });
+await t('one-word Title-case brands match only capitalised (benchmark: "a calm, playful app" ≠ Calm)', () => {
+  const calm = { name: 'Calm' };
+  assert.equal(findMention('a calm, playful meditation app for kids', calm), null);
+  assert.equal(findMention('**calm** — synonyms: composed', calm), null);
+  assert.notEqual(findMention('Try Calm or Headspace.', calm), null);
+  assert.notEqual(findMention('CALM is popular', calm), null);
+  assert.notEqual(findMention('i use ynab daily', { name: 'YNAB' }), null, 'acronyms stay case-insensitive');
+  assert.notEqual(findMention('habitkit is nice', { name: 'HabitKit' }), null, 'CamelCase brands stay case-insensitive');
+});
 await t('Korean name matched without ASCII boundary issues', () => {
   assert.notEqual(findMention('추천: 1. 루틴메이트 2. 마이루틴', { name: '마이루틴' }), null);
   assert.equal(findMention('추천: 마이루틴플러스', { name: '마이루틴' }), null);
