@@ -1,0 +1,97 @@
+{
+  "country": "us",
+  "target": {
+    "name": "Insight Timer",
+    "aliases": [
+      "Insight Timer: Meditate, Sleep"
+    ],
+    "appStoreId": "337472899"
+  },
+  "competitors": [
+    {
+      "name": "Calm",
+      "aliases": [],
+      "appStoreId": "571800810"
+    },
+    {
+      "name": "Headspace",
+      "aliases": [
+        "Headspace: Sleep & Meditation"
+      ],
+      "appStoreId": "493145008"
+    }
+  ],
+  "prompts": [
+    "best meditation app",
+    "meditation app for kids",
+    "meditation app free",
+    "meditation app without subscription",
+    "meditation app with orange branding",
+    "meditation app that is free",
+    "calm alternative words",
+    "headspace alternative free",
+    "best meditation app australia",
+    "meditation app for anxiety",
+    "best meditation app buddhist",
+    "meditation app for beginners",
+    "best meditation app calm or headspace",
+    "meditation app for children",
+    "best meditation app for depression",
+    "meditation app for divorce",
+    "best meditation app apple watch",
+    "meditation app example",
+    "best meditation app free",
+    "best meditation app garmin",
+    "meditation app for garmin watch",
+    "best meditation app hindi",
+    "meditation app for healing",
+    "best meditation app in india",
+    "meditation app for ibs",
+    "best meditation app kids",
+    "best meditation learning app",
+    "meditation app for labor",
+    "best meditation app meta quest 3",
+    "meditation app for men",
+    "best meditation app no subscription",
+    "mindfulness app for nurses",
+    "best meditation app on meta quest 3",
+    "meditation app for ocd",
+    "best meditation app paid",
+    "meditation app for pregnancy",
+    "best meditation app reviews",
+    "meditation app reviews",
+    "best meditation app sleep",
+    "meditation app for sleep",
+    "best meditation app to lower blood pressure",
+    "meditation app for teens",
+    "best meditation app uk",
+    "meditation app ui",
+    "best meditation app wirecutter",
+    "meditation app for women",
+    "best meditation apps free",
+    "meditation app free for a year",
+    "meditation app without ai",
+    "meditation app with orange branding codycross",
+    "meditation apps that are actually free",
+    "calm alternative songs",
+    "headspace app alternatives",
+    "best meditation app android",
+    "meditation app for apple watch",
+    "best meditation app beginners",
+    "meditation app for bipoc",
+    "best meditation app calm",
+    "meditation app for co parenting",
+    "best meditation app for deaf people"
+  ],
+  "promptSources": {
+    "autocomplete": 60,
+    "total": 60
+  },
+  "providers": [
+    "claude-search",
+    "codex-search"
+  ],
+  "repeats": 2,
+  "concurrency": 3,
+  "maxCalls": 2000
+}

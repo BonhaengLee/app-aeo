@@ -1,0 +1,561 @@
+{
+  "meta": {
+    "startedAt": "2026-10-09T18:45:39.754Z",
+    "finishedAt": "2026-10-09T18:57:53.471Z",
+    "promptSet": "b48f4e98ccae",
+    "providers": [
+      "codex-search"
+    ],
+    "ground": null,
+    "groundSearches": 0,
+    "calls": 224,
+    "halted": {},
+    "skippedByBudget": 0,
+    "repeatsByEngine": {
+      "claude-search": 2,
+      "codex-search": 4
+    }
+  },
+  "agg": {
+    "target": "편한가계부",
+    "prompts": 43,
+    "answers": 222,
+    "failed": 2,
+    "overall": {
+      "mentioned": 162,
+      "rate": 0.7297297297297297,
+      "ci": [
+        0.6677695592418674,
+        0.7838744248602642
+      ]
+    },
+    "perProvider": [
+      {
+        "provider": "claude-search",
+        "mode": "search",
+        "grounded": 50,
+        "stability": {
+          "prompts": 7,
+          "agreeing": 5,
+          "rate": 0.7142857142857143
+        },
+        "models": [
+          "claude-opus-4-6[1m]"
+        ],
+        "answers": 50,
+        "failed": 2,
+        "failures": [
+          "rate_limited"
+        ],
+        "target": {
+          "name": "편한가계부",
+          "mentioned": 43,
+          "rate": 0.86,
+          "ci": [
+            0.738135428014719,
+            0.9304925473797714
+          ],
+          "avgRank": 1.930232558139535,
+          "linked": 1,
+          "byPrompt": {
+            "mean": 0.8604651162790697,
+            "ci": [
+              0.7558139534883721,
+              0.9534883720930233
+            ],
+            "prompts": 43
+          }
+        },
+        "shareOfVoice": 0.36134453781512604,
+        "apps": [
+          {
+            "name": "편한가계부",
+            "mentioned": 43,
+            "rate": 0.86,
+            "ci": [
+              0.738135428014719,
+              0.9304925473797714
+            ],
+            "avgRank": 1.930232558139535,
+            "linked": 1,
+            "byPrompt": {
+              "mean": 0.8604651162790697,
+              "ci": [
+                0.7558139534883721,
+                0.9534883720930233
+              ],
+              "prompts": 43
+            }
+          },
+          {
+            "name": "뱅크샐러드",
+            "mentioned": 47,
+            "rate": 0.94,
+            "ci": [
+              0.8378265662912299,
+              0.9793854036353695
+            ],
+            "avgRank": 1.574468085106383,
+            "linked": 0
+          },
+          {
+            "name": "위플 가계부",
+            "mentioned": 29,
+            "rate": 0.58,
+            "ci": [
+              0.4423319668777783,
+              0.7062520276543307
+            ],
+            "avgRank": 2.7241379310344827,
+            "linked": 2
+          }
+        ]
+      },
+      {
+        "provider": "codex-search",
+        "mode": "search",
+        "grounded": 172,
+        "stability": {
+          "prompts": 43,
+          "agreeing": 28,
+          "rate": 0.6511627906976745
+        },
+        "models": [],
+        "answers": 172,
+        "failed": 0,
+        "failures": [],
+        "target": {
+          "name": "편한가계부",
+          "mentioned": 119,
+          "rate": 0.6918604651162791,
+          "ci": [
+            0.6192941428045027,
+            0.7560436612191186
+          ],
+          "avgRank": 1.4369747899159664,
+          "linked": 25,
+          "byPrompt": {
+            "mean": 0.6918604651162791,
+            "ci": [
+              0.5755813953488372,
+              0.8023255813953488
+            ],
+            "prompts": 43
+          }
+        },
+        "shareOfVoice": 0.4722222222222222,
+        "apps": [
+          {
+            "name": "편한가계부",
+            "mentioned": 119,
+            "rate": 0.6918604651162791,
+            "ci": [
+              0.6192941428045027,
+              0.7560436612191186
+            ],
+            "avgRank": 1.4369747899159664,
+            "linked": 25,
+            "byPrompt": {
+              "mean": 0.6918604651162791,
+              "ci": [
+                0.5755813953488372,
+                0.8023255813953488
+              ],
+              "prompts": 43
+            }
+          },
+          {
+            "name": "뱅크샐러드",
+            "mentioned": 105,
+            "rate": 0.6104651162790697,
+            "ci": [
+              0.535934042960295,
+              0.6801695411745172
+            ],
+            "avgRank": 1.6095238095238096,
+            "linked": 12
+          },
+          {
+            "name": "위플 가계부",
+            "mentioned": 28,
+            "rate": 0.16279069767441862,
+            "ci": [
+              0.11509600538971568,
+              0.22521936935664696
+            ],
+            "avgRank": 2,
+            "linked": 10
+          }
+        ]
+      }
+    ],
+    "perPrompt": [
+      {
+        "prompt": "가계부 어플 추천",
+        "answers": 6,
+        "targetMentioned": 6
+      },
+      {
+        "prompt": "가계부 앱 디시",
+        "answers": 6,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "가계부 앱 추천",
+        "answers": 6,
+        "targetMentioned": 6
+      },
+      {
+        "prompt": "가계부 앱 만들기",
+        "answers": 6,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "가계부 앱 추천 디시",
+        "answers": 6,
+        "targetMentioned": 6
+      },
+      {
+        "prompt": "가계부 어플 추천 디시",
+        "answers": 6,
+        "targetMentioned": 6
+      },
+      {
+        "prompt": "가계부 앱 추천 더쿠",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "가계부 앱 디자인",
+        "answers": 6,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "가계부 앱 미국",
+        "answers": 5,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "가계부 앱 더쿠",
+        "answers": 5,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "가계부 어플 추천 더쿠",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "가계부 어플 디시",
+        "answers": 5,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "가계부 어플 추천 클리앙",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "안드로이드 가계부 앱 추천",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "가계부 앱 추천 클리앙",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "가계부 어플 만들기",
+        "answers": 5,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "아이폰 가계부 앱 추천",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "가계부 어플 추천해줘",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "가계부 어플 더쿠",
+        "answers": 5,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "가계부 어플 추천 아이폰",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "미국 가계부 앱 추천",
+        "answers": 5,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "가계부 앱 카드 연동",
+        "answers": 5,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "가계부 어플 공유",
+        "answers": 5,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "아이폰 가계부 어플 추천 디시",
+        "answers": 5,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "무료 가계부 앱 추천",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "애플 가계부 앱 추천",
+        "answers": 5,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "부부 가계부 어플 추천",
+        "answers": 5,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "무료 가계부 어플 추천",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "갤럭시 가계부 어플 추천",
+        "answers": 5,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "아이폰에서 제일 좋은 가계부 앱이 뭐야?",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "안드로이드 가계부 앱 추천해줘.",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "무료 가계부 앱 추천해줘.",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "광고 없는 간단한 가계부 앱 있어?",
+        "answers": 5,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "처음 쓰기 좋은 가계부 앱은?",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "오프라인에서도 되는 가계부 앱 있어?",
+        "answers": 5,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "위젯 좋은 가계부 앱 추천해줘.",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "2026년 가계부 앱 순위 알려줘.",
+        "answers": 5,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "가계부 하려면 무슨 앱 써야 돼?",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "인기 있는 가계부 앱들 비교해줘.",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "뱅크샐러드 대신 쓸 만한 앱 있어?",
+        "answers": 5,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "뱅크샐러드보다 나은 앱 있어?",
+        "answers": 5,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "위플 가계부 대신 쓸 만한 앱 있어?",
+        "answers": 5,
+        "targetMentioned": 5
+      },
+      {
+        "prompt": "위플 가계부보다 나은 앱 있어?",
+        "answers": 5,
+        "targetMentioned": 4
+      }
+    ],
+    "otherApps": [
+      {
+        "key": "play:com.rainist.banksalad2",
+        "count": 28
+      },
+      {
+        "key": "apple:1320730220",
+        "count": 17
+      },
+      {
+        "key": "play:com.realbyteapps.moneymanagerfree",
+        "count": 15
+      },
+      {
+        "key": "apple:954944283",
+        "count": 12
+      },
+      {
+        "key": "apple:6752123281",
+        "count": 11
+      },
+      {
+        "key": "name:토스",
+        "count": 10
+      },
+      {
+        "key": "apple:441683476",
+        "count": 9
+      },
+      {
+        "key": "apple:6459790014",
+        "count": 8
+      },
+      {
+        "key": "apple:6743708760",
+        "count": 7
+      },
+      {
+        "key": "apple:6444122615",
+        "count": 6
+      },
+      {
+        "key": "name:무료 vs 유료",
+        "count": 6
+      },
+      {
+        "key": "name:SMS 자동 인식",
+        "count": 5
+      },
+      {
+        "key": "apple:6743646049",
+        "count": 4
+      },
+      {
+        "key": "apple:1560944312",
+        "count": 4
+      },
+      {
+        "key": "play:com.wildducklabs.moneymanager",
+        "count": 4
+      }
+    ],
+    "warnings": [
+      "claude-search: only 71% of prompts gave the same yes/no across repeats — single answers from this engine are noisy.",
+      "claude-search: 2 failed call(s) [rate_limited] — excluded from rates, not counted as \"not mentioned\".",
+      "codex-search: only 65% of prompts gave the same yes/no across repeats — single answers from this engine are noisy."
+    ]
+  },
+  "gates": [
+    {
+      "provider": "codex-search",
+      "mode": "search",
+      "answers": 172,
+      "repeats": 4,
+      "status": "NOT RELIABLE",
+      "parts": [
+        {
+          "id": "R1 rate reliability",
+          "status": "PASS",
+          "halfR": 0.9939447687571097,
+          "reliability": 0.9969631900854181,
+          "spearmanHalf": 1,
+          "coreApps": 4,
+          "moreDataFactor": 1,
+          "value": 0.9969631900854181,
+          "threshold": "≥ 0.8"
+        },
+        {
+          "id": "R2 precision (±)",
+          "status": "FAIL",
+          "rate": 0.6918604651162791,
+          "ci": [
+            0.5755813953488372,
+            0.8023255813953488
+          ],
+          "halfWidth": 0.1133720930232558,
+          "prompts": 43,
+          "promptsNeeded": 55,
+          "value": 0.1133720930232558,
+          "threshold": "≤ 0.1"
+        },
+        {
+          "id": "R3 coding agreement κ",
+          "status": "INDETERMINATE",
+          "value": null,
+          "threshold": "≥ 0.8",
+          "reason": "judge produced no usable codes"
+        }
+      ]
+    },
+    {
+      "provider": "claude-search",
+      "mode": "search",
+      "answers": 50,
+      "repeats": 2,
+      "status": "INDETERMINATE",
+      "parts": [
+        {
+          "id": "R1 rate reliability",
+          "status": "PASS",
+          "halfR": 0.9963327749738002,
+          "reliability": 0.9981630191758747,
+          "spearmanHalf": 0.9746794344808964,
+          "coreApps": 5,
+          "moreDataFactor": 1,
+          "value": 0.9981630191758747,
+          "threshold": "≥ 0.8"
+        },
+        {
+          "id": "R2 precision (±)",
+          "status": "PASS",
+          "rate": 0.8604651162790697,
+          "ci": [
+            0.7558139534883721,
+            0.9418604651162791
+          ],
+          "halfWidth": 0.09302325581395349,
+          "prompts": 43,
+          "promptsNeeded": 43,
+          "value": 0.09302325581395349,
+          "threshold": "≤ 0.1"
+        },
+        {
+          "id": "R3 coding agreement κ",
+          "status": "INDETERMINATE",
+          "value": null,
+          "threshold": "≥ 0.8",
+          "reason": "judge produced no usable codes"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "claude-search": {
+    "rho": -1,
+    "p": 0.33573285342931414,
+    "n": 3,
+    "matched": [
+      {
+        "key": "ynab",
+        "name": "YNAB",
+        "rate": 0.8405797101449275,
+        "store": "YNAB",
+        "appStoreId": "1010865877",
+        "ratingCount": 61823
+      },
+      {
+        "key": "monarch money",
+        "name": "Monarch Money",
+        "rate": 0.6376811594202898,
+        "store": "Monarch: Budget & Track Money",
+        "appStoreId": "1459319842",
+        "ratingCount": 113262
+      },
+      {
+        "key": "rocket money",
+        "name": "Rocket Money",
+        "rate": 0.42028985507246375,
+        "store": "Rocket Money - Bills & Budgets",
+        "appStoreId": "1130616675",
+        "ratingCount": 397697
+      }
+    ],
+    "unmatched": []
+  },
+  "codex-search": {
+    "rho": 0.2,
+    "p": 0.9152169566086783,
+    "n": 4,
+    "matched": [
+      {
+        "key": "ynab",
+        "name": "YNAB",
+        "rate": 0.6,
+        "store": "YNAB",
+        "appStoreId": "1010865877",
+        "ratingCount": 61823
+      },
+      {
+        "key": "monarch money",
+        "name": "Monarch Money",
+        "rate": 0.2833333333333333,
+        "store": "Monarch: Budget & Track Money",
+        "appStoreId": "1459319842",
+        "ratingCount": 113262
+      },
+      {
+        "key": "rocket money",
+        "name": "Rocket Money",
+        "rate": 0.09166666666666666,
+        "store": "Rocket Money - Bills & Budgets",
+        "appStoreId": "1130616675",
+        "ratingCount": 397697
+      },
+      {
+        "key": "honeydue",
+        "name": "Honeydue",
+        "rate": 0.05,
+        "store": "Honeydue: Couples Finance",
+        "appStoreId": "1157633945",
+        "ratingCount": 10252
+      }
+    ],
+    "unmatched": [
+      "Goodbudget"
+    ]
+  }
+}

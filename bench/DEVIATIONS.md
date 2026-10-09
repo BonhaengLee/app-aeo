@@ -13,3 +13,10 @@ Both deviations were written down **before** their data was collected. The pre-r
   - existing answers are reused, so only new prompts are asked;
   - the gate runs again.
 - This tests whether the gate's "needs N prompts" prediction holds. Results are reported per cell, pass or fail.
+
+**D3 — Claude session limit hit mid-benchmark (2026-10-10 ~03:30–04:30 KST).**
+- `claude-search` returned "You've hit your session limit" and was halted as designed. 10 calls were affected across budgeting, ko-gagyebu and language+. They were recorded as failures, not as "not mentioned".
+- The LLM-judge audit, which also uses Claude, failed for budgeting and ko-gagyebu (κ = none, so R3 = INDETERMINATE).
+- After the limit reset, the same runs were resumed (`--resume` semantics: only failed or missing jobs are re-asked) and the audits were re-run.
+- The as-run audits are preserved as `audit-asrun.json`.
+- **Practical finding for users:** a 60-prompt × 2-engine gated run consumes a noticeable share of a Claude subscription's 5-hour session budget. The "free" path is free of extra charges, not free of quota.

@@ -1,0 +1,99 @@
+{
+  "country": "us",
+  "target": {
+    "name": "Babbel",
+    "aliases": [
+      "Babbel - Language Learning"
+    ],
+    "appStoreId": "829587759"
+  },
+  "competitors": [
+    {
+      "name": "Duolingo",
+      "aliases": [
+        "Duolingo: Language Lessons"
+      ],
+      "appStoreId": "570060128"
+    },
+    {
+      "name": "Busuu",
+      "aliases": [
+        "Busuu: Language Learning App"
+      ],
+      "appStoreId": "379968583"
+    }
+  ],
+  "prompts": [
+    "best language learning app",
+    "language learning app for kids",
+    "language learning app free",
+    "language learning app without ai",
+    "language learning app with an owl mascot",
+    "language learning app that doesn't use ai",
+    "duolingo alternatives free",
+    "busuu free alternative",
+    "best language learning app ai",
+    "language learning app for adults",
+    "best language learning app besides duolingo",
+    "language learning app for bengali",
+    "best language learning app chinese",
+    "language learning app for couples",
+    "best language learning app dutch",
+    "language learning app for dutch",
+    "best language learning app except duolingo",
+    "language learning app for english",
+    "best language learning app for korean",
+    "best language learning app german",
+    "language learning app for german",
+    "best language learning app hindi",
+    "language learning app for hindi",
+    "best language learning app in the world",
+    "language learning app for italian",
+    "best language learning apps like duolingo",
+    "language learning app for latin",
+    "best language learning app mandarin",
+    "language learning app for malayalam",
+    "best language learning app not duolingo",
+    "language learning app for netflix",
+    "best language learning app offline",
+    "language learning app owl",
+    "best language learning app portuguese",
+    "language learning app for phone",
+    "best language learning app russian",
+    "language learning app for russian",
+    "best language learning app spanish",
+    "language learning app for speaking",
+    "best language learning app to become fluent",
+    "language learning app for travel",
+    "best language learning app uk",
+    "language learning app for urdu",
+    "best language learning app without ai",
+    "language learning apps for welsh",
+    "best language learning apps free",
+    "language learning app free no ai",
+    "language learning apps without subscription",
+    "language learning app that insults you",
+    "duolingo alternatives no ai",
+    "is busuu free",
+    "best language learning app android",
+    "language learning app for arabic",
+    "best language learning app better than duolingo",
+    "language learning apps for beginners",
+    "best language learning app conversation",
+    "language learning app for children",
+    "best language learning app duolingo",
+    "language learning app for driving",
+    "best language learning app ever"
+  ],
+  "promptSources": {
+    "autocomplete": 60,
+    "total": 60
+  },
+  "providers": [
+    "claude-search",
+    "codex-search"
+  ],
+  "repeats": 2,
+  "concurrency": 3,
+  "maxCalls": 2000
+}

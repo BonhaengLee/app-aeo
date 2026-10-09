@@ -1,0 +1,98 @@
+{
+  "byProvider": {
+    "codex-search": {
+      "judge": "claude-cli",
+      "kappa": 0.896788990825688,
+      "agreement": 0.95,
+      "pairs": 120,
+      "judged": 40,
+      "failedBatches": 0,
+      "disagreements": [
+        {
+          "provider": "codex-search",
+          "prompt": "calm alternative words",
+          "app": "Calm",
+          "extractor": true,
+          "judge": false,
+          "excerpt": "Alternatives for **calm**, depending on meaning: - **A person:** composed, collected, unflustered,"
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for children",
+          "app": "Calm",
+          "extractor": true,
+          "judge": false,
+          "excerpt": "A promising concept: **a calm, playful meditation app for kids ages 5–10**, with a parent setting things "
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for co parenting",
+          "app": "Calm",
+          "extractor": true,
+          "judge": false,
+          "excerpt": "A promising direction: **a calm companion for the moments around co-parenting—not another custody-managemen"
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for men",
+          "app": "Calm",
+          "extractor": true,
+          "judge": false,
+          "excerpt": "itation, with a plain explanation of what each does. - **Use a grounded tone:** calm and direct, without macho posturing or spiritual language. - **Make progres"
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app in india",
+          "app": "Calm",
+          "extractor": true,
+          "judge": false,
+          "excerpt": "rth a look for content designed for Indian users; it offers guided sessions for calm, focus, breathing, and sleep. [ThinkRight.me](https://thinkright.me/) If y"
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "calm alternative songs",
+          "app": "Calm",
+          "extractor": true,
+          "judge": false,
+          "excerpt": "Try these for a calm alternative mix: - “Space Song” — Beach House - “Holocene” — Bon Iver - “F"
+        }
+      ],
+      "reason": null
+    },
+    "claude-search": {
+      "judge": "claude-cli",
+      "kappa": 0.9274193548387096,
+      "agreement": 0.975,
+      "pairs": 120,
+      "judged": 40,
+      "failedBatches": 0,
+      "disagreements": [
+        {
+          "provider": "claude-search",
+          "prompt": "calm alternative words",
+          "app": "Calm",
+          "extractor": true,
+          "judge": false,
+          "excerpt": "# Alternative Words for \"Calm\" 🌿 Here are a variety of synonyms and alternatives, grouped by nuance: -"
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app with orange branding codycross",
+          "app": "Calm",
+          "extractor": true,
+          "judge": false,
+          "excerpt": "orange branding**. Its logo is an orange dot (or circle), symbolizing focus and calm, and the app's overall design uses warm orange tones paired with playful il"
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for bipoc",
+          "app": "Calm",
+          "extractor": true,
+          "judge": false,
+          "excerpt": "ell-being — breathwork, meditations, affirmations, and coaching - Designed as a calming, safe space for coping with microaggressions, stress, and negative feeli"
+        }
+      ],
+      "reason": null
+    }
+  }
+}

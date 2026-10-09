@@ -1,0 +1,847 @@
+{
+  "meta": {
+    "startedAt": "2026-10-09T18:48:19.036Z",
+    "finishedAt": "2026-10-09T18:53:11.173Z",
+    "promptSet": "153de4104003",
+    "providers": [
+      "claude-search",
+      "codex-search"
+    ],
+    "ground": null,
+    "groundSearches": 0,
+    "calls": 83,
+    "halted": {
+      "claude-search": "rate_limited"
+    },
+    "skippedByBudget": 0,
+    "repeatsByEngine": {
+      "claude-search": 2,
+      "codex-search": 2
+    }
+  },
+  "agg": {
+    "target": "Babbel",
+    "prompts": 100,
+    "answers": 320,
+    "failed": 3,
+    "overall": {
+      "mentioned": 154,
+      "rate": 0.48125,
+      "ci": [
+        0.4270525151254418,
+        0.5358923319849974
+      ]
+    },
+    "perProvider": [
+      {
+        "provider": "claude-search",
+        "mode": "search",
+        "grounded": 120,
+        "stability": {
+          "prompts": 60,
+          "agreeing": 55,
+          "rate": 0.9166666666666666
+        },
+        "models": [
+          "claude-opus-4-6[1m]"
+        ],
+        "answers": 120,
+        "failed": 3,
+        "failures": [
+          "rate_limited"
+        ],
+        "target": {
+          "name": "Babbel",
+          "mentioned": 65,
+          "rate": 0.5416666666666666,
+          "ci": [
+            0.4526080815617851,
+            0.6281402291835539
+          ],
+          "avgRank": 2.723076923076923,
+          "linked": 0,
+          "byPrompt": {
+            "mean": 0.5416666666666666,
+            "ci": [
+              0.425,
+              0.6666666666666666
+            ],
+            "prompts": 60
+          }
+        },
+        "shareOfVoice": 0.2719665271966527,
+        "apps": [
+          {
+            "name": "Babbel",
+            "mentioned": 65,
+            "rate": 0.5416666666666666,
+            "ci": [
+              0.4526080815617851,
+              0.6281402291835539
+            ],
+            "avgRank": 2.723076923076923,
+            "linked": 0,
+            "byPrompt": {
+              "mean": 0.5416666666666666,
+              "ci": [
+                0.425,
+                0.6666666666666666
+              ],
+              "prompts": 60
+            }
+          },
+          {
+            "name": "Duolingo",
+            "mentioned": 111,
+            "rate": 0.925,
+            "ci": [
+              0.8635894316089088,
+              0.9600433379935513
+            ],
+            "avgRank": 2.063063063063063,
+            "linked": 1
+          },
+          {
+            "name": "Busuu",
+            "mentioned": 63,
+            "rate": 0.525,
+            "ci": [
+              0.43626835924004914,
+              0.6121806272071544
+            ],
+            "avgRank": 3.5555555555555554,
+            "linked": 0
+          }
+        ]
+      },
+      {
+        "provider": "codex-search",
+        "mode": "search",
+        "grounded": 200,
+        "stability": {
+          "prompts": 100,
+          "agreeing": 93,
+          "rate": 0.93
+        },
+        "models": [],
+        "answers": 200,
+        "failed": 0,
+        "failures": [],
+        "target": {
+          "name": "Babbel",
+          "mentioned": 89,
+          "rate": 0.445,
+          "ci": [
+            0.3778048169746545,
+            0.5142682436763609
+          ],
+          "avgRank": 1.595505617977528,
+          "linked": 0,
+          "byPrompt": {
+            "mean": 0.445,
+            "ci": [
+              0.35,
+              0.54
+            ],
+            "prompts": 100
+          }
+        },
+        "shareOfVoice": 0.30067567567567566,
+        "apps": [
+          {
+            "name": "Babbel",
+            "mentioned": 89,
+            "rate": 0.445,
+            "ci": [
+              0.3778048169746545,
+              0.5142682436763609
+            ],
+            "avgRank": 1.595505617977528,
+            "linked": 0,
+            "byPrompt": {
+              "mean": 0.445,
+              "ci": [
+                0.35,
+                0.54
+              ],
+              "prompts": 100
+            }
+          },
+          {
+            "name": "Duolingo",
+            "mentioned": 137,
+            "rate": 0.685,
+            "ci": [
+              0.617649158589664,
+              0.7453778192205573
+            ],
+            "avgRank": 1.4233576642335766,
+            "linked": 0
+          },
+          {
+            "name": "Busuu",
+            "mentioned": 70,
+            "rate": 0.35,
+            "ci": [
+              0.28728715939415395,
+              0.41836664238134236
+            ],
+            "avgRank": 1.8714285714285714,
+            "linked": 0
+          }
+        ]
+      }
+    ],
+    "perPrompt": [
+      {
+        "prompt": "language learning app free",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app for kids",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best language learning app",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "language learning app that doesn't use ai",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app with an owl mascot",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app without ai",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best language learning app ai",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "duolingo alternatives free",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "busuu free alternative",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app for adults",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best language learning app besides duolingo",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "language learning app for bengali",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best language learning app chinese",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app for couples",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app for dutch",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best language learning app except duolingo",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best language learning app dutch",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best language learning app for korean",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best language learning app german",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "language learning app for english",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "language learning app for hindi",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app for german",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best language learning app hindi",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app for italian",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best language learning app in the world",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best language learning apps like duolingo",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "language learning app for latin",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best language learning app mandarin",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app for malayalam",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best language learning app not duolingo",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "language learning app owl",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app for netflix",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best language learning app offline",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "language learning app for phone",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best language learning app portuguese",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "best language learning app russian",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "language learning app for russian",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "language learning app for speaking",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best language learning app spanish",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best language learning app to become fluent",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best language learning app uk",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "language learning app for travel",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "best language learning app without ai",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "language learning app for urdu",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "language learning apps for welsh",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best language learning apps free",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app free no ai",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app that insults you",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "language learning apps without subscription",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "is busuu free",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "duolingo alternatives no ai",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best language learning app android",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best language learning app better than duolingo",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "language learning app for arabic",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best language learning app conversation",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "language learning app for children",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning apps for beginners",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best language learning app duolingo",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "language learning app for driving",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best language learning app ever",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "language learning apps for european portuguese",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app for french",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best language learning app free",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app for greek",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best language learning app greek",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best language learning app hebrew",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app for hebrew",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app for irish",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best language learning app in 2026",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best language learning app kids",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app for kids free",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best language learning apps listening",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "language learning app like duolingo",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "language learning app for mandarin",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best language learning apps mango",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best language learning app no ai",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best language learning app other than duolingo",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "language learning apps for norwegian",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "language learning app offline",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "language learning app for portuguese",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best language learning app paid",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best language learning app reviews",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "language learning app for reading",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best language learning app speaking",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "language learning app for spanish",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "language learning app for thai",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best language learning app that is free",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning apps for ukrainian",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best language learning app using ai",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best language learning app with ai",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best language learning app for welsh",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app for japanese",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app free with library card",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning apps no ai free",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app with blue cat",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app that roasts you",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "is busuu free good",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "duolingo alternatives for japanese",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best language learning app arabic",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "language learning app for afrikaans",
+        "answers": 2,
+        "targetMentioned": 0
+      }
+    ],
+    "otherApps": [
+      {
+        "key": "name:Pimsleur",
+        "count": 42
+      },
+      {
+        "key": "name:Anki",
+        "count": 32
+      },
+      {
+        "key": "name:Memrise",
+        "count": 30
+      },
+      {
+        "key": "name:LingQ",
+        "count": 22
+      },
+      {
+        "key": "name:Mango Languages",
+        "count": 17
+      },
+      {
+        "key": "name:Clozemaster",
+        "count": 16
+      },
+      {
+        "key": "name:Drops",
+        "count": 11
+      },
+      {
+        "key": "name:ELSA Speak",
+        "count": 10
+      },
+      {
+        "key": "name:Mondly",
+        "count": 10
+      },
+      {
+        "key": "name:Language Transfer",
+        "count": 9
+      },
+      {
+        "key": "name:HelloTalk",
+        "count": 7
+      },
+      {
+        "key": "name:Talkpal",
+        "count": 6
+      },
+      {
+        "key": "name:Rosetta Stone",
+        "count": 5
+      },
+      {
+        "key": "name:HelloChinese",
+        "count": 5
+      },
+      {
+        "key": "name:Pleco",
+        "count": 5
+      }
+    ],
+    "warnings": [
+      "claude-search: 3 failed call(s) [rate_limited] — excluded from rates, not counted as \"not mentioned\"."
+    ]
+  },
+  "gates": [
+    {
+      "provider": "codex-search",
+      "mode": "search",
+      "answers": 200,
+      "repeats": 2,
+      "status": "INDETERMINATE",
+      "parts": [
+        {
+          "id": "R1 rate reliability",
+          "status": "PASS",
+          "halfR": 0.9934467919771851,
+          "reliability": 0.9967126245610423,
+          "spearmanHalf": 0.9535949865515757,
+          "coreApps": 9,
+          "moreDataFactor": 1,
+          "value": 0.9967126245610423,
+          "threshold": "≥ 0.8"
+        },
+        {
+          "id": "R2 precision (±)",
+          "status": "PASS",
+          "rate": 0.44,
+          "ci": [
+            0.345,
+            0.53
+          ],
+          "halfWidth": 0.09250000000000003,
+          "prompts": 100,
+          "promptsNeeded": 100,
+          "value": 0.09250000000000003,
+          "threshold": "≤ 0.1"
+        },
+        {
+          "id": "R3 coding agreement κ",
+          "status": "INDETERMINATE",
+          "value": null,
+          "threshold": "≥ 0.8",
+          "reason": "judge produced no usable codes"
+        }
+      ]
+    },
+    {
+      "provider": "claude-search",
+      "mode": "search",
+      "answers": 120,
+      "repeats": 2,
+      "status": "NOT RELIABLE",
+      "parts": [
+        {
+          "id": "R1 rate reliability",
+          "status": "PASS",
+          "halfR": 0.9880065709153522,
+          "reliability": 0.9939671079260438,
+          "spearmanHalf": 0.8658869394132948,
+          "coreApps": 15,
+          "moreDataFactor": 1,
+          "value": 0.9939671079260438,
+          "threshold": "≥ 0.8"
+        },
+        {
+          "id": "R2 precision (±)",
+          "status": "FAIL",
+          "rate": 0.5333333333333333,
+          "ci": [
+            0.4166666666666667,
+            0.65
+          ],
+          "halfWidth": 0.11666666666666667,
+          "prompts": 60,
+          "promptsNeeded": 91,
+          "value": 0.11666666666666667,
+          "threshold": "≤ 0.1"
+        },
+        {
+          "id": "R3 coding agreement κ",
+          "status": "INDETERMINATE",
+          "value": null,
+          "threshold": "≥ 0.8",
+          "reason": "judge produced no usable codes"
+        }
+      ]
+    }
+  ]
+}

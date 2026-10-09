@@ -1,0 +1,165 @@
+{
+  "claude-search": {
+    "rho": 0.7460606887803387,
+    "p": 0.007998400319936013,
+    "n": 12,
+    "matched": [
+      {
+        "key": "duolingo",
+        "name": "Duolingo",
+        "rate": 0.925,
+        "store": "Duolingo: Learn Languages",
+        "appStoreId": "570060128",
+        "ratingCount": 5496372
+      },
+      {
+        "key": "babbel",
+        "name": "Babbel",
+        "rate": 0.5333333333333333,
+        "store": "Babbel - Language Learning",
+        "appStoreId": "829587759",
+        "ratingCount": 755584
+      },
+      {
+        "key": "busuu",
+        "name": "Busuu",
+        "rate": 0.525,
+        "store": "Busuu: Language Learning App",
+        "appStoreId": "379968583",
+        "ratingCount": 101164
+      },
+      {
+        "key": "memrise",
+        "name": "Memrise",
+        "rate": 0.16666666666666666,
+        "store": "Memrise: Language Learning App",
+        "appStoreId": "635966718",
+        "ratingCount": 217243
+      },
+      {
+        "key": "pimsleur",
+        "name": "Pimsleur",
+        "rate": 0.15,
+        "store": "Pimsleur | Language Learning",
+        "appStoreId": "1405735469",
+        "ratingCount": 30202
+      },
+      {
+        "key": "lingq",
+        "name": "LingQ",
+        "rate": 0.11666666666666667,
+        "store": "LingQ | Learn Languages",
+        "appStoreId": "379385811",
+        "ratingCount": 10315
+      },
+      {
+        "key": "drops",
+        "name": "Drops",
+        "rate": 0.09166666666666666,
+        "store": "Drops: Language Learning Games",
+        "appStoreId": "939540371",
+        "ratingCount": 71643
+      },
+      {
+        "key": "mondly",
+        "name": "Mondly",
+        "rate": 0.075,
+        "store": "Mondly: Learn 41 Languages",
+        "appStoreId": "987873536",
+        "ratingCount": 33222
+      },
+      {
+        "key": "elsa speak",
+        "name": "ELSA Speak",
+        "rate": 0.06666666666666667,
+        "store": "ELSA Speak - English Learning",
+        "appStoreId": "1083804886",
+        "ratingCount": 113595
+      },
+      {
+        "key": "hellotalk",
+        "name": "HelloTalk",
+        "rate": 0.058333333333333334,
+        "store": "HelloTalk - Language Learning",
+        "appStoreId": "557130558",
+        "ratingCount": 43969
+      },
+      {
+        "key": "talkpal",
+        "name": "Talkpal",
+        "rate": 0.05,
+        "store": "Talkpal - AI Language Learning",
+        "appStoreId": "6468219825",
+        "ratingCount": 3814
+      },
+      {
+        "key": "lingopie",
+        "name": "Lingopie",
+        "rate": 0.05,
+        "store": "Lingopie: Learn a Language",
+        "appStoreId": "1534737981",
+        "ratingCount": 2174
+      }
+    ],
+    "unmatched": [
+      "Anki",
+      "Clozemaster"
+    ]
+  },
+  "codex-search": {
+    "rho": 0.6,
+    "p": 0.24235152969406118,
+    "n": 6,
+    "matched": [
+      {
+        "key": "duolingo",
+        "name": "Duolingo",
+        "rate": 0.685,
+        "store": "Duolingo: Learn Languages",
+        "appStoreId": "570060128",
+        "ratingCount": 5496372
+      },
+      {
+        "key": "babbel",
+        "name": "Babbel",
+        "rate": 0.44,
+        "store": "Babbel - Language Learning",
+        "appStoreId": "829587759",
+        "ratingCount": 755584
+      },
+      {
+        "key": "busuu",
+        "name": "Busuu",
+        "rate": 0.35,
+        "store": "Busuu: Language Learning App",
+        "appStoreId": "379968583",
+        "ratingCount": 101164
+      },
+      {
+        "key": "pimsleur",
+        "name": "Pimsleur",
+        "rate": 0.12,
+        "store": "Pimsleur | Language Learning",
+        "appStoreId": "1405735469",
+        "ratingCount": 30202
+      },
+      {
+        "key": "mango languages",
+        "name": "Mango Languages",
+        "rate": 0.07,
+        "store": "Mango Languages: Learning",
+        "appStoreId": "443516516",
+        "ratingCount": 44320
+      },
+      {
+        "key": "memrise",
+        "name": "Memrise",
+        "rate": 0.05,
+        "store": "Memrise: Language Learning App",
+        "appStoreId": "635966718",
+        "ratingCount": 217243
+      }
+    ],
+    "unmatched": []
+  }
+}

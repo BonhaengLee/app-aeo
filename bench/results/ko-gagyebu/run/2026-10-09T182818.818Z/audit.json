@@ -1,0 +1,24 @@
+{
+  "byProvider": {
+    "codex-search": {
+      "judge": "claude-cli",
+      "kappa": null,
+      "agreement": null,
+      "pairs": 0,
+      "judged": 0,
+      "failedBatches": 1,
+      "disagreements": [],
+      "reason": "judge produced no usable codes"
+    },
+    "claude-search": {
+      "judge": "claude-cli",
+      "kappa": null,
+      "agreement": null,
+      "pairs": 0,
+      "judged": 0,
+      "failedBatches": 1,
+      "disagreements": [],
+      "reason": "judge produced no usable codes"
+    }
+  }
+}

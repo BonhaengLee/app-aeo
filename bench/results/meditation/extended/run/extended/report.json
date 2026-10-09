@@ -1,0 +1,848 @@
+{
+  "meta": {
+    "startedAt": "2026-10-09T18:40:33.935Z",
+    "finishedAt": "2026-10-09T18:47:31.873Z",
+    "promptSet": "684d8e8e5cc4",
+    "providers": [
+      "claude-search",
+      "codex-search"
+    ],
+    "ground": null,
+    "groundSearches": 0,
+    "calls": 101,
+    "halted": {
+      "claude-search": "rate_limited"
+    },
+    "skippedByBudget": 0,
+    "repeatsByEngine": {
+      "claude-search": 2,
+      "codex-search": 2
+    }
+  },
+  "agg": {
+    "target": "Insight Timer",
+    "prompts": 100,
+    "answers": 338,
+    "failed": 3,
+    "overall": {
+      "mentioned": 192,
+      "rate": 0.5680473372781065,
+      "ci": [
+        0.5147656130675756,
+        0.6197996358664336
+      ]
+    },
+    "perProvider": [
+      {
+        "provider": "claude-search",
+        "mode": "search",
+        "grounded": 136,
+        "stability": {
+          "prompts": 60,
+          "agreeing": 50,
+          "rate": 0.8333333333333334
+        },
+        "models": [
+          "claude-opus-4-6[1m]"
+        ],
+        "answers": 138,
+        "failed": 3,
+        "failures": [
+          "rate_limited"
+        ],
+        "target": {
+          "name": "Insight Timer",
+          "mentioned": 94,
+          "rate": 0.6811594202898551,
+          "ci": [
+            0.5994014484303916,
+            0.7531044454681544
+          ],
+          "avgRank": 2.3617021276595747,
+          "linked": 0,
+          "byPrompt": {
+            "mean": 0.6666666666666666,
+            "ci": [
+              0.5705128205128205,
+              0.7628205128205128
+            ],
+            "prompts": 78
+          }
+        },
+        "shareOfVoice": 0.2822822822822823,
+        "apps": [
+          {
+            "name": "Insight Timer",
+            "mentioned": 94,
+            "rate": 0.6811594202898551,
+            "ci": [
+              0.5994014484303916,
+              0.7531044454681544
+            ],
+            "avgRank": 2.3617021276595747,
+            "linked": 0,
+            "byPrompt": {
+              "mean": 0.6666666666666666,
+              "ci": [
+                0.5705128205128205,
+                0.7628205128205128
+              ],
+              "prompts": 78
+            }
+          },
+          {
+            "name": "Calm",
+            "mentioned": 115,
+            "rate": 0.8333333333333334,
+            "ci": [
+              0.7623124168362461,
+              0.8862984279370787
+            ],
+            "avgRank": 3.373913043478261,
+            "linked": 0
+          },
+          {
+            "name": "Headspace",
+            "mentioned": 124,
+            "rate": 0.8985507246376812,
+            "ci": [
+              0.8369096923902526,
+              0.9386032741865487
+            ],
+            "avgRank": 2.620967741935484,
+            "linked": 0
+          }
+        ]
+      },
+      {
+        "provider": "codex-search",
+        "mode": "search",
+        "grounded": 200,
+        "stability": {
+          "prompts": 100,
+          "agreeing": 92,
+          "rate": 0.92
+        },
+        "models": [],
+        "answers": 200,
+        "failed": 0,
+        "failures": [],
+        "target": {
+          "name": "Insight Timer",
+          "mentioned": 98,
+          "rate": 0.49,
+          "ci": [
+            0.4215615528275274,
+            0.5588153672908391
+          ],
+          "avgRank": 1.7959183673469388,
+          "linked": 11,
+          "byPrompt": {
+            "mean": 0.49,
+            "ci": [
+              0.395,
+              0.585
+            ],
+            "prompts": 100
+          }
+        },
+        "shareOfVoice": 0.33447098976109213,
+        "apps": [
+          {
+            "name": "Insight Timer",
+            "mentioned": 98,
+            "rate": 0.49,
+            "ci": [
+              0.4215615528275274,
+              0.5588153672908391
+            ],
+            "avgRank": 1.7959183673469388,
+            "linked": 11,
+            "byPrompt": {
+              "mean": 0.49,
+              "ci": [
+                0.395,
+                0.585
+              ],
+              "prompts": 100
+            }
+          },
+          {
+            "name": "Calm",
+            "mentioned": 88,
+            "rate": 0.44,
+            "ci": [
+              0.3729770042058236,
+              0.509284516504375
+            ],
+            "avgRank": 2.0454545454545454,
+            "linked": 6
+          },
+          {
+            "name": "Headspace",
+            "mentioned": 107,
+            "rate": 0.535,
+            "ci": [
+              0.46586521028994954,
+              0.6028155692957681
+            ],
+            "avgRank": 1.3831775700934579,
+            "linked": 6
+          }
+        ]
+      }
+    ],
+    "perPrompt": [
+      {
+        "prompt": "best meditation app",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "meditation app for kids",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "meditation app free",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "meditation app without subscription",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "meditation app that is free",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "meditation app with orange branding",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "calm alternative words",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meditation app australia",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "headspace alternative free",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "meditation app for anxiety",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best meditation app buddhist",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "meditation app for beginners",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "best meditation app calm or headspace",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "meditation app for children",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best meditation app for depression",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "meditation app for divorce",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best meditation app apple watch",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "meditation app example",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best meditation app free",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best meditation app garmin",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "meditation app for garmin watch",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meditation app for healing",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "best meditation app hindi",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best meditation app in india",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "meditation app for ibs",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meditation learning app",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best meditation app kids",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "meditation app for labor",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meditation app for men",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best meditation app meta quest 3",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meditation app no subscription",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best meditation app on meta quest 3",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "mindfulness app for nurses",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "meditation app for pregnancy",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best meditation app paid",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "meditation app for ocd",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meditation app sleep",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best meditation app reviews",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "meditation app reviews",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "meditation app for sleep",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "meditation app for teens",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best meditation app to lower blood pressure",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best meditation app uk",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "meditation app ui",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meditation app wirecutter",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meditation apps free",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "meditation app for women",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "meditation app free for a year",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "meditation app without ai",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "meditation app with orange branding codycross",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meditation apps that are actually free",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "calm alternative songs",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "headspace app alternatives",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best meditation app android",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "meditation app for bipoc",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best meditation app beginners",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "meditation app for apple watch",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best meditation app for deaf people",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best meditation app calm",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "meditation app for co parenting",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "meditation app for.depression",
+        "answers": 3,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best meditation apps for experienced meditators",
+        "answers": 3,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "best meditation app apple",
+        "answers": 3,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "meditation app for focus",
+        "answers": 3,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "best meditation app guided",
+        "answers": 3,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "meditation app for garmin",
+        "answers": 3,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meditation app headspace",
+        "answers": 3,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "meditation app for iphone",
+        "answers": 3,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "meditation apps for high blood pressure",
+        "answers": 3,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "meditation app for kids free",
+        "answers": 3,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best mindfulness apps kids",
+        "answers": 3,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meditation app for weight loss",
+        "answers": 3,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "meditation app for meta quest",
+        "answers": 3,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meditation app meta quest",
+        "answers": 3,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meditation app new york times",
+        "answers": 3,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "free meditation app for nhs staff",
+        "answers": 3,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meditation app for oculus",
+        "answers": 3,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meditation app on iphone",
+        "answers": 3,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "best meditation app for pregnancy",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "meditation app for parents",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meditation apps ranked",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best meditation app subscription",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "meditation app for sleep free",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "meditation app recommendations",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best meditation app to reduce stress",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best meditation apps uk free",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "meditation app for teachers",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "is waking up the best meditation app",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "meditation app ui design",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meditation apps 2026",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "meditation app with flashing lights",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meditation without app",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meditation app free for teachers",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "calm alternative free",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best headspace alternative",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "meditation apps that are completely free",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "meditation app for black women",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meditation app for adhd",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meditation app balance",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best meditation apps canada",
+        "answers": 2,
+        "targetMentioned": 2
+      }
+    ],
+    "otherApps": [
+      {
+        "key": "name:Medito",
+        "count": 16
+      },
+      {
+        "key": "name:Waking Up",
+        "count": 13
+      },
+      {
+        "key": "name:Smiling Mind",
+        "count": 11
+      },
+      {
+        "key": "name:UCLA Mindful",
+        "count": 7
+      },
+      {
+        "key": "name:Start small",
+        "count": 7
+      },
+      {
+        "key": "name:Balance",
+        "count": 6
+      },
+      {
+        "key": "apple:1675603291",
+        "count": 6
+      },
+      {
+        "key": "name:Healthy Minds Program",
+        "count": 5
+      },
+      {
+        "key": "name:Ten Percent Happier",
+        "count": 4
+      },
+      {
+        "key": "name:Be consistent",
+        "count": 4
+      },
+      {
+        "key": "name:BetterSleep",
+        "count": 4
+      },
+      {
+        "key": "name:Try before you buy",
+        "count": 4
+      },
+      {
+        "key": "name:Breethe",
+        "count": 4
+      },
+      {
+        "key": "apple:1631848467",
+        "count": 3
+      },
+      {
+        "key": "apple:6744633379",
+        "count": 3
+      }
+    ],
+    "warnings": [
+      "claude-search: 2/138 answers had no search results behind them (search mode).",
+      "claude-search: 3 failed call(s) [rate_limited] — excluded from rates, not counted as \"not mentioned\"."
+    ]
+  },
+  "gates": [
+    {
+      "provider": "codex-search",
+      "mode": "search",
+      "answers": 200,
+      "repeats": 2,
+      "status": "INDETERMINATE",
+      "parts": [
+        {
+          "id": "R1 rate reliability",
+          "status": "PASS",
+          "halfR": 0.9924717371268463,
+          "reliability": 0.9962216463436467,
+          "spearmanHalf": 1,
+          "coreApps": 7,
+          "moreDataFactor": 1,
+          "value": 0.9962216463436467,
+          "threshold": "≥ 0.8"
+        },
+        {
+          "id": "R2 precision (±)",
+          "status": "PASS",
+          "rate": 0.49,
+          "ci": [
+            0.395,
+            0.585
+          ],
+          "halfWidth": 0.09499999999999997,
+          "prompts": 100,
+          "promptsNeeded": 100,
+          "value": 0.09499999999999997,
+          "threshold": "≤ 0.1"
+        },
+        {
+          "id": "R3 coding agreement κ",
+          "status": "INDETERMINATE",
+          "value": null,
+          "threshold": "≥ 0.8",
+          "reason": "judge produced no usable codes"
+        }
+      ]
+    },
+    {
+      "provider": "claude-search",
+      "mode": "search",
+      "answers": 138,
+      "repeats": 2,
+      "status": "INDETERMINATE",
+      "parts": [
+        {
+          "id": "R1 rate reliability",
+          "status": "PASS",
+          "halfR": 0.9965389650710391,
+          "reliability": 0.9982664826534764,
+          "spearmanHalf": 0.9746794344808964,
+          "coreApps": 5,
+          "moreDataFactor": 1,
+          "value": 0.9982664826534764,
+          "threshold": "≥ 0.8"
+        },
+        {
+          "id": "R2 precision (±)",
+          "status": "PASS",
+          "rate": 0.6666666666666666,
+          "ci": [
+            0.5705128205128205,
+            0.7628205128205128
+          ],
+          "halfWidth": 0.09615384615384615,
+          "prompts": 78,
+          "promptsNeeded": 78,
+          "value": 0.09615384615384615,
+          "threshold": "≤ 0.1"
+        },
+        {
+          "id": "R3 coding agreement κ",
+          "status": "INDETERMINATE",
+          "value": null,
+          "threshold": "≥ 0.8",
+          "reason": "judge produced no usable codes"
+        }
+      ]
+    }
+  ]
+}

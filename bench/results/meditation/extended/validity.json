@@ -1,0 +1,90 @@
+{
+  "claude-search": {
+    "rho": 0.9,
+    "p": 0.08238352329534093,
+    "n": 5,
+    "matched": [
+      {
+        "key": "headspace",
+        "name": "Headspace",
+        "rate": 0.8985507246376812,
+        "store": "Headspace: Sleep & Meditation",
+        "appStoreId": "493145008",
+        "ratingCount": 973796
+      },
+      {
+        "key": "calm",
+        "name": "Calm",
+        "rate": 0.8043478260869565,
+        "store": "Calm",
+        "appStoreId": "571800810",
+        "ratingCount": 1986354
+      },
+      {
+        "key": "insight timer",
+        "name": "Insight Timer",
+        "rate": 0.6811594202898551,
+        "store": "Insight Timer: Meditate, Sleep",
+        "appStoreId": "337472899",
+        "ratingCount": 447566
+      },
+      {
+        "key": "waking up",
+        "name": "Waking Up",
+        "rate": 0.057971014492753624,
+        "store": "Waking Up: Meditation & Wisdom",
+        "appStoreId": "1307736395",
+        "ratingCount": 42671
+      },
+      {
+        "key": "start small",
+        "name": "Start small",
+        "rate": 0.050724637681159424,
+        "store": "Start Small: Social Confidence",
+        "appStoreId": "6768707125",
+        "ratingCount": 0
+      }
+    ],
+    "unmatched": []
+  },
+  "codex-search": {
+    "rho": 0.4,
+    "p": 0.7488502299540092,
+    "n": 4,
+    "matched": [
+      {
+        "key": "headspace",
+        "name": "Headspace",
+        "rate": 0.535,
+        "store": "Headspace: Sleep & Meditation",
+        "appStoreId": "493145008",
+        "ratingCount": 973796
+      },
+      {
+        "key": "insight timer",
+        "name": "Insight Timer",
+        "rate": 0.49,
+        "store": "Insight Timer: Meditate, Sleep",
+        "appStoreId": "337472899",
+        "ratingCount": 447566
+      },
+      {
+        "key": "calm",
+        "name": "Calm",
+        "rate": 0.36,
+        "store": "Calm",
+        "appStoreId": "571800810",
+        "ratingCount": 1986354
+      },
+      {
+        "key": "medito",
+        "name": "Medito",
+        "rate": 0.065,
+        "store": "Medito: Mindfulness Meditation",
+        "appStoreId": "1500780518",
+        "ratingCount": 4249
+      }
+    ],
+    "unmatched": []
+  }
+}

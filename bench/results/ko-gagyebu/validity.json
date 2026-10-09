@@ -1,0 +1,79 @@
+{
+  "claude-search": {
+    "rho": -1,
+    "p": 0.33573285342931414,
+    "n": 3,
+    "matched": [
+      {
+        "key": "뱅크샐러드",
+        "name": "뱅크샐러드",
+        "rate": 0.94,
+        "store": "뱅크샐러드",
+        "appStoreId": "1195804784",
+        "ratingCount": 21186
+      },
+      {
+        "key": "편한가계부",
+        "name": "편한가계부",
+        "rate": 0.86,
+        "store": "편한가계부",
+        "appStoreId": "560481810",
+        "ratingCount": 86863
+      },
+      {
+        "key": "위플 가계부",
+        "name": "위플 가계부",
+        "rate": 0.58,
+        "store": "위플 가계부 - Weple Money",
+        "appStoreId": "467936485",
+        "ratingCount": 216079
+      }
+    ],
+    "unmatched": [
+      "무료 vs 유료",
+      "SMS 자동 인식",
+      "자동 연동 vs 수동 입력",
+      "장점"
+    ]
+  },
+  "codex-search": {
+    "rho": -0.6,
+    "p": 0.42351529694061185,
+    "n": 4,
+    "matched": [
+      {
+        "key": "편한가계부",
+        "name": "편한가계부",
+        "rate": 0.6918604651162791,
+        "store": "편한가계부",
+        "appStoreId": "560481810",
+        "ratingCount": 86863
+      },
+      {
+        "key": "뱅크샐러드",
+        "name": "뱅크샐러드",
+        "rate": 0.6104651162790697,
+        "store": "뱅크샐러드",
+        "appStoreId": "1195804784",
+        "ratingCount": 21186
+      },
+      {
+        "key": "위플 가계부",
+        "name": "위플 가계부",
+        "rate": 0.16279069767441862,
+        "store": "위플 가계부 - Weple Money",
+        "appStoreId": "467936485",
+        "ratingCount": 216079
+      },
+      {
+        "key": "토스",
+        "name": "토스",
+        "rate": 0.05813953488372093,
+        "store": "토스",
+        "appStoreId": "839333328",
+        "ratingCount": 91802
+      }
+    ],
+    "unmatched": []
+  }
+}
