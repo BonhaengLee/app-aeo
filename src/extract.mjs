@@ -89,12 +89,16 @@ export function listedNames(text) {
   const t = nfc(text);
   const out = [];
   for (const m of t.matchAll(/^[ \t]*(?:\d{1,2}[.)]|[-*•])[ \t]+\*\*\[?([^*\]\n]{2,60}?)\]?(?:\([^)]*\))?\*\*/gm)) {
-    const name = m[1].trim();
+    const name = m[1].trim().replace(/^(?:iOS|iPhone|Android|Web|Mac)\s*:\s*/i, '');
     // "**Simple and polished:**" is a section label, not an app name.
     if (/[:：]$/.test(name) || name.split(/\s+/).length > 5) continue;
     // "Notion or a spreadsheet", "Android: Loop Habit Tracker." — alternatives and platform labels, not one app.
     if (/\s(or|and|\/|또는|나)\s/i.test(name) || /\.$/.test(name)) continue;
-    out.push(name.replace(/^(?:iOS|iPhone|Android|Web|Mac)\s*:\s*/i, ''));
+    // Section labels seen in real search-mode answers: "Android user?", "iPhone →", "Kotlin + Jetpack Compose",
+    // "One-time purchase", "Room database". App names don't end in "?", don't contain arrows/plus, and start uppercase.
+    if (/[?？→←⇒+=]/.test(name) || !/^[\p{Lu}\p{Lo}\d]/u.test(name)) continue;
+    if (/\b(user|users|budget|database|devices?|purchase|subscription|option|options|pick|picks|need|want|use|if|best|free|paid|cheap|simple|bottom line|verdict|summary|winner|overall|alternative|alternatives|recommendation|recommendations|platform|price|pricing|features?|pros|cons|tip|tips|note)\b/i.test(name)) continue;
+    out.push(name);
   }
   return [...new Set(out)];
 }

@@ -74,6 +74,8 @@ await t('listedNames reads bold names incl. [link] form', () => {
   assert.deepEqual(listedNames('1. **[Way of Life](https://x)** — a\n2. **Done** — b'), ['Way of Life', 'Done']);
   assert.deepEqual(listedNames('- **Simple and polished:** Streaks\n- **Free with a generous tier:** Habitify'), []);
   assert.deepEqual(listedNames('- **Notion or a spreadsheet** — x\n- **Android: Loop Habit Tracker.** y\n- **iOS: Streaks** z'), ['Streaks']);
+  // Real labels from search-mode answers (2026-10-10 run) must not become "apps".
+  assert.deepEqual(listedNames('- **Android user?** x\n- **iPhone →** y\n- **Kotlin + Jetpack Compose** z\n- **One-time purchase** w\n- **Room database** v\n- **Want gamification?** u\n- **Habitica** ok\n- **Apple Reminders** ok'), ['Habitica', 'Apple Reminders']);
 });
 
 // report
@@ -210,9 +212,18 @@ await t('fallback chain: exhausted link is skipped for the rest of the run; mixe
 });
 await t('codexEvents counts web_search events and URLs; claudeSearchCount sums modelUsage', async () => {
   const { codexEvents, claudeSearchCount } = await import('../src/providers.mjs');
-  const ev = codexEvents('{"type":"item.completed","item":{"type":"web_search","query":"x"}}\n{"type":"item.completed","item":{"type":"agent_message","text":"see https://apps.apple.com/us/app/x/id1"}}\nnot json');
+  const ev = codexEvents('{"type":"item.started","item":{"type":"web_search","query":"x"}}\n{"type":"item.completed","item":{"type":"web_search","query":"x"}}\n{"type":"item.completed","item":{"type":"agent_message","text":"see https://apps.apple.com/us/app/x/id1"}}\nnot json');
   assert.deepEqual(ev, { searches: 1, urls: ['https://apps.apple.com/us/app/x/id1'] });
   assert.equal(claudeSearchCount({ modelUsage: { a: { webSearchRequests: 0 }, b: { webSearchRequests: 2 } } }), 2);
+});
+await t('codex engines pass consumer-role developer_instructions (coding-agent misread fix)', async () => {
+  let argsSeen;
+  const run = async (cmd, args) => { argsSeen = args; const o = args[args.indexOf('-o') + 1]; fs.writeFileSync(o, 'Streaks'); return { code: 0, stdout: '{"type":"item.completed","item":{"type":"web_search"}}', stderr: '' }; };
+  const r = await ask('codex-search', 'habit tracker app for iphone', { run });
+  assert.equal(argsSeen[0], '--search');
+  const di = argsSeen[argsSeen.indexOf('-c') + 1];
+  assert.match(di, /^developer_instructions=".*not a coding.*Search the web/);
+  assert.equal(r.grounded, true);
 });
 await t('HTTP 429/401/402 classified as halting kinds', () => {
   assert.equal(classifyHttp(429), 'rate_limited');
@@ -247,11 +258,12 @@ await t('claude-cli provider parses JSON result and surfaces is_error', async ()
   let argsSeen;
   const spy = async (cmd, args) => { argsSeen = args; return { code: 0, stdout: JSON.stringify({ result: 'ok', modelUsage: { m: { webSearchRequests: 1 } } }), stderr: '' }; };
   const mem = await ask('claude-cli', 'q', { run: spy });
-  assert.equal(argsSeen[argsSeen.indexOf('--system-prompt') + 1], 'You are a helpful assistant.', 'coding-agent system prompt must be replaced');
+  assert.match(argsSeen[argsSeen.indexOf('--system-prompt') + 1], /not a coding/, 'coding-agent system prompt must be replaced');
   assert.equal(argsSeen[argsSeen.indexOf('--tools') + 1], '', 'memory mode has no tools');
   assert.equal(mem.grounded, false);
   const se = await ask('claude-search', 'q', { run: spy });
   assert.equal(argsSeen[argsSeen.indexOf('--tools') + 1], 'WebSearch');
+  assert.match(argsSeen[argsSeen.indexOf('--system-prompt') + 1], /Search the web/);
   assert.equal(se.grounded, true);
   const run = async () => ({ code: 0, stdout: JSON.stringify({ result: 'Streaks!', is_error: false, modelUsage: { 'claude-sonnet-x': {} }, total_cost_usd: 0.01 }), stderr: '' });
   const r = await ask('claude-cli:sonnet', 'q', { run });

@@ -78,7 +78,13 @@ function runChild(cmd, args, { input = '', cwd, env, timeoutMs = DEFAULT_TIMEOUT
   });
 }
 
-export const SEARCH_SYSTEM = 'You are a helpful assistant. Search the web when current information would help.';
+// Both host agents are coding agents by default. Measured 2026-10-10: codex answered "habit tracker app for iphone" with
+// "I can help you build an iPhone habit tracker" (2/80 answers) and searched in only 34/80. These instructions fix the role
+// and require a search, so search-mode answers are consumer answers grounded in today's web.
+export const CONSUMER_ROLE = 'You are a general-purpose assistant answering a consumer question in a chat app. This is not a coding or software-development task.';
+export const SEARCH_SYSTEM = `${CONSUMER_ROLE} Search the web for current information before answering.`;
+export const MEMORY_SYSTEM = `${CONSUMER_ROLE} Answer from your own knowledge.`;
+export const SEARCH_TIMEOUT_MS = 420_000;
 
 /** Sum of web searches Claude Code reports in modelUsage (per-model counters). */
 export const claudeSearchCount = (j) => Object.values(j.modelUsage ?? {}).reduce((n, u) => n + (u.webSearchRequests ?? 0), 0) + (j.usage?.server_tool_use?.web_search_requests ?? 0);
@@ -88,7 +94,7 @@ function claudeAsker({ search }) {
     // Replace Claude Code's coding-agent system prompt: we want the answer a general assistant gives, not a coding agent.
     const args = ['-p', '--output-format', 'json', '--setting-sources', '', '--strict-mcp-config', '--no-session-persistence'];
     if (search) args.push('--tools', 'WebSearch', '--allowedTools', 'WebSearch', '--system-prompt', SEARCH_SYSTEM);
-    else args.push('--tools', '', '--system-prompt', NEUTRAL_SYSTEM);
+    else args.push('--tools', '', '--system-prompt', MEMORY_SYSTEM);
     if (model) args.push('--model', model);
     const label = search ? 'claude-search' : 'claude-cli';
     const r = await run('claude', args, { input: prompt, cwd: os.tmpdir(), timeoutMs });
@@ -122,7 +128,8 @@ export function codexEvents(jsonl) {
     let ev;
     try { ev = JSON.parse(line); } catch { continue; }
     const s = JSON.stringify(ev);
-    if (/"type":"web_search"/.test(s)) searches += 1;
+    // item.started and item.completed both carry the item; count a search once, when it completes.
+    if (ev.type === 'item.completed' && ev.item?.type === 'web_search') searches += 1;
     for (const m of s.matchAll(/https?:\/\/[^"\s)\\]+/g)) urls.add(m[0]);
   }
   return { searches, urls: [...urls] };
@@ -133,7 +140,7 @@ function codexAsker({ search }) {
     const home = isolatedCodexHome();
     const work = fs.mkdtempSync(path.join(os.tmpdir(), 'app-aeo-codex-'));
     const out = path.join(work, 'answer.txt');
-    const args = [...(search ? ['--search'] : []), 'exec', '--skip-git-repo-check', '--ephemeral', '-s', 'read-only', '--json', '-o', out];
+    const args = [...(search ? ['--search'] : []), 'exec', '--skip-git-repo-check', '--ephemeral', '-s', 'read-only', '--json', '-c', `developer_instructions=${JSON.stringify(search ? SEARCH_SYSTEM : MEMORY_SYSTEM)}`, '-o', out];
     if (model) args.push('-m', model);
     args.push('-');
     const label = search ? 'codex-search' : 'codex-cli';
@@ -229,8 +236,9 @@ export const PROVIDERS = Object.freeze({
 export const newChainState = () => new Map();
 
 /** Ask one provider (or chain). `deps` lets tests inject run/fetch. */
-export async function ask(spec, prompt, { timeoutMs = DEFAULT_TIMEOUT_MS, chainState = newChainState(), ...deps } = {}) {
+export async function ask(spec, prompt, { timeoutMs, chainState = newChainState(), ...deps } = {}) {
   const p = typeof spec === 'string' ? parseProviderSpec(spec) : spec;
+  timeoutMs ??= p.mode === 'search' ? SEARCH_TIMEOUT_MS : DEFAULT_TIMEOUT_MS;
   const started = Date.now();
   if (p.type !== 'chain') {
     const r = await PROVIDERS[p.type].ask(prompt, { model: p.model, timeoutMs, ...deps });
