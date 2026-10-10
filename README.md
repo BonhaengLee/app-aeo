@@ -6,7 +6,7 @@ It is built for an AI agent to drive. Install the skill, ask "does AI recommend 
 
 - **$0 to run.** The main engines are your own **Claude Code** and **Codex** with live web search, inside the plan you already have. Optional free-tier keys add more engines; Tavily's free search can ground them.
 - **Real questions.** Prompts come from Google autocomplete for your category.
-- **Self-validating.** Every result can be checked two ways: the same config is re-run (test–retest), and mention rates are compared with real App Store usage (convergent validity). Verdicts are printed as they come out.
+- **A reliability gate, not just a number.** `check --gate` labels each engine's result RELIABLE only if three checks pass: R1 split-half reliability ≥ 0.80, R2 interval ±10 pp or tighter, R3 agreement with an independent LLM judge κ ≥ 0.80. If one fails it says NOT RELIABLE and how much more data would fix it. In a [pre-registered benchmark](bench/BENCHMARK.md) that prescription held in 3 of 4 categories (details below).
 - **Honest numbers.**
   - Intervals are bootstrapped over prompts, so repeats don't fake precision.
   - Failed calls never count as "not mentioned".
@@ -18,13 +18,13 @@ It is built for an AI agent to drive. Install the skill, ask "does AI recommend 
 ```sh
 node bin/app-aeo.mjs doctor                 # which free engines work on this machine
 node bin/app-aeo.mjs init cfg.json --category "habit tracker" --app-id 963034692 --competitor-id 1111447047 --competitor-id 6443918070
-node bin/app-aeo.mjs check cfg.json --out runsA &
-node bin/app-aeo.mjs check cfg.json --out runsB &
-wait
-node bin/app-aeo.mjs validate runsA/<run> runsB/<run> --popularity --engine claude-search
+node bin/app-aeo.mjs check cfg.json --dry-run   # how many calls it will make
+node bin/app-aeo.mjs check cfg.json --gate      # measure, add repeats until reliable, audit, print the gate
 ```
 
-`init` fills in the prompts (Google autocomplete), the engines (from `doctor`) and `repeats: 2`. Check that `target.name` is the brand ("HabitKit", not "Habit Tracker - HabitKit").
+`init` fills in the prompts (Google autocomplete, **100 by default**), the engines (from `doctor`) and `repeats: 2`. Check that `target.name` is the brand ("HabitKit", not "Habit Tracker - HabitKit"). If autocomplete returns fewer than 100 queries, `init` warns you; add your users' real questions.
+
+**Cost in quota.** "$0" means no extra charges. It still uses your Claude Code and Codex plan limits. 100 prompts × 2 engines × 2 repeats is 400 answers, plus judge calls for the audit. In the benchmark, `claude-search` hit the Claude 5-hour session limit after 372 answers (46 minutes), and later the weekly limit. The same account was also used interactively, so treat that as an observation, not a limit you can plan to.
 
 ## Engines
 
@@ -40,37 +40,42 @@ Tool choices:
 - **Groq compound is gone.** Its built-in search was shut down on 2026-09-21.
 - **Gemini 3.x free tier** has no search grounding.
 
-## Measured on 2026-10-10, not assumed
+## Benchmark — pre-registered, every cell published
 
-Setup: habit-tracker category, target Streaks, 20 Google-autocomplete prompts × 2 repeats, two independent runs per engine, 160 answers, **0 failed calls, every answer search-grounded**.
+Full report: [`bench/BENCHMARK.md`](bench/BENCHMARK.md). Protocol and hypotheses were committed before any answer was collected ([`bench/PREREGISTRATION.md`](bench/PREREGISTRATION.md)). Deviations are logged in [`bench/DEVIATIONS.md`](bench/DEVIATIONS.md). Setup: 4 categories (meditation, budgeting and language learning in the US, 가계부 in Korea) × 2 engines (`claude-search`, `codex-search`), real Google-autocomplete prompts, all answers search-grounded.
 
-| | claude-search | codex-search |
+| Hypothesis (pre-registered) | Criterion | Result |
 |---|---|---|
-| Target mention rate, run A → B (95% CI over prompts) | 88% (75–98) → 90% (78–100) | 45% (25–65) → 40% (23–60) |
-| Same yes/no on repeat | 85% / 90% of prompts | 90% / 70% of prompts |
-| **Test–retest** (rank of apps named in ≥5% of answers) | ❌ ρ = 0.40, p = 0.23 (11 apps) | ✅ ρ = 1.00, p = 0.015 (5 apps) |
-| **Convergent validity** (mention rate vs App Store rating count) | ✅ ρ = 0.91, p = 0.010 (7 apps) | ❌ ρ = 0.70, p = 0.23 (5 apps, too few to decide) |
+| H1 the gate can reach RELIABLE | ≥ 6 of 8 cells within 4 repeats | ❌ **2 / 8** |
+| H2 the extractor codes mentions correctly | every cell κ ≥ 0.80 | ✅ **8 / 8** (κ 0.95–1.00) |
+| H3 picks track real App Store usage | ≥ half of cells ρ ≥ 0.5, p < 0.05 | ❌ **1 / 8** |
 
-What this shows:
-- **The target's own rate is stable run to run** for both engines: 88→90% and 45→40%, inside each other's intervals.
-- **Engines disagree a lot with each other** (88% vs ~43%). "What AI recommends" depends on the assistant, so report per engine and never pooled.
-- Claude's picks **track real usage** (✅), but the long tail of rarely named apps reshuffles between runs (❌).
-- Codex's picks are **reproducible** (✅), but it names too few apps for the usage check to reach significance.
-- Criteria were fixed before the runs (5% floor, ρ ≥ 0.5, p < 0.05) and were not tuned afterwards. More prompts or repeats raise the power.
+What failed, and why:
+- **H1 failed on precision only.** R1 (reliability) and R3 (coding) passed in all 8 cells. R2 failed in 6: at 60 prompts the interval was ±0.10–0.13. More repeats cannot fix this; only more prompts can.
+- **Follow-up (not pre-registered, rule fixed in advance as D2).** Each category was extended to the number of prompts the gate itself prescribed. **7 of 8 cells became RELIABLE.** The exception is Korean 가계부: autocomplete ran out at 43 queries (gate asked for 55), and codex-search stayed NOT RELIABLE at ±0.113. That is why `init` now defaults to 100 prompts and warns when it finds fewer.
+- **H3 was mostly too small to decide.** Only apps named in ≥ 5% of answers are compared, which left 3–6 apps in 7 of 8 cells. With so few points the test has almost no power, so the 1/8 does not show that AI picks ignore real usage. It does not show the opposite either. The one cell with enough apps (language, claude-search, 12 apps) passed: ρ = 0.75, p = 0.008.
+- **Engines disagree with each other.** Target mention rates, claude-search vs codex-search: meditation 70% vs 43%, budgeting 63% vs 28%, language 54% vs 48%. Always report per engine; never pool them.
 
-History:
-- **Earlier failure:** a run without web search (Claude, memory only) was reproducible but did **not** track usage (ρ = −0.20). That is why search mode is the default.
-- **Three harness defects** surfaced in live runs and were fixed, each with a regression test:
-  - Codex answered *"I can help you build an iPhone habit tracker"*. A consumer-role instruction fixed it.
-  - Codex searched in only 34/80 answers. A search instruction fixed it; all answers are now grounded.
-  - Section labels ("Android user?", "Kotlin + Jetpack Compose") were counted as apps.
+Earlier pilot (habit tracker, 20 prompts, before the benchmark): claude-search mention rate vs App Store rating count gave ρ = 0.91, p = 0.010 over 7 apps. The benchmark did not reproduce that as a general result (H3 above), so it is a single observation, not a property of the tool.
+
+Harness defects found in live runs, each fixed with a regression test:
+- Codex answered *"I can help you build an iPhone habit tracker"*. A consumer-role instruction fixed it.
+- Codex searched in only 34/80 answers. A search instruction fixed it.
+- Section labels ("Android user?", "Kotlin + Jetpack Compose") were counted as apps.
+- The word "calm" was counted as the app *Calm*. The LLM-judge audit found it (D1).
 
 **Not shown by anyone, including this tool:**
+- that the engines measured here match what the consumer ChatGPT or Gemini apps show;
 - that editing a listing or page raises the mention rate;
-- that a higher mention rate raises installs;
-- that these engines match what the ChatGPT or Gemini consumer apps show.
+- that a higher mention rate raises installs.
 
 Treat improvements as hypotheses. Re-run the **same** config and compare with `trend`.
+
+## Alternatives
+
+- **AppTweak AI Visibility** ([product page](https://www.apptweak.com/en/ai-search-visibility-tool-for-mobile-apps)): a commercial, app-specific tracker for ChatGPT and Gemini. No public price; access is through a demo. Use it if you need the consumer ChatGPT/Gemini surfaces, which this tool does not measure.
+- **Open-source brand/website trackers** (see the [ai-visibility topic](https://github.com/topics/ai-visibility)): track brands and domains across engines with your own API keys. They are not built around App Store ids.
+- **Use app-aeo** if you want a free run inside a Claude Code or Codex plan you already have, App Store id matching, raw answers you can re-check, and a gate that says when the number is not yet trustworthy.
 
 ## Commands
 
@@ -116,13 +121,13 @@ Tools:
 
 ## Skills
 
-- `skills/app-aeo/SKILL.md` is the agent workflow: doctor → init → measure twice → validate → report only what passed.
+- `skills/app-aeo/SKILL.md` is the agent workflow: doctor → init (100 prompts) → `check --gate` → report the gate verdict first, and findings only from RELIABLE engines.
 - `skills/aso-lint/SKILL.md` is the listing check.
 
 ## Development
 
 ```sh
-node test/selftest.mjs   # 52 cases, no network
+node test/selftest.mjs   # 62 cases, no network
 ```
 
 - Every fix from the live runs and from an independent Codex code review has a regression test.

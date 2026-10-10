@@ -1,22 +1,24 @@
-1/ "Does ChatGPT recommend my app?" Every indie dev asks this now. We built a free tool that measures it, and that refuses to give you a number it can't stand behind. 🧵
+1/ "Does AI recommend my app?" AI answers change from run to run, so how many questions do you need before the number means anything? We pre-registered a benchmark to find out, and published every cell, failures included. 🧵
 
-2/ How it works:
-- 60 real search queries per category, from Google autocomplete.
-- Claude and Codex, each answering with live web search.
-- It counts how often your app gets named.
-- $0 if you already have Claude Code or Codex.
+2/ The tool (open source, MIT):
+- real search queries from Google autocomplete;
+- Claude Code + Codex answering with live web search;
+- counts how often your app is named.
+No extra charges if you already have Claude Code or Codex. It does use your plan limits.
 
-3/ The part we care about: a pre-registered reliability gate.
-- R1: split-half reliability ≥ 0.8.
-- R2: CI ±10 pp.
-- R3: an independent AI judge agrees with the extractor, κ ≥ 0.8.
-Fail any of them and the report says NOT RELIABLE, and how much more data it needs.
+3/ A gate fixed before any data:
+- R1 split-half reliability ≥ 0.8;
+- R2 interval ±10 pp;
+- R3 independent AI judge agrees with the extractor, κ ≥ 0.8.
+If any check fails: NOT RELIABLE, plus how much more data it needs.
 
-4/ Benchmark: 4 categories × 2 engines, all cells published. {table image}
+4/ Result at 60 prompts: only 2 of 8 cells were reliable. R1 and R3 passed everywhere. Precision was the problem.
 
-5/ Lessons:
-- Engines disagree hugely ({X}% vs {Y}%).
-- Without web search, the picks don't track real usage.
-- Codex will try to *build* you the app unless told otherwise.
+5/ Then we gave each category the number of prompts the gate prescribed. 7 of 8 became reliable. The miss: Korean ran out of real queries at 43 (55 needed).
 
-6/ MIT, zero deps, CLI + MCP + skills: {repo url}
+6/ Also:
+- Claude vs Codex disagree hugely (budgeting: 63% vs 28%).
+- "Do picks match real App Store usage?" was undecided: too few apps per category to test.
+- 372 Claude answers hit the 5-hour session limit.
+
+7/ {table image} · code, raw answers, pre-registration: {repo url}

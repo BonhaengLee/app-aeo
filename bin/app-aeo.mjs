@@ -3,7 +3,7 @@
 // Exit codes: 0 complete · 10 partial (failed calls, halted engine, or budget cut) · 1 nothing answered / lint error · 2 bad input
 import fs from 'node:fs';
 import path from 'node:path';
-import { runCheck, runAdaptive, gateRun, renderGate, latestRows, trend, validateConfig, configFingerprint, DEFAULT_MAX_CALLS } from '../src/run.mjs';
+import { runCheck, runAdaptive, gateRun, renderGate, latestRows, trend, validateConfig, configFingerprint, DEFAULT_MAX_CALLS, DEFAULT_PROMPTS } from '../src/run.mjs';
 import { audit as runAudit } from '../src/judge.mjs';
 import { hydrate, lookup, search, suggestPrompts } from '../src/store.mjs';
 import { lint, renderLint, validateListing } from '../src/lint.mjs';
@@ -27,7 +27,7 @@ Usage
   app-aeo lookup <appStoreId ...> [--country us]
   app-aeo search <term> [--country us]
   app-aeo lint <listing.json> [--avoid "Brand A,Brand B"] [--json]
-  app-aeo init <config.json> --category "..." --app-id <appStoreId> [--competitor-id ID ...] [--locale en|ko] [--country us] [--prompts 20]
+  app-aeo init <config.json> --category "..." --app-id <appStoreId> [--competitor-id ID ...] [--locale en|ko] [--country us] [--prompts 100]
 
 Engines (config "providers"): ${Object.keys(PROVIDERS).join(', ')}
   claude-cli / codex-cli use the CLIs you are logged into (no API key). Others read *_API_KEY env vars.
@@ -183,9 +183,11 @@ async function main(argv) {
     if (!d.recommended.providers.length) { console.error(renderDoctor(d)); return 1; }
     const promptArgs = { category: opt['--category'], competitors: cs.map((c) => brandOf(c.name, opt['--category'])), locale: opt['--locale'] ?? 'en' };
     let prompts;
-    const nPrompts = opt['--prompts'] ? Number(opt['--prompts']) : 20;
+    const nPrompts = opt['--prompts'] ? Number(opt['--prompts']) : DEFAULT_PROMPTS;
     try { prompts = opt['--no-autocomplete'] ? suggestPrompts(promptArgs) : await autocompletePrompts({ ...promptArgs, max: nPrompts }); }
     catch (e) { console.error(`autocomplete unavailable (${e.message}) — using templates`); prompts = suggestPrompts(promptArgs); }
+    // ko-gagyebu in the benchmark ran out at 43 queries and its codex cell stayed NOT RELIABLE — say so up front.
+    if (prompts.length < nPrompts) console.error(`only ${prompts.length} distinct prompts found (asked for ${nPrompts}). The gate may report R2 NOT RELIABLE; add your users' real questions to cfg.json.`);
     const cfg = {
       country,
       target: asApp(t),
@@ -198,7 +200,7 @@ async function main(argv) {
       maxCalls: Math.max(DEFAULT_MAX_CALLS, prompts.length * d.recommended.providers.length * 2),
     };
     fs.writeFileSync(pos[0], JSON.stringify(cfg, null, 2) + '\n');
-    console.log(`wrote ${pos[0]} — ${cfg.prompts.length} prompts × ${cfg.providers.length} engines. Edit aliases/prompts, then: app-aeo check ${pos[0]} --dry-run`);
+    console.log(`wrote ${pos[0]} — ${cfg.prompts.length} prompts × ${cfg.providers.length} engines. Edit aliases/prompts, then: app-aeo check ${pos[0]} --dry-run (cost preview), then: app-aeo check ${pos[0]} --gate`);
     return 0;
   }
   console.error(`unknown command "${cmd}"\n\n${HELP}`);

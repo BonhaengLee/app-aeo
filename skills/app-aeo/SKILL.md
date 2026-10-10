@@ -18,22 +18,24 @@ Run `app-aeo doctor` (add `--live` to ask each engine one tiny question).
    - Find its App Store id with `app-aeo search "<name>"` and confirm it with the user if there are several.
    - Pick 2–5 real competitors with the user, or take the top results for the category.
 2. Run `app-aeo init cfg.json --category "<category in the users' words>" --app-id <id> --competitor-id <id> ...`
-   - The prompts come from real Google autocomplete queries.
+   - The prompts come from real Google autocomplete queries, 100 by default. In the benchmark, 60 prompts were too few for a ±10 pp interval in 6 of 8 cells.
    - The engines come from `doctor`. `repeats` is 2.
-3. Open `cfg.json`. Check that `target.name` is the **brand** ("HabitKit", not "Habit Tracker"). Add the user's own real use-case questions if they have any. Keep 10 or more prompts.
+   - If `init` warns that it found fewer than 100 prompts (common for Korean), ask the user for their users' real questions and add them.
+3. Open `cfg.json`. Check that `target.name` is the **brand** ("HabitKit", not "Habit Tracker").
+4. Tell the user the cost before running: `app-aeo check cfg.json --dry-run` prints the number of calls. These use their Claude Code / Codex plan limits. In the benchmark, about 370 Claude answers reached the 5-hour session limit.
 
-## 3. Measure twice, then validate
-Run `app-aeo check cfg.json --out runsA` and `app-aeo check cfg.json --out runsB`. They can run in parallel.
+## 3. Measure with the gate
+Run `app-aeo check cfg.json --gate`. It measures, adds repeats while R1 is short, runs the independent judge audit, and prints one verdict per engine:
+- **RELIABLE**: R1 split-half reliability ≥ 0.80, R2 interval ±10 pp or tighter, R3 judge κ ≥ 0.80.
+- **NOT RELIABLE**: the gate prints how many more prompts (R2) or repeats (R1) it needs.
+- **INDETERMINATE**: something could not be measured (e.g. the judge failed). Never treat it as a pass.
 
-Then run `app-aeo validate runsA/<run> runsB/<run> --popularity --engine <spec>` for each search engine. It checks two things:
-- **Test–retest**: do the two runs rank the frequently named apps the same way? (ρ ≥ 0.5, p < 0.05)
-- **Convergent validity**: do the apps this engine recommends track real App Store usage (rating counts)?
+Optional usage check: `app-aeo validate <run> --popularity --engine <spec>` compares the engine's picks with App Store rating counts. With fewer than ~10 frequently named apps it has little power; the benchmark could not decide it in 7 of 8 cells. Report it, but don't lean on it.
 
 ## 4. Report — rules
-- Lead with the target's mention rate per engine, with its interval. Say which mode each engine is in: search, rag or memory.
-- State the validation verdicts **as they came out**:
-  - If the retest failed, the numbers are noise. Say so and do not give advice from them.
-  - If popularity failed, say the engine's picks don't track the real market for this category. Rates can still be compared over time, but don't call them market signals.
+- Lead with the gate verdict per engine. Only give a mention rate as a finding if that engine is RELIABLE. Otherwise show it labelled NOT RELIABLE, with what more data it needs.
+- Give the target's mention rate per engine with its interval. Say which mode each engine is in: search, rag or memory.
+- If the usage check failed or was too small, say so. Rates can still be compared over time, but don't call them market signals.
 - Show the prompts where the app was missing, and the apps recommended instead (with the sources engines cited, if any).
 - **Never:**
   - turn a mention rate into installs, revenue or market share;

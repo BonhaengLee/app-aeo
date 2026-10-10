@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.1 — 2026-10-10
+- `init` now asks for **100 prompts** by default (was 20), and warns when autocomplete returns fewer. Why: in the benchmark, 60 prompts failed R2 in 6 of 8 cells, and at the gate's prescription (70–100) 7 of 8 passed.
+- `init` points to `check --gate` after the cost preview.
+- The benchmark finished. `bench/BENCHMARK.md` now has a follow-up table, and `DEVIATIONS.md` has D4 (weekly limit, Korean prompt pool exhausted).
+- README, skill, methodology and launch drafts now state the benchmark results. The 7-app pilot result (ρ = 0.91) is labelled a single observation, not a general finding. Added a section on alternatives and a note on quota cost.
+
 ## 0.3.0 — 2026-10-10
 - Added a reliability gate, `check --gate`:
   - R1: split-half rate reliability, Spearman–Brown corrected.

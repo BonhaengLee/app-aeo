@@ -10,6 +10,9 @@ import { GATE, gateVerdict, precision, splitHalfRank } from './reliability.mjs';
 import { audit as runAudit } from './judge.mjs';
 
 export const DEFAULT_MAX_CALLS = 120;
+// Benchmark (bench/BENCHMARK.md): at 60 prompts R2 failed in 6 of 8 cells; the gate prescribed 68–93 for the US
+// categories, and at 70–100 prompts every US cell passed. 100 is the smallest round default that covered all of them.
+export const DEFAULT_PROMPTS = 100;
 
 /** Validate a config object. Returns a list of problems (empty = ok). */
 export function validateConfig(cfg) {

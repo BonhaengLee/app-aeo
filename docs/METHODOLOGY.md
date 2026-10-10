@@ -19,7 +19,8 @@ It is **not** a recommendation score, market share, traffic, or install estimate
 - The set is **frozen** in the run's `config.json`.
   - Results are only comparable within one prompt set; a fingerprint over target, competitors, prompts, grounding and country enforces this.
   - `--resume` and `validate` refuse to mix different fingerprints.
-- **Limitation:** autocomplete reflects search behaviour, which is not the same as chat behaviour. Korean autocomplete is sparse, so Korean sets are topped up with templates, and the run records how many prompts came from each source.
+- **How many.** `init` asks for 100 prompts by default. In the benchmark, R2 (±10 pp) failed in 6 of 8 cells at 60 prompts. The gate prescribed 68–93 for the US categories, and every US cell passed at 70–100.
+- **Limitation:** autocomplete reflects search behaviour, which is not the same as chat behaviour. Korean autocomplete is sparse, so Korean sets are topped up with templates, and the run records how many prompts came from each source. In the benchmark the Korean pool ran out at 43 (29 autocomplete + 14 templates) against a prescription of 55. `init` warns when it finds fewer prompts than requested.
 
 ## 3. Engines and harness
 - **Search mode** (primary).
@@ -70,7 +71,7 @@ Outcomes:
   - p-value from 5000 permutations.
 - **Known limits:**
   - Rating counts are US/KR App Store only. Android-only apps have no comparable count.
-  - With 5–7 matched apps the test has little power.
+  - With 5–7 matched apps the test has little power. In the benchmark, 7 of 8 cells had only 3–6 apps above the 5% floor, so H3 (≥ half of cells ρ ≥ 0.5, p < 0.05) came out 1/8. That result says the test was underpowered. It is not evidence for or against validity.
 - **Not established by anyone yet:**
   - that the engines measured here match what the consumer ChatGPT or Gemini apps show;
   - that listing changes move the mention rate;
