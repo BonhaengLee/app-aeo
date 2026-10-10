@@ -1,0 +1,21 @@
+Forecast the engine-level name-mention rate, not market share or recommendation quality.
+
+{{definition}}
+
+You must estimate it for this category: {{category}}
+Observed apps: {{apps}}
+
+Question set:
+{{prompts}}
+
+Use web search strategically to establish each app’s identity, prominence, terminology, regional relevance, and feature associations. Then translate that evidence into the behavior of the same assistant answering these exact prompts. The translation matters: an app can be popular yet absent from answers for incompatible intents, while an app can be named often because its name is embedded in an alternative/comparison query.
+
+Perform two internal passes:
+
+- Bottom-up: inspect every query and predict whether the natural answer would name each app.
+- Top-down: form a base-rate expectation for how frequently this engine names each app in this category, then adjust it for the actual mix of generic, constrained, explicit-name, and off-topic queries.
+
+Reconcile the passes by trusting concrete query-level triggers over broad web popularity. Count a name anywhere in an answer, including criticism or comparison. Average over questions, not over answer slots or only recommendation questions.
+
+Give no tables. End the response with precisely one JSON object using these exact keys, with plain numeric 0–100 percentages:
+{{json}}

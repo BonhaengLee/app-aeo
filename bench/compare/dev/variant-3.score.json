@@ -1,0 +1,177 @@
+{
+  "variant": "variant-3.txt",
+  "mse": 0.021266171926450406,
+  "rmse": 0.14582925607178557,
+  "scored": 24,
+  "missing": 0,
+  "rows": [
+    {
+      "category": "meditation",
+      "engine": "claude-search",
+      "app": "Insight Timer",
+      "truth": 0.69,
+      "est": 0.52
+    },
+    {
+      "category": "meditation",
+      "engine": "claude-search",
+      "app": "Calm",
+      "truth": 0.805,
+      "est": 0.64
+    },
+    {
+      "category": "meditation",
+      "engine": "claude-search",
+      "app": "Headspace",
+      "truth": 0.88,
+      "est": 0.71
+    },
+    {
+      "category": "meditation",
+      "engine": "codex-search",
+      "app": "Insight Timer",
+      "truth": 0.49,
+      "est": 0.57
+    },
+    {
+      "category": "meditation",
+      "engine": "codex-search",
+      "app": "Calm",
+      "truth": 0.36,
+      "est": 0.52
+    },
+    {
+      "category": "meditation",
+      "engine": "codex-search",
+      "app": "Headspace",
+      "truth": 0.535,
+      "est": 0.55
+    },
+    {
+      "category": "budgeting",
+      "engine": "claude-search",
+      "app": "Monarch Money",
+      "truth": 0.6357142857142857,
+      "est": 0.44
+    },
+    {
+      "category": "budgeting",
+      "engine": "claude-search",
+      "app": "YNAB",
+      "truth": 0.9,
+      "est": 0.61
+    },
+    {
+      "category": "budgeting",
+      "engine": "claude-search",
+      "app": "Rocket Money",
+      "truth": 0.3357142857142857,
+      "est": 0.41
+    },
+    {
+      "category": "budgeting",
+      "engine": "codex-search",
+      "app": "Monarch Money",
+      "truth": 0.2785714285714286,
+      "est": 0.37
+    },
+    {
+      "category": "budgeting",
+      "engine": "codex-search",
+      "app": "YNAB",
+      "truth": 0.6071428571428571,
+      "est": 0.76
+    },
+    {
+      "category": "budgeting",
+      "engine": "codex-search",
+      "app": "Rocket Money",
+      "truth": 0.07857142857142857,
+      "est": 0.38
+    },
+    {
+      "category": "language",
+      "engine": "claude-search",
+      "app": "Babbel",
+      "truth": 0.495,
+      "est": 0.53
+    },
+    {
+      "category": "language",
+      "engine": "claude-search",
+      "app": "Duolingo",
+      "truth": 0.92,
+      "est": 0.83
+    },
+    {
+      "category": "language",
+      "engine": "claude-search",
+      "app": "Busuu",
+      "truth": 0.455,
+      "est": 0.47
+    },
+    {
+      "category": "language",
+      "engine": "codex-search",
+      "app": "Babbel",
+      "truth": 0.44,
+      "est": 0.46
+    },
+    {
+      "category": "language",
+      "engine": "codex-search",
+      "app": "Duolingo",
+      "truth": 0.685,
+      "est": 0.82
+    },
+    {
+      "category": "language",
+      "engine": "codex-search",
+      "app": "Busuu",
+      "truth": 0.35,
+      "est": 0.39
+    },
+    {
+      "category": "ko-gagyebu",
+      "engine": "claude-search",
+      "app": "편한가계부",
+      "truth": 0.8488372093023255,
+      "est": 0.72
+    },
+    {
+      "category": "ko-gagyebu",
+      "engine": "claude-search",
+      "app": "뱅크샐러드",
+      "truth": 0.9186046511627907,
+      "est": 0.78
+    },
+    {
+      "category": "ko-gagyebu",
+      "engine": "claude-search",
+      "app": "위플 가계부",
+      "truth": 0.6162790697674418,
+      "est": 0.61
+    },
+    {
+      "category": "ko-gagyebu",
+      "engine": "codex-search",
+      "app": "편한가계부",
+      "truth": 0.6918604651162791,
+      "est": 0.47
+    },
+    {
+      "category": "ko-gagyebu",
+      "engine": "codex-search",
+      "app": "뱅크샐러드",
+      "truth": 0.6046511627906976,
+      "est": 0.51
+    },
+    {
+      "category": "ko-gagyebu",
+      "engine": "codex-search",
+      "app": "위플 가계부",
+      "truth": 0.16279069767441862,
+      "est": 0.3
+    }
+  ]
+}

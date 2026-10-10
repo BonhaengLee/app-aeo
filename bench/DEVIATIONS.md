@@ -1,5 +1,10 @@
 D1 and D2 were written down **before** their data was collected. The pre-registered results are reported as run, next to the follow-ups.
 
+**D0 — Korean cell ran with 43 prompts, not 60 (found in review on 2026-10-10, listed late).**
+- The pre-registration says 60 prompts per category. For 가계부 (KR), autocomplete plus the Korean templates yielded only 43 distinct queries, and the run used all 43.
+- The Korean cell therefore had fewer prompts than the others. Its R2 is not directly comparable.
+- This should have been listed when the run started; it was not, and is recorded here instead of silently.
+
 **D1 — extractor fix (after meditation and language had finished, before the follow-up runs).**
 - The LLM-judge audit (R3) found the extractor counting the ordinary word "calm" as the app *Calm*: 9 of 240 audited pairs in meditation.
 - Fix: one-word Title-case Latin brands now match only when capitalised (`isWordLikeBrand`). There is a regression test for it.

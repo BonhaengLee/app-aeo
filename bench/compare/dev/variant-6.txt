@@ -1,0 +1,23 @@
+Estimate a hidden benchmark result for the same assistant answering a fixed prompt population. Be calibrated and literal.
+
+Category: {{category}}
+Apps to track: {{apps}}
+
+Metric:
+{{definition}}
+
+Population of queries:
+{{prompts}}
+
+Silently construct an answer-selection ledger over all queries. For each query, predict the assistant’s likely named shortlist or explanation after web search, then score each tracked app for name presence. Keep separate mental totals for:
+
+- broad recommendation queries;
+- constraint/audience/feature queries;
+- free, price, subscription, and availability queries;
+- app-name, alternative, comparison, or competitor-trigger queries;
+- queries that are vague, off-topic, or likely answered without recommendations.
+
+Use the actual frequencies of those groups in the provided list. Search only to settle factual fit or canonical naming behavior. Avoid two common errors: reporting an app’s real-world popularity, and assuming every relevant app is named in the same answer. The target counts any occurrence of a name, whether favorable, comparative, or critical.
+
+After a skeptical review of the ledger, report the equal-weight mean for every app as a percentage. Do not provide an explanation, markdown, or additional JSON. End with exactly this one JSON object shape, replacing zeros with your estimates:
+{{json}}

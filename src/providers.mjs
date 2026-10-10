@@ -89,12 +89,12 @@ export const SEARCH_TIMEOUT_MS = 420_000;
 /** Sum of web searches Claude Code reports in modelUsage (per-model counters). */
 export const claudeSearchCount = (j) => Object.values(j.modelUsage ?? {}).reduce((n, u) => n + (u.webSearchRequests ?? 0), 0) + (j.usage?.server_tool_use?.web_search_requests ?? 0);
 
-function claudeAsker({ search }) {
+function claudeAsker({ search, system = null }) {
   return async (prompt, { model, timeoutMs, run = runChild }) => {
     // Replace Claude Code's coding-agent system prompt: we want the answer a general assistant gives, not a coding agent.
     const args = ['-p', '--output-format', 'json', '--setting-sources', '', '--strict-mcp-config', '--no-session-persistence'];
-    if (search) args.push('--tools', 'WebSearch', '--allowedTools', 'WebSearch', '--system-prompt', SEARCH_SYSTEM);
-    else args.push('--tools', '', '--system-prompt', MEMORY_SYSTEM);
+    if (search) args.push('--tools', 'WebSearch', '--allowedTools', 'WebSearch', '--system-prompt', system ?? SEARCH_SYSTEM);
+    else args.push('--tools', '', '--system-prompt', system ?? MEMORY_SYSTEM);
     if (model) args.push('--model', model);
     const label = search ? 'claude-search' : 'claude-cli';
     const r = await run('claude', args, { input: prompt, cwd: os.tmpdir(), timeoutMs });
@@ -135,12 +135,12 @@ export function codexEvents(jsonl) {
   return { searches, urls: [...urls] };
 }
 
-function codexAsker({ search }) {
+function codexAsker({ search, system = null }) {
   return async (prompt, { model, timeoutMs, run = runChild }) => {
     const home = isolatedCodexHome();
     const work = fs.mkdtempSync(path.join(os.tmpdir(), 'app-aeo-codex-'));
     const out = path.join(work, 'answer.txt');
-    const args = [...(search ? ['--search'] : []), 'exec', '--skip-git-repo-check', '--ephemeral', '-s', 'read-only', '--json', '-c', `developer_instructions=${JSON.stringify(search ? SEARCH_SYSTEM : MEMORY_SYSTEM)}`, '-o', out];
+    const args = [...(search ? ['--search'] : []), 'exec', '--skip-git-repo-check', '--ephemeral', '-s', 'read-only', '--json', '-c', `developer_instructions=${JSON.stringify(system ?? (search ? SEARCH_SYSTEM : MEMORY_SYSTEM))}`, '-o', out];
     if (model) args.push('-m', model);
     args.push('-');
     const label = search ? 'codex-search' : 'codex-cli';
@@ -266,3 +266,11 @@ export async function ask(spec, prompt, { timeoutMs, chainState = newChainState(
 
 /** Errors after which asking the same provider again in this run is pointless. */
 export const HALTING_KINDS = Object.freeze(new Set(['rate_limited', 'auth', 'quota', 'config']));
+
+/** Same CLIs, isolation and web search as claude-search / codex-search, with a different system prompt. Used by the
+ *  comparison study's direct-estimate arms (bench/compare), where the consumer-assistant role would be the wrong task. */
+export function searchAskerWithSystem(engine, system) {
+  if (engine === 'claude-search') return claudeAsker({ search: true, system });
+  if (engine === 'codex-search') return codexAsker({ search: true, system });
+  throw new Error(`searchAskerWithSystem: unknown engine ${engine}`);
+}

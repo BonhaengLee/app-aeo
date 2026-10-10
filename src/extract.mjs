@@ -35,7 +35,7 @@ export function aliasesOf(app) {
   return [...new Set(names)].filter((n) => [...n].length >= 3 || /[^\x00-\x7F]/.test(n));
 }
 
-const GENERIC = new Set(['app', 'apps', 'the', 'and', 'for', 'free', 'best', 'my', 'daily', 'simple', 'pro', 'plus', 'lite', '&', 'with', 'your', 'tracker', 'planner', 'manager', 'maker', 'editor', 'widget', 'widgets', 'game', 'games', '앱', '어플']);
+export const GENERIC = new Set(['app', 'apps', 'the', 'and', 'for', 'free', 'best', 'my', 'daily', 'simple', 'pro', 'plus', 'lite', '&', 'with', 'your', 'tracker', 'planner', 'manager', 'maker', 'editor', 'widget', 'widgets', 'game', 'games', '앱', '어플']);
 const words = (s) => nfc(s).toLowerCase().split(/[\s\p{P}\p{S}]+/u).filter(Boolean);
 
 /** Brand part of a store title: the first " - " / ":" segment that has a word outside the category and generic words. */

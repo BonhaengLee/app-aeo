@@ -1,0 +1,8 @@
+{"key":"meditation\tclaude-search","at":"2026-10-10T09:58:00.044Z","model":"claude-opus-4-6[1m]","text":"{\"Insight Timer\":52,\"Calm\":67,\"Headspace\":73}"}
+{"key":"meditation\tcodex-search","at":"2026-10-10T09:58:07.547Z","model":null,"text":"{\"Insight Timer\":42,\"Calm\":58,\"Headspace\":61}"}
+{"key":"budgeting\tclaude-search","at":"2026-10-10T10:02:10.982Z","model":"claude-opus-4-6[1m]","text":"{\"Monarch Money\":49,\"YNAB\":73,\"Rocket Money\":43}"}
+{"key":"budgeting\tcodex-search","at":"2026-10-10T10:02:26.612Z","model":null,"text":"{\"Monarch Money\":36,\"YNAB\":53,\"Rocket Money\":46}"}
+{"key":"language\tclaude-search","at":"2026-10-10T10:10:01.668Z","model":"claude-opus-4-6[1m]","text":"{\"Babbel\":52,\"Duolingo\":85,\"Busuu\":39}"}
+{"key":"language\tcodex-search","at":"2026-10-10T10:10:16.649Z","model":null,"text":"{\"Babbel\":43,\"Duolingo\":82,\"Busuu\":42}"}
+{"key":"ko-gagyebu\tclaude-search","at":"2026-10-10T10:13:51.512Z","model":"claude-opus-4-6[1m]","text":"{\"편한가계부\":76,\"뱅크샐러드\":75,\"위플 가계부\":47}"}
+{"key":"ko-gagyebu\tcodex-search","at":"2026-10-10T10:14:07.839Z","model":null,"text":"{\"편한가계부\":74,\"뱅크샐러드\":67,\"위플 가계부\":42}"}

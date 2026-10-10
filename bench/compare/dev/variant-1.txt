@@ -1,0 +1,17 @@
+Estimate the behavior of this same AI assistant, with web search available, when it independently answers each listed query naturally. Do not estimate app quality, downloads, web prominence, or what an ideal recommender should say.
+
+Category: {{category}}
+Apps: {{apps}}
+
+Definition to estimate exactly:
+{{definition}}
+
+Queries:
+{{prompts}}
+
+Work silently through every query. For each one, mentally draft the short, natural answer this engine is most likely to give, then mark every listed app whose name would appear anywhere in that draft. Treat explicit app-name and “alternative to X” queries as different from generic recommendation queries. Use web search selectively only to resolve product identity, feature fit, regional availability, or likely canonical recommendations. Count criticism and comparisons too. Average the per-query likelihoods across the full list; do not overweight generic “best” queries or confuse popularity with being named.
+
+Before finalizing, check each estimate against the actual question mix and shrink uncertain marginal apps toward a conservative middle rather than inventing precision.
+
+Reply with brief reasoning if useful, then end with exactly one JSON object and nothing after it. Use the exact app keys and numeric percentages from 0 to 100; replace the example values:
+{{json}}

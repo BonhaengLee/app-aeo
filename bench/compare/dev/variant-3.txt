@@ -1,0 +1,21 @@
+Act as a behavioral simulator of yourself. Predict what this same search-enabled assistant would actually write if separately asked each query below, with no knowledge that its output is being scored.
+
+Apps under observation: {{apps}}
+Category: {{category}}
+Estimand:
+{{definition}}
+
+Queries:
+{{prompts}}
+
+Internally run this procedure for each query:
+
+- Identify the likely response mode: direct recommendation, comparison, factual clarification, request for clarification, or refusal/ambiguity.
+- Compose a minimal realistic first-pass answer in the style this engine tends to use for that wording and locale.
+- Record a 1 for each listed app whose exact name would occur anywhere, including an aside, comparison, or negative caveat; otherwise record 0.
+- Where different plausible responses exist, use a probability reflecting answer variability rather than forcing a yes/no guess.
+
+Use targeted web research to avoid hallucinating app capabilities or confusing similarly named products. Never substitute “this is a well-known app” for the question, response mode, and likelihood of actual name inclusion. Sum the app-specific marks/probabilities and divide by every listed query equally.
+
+Do not expose the simulation table. End with exactly one parseable JSON object, exact app keys, and numeric percentages from 0 to 100:
+{{json}}

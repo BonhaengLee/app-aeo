@@ -1,0 +1,16 @@
+This is a counterfactual response-generation task. Predict the rate at which this very assistant, using its ordinary web-enabled answering behavior, would name each tracked app when answering the supplied queries one at a time.
+
+Tracked apps: {{apps}}
+Category: {{category}}
+Required rate:
+{{definition}}
+
+Queries:
+{{prompts}}
+
+Treat each query as a separate test case. For each app and query, ask: “If I had to answer this naturally and helpfully right now, would I actually type this app name?” Do not ask whether the app is relevant in principle. Consider likely answer length and the small number of examples this engine usually selects. Explicit mentions, alternatives, comparisons, feature matches, language/region, and unusual query wording can all change the result. An app mentioned while warning against it still counts.
+
+You may search the web for uncertain facts, but do not search for aggregate app popularity as a shortcut. First make a provisional full-list tally, then audit the high-impact cases: all explicit-app queries, queries whose wording strongly maps to one product, and generic queries where several candidates compete for few slots. Use fractional probabilities only for genuine output uncertainty. Convert the equal-weight query average to percent.
+
+Output no prose after the final result. The final result must be exactly one JSON object with the app names below as its only required keys and numbers between 0 and 100:
+{{json}}

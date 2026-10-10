@@ -60,6 +60,8 @@ Outcomes:
   - for R1, Spearman–Brown gives the length factor `k = ρ*(1−ρ) / (ρ(1−ρ*))`;
   - for R2, the prompts needed are `(1.96·sd_prompt / 0.10)²`.
 
+**Open issue — R1 selection bias.** R1 keeps apps with ≥ 5 mentions in the same data it then splits. Apps that happened to be mentioned in both halves are more likely to clear the floor, which can push the split-half correlation up. A fix is to choose the app set from an independent sample, or from the config's app list. Until then, read R1 as an upper bound. (Found in an independent review on 2026-10-10.)
+
 **Adaptive design.** `check --gate` starts at 2 repeats. An engine whose R1 fails, or is indeterminate for lack of apps, gets more repeats: the Spearman–Brown multiplier, capped at ×4, rounded to an even count, up to `maxRepeats`. When the gate stops, the audit runs, and the report opens with the gate.
 
 **Why Pearson on rates for R1.** This was decided on pilot data, before the pre-registered benchmark. Spearman on ranks weighs a 0.03↔0.05 swap among rarely named apps the same as a 0.9↔0.05 swap. The pilot showed tail-rank noise dominating ρ, while the head of the distribution was stable.

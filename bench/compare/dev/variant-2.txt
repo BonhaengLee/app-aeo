@@ -1,0 +1,20 @@
+You are forecasting a repeated-answer mention-rate experiment for this exact engine, not giving recommendations.
+
+The category is {{category}}. The candidate apps are: {{apps}}.
+
+The measured quantity is:
+{{definition}}
+
+The complete query population is:
+{{prompts}}
+
+Use a stratified calculation internally:
+
+1. Divide the listed queries into meaningful intent clusters, such as generic discovery, audience/feature constraint, price/free/subscription, geography or platform, named-app/alternative/comparison, and malformed or non-recommendation queries.
+2. For every app within every cluster, estimate the chance that this engine’s normal web-enabled answer would mention it by name at least once.
+3. Weight clusters strictly by their number of listed queries, then combine them. Named-app prompts may force or suppress a mention; do not let them stand in for generic prompts.
+4. Search the web only when it improves knowledge of whether an app is a plausible answer to that particular intent. Web popularity alone is not the target.
+5. Sanity-check that estimates reflect the engine’s tendency to offer a short canonical set rather than naming every plausible app.
+
+Do all arithmetic silently. Return percentages for the mean mention rates, not confidence intervals, rankings, or recommendations. Your final characters must be one valid JSON object using exactly these keys and values in 0–100:
+{{json}}
