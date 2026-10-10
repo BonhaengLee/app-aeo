@@ -1,7 +1,7 @@
 {
   "meta": {
-    "startedAt": "2026-10-09T17:59:00.689Z",
-    "finishedAt": "2026-10-09T18:27:05.372Z",
+    "startedAt": "2026-10-09T19:54:06.899Z",
+    "finishedAt": "2026-10-09T19:57:22.552Z",
     "promptSet": "c5555657b240",
     "providers": [
       "claude-search",
@@ -9,7 +9,7 @@
     ],
     "ground": null,
     "groundSearches": 0,
-    "calls": 240,
+    "calls": 0,
     "halted": {},
     "skippedByBudget": 0,
     "repeatsByEngine": {
@@ -565,26 +565,26 @@
         {
           "id": "R1 rate reliability",
           "status": "PASS",
-          "halfR": 0.9868121809702187,
-          "reliability": 0.9933623222385614,
+          "halfR": 0.9895960533939988,
+          "reliability": 0.994770824666518,
           "spearmanHalf": 0.9428571428571428,
           "coreApps": 6,
           "moreDataFactor": 1,
-          "value": 0.9933623222385614,
+          "value": 0.994770824666518,
           "threshold": "≥ 0.8"
         },
         {
           "id": "R2 precision (±)",
           "status": "FAIL",
-          "rate": 0.48333333333333334,
+          "rate": 0.475,
           "ci": [
-            0.36666666666666664,
-            0.6083333333333333
+            0.35,
+            0.6
           ],
-          "halfWidth": 0.12083333333333332,
+          "halfWidth": 0.125,
           "prompts": 60,
-          "promptsNeeded": 92,
-          "value": 0.12083333333333332,
+          "promptsNeeded": 93,
+          "value": 0.125,
           "threshold": "≤ 0.1"
         },
         {
@@ -606,25 +606,25 @@
         {
           "id": "R1 rate reliability",
           "status": "PASS",
-          "halfR": 0.9871436718491055,
-          "reliability": 0.9935302472926222,
+          "halfR": 0.9880065709153522,
+          "reliability": 0.9939671079260438,
           "spearmanHalf": 0.8658869394132948,
           "coreApps": 15,
           "moreDataFactor": 1,
-          "value": 0.9935302472926222,
+          "value": 0.9939671079260438,
           "threshold": "≥ 0.8"
         },
         {
           "id": "R2 precision (±)",
           "status": "FAIL",
-          "rate": 0.5416666666666666,
+          "rate": 0.5333333333333333,
           "ci": [
-            0.425,
-            0.6583333333333333
+            0.4166666666666667,
+            0.65
           ],
           "halfWidth": 0.11666666666666667,
           "prompts": 60,
-          "promptsNeeded": 89,
+          "promptsNeeded": 91,
           "value": 0.11666666666666667,
           "threshold": "≤ 0.1"
         },

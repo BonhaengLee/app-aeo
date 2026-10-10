@@ -1,0 +1,117 @@
+{
+  "country": "us",
+  "target": {
+    "name": "Monarch Money",
+    "aliases": [
+      "Monarch: Budget & Track Money",
+      "Monarch"
+    ],
+    "appStoreId": "1459319842"
+  },
+  "competitors": [
+    {
+      "name": "YNAB",
+      "aliases": [
+        "You Need A Budget"
+      ],
+      "appStoreId": "1010865877"
+    },
+    {
+      "name": "Rocket Money",
+      "aliases": [
+        "Rocket Money - Bills & Budgets"
+      ],
+      "appStoreId": "1130616675"
+    }
+  ],
+  "prompts": [
+    "best budgeting app",
+    "budgeting app for couples",
+    "budgeting app free",
+    "budgeting app without bank sync",
+    "budgeting app with no subscription",
+    "budgeting app that links to bank account",
+    "ynab alternatives canada",
+    "rocket money alternative",
+    "best budgeting app australia",
+    "budgeting app for adhd",
+    "best budgeting banking app",
+    "budgeting app for biweekly pay",
+    "best budgeting app canada",
+    "best budgeting app dave ramsey",
+    "budgeting app for dummies",
+    "best budgeting app europe",
+    "budgeting app for europe",
+    "best budgeting app for couples",
+    "best budgeting app germany",
+    "budgeting app for groceries",
+    "best budgeting app hong kong",
+    "budgeting app for household",
+    "best budgeting app india",
+    "budgeting app for iphone",
+    "best budgeting app kenya",
+    "budgeting app for kids",
+    "best budgeting app like mint",
+    "budgeting app for linux",
+    "best budgeting app malaysia",
+    "budgeting app for macbook",
+    "best budgeting app nz",
+    "budgeting app for nurses",
+    "best budgeting app or spreadsheet",
+    "best budgeting app for overspenders",
+    "best budgeting app philippines",
+    "budgeting app for personal use",
+    "best budgeting app reviews",
+    "budgeting app for retirees",
+    "best budgeting app south africa",
+    "budgeting app for students",
+    "best budgeting app to pay off debt",
+    "budgeting app for teens",
+    "best budgeting app uk",
+    "budgeting app for uk",
+    "best budgeting app with bank sync",
+    "budgeting app for women",
+    "best budgeting apps free",
+    "budgeting app free uk",
+    "budgeting app without subscription",
+    "budgeting app that connects to bank free",
+    "ynab alternative free",
+    "rocket money alternative free",
+    "best budgeting app android",
+    "budgeting app for android",
+    "best budget building app",
+    "budgeting app for beginners",
+    "best budgeting app canada free",
+    "budgeting app for college students",
+    "best budgeting app dollarwise",
+    "budgeting app for debt",
+    "best budgeting app eu",
+    "budgeting app for europeans",
+    "best budgeting app free",
+    "budgeting app for freelancers",
+    "best budget grocery app",
+    "budgeting app for girls",
+    "best budget app household",
+    "budgeting app for home",
+    "best budgeting app ireland",
+    "budgeting app for ipad"
+  ],
+  "promptSources": {
+    "autocomplete": 60,
+    "total": 60
+  },
+  "providers": [
+    "claude-search",
+    "codex-search"
+  ],
+  "repeats": 2,
+  "concurrency": 3,
+  "maxCalls": 2000,
+  "repeatsByEngine": {
+    "claude-search": 2,
+    "codex-search": 2
+  },
+  "extendedFrom": 60,
+  "prescribed": 68,
+  "fingerprint": "97a02c82f26a0a54"
+}

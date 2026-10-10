@@ -4,18 +4,18 @@ _A number is RELIABLE only if R1–R3 all pass. Thresholds were fixed before any
 
 | Engine | Mode | Answers (repeats) | Verdict | R1 rate reliability ≥ 0.8 | R2 precision ± ≤ 0.10 | R3 coding κ ≥ 0.8 |
 |---|---|---|---|---|---|---|
-| codex-search | search | 200 (2) | **INDETERMINATE** | ✅ 1.00 | ✅ 0.09 | ⚪ — (judge produced no usable codes) |
-| claude-search | search | 138 (2) | **INDETERMINATE** | ✅ 1.00 | ✅ 0.10 | ⚪ — (judge produced no usable codes) |
+| codex-search | search | 200 (2) | **RELIABLE** | ✅ 1.00 | ✅ 0.09 | ✅ 1.00 |
+| claude-search | search | 200 (2) | **RELIABLE** | ✅ 1.00 | ✅ 0.08 | ✅ 1.00 |
 
 # App AEO report — Insight Timer
 
-Run 2026-10-09T18:40:33.935Z → 2026-10-09T18:47:31.873Z · 100 prompts · 338 answers · 3 failed calls
+Run 2026-10-09T20:13:44.473Z → 2026-10-09T20:28:21.279Z · 100 prompts · 400 answers · 0 failed calls
 
 ## By answer engine
 
 | Engine | Mode | Model | Prompts × answers | Mention rate (95% CI over prompts) | Same answer on repeat | Avg position | Store link | Share of voice | Failed |
 |---|---|---|---|---|---|---|---|---|---|
-| claude-search | search | claude-opus-4-6[1m] | 78 × 138 | 67% (57%–76%) | 83% (50/60) | 2.4 | 0 | 28% | 3 |
+| claude-search | search | claude-opus-4-6[1m] | 100 × 200 | 69% (61%–77%) | 86% (86/100) | 2.7 | 0 | 29% | 0 |
 | codex-search | search | — | 100 × 200 | 49% (40%–59%) | 92% (92/100) | 1.8 | 11 | 33% | 0 |
 
 _Mode: **search** = answer grounded in a live web search (closest to consumer chat apps) · **memory** = model knowledge only · **agent** = coding-agent CLI. Interval = bootstrap over prompts, so repeats do not fake precision._
@@ -24,9 +24,9 @@ _Mode: **search** = answer grounded in a live web search (closest to consumer ch
 
 | App | claude-search | codex-search |
 |---|---|---|
-| **Insight Timer** | 68% @2.4 | 49% @1.8 |
-| Calm | 83% @3.4 | 44% @2.0 |
-| Headspace | 90% @2.6 | 54% @1.4 |
+| **Insight Timer** | 69% @2.7 | 49% @1.8 |
+| Calm | 83% @3.3 | 44% @2.0 |
+| Headspace | 88% @2.7 | 54% @1.4 |
 
 ## Prompts where at least one answer left the app out
 
@@ -43,19 +43,13 @@ _Mode: **search** = answer grounded in a live web search (closest to consumer ch
 | best meditation app wirecutter | 0/4 |
 | meditation app with orange branding codycross | 0/4 |
 | calm alternative songs | 0/4 |
-| meditation app for garmin | 0/3 |
-| best mindfulness apps kids | 0/3 |
-| meditation app for meta quest | 0/3 |
-| best meditation app meta quest | 0/3 |
-| free meditation app for nhs staff | 0/3 |
-| meditation app for oculus | 0/3 |
-| meditation app for parents | 0/2 |
-| meditation app for teachers | 0/2 |
-| meditation app ui design | 0/2 |
-| meditation app with flashing lights | 0/2 |
-| meditation without app | 0/2 |
-| meditation app for black women | 0/2 |
-| meditation app for adhd | 0/2 |
+| meditation app for garmin | 0/4 |
+| best meditation app meta quest | 0/4 |
+| free meditation app for nhs staff | 0/4 |
+| meditation app for oculus | 0/4 |
+| meditation app with flashing lights | 0/4 |
+| meditation without app | 0/4 |
+| meditation app for black women | 0/4 |
 | meditation app for kids | 1/4 |
 | meditation app with orange branding | 1/4 |
 | best meditation app calm or headspace | 1/4 |
@@ -64,7 +58,10 @@ _Mode: **search** = answer grounded in a live web search (closest to consumer ch
 | best meditation app garmin | 1/4 |
 | best meditation app kids | 1/4 |
 | meditation app for pregnancy | 1/4 |
-| meditation app for weight loss | 1/3 |
+| best mindfulness apps kids | 1/4 |
+| meditation app for meta quest | 1/4 |
+| meditation app for adhd | 1/4 |
+| best meditation app balance | 1/4 |
 | best meditation app australia | 2/4 |
 | meditation app for divorce | 2/4 |
 | meditation app example | 2/4 |
@@ -81,42 +78,46 @@ _Mode: **search** = answer grounded in a live web search (closest to consumer ch
 | meditation app for apple watch | 2/4 |
 | best meditation app for deaf people | 2/4 |
 | meditation app for co parenting | 2/4 |
-| best meditation app subscription | 1/2 |
-| is waking up the best meditation app | 1/2 |
-| best meditation app balance | 1/2 |
-| meditation app for.depression | 2/3 |
-| best meditation app headspace | 2/3 |
-| meditation apps for high blood pressure | 2/3 |
-| meditation app for kids free | 2/3 |
-| best meditation app new york times | 2/3 |
+| best meditation app headspace | 2/4 |
+| meditation apps for high blood pressure | 2/4 |
+| meditation app for weight loss | 2/4 |
+| best meditation app for pregnancy | 2/4 |
+| meditation app for parents | 2/4 |
+| meditation app for teachers | 2/4 |
+| meditation app ui design | 2/4 |
 | meditation app for beginners | 3/4 |
 | meditation app for healing | 3/4 |
 | best meditation app beginners | 3/4 |
 | best meditation app calm | 3/4 |
+| meditation app for.depression | 3/4 |
+| meditation app for kids free | 3/4 |
+| best meditation app new york times | 3/4 |
+| best meditation app subscription | 3/4 |
+| is waking up the best meditation app | 3/4 |
+| meditation app free for teachers | 3/4 |
 
 ## Apps the engines recommend that you did not list
 
 | App (name or store id) | Answers |
 |---|---|
-| name:Medito | 16 |
+| name:Medito | 17 |
 | name:Waking Up | 13 |
-| name:Smiling Mind | 11 |
-| name:UCLA Mindful | 7 |
+| name:Smiling Mind | 12 |
+| name:UCLA Mindful | 8 |
 | name:Start small | 7 |
-| name:Balance | 6 |
+| name:Balance | 7 |
+| name:Healthy Minds Program | 6 |
 | apple:1675603291 | 6 |
-| name:Healthy Minds Program | 5 |
+| name:Try before you buy | 5 |
+| apple:1307736395 | 5 |
 | name:Ten Percent Happier | 4 |
 | name:Be consistent | 4 |
 | name:BetterSleep | 4 |
-| name:Try before you buy | 4 |
 | name:Breethe | 4 |
 | apple:1631848467 | 3 |
-| apple:6744633379 | 3 |
 
 ## Caveats
 
-- claude-search: 2/138 answers had no search results behind them (search mode).
-- claude-search: 3 failed call(s) [rate_limited] — excluded from rates, not counted as "not mentioned".
+- claude-search: 2/200 answers had no search results behind them (search mode).
 
 _Mention = name/alias as a whole word or a store link. Position = list item number when the answer is a list. Nothing here is a market share: it is how often these engines named the app for these prompts on this day._

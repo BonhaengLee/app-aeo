@@ -4,12 +4,12 @@ _A number is RELIABLE only if R1–R3 all pass. Thresholds were fixed before any
 
 | Engine | Mode | Answers (repeats) | Verdict | R1 rate reliability ≥ 0.8 | R2 precision ± ≤ 0.10 | R3 coding κ ≥ 0.8 |
 |---|---|---|---|---|---|---|
-| codex-search | search | 120 (2) | **NOT RELIABLE** | ✅ 0.99 | ❌ 0.12 (needs ~92 prompts) | ✅ 1.00 |
-| claude-search | search | 120 (2) | **NOT RELIABLE** | ✅ 0.99 | ❌ 0.12 (needs ~89 prompts) | ✅ 1.00 |
+| codex-search | search | 120 (2) | **NOT RELIABLE** | ✅ 0.99 | ❌ 0.13 (needs ~93 prompts) | ✅ 1.00 |
+| claude-search | search | 120 (2) | **NOT RELIABLE** | ✅ 0.99 | ❌ 0.12 (needs ~91 prompts) | ✅ 1.00 |
 
 # App AEO report — Babbel
 
-Run 2026-10-09T17:59:00.689Z → 2026-10-09T18:27:05.372Z · 60 prompts · 240 answers · 0 failed calls
+Run 2026-10-09T19:54:06.899Z → 2026-10-09T19:57:22.552Z · 60 prompts · 240 answers · 0 failed calls
 
 ## By answer engine
 

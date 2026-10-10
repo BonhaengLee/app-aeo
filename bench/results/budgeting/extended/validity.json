@@ -1,0 +1,86 @@
+{
+  "claude-search": {
+    "rho": 0.2,
+    "p": 0.9152169566086783,
+    "n": 4,
+    "matched": [
+      {
+        "key": "ynab",
+        "name": "YNAB",
+        "rate": 0.9,
+        "store": "YNAB",
+        "appStoreId": "1010865877",
+        "ratingCount": 61823
+      },
+      {
+        "key": "monarch money",
+        "name": "Monarch Money",
+        "rate": 0.6357142857142857,
+        "store": "Monarch: Budget & Track Money",
+        "appStoreId": "1459319842",
+        "ratingCount": 113262
+      },
+      {
+        "key": "rocket money",
+        "name": "Rocket Money",
+        "rate": 0.3357142857142857,
+        "store": "Rocket Money - Bills & Budgets",
+        "appStoreId": "1130616675",
+        "ratingCount": 397697
+      },
+      {
+        "key": "pocketguard",
+        "name": "PocketGuard",
+        "rate": 0.05,
+        "store": "PocketGuard - Budget App",
+        "appStoreId": "949414211",
+        "ratingCount": 7676
+      }
+    ],
+    "unmatched": [
+      "Goodbudget"
+    ]
+  },
+  "codex-search": {
+    "rho": 0.2,
+    "p": 0.9152169566086783,
+    "n": 4,
+    "matched": [
+      {
+        "key": "ynab",
+        "name": "YNAB",
+        "rate": 0.6071428571428571,
+        "store": "YNAB",
+        "appStoreId": "1010865877",
+        "ratingCount": 61823
+      },
+      {
+        "key": "monarch money",
+        "name": "Monarch Money",
+        "rate": 0.2785714285714286,
+        "store": "Monarch: Budget & Track Money",
+        "appStoreId": "1459319842",
+        "ratingCount": 113262
+      },
+      {
+        "key": "rocket money",
+        "name": "Rocket Money",
+        "rate": 0.07857142857142857,
+        "store": "Rocket Money - Bills & Budgets",
+        "appStoreId": "1130616675",
+        "ratingCount": 397697
+      },
+      {
+        "key": "honeydue",
+        "name": "Honeydue",
+        "rate": 0.05714285714285714,
+        "store": "Honeydue: Couples Finance",
+        "appStoreId": "1157633945",
+        "ratingCount": 10252
+      }
+    ],
+    "unmatched": [
+      "Goodbudget"
+    ]
+  }
+}

@@ -10,12 +10,12 @@
         "rate": 0.9,
         "store": "Headspace: Sleep & Meditation",
         "appStoreId": "493145008",
-        "ratingCount": 973796
+        "ratingCount": 973807
       },
       {
         "key": "calm",
         "name": "Calm",
-        "rate": 0.8583333333333333,
+        "rate": 0.825,
         "store": "Calm",
         "appStoreId": "571800810",
         "ratingCount": 1986354
@@ -48,8 +48,8 @@
     "unmatched": []
   },
   "codex-search": {
-    "rho": 0.6324555320336759,
-    "p": 0.5000999800039992,
+    "rho": 0.4,
+    "p": 0.7488502299540092,
     "n": 4,
     "matched": [
       {
@@ -58,7 +58,7 @@
         "rate": 0.48333333333333334,
         "store": "Headspace: Sleep & Meditation",
         "appStoreId": "493145008",
-        "ratingCount": 973796
+        "ratingCount": 973807
       },
       {
         "key": "insight timer",
@@ -71,7 +71,7 @@
       {
         "key": "calm",
         "name": "Calm",
-        "rate": 0.43333333333333335,
+        "rate": 0.3,
         "store": "Calm",
         "appStoreId": "571800810",
         "ratingCount": 1986354

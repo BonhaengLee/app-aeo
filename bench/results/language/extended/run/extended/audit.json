@@ -2,25 +2,1947 @@
   "byProvider": {
     "codex-search": {
       "judge": "claude-cli",
-      "kappa": null,
-      "agreement": null,
-      "pairs": 0,
-      "judged": 0,
-      "failedBatches": 1,
+      "kappa": 1,
+      "agreement": 1,
+      "pairs": 120,
+      "judged": 40,
+      "failedBatches": 0,
       "disagreements": [],
-      "codes": [],
-      "reason": "judge produced no usable codes"
+      "codes": [
+        {
+          "provider": "codex-search",
+          "prompt": "language learning apps for welsh",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning apps for welsh",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning apps for welsh",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app chinese",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app chinese",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app chinese",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app kids",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app kids",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app kids",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app duolingo",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app duolingo",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app duolingo",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app besides duolingo",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app besides duolingo",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app besides duolingo",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning apps for beginners",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning apps for beginners",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning apps for beginners",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app greek",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app greek",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app greek",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for italian",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for italian",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for italian",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app duolingo",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app duolingo",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app duolingo",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app free with library card",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app free with library card",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app free with library card",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app ever",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app ever",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app ever",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "is busuu free good",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "is busuu free good",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "is busuu free good",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app russian",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app russian",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app russian",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for hebrew",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for hebrew",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for hebrew",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app in the world",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app in the world",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app in the world",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning apps like duolingo",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning apps like duolingo",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning apps like duolingo",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning apps listening",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning apps listening",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning apps listening",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for urdu",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for urdu",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for urdu",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for irish",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for irish",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for irish",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app that doesn't use ai",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app that doesn't use ai",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app that doesn't use ai",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning apps without subscription",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning apps without subscription",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning apps without subscription",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app offline",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app offline",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app offline",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app free with library card",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app free with library card",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app free with library card",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app free no ai",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app free no ai",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app free no ai",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for arabic",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for arabic",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for arabic",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app that insults you",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app that insults you",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app that insults you",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for russian",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for russian",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for russian",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "is busuu free good",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "is busuu free good",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "is busuu free good",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for reading",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for reading",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for reading",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app owl",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app owl",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app owl",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app spanish",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app spanish",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app spanish",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for malayalam",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for malayalam",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for malayalam",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app not duolingo",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app not duolingo",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app not duolingo",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app free",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app free",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app free",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for adults",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for adults",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for adults",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app free no ai",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app free no ai",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app free no ai",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning apps for welsh",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning apps for welsh",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning apps for welsh",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app reviews",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app reviews",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app reviews",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for japanese",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for japanese",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "language learning app for japanese",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app dutch",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app dutch",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best language learning app dutch",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        }
+      ],
+      "reason": null
     },
     "claude-search": {
       "judge": "claude-cli",
-      "kappa": null,
-      "agreement": null,
-      "pairs": 0,
-      "judged": 0,
-      "failedBatches": 1,
+      "kappa": 1,
+      "agreement": 1,
+      "pairs": 120,
+      "judged": 40,
+      "failedBatches": 0,
       "disagreements": [],
-      "codes": [],
-      "reason": "judge produced no usable codes"
+      "codes": [
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app without ai",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app without ai",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app without ai",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app chinese",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app chinese",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app chinese",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for irish",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for irish",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for irish",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app duolingo",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app duolingo",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app duolingo",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app besides duolingo",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app besides duolingo",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app besides duolingo",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for children",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for children",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for children",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for greek",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for greek",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for greek",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app in the world",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app in the world",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app in the world",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for driving",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for driving",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for driving",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app free with library card",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app free with library card",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app free with library card",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app ever",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app ever",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app ever",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "duolingo alternatives for japanese",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "duolingo alternatives for japanese",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "duolingo alternatives for japanese",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app russian",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app russian",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app russian",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app hebrew",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app hebrew",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app hebrew",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for italian",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for italian",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for italian",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning apps like duolingo",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning apps like duolingo",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning apps like duolingo",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for kids free",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for kids free",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for kids free",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning apps free",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning apps free",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning apps free",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app kids",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app kids",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app kids",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app with an owl mascot",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app with an owl mascot",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app with an owl mascot",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app that insults you",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app that insults you",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app that insults you",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app offline",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app offline",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app offline",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app free with library card",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app free with library card",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app free with library card",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app free no ai",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app free no ai",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app free no ai",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app conversation",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app conversation",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app conversation",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app free no ai",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app free no ai",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app free no ai",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for russian",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for russian",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for russian",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "duolingo alternatives for japanese",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "duolingo alternatives for japanese",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "duolingo alternatives for japanese",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for reading",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for reading",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for reading",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for netflix",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for netflix",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for netflix",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app spanish",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app spanish",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app spanish",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app not duolingo",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app not duolingo",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app not duolingo",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for malayalam",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for malayalam",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning app for malayalam",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app free",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app free",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app free",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app besides duolingo",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app besides duolingo",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app besides duolingo",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning apps without subscription",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning apps without subscription",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning apps without subscription",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning apps for welsh",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning apps for welsh",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "language learning apps for welsh",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app speaking",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app speaking",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app speaking",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app for welsh",
+          "repeat": 2,
+          "app": "Babbel",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app for welsh",
+          "repeat": 2,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app for welsh",
+          "repeat": 2,
+          "app": "Busuu",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app except duolingo",
+          "repeat": 1,
+          "app": "Babbel",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app except duolingo",
+          "repeat": 1,
+          "app": "Duolingo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best language learning app except duolingo",
+          "repeat": 1,
+          "app": "Busuu",
+          "judge": true,
+          "extractor": true
+        }
+      ],
+      "reason": null
     }
   }
 }

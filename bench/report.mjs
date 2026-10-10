@@ -63,6 +63,30 @@ for (const d of detail) {
   for (const app of d.agg.perProvider[0].apps) L.push(`| ${app.name === d.cfg.target.name ? `**${app.name}**` : app.name} | ${d.agg.perProvider.map((p) => { const a = p.apps.find((y) => y.name === app.name); return pct(a.rate); }).join(' | ')} |`);
   L.push('', 'Apps the engines recommended that were not in the config (top 8): ' + (d.agg.otherApps.slice(0, 8).map((o) => `${o.key.replace(/^name:/, '')} (${o.count})`).join(', ') || 'none'), '');
 }
+// Follow-up D2 (DEVIATIONS.md): the same gate after extending prompts to its own prescription. Reported next to, never instead of, the pre-registered cells.
+const ext = [];
+for (const c of cats) {
+  const out = path.join(here, 'results', c.id, 'extended');
+  const runRoot = path.join(out, 'run');
+  if (!fs.existsSync(runRoot)) { ext.push({ c, missing: true }); continue; }
+  const dir = path.join(runRoot, fs.readdirSync(runRoot)[0]);
+  const cfg = JSON.parse(fs.readFileSync(path.join(dir, 'config.json'), 'utf8'));
+  const rows = latestRows(path.join(dir, 'responses.jsonl'));
+  const validity = fs.existsSync(path.join(out, 'validity.json')) ? JSON.parse(fs.readFileSync(path.join(out, 'validity.json'), 'utf8')) : {};
+  const audit = fs.existsSync(path.join(dir, 'audit.json')) ? JSON.parse(fs.readFileSync(path.join(dir, 'audit.json'), 'utf8')) : { byProvider: {} };
+  for (const g of gateRun(dir, cfg)) ext.push({ c, g, cfg, v: validity[g.provider], a: audit.byProvider?.[g.provider], failed: rows.filter((r) => !r.ok && r.provider === g.provider).length });
+}
+const extDone = ext.filter((x) => !x.missing);
+L.push('## Follow-up D2 — prompts extended to the gate\'s prescription', '');
+L.push(`Not part of the pre-registered test (see D2). Each category was extended to the gate's own "prompts needed" (rounded up to 10, cap 120), drawing only new Google-autocomplete queries. **RELIABLE ${extDone.filter((x) => x.g.status === 'RELIABLE').length} / ${extDone.length}** after extension.`, '');
+L.push('| Category | Engine | Prompts (pre-reg → extended, prescribed) | Answers (repeats) | R1 | R2 ± | R3 κ | Verdict | Convergent ρ (p, n) |', '|---|---|---|---|---|---|---|---|---|');
+for (const x of ext) {
+  if (x.missing) { L.push(`| ${x.c.id} | — | not run | | | | | ⚪ | |`); continue; }
+  const [r1, r2, r3] = x.g.parts;
+  const short = x.cfg.prompts.length < x.cfg.prescribed ? ' ⚠️ pool exhausted' : '';
+  L.push(`| ${x.c.id} (${x.c.country}) | ${x.g.provider} | ${x.cfg.extendedFrom} → ${x.cfg.prompts.length} (${x.cfg.prescribed})${short} | ${x.g.answers} (${x.g.repeats})${x.failed ? ` +${x.failed} failed` : ''} | ${icon(r1.status)} ${f(r1.value)} | ${icon(r2.status)} ${f(r2.value, 3)} | ${icon(r3.status)} ${f(r3.value)} | **${x.g.status}** | ${x.v ? `${f(x.v.rho)} (${f(x.v.p, 3)}, ${x.v.n})` : '—'} |`);
+}
+L.push('');
 L.push('## Coding audit disagreements', '');
 L.push('Every (answer, app) pair where the extractor and the independent judge disagreed, so readers can see who was right.', '');
 let shown = 0;

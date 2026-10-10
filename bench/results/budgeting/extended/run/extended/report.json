@@ -1,0 +1,693 @@
+{
+  "meta": {
+    "startedAt": "2026-10-09T20:29:02.286Z",
+    "finishedAt": "2026-10-09T20:35:38.940Z",
+    "promptSet": "450650793a2b",
+    "providers": [
+      "claude-search",
+      "codex-search"
+    ],
+    "ground": null,
+    "groundSearches": 0,
+    "calls": 40,
+    "halted": {},
+    "skippedByBudget": 0,
+    "repeatsByEngine": {
+      "claude-search": 2,
+      "codex-search": 2
+    }
+  },
+  "agg": {
+    "target": "Monarch Money",
+    "prompts": 70,
+    "answers": 280,
+    "failed": 0,
+    "overall": {
+      "mentioned": 128,
+      "rate": 0.45714285714285713,
+      "ci": [
+        0.39976554540368947,
+        0.5156802525343154
+      ]
+    },
+    "perProvider": [
+      {
+        "provider": "claude-search",
+        "mode": "search",
+        "grounded": 140,
+        "stability": {
+          "prompts": 70,
+          "agreeing": 55,
+          "rate": 0.7857142857142857
+        },
+        "models": [
+          "claude-opus-4-6[1m]"
+        ],
+        "answers": 140,
+        "failed": 0,
+        "failures": [],
+        "target": {
+          "name": "Monarch Money",
+          "mentioned": 89,
+          "rate": 0.6357142857142857,
+          "ci": [
+            0.5533622129235948,
+            0.7108172734002504
+          ],
+          "avgRank": 2.808988764044944,
+          "linked": 0,
+          "byPrompt": {
+            "mean": 0.6357142857142857,
+            "ci": [
+              0.5285714285714286,
+              0.7285714285714285
+            ],
+            "prompts": 70
+          }
+        },
+        "shareOfVoice": 0.33969465648854963,
+        "apps": [
+          {
+            "name": "Monarch Money",
+            "mentioned": 89,
+            "rate": 0.6357142857142857,
+            "ci": [
+              0.5533622129235948,
+              0.7108172734002504
+            ],
+            "avgRank": 2.808988764044944,
+            "linked": 0,
+            "byPrompt": {
+              "mean": 0.6357142857142857,
+              "ci": [
+                0.5285714285714286,
+                0.7285714285714285
+              ],
+              "prompts": 70
+            }
+          },
+          {
+            "name": "YNAB",
+            "mentioned": 126,
+            "rate": 0.9,
+            "ci": [
+              0.8391397767648922,
+              0.9394944987159147
+            ],
+            "avgRank": 2.2857142857142856,
+            "linked": 0
+          },
+          {
+            "name": "Rocket Money",
+            "mentioned": 47,
+            "rate": 0.3357142857142857,
+            "ci": [
+              0.26280234715531176,
+              0.41740143255792844
+            ],
+            "avgRank": 3.25531914893617,
+            "linked": 0
+          }
+        ]
+      },
+      {
+        "provider": "codex-search",
+        "mode": "search",
+        "grounded": 140,
+        "stability": {
+          "prompts": 70,
+          "agreeing": 61,
+          "rate": 0.8714285714285714
+        },
+        "models": [],
+        "answers": 140,
+        "failed": 0,
+        "failures": [],
+        "target": {
+          "name": "Monarch Money",
+          "mentioned": 39,
+          "rate": 0.2785714285714286,
+          "ci": [
+            0.210984864123534,
+            0.35798544766387663
+          ],
+          "avgRank": 2,
+          "linked": 4,
+          "byPrompt": {
+            "mean": 0.2785714285714286,
+            "ci": [
+              0.17857142857142858,
+              0.37857142857142856
+            ],
+            "prompts": 70
+          }
+        },
+        "shareOfVoice": 0.28888888888888886,
+        "apps": [
+          {
+            "name": "Monarch Money",
+            "mentioned": 39,
+            "rate": 0.2785714285714286,
+            "ci": [
+              0.210984864123534,
+              0.35798544766387663
+            ],
+            "avgRank": 2,
+            "linked": 4,
+            "byPrompt": {
+              "mean": 0.2785714285714286,
+              "ci": [
+                0.17857142857142858,
+                0.37857142857142856
+              ],
+              "prompts": 70
+            }
+          },
+          {
+            "name": "YNAB",
+            "mentioned": 85,
+            "rate": 0.6071428571428571,
+            "ci": [
+              0.5244165545155076,
+              0.6841461978454227
+            ],
+            "avgRank": 1.2470588235294118,
+            "linked": 5
+          },
+          {
+            "name": "Rocket Money",
+            "mentioned": 11,
+            "rate": 0.07857142857142857,
+            "ci": [
+              0.04443691687302743,
+              0.13521625717397984
+            ],
+            "avgRank": 1.4545454545454546,
+            "linked": 0
+          }
+        ]
+      }
+    ],
+    "perPrompt": [
+      {
+        "prompt": "budgeting app free",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best budgeting app",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "budgeting app for couples",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "budgeting app with no subscription",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "budgeting app that links to bank account",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "budgeting app without bank sync",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "rocket money alternative",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "ynab alternatives canada",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best budgeting app australia",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best budgeting banking app",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "budgeting app for adhd",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "budgeting app for biweekly pay",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best budgeting app dave ramsey",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best budgeting app canada",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "budgeting app for dummies",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best budgeting app europe",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "budgeting app for europe",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best budgeting app for couples",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "budgeting app for groceries",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best budgeting app germany",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best budgeting app hong kong",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "budgeting app for household",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "budgeting app for iphone",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "best budgeting app india",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best budgeting app kenya",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "budgeting app for kids",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best budgeting app like mint",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "budgeting app for macbook",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "budgeting app for linux",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best budgeting app malaysia",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best budgeting app nz",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "budgeting app for nurses",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best budgeting app or spreadsheet",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "best budgeting app for overspenders",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "best budgeting app philippines",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "budgeting app for personal use",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best budgeting app reviews",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best budgeting app south africa",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "budgeting app for retirees",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "budgeting app for students",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "budgeting app for teens",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best budgeting app uk",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best budgeting app to pay off debt",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "budgeting app for uk",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best budgeting app with bank sync",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "budgeting app for women",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "budgeting app without subscription",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best budgeting apps free",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "budgeting app free uk",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "budgeting app that connects to bank free",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "ynab alternative free",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "rocket money alternative free",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "budgeting app for android",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best budget building app",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best budgeting app android",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "budgeting app for college students",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "budgeting app for beginners",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best budgeting app canada free",
+        "answers": 4,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "budgeting app for debt",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best budgeting app dollarwise",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "best budgeting app free",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best budgeting app eu",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "budgeting app for europeans",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "budgeting app for freelancers",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best budget grocery app",
+        "answers": 4,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "budgeting app for girls",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best budget app household",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "budgeting app for home",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "budgeting app for ipad",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
+        "prompt": "best budgeting app ireland",
+        "answers": 4,
+        "targetMentioned": 2
+      }
+    ],
+    "otherApps": [
+      {
+        "key": "name:Goodbudget",
+        "count": 20
+      },
+      {
+        "key": "name:Honeydue",
+        "count": 12
+      },
+      {
+        "key": "name:Spendee",
+        "count": 8
+      },
+      {
+        "key": "name:Empower",
+        "count": 7
+      },
+      {
+        "key": "name:PocketGuard",
+        "count": 7
+      },
+      {
+        "key": "name:Money Manager",
+        "count": 4
+      },
+      {
+        "key": "name:Zero-based budgeting",
+        "count": 4
+      },
+      {
+        "key": "apple:486312413",
+        "count": 4
+      },
+      {
+        "key": "play:com.droid4you.application.wallet",
+        "count": 4
+      },
+      {
+        "key": "name:EveryDollar",
+        "count": 4
+      },
+      {
+        "key": "name:PocketSmith",
+        "count": 3
+      },
+      {
+        "key": "name:Finny",
+        "count": 3
+      },
+      {
+        "key": "name:Revolut",
+        "count": 3
+      },
+      {
+        "key": "name:Snoop",
+        "count": 3
+      },
+      {
+        "key": "name:Privacy",
+        "count": 3
+      }
+    ],
+    "warnings": [
+      "claude-search: only 79% of prompts gave the same yes/no across repeats — single answers from this engine are noisy."
+    ]
+  },
+  "gates": [
+    {
+      "provider": "codex-search",
+      "mode": "search",
+      "answers": 140,
+      "repeats": 2,
+      "status": "RELIABLE",
+      "parts": [
+        {
+          "id": "R1 rate reliability",
+          "status": "PASS",
+          "halfR": 0.9921444655331981,
+          "reliability": 0.9960567445771563,
+          "spearmanHalf": 0.8116794499134278,
+          "coreApps": 6,
+          "moreDataFactor": 1,
+          "value": 0.9960567445771563,
+          "threshold": "≥ 0.8"
+        },
+        {
+          "id": "R2 precision (±)",
+          "status": "PASS",
+          "rate": 0.2785714285714286,
+          "ci": [
+            0.17857142857142858,
+            0.37857142857142856
+          ],
+          "halfWidth": 0.09999999999999999,
+          "prompts": 70,
+          "promptsNeeded": 70,
+          "value": 0.09999999999999999,
+          "threshold": "≤ 0.1"
+        },
+        {
+          "id": "R3 coding agreement κ",
+          "status": "PASS",
+          "value": 1,
+          "threshold": "≥ 0.8",
+          "reason": null
+        }
+      ]
+    },
+    {
+      "provider": "claude-search",
+      "mode": "search",
+      "answers": 140,
+      "repeats": 2,
+      "status": "RELIABLE",
+      "parts": [
+        {
+          "id": "R1 rate reliability",
+          "status": "PASS",
+          "halfR": 0.9785358371725332,
+          "reliability": 0.9891514915099336,
+          "spearmanHalf": 1,
+          "coreApps": 5,
+          "moreDataFactor": 1,
+          "value": 0.9891514915099336,
+          "threshold": "≥ 0.8"
+        },
+        {
+          "id": "R2 precision (±)",
+          "status": "PASS",
+          "rate": 0.6357142857142857,
+          "ci": [
+            0.5357142857142857,
+            0.7285714285714285
+          ],
+          "halfWidth": 0.09642857142857142,
+          "prompts": 70,
+          "promptsNeeded": 70,
+          "value": 0.09642857142857142,
+          "threshold": "≤ 0.1"
+        },
+        {
+          "id": "R3 coding agreement κ",
+          "status": "PASS",
+          "value": 1,
+          "threshold": "≥ 0.8",
+          "reason": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "startedAt": "2026-10-09T18:40:33.935Z",
-    "finishedAt": "2026-10-09T18:47:31.873Z",
+    "startedAt": "2026-10-09T20:13:44.473Z",
+    "finishedAt": "2026-10-09T20:28:21.279Z",
     "promptSet": "684d8e8e5cc4",
     "providers": [
       "claude-search",
@@ -9,10 +9,8 @@
     ],
     "ground": null,
     "groundSearches": 0,
-    "calls": 101,
-    "halted": {
-      "claude-search": "rate_limited"
-    },
+    "calls": 62,
+    "halted": {},
     "skippedByBudget": 0,
     "repeatsByEngine": {
       "claude-search": 2,
@@ -22,94 +20,92 @@
   "agg": {
     "target": "Insight Timer",
     "prompts": 100,
-    "answers": 338,
-    "failed": 3,
+    "answers": 400,
+    "failed": 0,
     "overall": {
-      "mentioned": 192,
-      "rate": 0.5680473372781065,
+      "mentioned": 236,
+      "rate": 0.59,
       "ci": [
-        0.5147656130675756,
-        0.6197996358664336
+        0.5411663599855963,
+        0.6371213647064611
       ]
     },
     "perProvider": [
       {
         "provider": "claude-search",
         "mode": "search",
-        "grounded": 136,
+        "grounded": 198,
         "stability": {
-          "prompts": 60,
-          "agreeing": 50,
-          "rate": 0.8333333333333334
+          "prompts": 100,
+          "agreeing": 86,
+          "rate": 0.86
         },
         "models": [
           "claude-opus-4-6[1m]"
         ],
-        "answers": 138,
-        "failed": 3,
-        "failures": [
-          "rate_limited"
-        ],
+        "answers": 200,
+        "failed": 0,
+        "failures": [],
         "target": {
           "name": "Insight Timer",
-          "mentioned": 94,
-          "rate": 0.6811594202898551,
+          "mentioned": 138,
+          "rate": 0.69,
           "ci": [
-            0.5994014484303916,
-            0.7531044454681544
+            0.622826945087378,
+            0.75001157266366
           ],
-          "avgRank": 2.3617021276595747,
+          "avgRank": 2.7246376811594204,
           "linked": 0,
           "byPrompt": {
-            "mean": 0.6666666666666666,
+            "mean": 0.69,
             "ci": [
-              0.5705128205128205,
-              0.7628205128205128
+              0.605,
+              0.77
             ],
-            "prompts": 78
+            "prompts": 100
           }
         },
-        "shareOfVoice": 0.2822822822822823,
+        "shareOfVoice": 0.2881002087682672,
         "apps": [
           {
             "name": "Insight Timer",
-            "mentioned": 94,
-            "rate": 0.6811594202898551,
+            "mentioned": 138,
+            "rate": 0.69,
             "ci": [
-              0.5994014484303916,
-              0.7531044454681544
+              0.622826945087378,
+              0.75001157266366
             ],
-            "avgRank": 2.3617021276595747,
+            "avgRank": 2.7246376811594204,
             "linked": 0,
             "byPrompt": {
-              "mean": 0.6666666666666666,
+              "mean": 0.69,
               "ci": [
-                0.5705128205128205,
-                0.7628205128205128
+                0.605,
+                0.77
               ],
-              "prompts": 78
+              "prompts": 100
             }
           },
           {
             "name": "Calm",
-            "mentioned": 115,
-            "rate": 0.8333333333333334,
+            "mentioned": 165,
+            "rate": 0.825,
             "ci": [
-              0.7623124168362461,
-              0.8862984279370787
+              0.7663545078991807,
+              0.8713955882539106
             ],
-            "avgRank": 3.373913043478261,
+            "avgRank": 3.3454545454545452,
             "linked": 0
           },
           {
             "name": "Headspace",
-            "mentioned": 124,
-            "rate": 0.8985507246376812,
+            "mentioned": 176,
+            "rate": 0.88,
             "ci": [
-              0.8369096923902526,
-              0.9386032741865487
+              0.8276563857409517,
+              0.9180206497611246
             ],
-            "avgRank": 2.620967741935484,
+            "avgRank": 2.7045454545454546,
             "linked": 0
           }
         ]
@@ -495,209 +491,209 @@
       },
       {
         "prompt": "meditation app for.depression",
-        "answers": 3,
-        "targetMentioned": 2
+        "answers": 4,
+        "targetMentioned": 3
       },
       {
         "prompt": "best meditation apps for experienced meditators",
-        "answers": 3,
-        "targetMentioned": 3
+        "answers": 4,
+        "targetMentioned": 4
       },
       {
         "prompt": "best meditation app apple",
-        "answers": 3,
-        "targetMentioned": 3
+        "answers": 4,
+        "targetMentioned": 4
       },
       {
         "prompt": "meditation app for focus",
-        "answers": 3,
-        "targetMentioned": 3
+        "answers": 4,
+        "targetMentioned": 4
       },
       {
         "prompt": "best meditation app guided",
-        "answers": 3,
-        "targetMentioned": 3
+        "answers": 4,
+        "targetMentioned": 4
       },
       {
         "prompt": "meditation app for garmin",
-        "answers": 3,
+        "answers": 4,
         "targetMentioned": 0
       },
       {
         "prompt": "best meditation app headspace",
-        "answers": 3,
+        "answers": 4,
         "targetMentioned": 2
       },
       {
         "prompt": "meditation app for iphone",
-        "answers": 3,
-        "targetMentioned": 3
+        "answers": 4,
+        "targetMentioned": 4
       },
       {
         "prompt": "meditation apps for high blood pressure",
-        "answers": 3,
+        "answers": 4,
         "targetMentioned": 2
       },
       {
         "prompt": "meditation app for kids free",
-        "answers": 3,
-        "targetMentioned": 2
+        "answers": 4,
+        "targetMentioned": 3
       },
       {
         "prompt": "best mindfulness apps kids",
-        "answers": 3,
-        "targetMentioned": 0
-      },
-      {
-        "prompt": "meditation app for weight loss",
-        "answers": 3,
+        "answers": 4,
         "targetMentioned": 1
       },
       {
+        "prompt": "meditation app for weight loss",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
         "prompt": "meditation app for meta quest",
-        "answers": 3,
-        "targetMentioned": 0
+        "answers": 4,
+        "targetMentioned": 1
       },
       {
         "prompt": "best meditation app meta quest",
-        "answers": 3,
+        "answers": 4,
         "targetMentioned": 0
       },
       {
         "prompt": "best meditation app new york times",
-        "answers": 3,
-        "targetMentioned": 2
+        "answers": 4,
+        "targetMentioned": 3
       },
       {
         "prompt": "free meditation app for nhs staff",
-        "answers": 3,
+        "answers": 4,
         "targetMentioned": 0
       },
       {
         "prompt": "meditation app for oculus",
-        "answers": 3,
+        "answers": 4,
         "targetMentioned": 0
       },
       {
         "prompt": "best meditation app on iphone",
-        "answers": 3,
-        "targetMentioned": 3
+        "answers": 4,
+        "targetMentioned": 4
       },
       {
         "prompt": "best meditation app for pregnancy",
-        "answers": 2,
+        "answers": 4,
         "targetMentioned": 2
       },
       {
         "prompt": "meditation app for parents",
-        "answers": 2,
-        "targetMentioned": 0
+        "answers": 4,
+        "targetMentioned": 2
       },
       {
         "prompt": "best meditation apps ranked",
-        "answers": 2,
-        "targetMentioned": 2
+        "answers": 4,
+        "targetMentioned": 4
       },
       {
         "prompt": "best meditation app subscription",
-        "answers": 2,
-        "targetMentioned": 1
+        "answers": 4,
+        "targetMentioned": 3
       },
       {
         "prompt": "meditation app for sleep free",
-        "answers": 2,
-        "targetMentioned": 2
+        "answers": 4,
+        "targetMentioned": 4
       },
       {
         "prompt": "meditation app recommendations",
-        "answers": 2,
-        "targetMentioned": 2
+        "answers": 4,
+        "targetMentioned": 4
       },
       {
         "prompt": "best meditation app to reduce stress",
-        "answers": 2,
-        "targetMentioned": 2
+        "answers": 4,
+        "targetMentioned": 4
       },
       {
         "prompt": "best meditation apps uk free",
-        "answers": 2,
-        "targetMentioned": 2
+        "answers": 4,
+        "targetMentioned": 4
       },
       {
         "prompt": "meditation app for teachers",
-        "answers": 2,
-        "targetMentioned": 0
-      },
-      {
-        "prompt": "is waking up the best meditation app",
-        "answers": 2,
-        "targetMentioned": 1
-      },
-      {
-        "prompt": "meditation app ui design",
-        "answers": 2,
-        "targetMentioned": 0
-      },
-      {
-        "prompt": "best meditation apps 2026",
-        "answers": 2,
+        "answers": 4,
         "targetMentioned": 2
       },
       {
+        "prompt": "is waking up the best meditation app",
+        "answers": 4,
+        "targetMentioned": 3
+      },
+      {
+        "prompt": "meditation app ui design",
+        "answers": 4,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best meditation apps 2026",
+        "answers": 4,
+        "targetMentioned": 4
+      },
+      {
         "prompt": "meditation app with flashing lights",
-        "answers": 2,
+        "answers": 4,
         "targetMentioned": 0
       },
       {
         "prompt": "meditation without app",
-        "answers": 2,
+        "answers": 4,
         "targetMentioned": 0
       },
       {
         "prompt": "meditation app free for teachers",
-        "answers": 2,
-        "targetMentioned": 2
+        "answers": 4,
+        "targetMentioned": 3
       },
       {
         "prompt": "calm alternative free",
-        "answers": 2,
-        "targetMentioned": 2
+        "answers": 4,
+        "targetMentioned": 4
       },
       {
         "prompt": "best headspace alternative",
-        "answers": 2,
-        "targetMentioned": 2
+        "answers": 4,
+        "targetMentioned": 4
       },
       {
         "prompt": "meditation apps that are completely free",
-        "answers": 2,
-        "targetMentioned": 2
+        "answers": 4,
+        "targetMentioned": 4
       },
       {
         "prompt": "meditation app for black women",
-        "answers": 2,
+        "answers": 4,
         "targetMentioned": 0
       },
       {
         "prompt": "meditation app for adhd",
-        "answers": 2,
-        "targetMentioned": 0
+        "answers": 4,
+        "targetMentioned": 1
       },
       {
         "prompt": "best meditation app balance",
-        "answers": 2,
+        "answers": 4,
         "targetMentioned": 1
       },
       {
         "prompt": "best meditation apps canada",
-        "answers": 2,
-        "targetMentioned": 2
+        "answers": 4,
+        "targetMentioned": 4
       }
     ],
     "otherApps": [
       {
         "key": "name:Medito",
-        "count": 16
+        "count": 17
       },
       {
         "key": "name:Waking Up",
@@ -705,11 +701,11 @@
       },
       {
         "key": "name:Smiling Mind",
-        "count": 11
+        "count": 12
       },
       {
         "key": "name:UCLA Mindful",
-        "count": 7
+        "count": 8
       },
       {
         "key": "name:Start small",
@@ -717,6 +713,10 @@
       },
       {
         "key": "name:Balance",
+        "count": 7
+      },
+      {
+        "key": "name:Healthy Minds Program",
         "count": 6
       },
       {
@@ -724,7 +724,11 @@
         "count": 6
       },
       {
-        "key": "name:Healthy Minds Program",
+        "key": "name:Try before you buy",
+        "count": 5
+      },
+      {
+        "key": "apple:1307736395",
         "count": 5
       },
       {
@@ -740,25 +744,16 @@
         "count": 4
       },
       {
-        "key": "name:Try before you buy",
-        "count": 4
-      },
-      {
         "key": "name:Breethe",
         "count": 4
       },
       {
         "key": "apple:1631848467",
         "count": 3
-      },
-      {
-        "key": "apple:6744633379",
-        "count": 3
       }
     ],
     "warnings": [
-      "claude-search: 2/138 answers had no search results behind them (search mode).",
-      "claude-search: 3 failed call(s) [rate_limited] — excluded from rates, not counted as \"not mentioned\"."
+      "claude-search: 2/200 answers had no search results behind them (search mode)."
     ]
   },
   "gates": [
@@ -767,7 +762,7 @@
       "mode": "search",
       "answers": 200,
       "repeats": 2,
-      "status": "INDETERMINATE",
+      "status": "RELIABLE",
       "parts": [
         {
           "id": "R1 rate reliability",
@@ -796,51 +791,51 @@
         },
         {
           "id": "R3 coding agreement κ",
-          "status": "INDETERMINATE",
-          "value": null,
+          "status": "PASS",
+          "value": 1,
           "threshold": "≥ 0.8",
-          "reason": "judge produced no usable codes"
+          "reason": null
         }
       ]
     },
     {
       "provider": "claude-search",
       "mode": "search",
-      "answers": 138,
+      "answers": 200,
       "repeats": 2,
-      "status": "INDETERMINATE",
+      "status": "RELIABLE",
       "parts": [
         {
           "id": "R1 rate reliability",
           "status": "PASS",
-          "halfR": 0.9965389650710391,
-          "reliability": 0.9982664826534764,
-          "spearmanHalf": 0.9746794344808964,
-          "coreApps": 5,
+          "halfR": 0.9990256205306771,
+          "reliability": 0.9995125727958083,
+          "spearmanHalf": 0.9145291883606759,
+          "coreApps": 7,
           "moreDataFactor": 1,
-          "value": 0.9982664826534764,
+          "value": 0.9995125727958083,
           "threshold": "≥ 0.8"
         },
         {
           "id": "R2 precision (±)",
           "status": "PASS",
-          "rate": 0.6666666666666666,
+          "rate": 0.69,
           "ci": [
-            0.5705128205128205,
-            0.7628205128205128
+            0.61,
+            0.77
           ],
-          "halfWidth": 0.09615384615384615,
-          "prompts": 78,
-          "promptsNeeded": 78,
-          "value": 0.09615384615384615,
+          "halfWidth": 0.08000000000000002,
+          "prompts": 100,
+          "promptsNeeded": 100,
+          "value": 0.08000000000000002,
           "threshold": "≤ 0.1"
         },
         {
           "id": "R3 coding agreement κ",
-          "status": "INDETERMINATE",
-          "value": null,
+          "status": "PASS",
+          "value": 1,
           "threshold": "≥ 0.8",
-          "reason": "judge produced no usable codes"
+          "reason": null
         }
       ]
     }

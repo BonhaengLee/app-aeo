@@ -7,7 +7,7 @@
       {
         "key": "뱅크샐러드",
         "name": "뱅크샐러드",
-        "rate": 0.94,
+        "rate": 0.9186046511627907,
         "store": "뱅크샐러드",
         "appStoreId": "1195804784",
         "ratingCount": 21186
@@ -15,7 +15,7 @@
       {
         "key": "편한가계부",
         "name": "편한가계부",
-        "rate": 0.86,
+        "rate": 0.8488372093023255,
         "store": "편한가계부",
         "appStoreId": "560481810",
         "ratingCount": 86863
@@ -23,10 +23,10 @@
       {
         "key": "위플 가계부",
         "name": "위플 가계부",
-        "rate": 0.58,
+        "rate": 0.6162790697674418,
         "store": "위플 가계부 - Weple Money",
         "appStoreId": "467936485",
-        "ratingCount": 216079
+        "ratingCount": 216100
       }
     ],
     "unmatched": [
@@ -52,7 +52,7 @@
       {
         "key": "뱅크샐러드",
         "name": "뱅크샐러드",
-        "rate": 0.6104651162790697,
+        "rate": 0.6046511627906976,
         "store": "뱅크샐러드",
         "appStoreId": "1195804784",
         "ratingCount": 21186
@@ -63,7 +63,7 @@
         "rate": 0.16279069767441862,
         "store": "위플 가계부 - Weple Money",
         "appStoreId": "467936485",
-        "ratingCount": 216079
+        "ratingCount": 216100
       },
       {
         "key": "토스",
@@ -71,7 +71,7 @@
         "rate": 0.05813953488372093,
         "store": "토스",
         "appStoreId": "839333328",
-        "ratingCount": 91802
+        "ratingCount": 91775
       }
     ],
     "unmatched": []

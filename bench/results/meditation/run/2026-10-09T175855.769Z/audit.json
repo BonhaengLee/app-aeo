@@ -2,67 +2,980 @@
   "byProvider": {
     "codex-search": {
       "judge": "claude-cli",
-      "kappa": 0.896788990825688,
-      "agreement": 0.95,
+      "kappa": 1,
+      "agreement": 1,
       "pairs": 120,
       "judged": 40,
       "failedBatches": 0,
-      "disagreements": [
+      "disagreements": [],
+      "codes": [
         {
           "provider": "codex-search",
           "prompt": "calm alternative words",
-          "app": "Calm",
-          "extractor": true,
+          "repeat": 1,
+          "app": "Insight Timer",
           "judge": false,
-          "excerpt": "Alternatives for **calm**, depending on meaning: - **A person:** composed, collected, unflustered,"
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "calm alternative words",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "calm alternative words",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
         },
         {
           "provider": "codex-search",
           "prompt": "meditation app for children",
-          "app": "Calm",
-          "extractor": true,
+          "repeat": 2,
+          "app": "Insight Timer",
           "judge": false,
-          "excerpt": "A promising concept: **a calm, playful meditation app for kids ages 5–10**, with a parent setting things "
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for children",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for children",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app example",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app example",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app example",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app for depression",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app for depression",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app for depression",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app calm or headspace",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app calm or headspace",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app calm or headspace",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "headspace alternative free",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "headspace alternative free",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "headspace alternative free",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app without subscription",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app without subscription",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app without subscription",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app garmin",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app garmin",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app garmin",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for sleep",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for sleep",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for sleep",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for sleep",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for sleep",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for sleep",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app for deaf people",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app for deaf people",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app for deaf people",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app sleep",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app sleep",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app sleep",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for beginners",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for beginners",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for beginners",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app reviews",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app reviews",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app reviews",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for pregnancy",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for pregnancy",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for pregnancy",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for garmin watch",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for garmin watch",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for garmin watch",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app kids",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app kids",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app kids",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for divorce",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for divorce",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for divorce",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
         },
         {
           "provider": "codex-search",
           "prompt": "meditation app for co parenting",
-          "app": "Calm",
-          "extractor": true,
+          "repeat": 2,
+          "app": "Insight Timer",
           "judge": false,
-          "excerpt": "A promising direction: **a calm companion for the moments around co-parenting—not another custody-managemen"
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for co parenting",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for co parenting",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app buddhist",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app buddhist",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app buddhist",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app without ai",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app without ai",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app without ai",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app hindi",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app hindi",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app hindi",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
         },
         {
           "provider": "codex-search",
           "prompt": "meditation app for men",
-          "app": "Calm",
-          "extractor": true,
+          "repeat": 2,
+          "app": "Insight Timer",
           "judge": false,
-          "excerpt": "itation, with a plain explanation of what each does. - **Use a grounded tone:** calm and direct, without macho posturing or spiritual language. - **Make progres"
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for men",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for men",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app free for a year",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app free for a year",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app free for a year",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app with orange branding codycross",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app with orange branding codycross",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app with orange branding codycross",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app on meta quest 3",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app on meta quest 3",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app on meta quest 3",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for bipoc",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for bipoc",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for bipoc",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app hindi",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app hindi",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app hindi",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app wirecutter",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app wirecutter",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app wirecutter",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app kids",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app kids",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app kids",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app calm",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app calm",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app calm",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app australia",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app australia",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app australia",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for ocd",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for ocd",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app for ocd",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
         },
         {
           "provider": "codex-search",
           "prompt": "best meditation app in india",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app in india",
+          "repeat": 2,
           "app": "Calm",
-          "extractor": true,
           "judge": false,
-          "excerpt": "rth a look for content designed for Indian users; it offers guided sessions for calm, focus, breathing, and sleep. [ThinkRight.me](https://thinkright.me/) If y"
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app in india",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
         },
         {
           "provider": "codex-search",
           "prompt": "calm alternative songs",
-          "app": "Calm",
-          "extractor": true,
+          "repeat": 2,
+          "app": "Insight Timer",
           "judge": false,
-          "excerpt": "Try these for a calm alternative mix: - “Space Song” — Beach House - “Holocene” — Bon Iver - “F"
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "calm alternative songs",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "calm alternative songs",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app uk",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app uk",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app uk",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation learning app",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation learning app",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation learning app",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation apps free",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation apps free",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation apps free",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app apple watch",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app apple watch",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best meditation app apple watch",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app free",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app free",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "meditation app free",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
         }
       ],
       "reason": null
     },
     "claude-search": {
       "judge": "claude-cli",
-      "kappa": 0.9274193548387096,
-      "agreement": 0.975,
+      "kappa": 0.9764150943396227,
+      "agreement": 0.9916666666666667,
       "pairs": 120,
       "judged": 40,
       "failedBatches": 0,
@@ -74,22 +987,968 @@
           "extractor": true,
           "judge": false,
           "excerpt": "# Alternative Words for \"Calm\" 🌿 Here are a variety of synonyms and alternatives, grouped by nuance: -"
+        }
+      ],
+      "codes": [
+        {
+          "provider": "claude-search",
+          "prompt": "calm alternative words",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "calm alternative words",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": false,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "calm alternative words",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for children",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for children",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for children",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app free",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app free",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app free",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app for depression",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app for depression",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app for depression",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for beginners",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for beginners",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for beginners",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app that is free",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app that is free",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app that is free",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app with orange branding",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app with orange branding",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app with orange branding",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for garmin watch",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for garmin watch",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for garmin watch",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for sleep",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for sleep",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for sleep",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app sleep",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app sleep",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app sleep",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app calm",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app calm",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app calm",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app reviews",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app reviews",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app reviews",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app calm or headspace",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app calm or headspace",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app calm or headspace",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app reviews",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app reviews",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app reviews",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app reviews",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app reviews",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app reviews",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app hindi",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app hindi",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app hindi",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app kids",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app kids",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app kids",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for divorce",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for divorce",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for divorce",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app for deaf people",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app for deaf people",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app for deaf people",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app buddhist",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app buddhist",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app buddhist",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app free for a year",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app free for a year",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app free for a year",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for garmin watch",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for garmin watch",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for garmin watch",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app no subscription",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app no subscription",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app no subscription",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
         },
         {
           "provider": "claude-search",
           "prompt": "meditation app with orange branding codycross",
-          "app": "Calm",
-          "extractor": true,
+          "repeat": 2,
+          "app": "Insight Timer",
           "judge": false,
-          "excerpt": "orange branding**. Its logo is an orange dot (or circle), symbolizing focus and calm, and the app's overall design uses warm orange tones paired with playful il"
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app with orange branding codycross",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app with orange branding codycross",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app with orange branding codycross",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app with orange branding codycross",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app with orange branding codycross",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "mindfulness app for nurses",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "mindfulness app for nurses",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "mindfulness app for nurses",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
         },
         {
           "provider": "claude-search",
           "prompt": "meditation app for bipoc",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for bipoc",
+          "repeat": 2,
           "app": "Calm",
-          "extractor": true,
           "judge": false,
-          "excerpt": "ell-being — breathwork, meditations, affirmations, and coaching - Designed as a calming, safe space for coping with microaggressions, stress, and negative feeli"
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for bipoc",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app in india",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app in india",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app in india",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for women",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for women",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for women",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app kids",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app kids",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app kids",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app calm",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app calm",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app calm",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for anxiety",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for anxiety",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for anxiety",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app on meta quest 3",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app on meta quest 3",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app on meta quest 3",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for ibs",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for ibs",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for ibs",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app without ai",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app without ai",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app without ai",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app to lower blood pressure",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app to lower blood pressure",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app to lower blood pressure",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation learning app",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation learning app",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation learning app",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app wirecutter",
+          "repeat": 2,
+          "app": "Insight Timer",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app wirecutter",
+          "repeat": 2,
+          "app": "Calm",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app wirecutter",
+          "repeat": 2,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app apple watch",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app apple watch",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meditation app apple watch",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for kids",
+          "repeat": 1,
+          "app": "Insight Timer",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for kids",
+          "repeat": 1,
+          "app": "Calm",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meditation app for kids",
+          "repeat": 1,
+          "app": "Headspace",
+          "judge": true,
+          "extractor": true
         }
       ],
       "reason": null

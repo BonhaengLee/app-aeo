@@ -1,0 +1,268 @@
+{
+  "byProvider": {
+    "codex-search": {
+      "judge": "claude-cli",
+      "kappa": 1,
+      "agreement": 1,
+      "pairs": 15,
+      "judged": 5,
+      "failedBatches": 1,
+      "disagreements": [],
+      "codes": [
+        {
+          "provider": "codex-search",
+          "prompt": "무료 가계부 어플 추천",
+          "repeat": 1,
+          "app": "편한가계부",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "무료 가계부 어플 추천",
+          "repeat": 1,
+          "app": "뱅크샐러드",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "무료 가계부 어플 추천",
+          "repeat": 1,
+          "app": "위플 가계부",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "안드로이드 가계부 앱 추천",
+          "repeat": 4,
+          "app": "편한가계부",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "안드로이드 가계부 앱 추천",
+          "repeat": 4,
+          "app": "뱅크샐러드",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "안드로이드 가계부 앱 추천",
+          "repeat": 4,
+          "app": "위플 가계부",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "오프라인에서도 되는 가계부 앱 있어?",
+          "repeat": 4,
+          "app": "편한가계부",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "오프라인에서도 되는 가계부 앱 있어?",
+          "repeat": 4,
+          "app": "뱅크샐러드",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "오프라인에서도 되는 가계부 앱 있어?",
+          "repeat": 4,
+          "app": "위플 가계부",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "무료 가계부 어플 추천",
+          "repeat": 4,
+          "app": "편한가계부",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "무료 가계부 어플 추천",
+          "repeat": 4,
+          "app": "뱅크샐러드",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "무료 가계부 어플 추천",
+          "repeat": 4,
+          "app": "위플 가계부",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "부부 가계부 어플 추천",
+          "repeat": 3,
+          "app": "편한가계부",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "부부 가계부 어플 추천",
+          "repeat": 3,
+          "app": "뱅크샐러드",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "부부 가계부 어플 추천",
+          "repeat": 3,
+          "app": "위플 가계부",
+          "judge": false,
+          "extractor": false
+        }
+      ],
+      "reason": "1 judge batch(es) failed — κ over 5 answers"
+    },
+    "claude-search": {
+      "judge": "claude-cli",
+      "kappa": 1,
+      "agreement": 1,
+      "pairs": 15,
+      "judged": 5,
+      "failedBatches": 1,
+      "disagreements": [],
+      "codes": [
+        {
+          "provider": "claude-search",
+          "prompt": "가계부 앱 미국",
+          "repeat": 2,
+          "app": "편한가계부",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "가계부 앱 미국",
+          "repeat": 2,
+          "app": "뱅크샐러드",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "가계부 앱 미국",
+          "repeat": 2,
+          "app": "위플 가계부",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "가계부 어플 추천 더쿠",
+          "repeat": 1,
+          "app": "편한가계부",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "가계부 어플 추천 더쿠",
+          "repeat": 1,
+          "app": "뱅크샐러드",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "가계부 어플 추천 더쿠",
+          "repeat": 1,
+          "app": "위플 가계부",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "가계부 앱 더쿠",
+          "repeat": 2,
+          "app": "편한가계부",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "가계부 앱 더쿠",
+          "repeat": 2,
+          "app": "뱅크샐러드",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "가계부 앱 더쿠",
+          "repeat": 2,
+          "app": "위플 가계부",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "가계부 어플 만들기",
+          "repeat": 1,
+          "app": "편한가계부",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "가계부 어플 만들기",
+          "repeat": 1,
+          "app": "뱅크샐러드",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "가계부 어플 만들기",
+          "repeat": 1,
+          "app": "위플 가계부",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "가계부 앱 추천",
+          "repeat": 1,
+          "app": "편한가계부",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "가계부 앱 추천",
+          "repeat": 1,
+          "app": "뱅크샐러드",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "가계부 앱 추천",
+          "repeat": 1,
+          "app": "위플 가계부",
+          "judge": true,
+          "extractor": true
+        }
+      ],
+      "reason": "1 judge batch(es) failed — κ over 5 answers"
+    }
+  }
+}

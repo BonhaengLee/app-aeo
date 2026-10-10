@@ -76,12 +76,12 @@
     "claude-search",
     "codex-search"
   ],
-  "repeats": 4,
+  "repeats": 2,
   "concurrency": 3,
   "maxCalls": 2000,
   "repeatsByEngine": {
     "claude-search": 2,
-    "codex-search": 4
+    "codex-search": 2
   },
   "fingerprint": "46088cb37e64c582"
 }

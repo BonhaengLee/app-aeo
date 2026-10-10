@@ -4,12 +4,12 @@ _A number is RELIABLE only if R1–R3 all pass. Thresholds were fixed before any
 
 | Engine | Mode | Answers (repeats) | Verdict | R1 rate reliability ≥ 0.8 | R2 precision ± ≤ 0.10 | R3 coding κ ≥ 0.8 |
 |---|---|---|---|---|---|---|
-| codex-search | search | 120 (2) | **NOT RELIABLE** | ✅ 0.99 | ❌ 0.13 (needs ~93 prompts) | ✅ 0.90 |
-| claude-search | search | 120 (2) | **NOT RELIABLE** | ✅ 1.00 | ❌ 0.10 (needs ~66 prompts) | ✅ 0.93 |
+| codex-search | search | 120 (2) | **NOT RELIABLE** | ✅ 0.99 | ❌ 0.13 (needs ~93 prompts) | ✅ 1.00 |
+| claude-search | search | 120 (2) | **NOT RELIABLE** | ✅ 1.00 | ❌ 0.10 (needs ~66 prompts) | ✅ 0.98 |
 
 # App AEO report — Insight Timer
 
-Run 2026-10-09T17:58:55.784Z → 2026-10-09T18:27:20.070Z · 60 prompts · 240 answers · 0 failed calls
+Run 2026-10-09T19:33:34.452Z → 2026-10-09T19:37:08.876Z · 60 prompts · 240 answers · 0 failed calls
 
 ## By answer engine
 

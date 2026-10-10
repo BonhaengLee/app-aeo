@@ -1,7 +1,7 @@
 {
   "meta": {
-    "startedAt": "2026-10-09T17:58:55.784Z",
-    "finishedAt": "2026-10-09T18:27:20.070Z",
+    "startedAt": "2026-10-09T19:33:34.452Z",
+    "finishedAt": "2026-10-09T19:37:08.876Z",
     "promptSet": "176dda9ad08d",
     "providers": [
       "claude-search",
@@ -9,7 +9,7 @@
     ],
     "ground": null,
     "groundSearches": 0,
-    "calls": 240,
+    "calls": 0,
     "halted": {},
     "skippedByBudget": 0,
     "repeatsByEngine": {
@@ -567,12 +567,12 @@
         {
           "id": "R1 rate reliability",
           "status": "PASS",
-          "halfR": 0.9891094363261886,
-          "reliability": 0.9945249047262449,
-          "spearmanHalf": 0.8,
+          "halfR": 0.9882074270711897,
+          "reliability": 0.9940687411342277,
+          "spearmanHalf": 1,
           "coreApps": 4,
           "moreDataFactor": 1,
-          "value": 0.9945249047262449,
+          "value": 0.9940687411342277,
           "threshold": "≥ 0.8"
         },
         {
@@ -592,7 +592,7 @@
         {
           "id": "R3 coding agreement κ",
           "status": "PASS",
-          "value": 0.896788990825688,
+          "value": 1,
           "threshold": "≥ 0.8",
           "reason": null
         }
@@ -608,12 +608,12 @@
         {
           "id": "R1 rate reliability",
           "status": "PASS",
-          "halfR": 0.9932270223707518,
-          "reliability": 0.9966020039096237,
+          "halfR": 0.9930135474561114,
+          "reliability": 0.9964945283222956,
           "spearmanHalf": 0.9746794344808964,
           "coreApps": 5,
           "moreDataFactor": 1,
-          "value": 0.9966020039096237,
+          "value": 0.9964945283222956,
           "threshold": "≥ 0.8"
         },
         {
@@ -633,7 +633,7 @@
         {
           "id": "R3 coding agreement κ",
           "status": "PASS",
-          "value": 0.9274193548387096,
+          "value": 0.9764150943396227,
           "threshold": "≥ 0.8",
           "reason": null
         }

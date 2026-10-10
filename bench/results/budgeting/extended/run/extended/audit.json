@@ -1,0 +1,1948 @@
+{
+  "byProvider": {
+    "codex-search": {
+      "judge": "claude-cli",
+      "kappa": 1,
+      "agreement": 1,
+      "pairs": 120,
+      "judged": 40,
+      "failedBatches": 0,
+      "disagreements": [],
+      "codes": [
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for uk",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for uk",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for uk",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app dave ramsey",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app dave ramsey",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app dave ramsey",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for ipad",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for ipad",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for ipad",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app reviews",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app reviews",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app reviews",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app uk",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app uk",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app uk",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for groceries",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for groceries",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for groceries",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for retirees",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for retirees",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for retirees",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app dave ramsey",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app dave ramsey",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app dave ramsey",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app like mint",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app like mint",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app like mint",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app germany",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app germany",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app germany",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budget grocery app",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budget grocery app",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budget grocery app",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for home",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for home",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for home",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "ynab alternatives canada",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "ynab alternatives canada",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "ynab alternatives canada",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for iphone",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for iphone",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for iphone",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "rocket money alternative",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "rocket money alternative",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "rocket money alternative",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budget building app",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budget building app",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budget building app",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app india",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app india",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app india",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for couples",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for couples",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for couples",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app europe",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app europe",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app europe",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "ynab alternative free",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "ynab alternative free",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "ynab alternative free",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for college students",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for college students",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for college students",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app canada",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app canada",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app canada",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "ynab alternatives canada",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "ynab alternatives canada",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "ynab alternatives canada",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for girls",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for girls",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for girls",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for nurses",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for nurses",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for nurses",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app malaysia",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app malaysia",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app malaysia",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app south africa",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app south africa",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app south africa",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for macbook",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for macbook",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for macbook",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for groceries",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for groceries",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for groceries",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app for overspenders",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app for overspenders",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app for overspenders",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting banking app",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting banking app",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting banking app",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app with bank sync",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app with bank sync",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app with bank sync",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for nurses",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for nurses",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app for nurses",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app free uk",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app free uk",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "budgeting app free uk",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app for couples",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app for couples",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app for couples",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app nz",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app nz",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app nz",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app canada free",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app canada free",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app canada free",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app for overspenders",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app for overspenders",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app for overspenders",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting banking app",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting banking app",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting banking app",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app free",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app free",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best budgeting app free",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        }
+      ],
+      "reason": null
+    },
+    "claude-search": {
+      "judge": "claude-cli",
+      "kappa": 1,
+      "agreement": 1,
+      "pairs": 120,
+      "judged": 40,
+      "failedBatches": 0,
+      "disagreements": [],
+      "codes": [
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for uk",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for uk",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for uk",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app canada",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app canada",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app canada",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app ireland",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app ireland",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app ireland",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for retirees",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for retirees",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for retirees",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app to pay off debt",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app to pay off debt",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app to pay off debt",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app germany",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app germany",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app germany",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app reviews",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app reviews",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app reviews",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app canada",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app canada",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app canada",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for linux",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for linux",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for linux",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for groceries",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for groceries",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for groceries",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budget grocery app",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budget grocery app",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budget grocery app",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for home",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for home",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for home",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "rocket money alternative",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "rocket money alternative",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "rocket money alternative",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app india",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app india",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app india",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "ynab alternatives canada",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "ynab alternatives canada",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "ynab alternatives canada",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budget building app",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budget building app",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budget building app",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for iphone",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for iphone",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for iphone",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for couples",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for couples",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for couples",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app europe",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app europe",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app europe",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "ynab alternative free",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "ynab alternative free",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "ynab alternative free",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for beginners",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for beginners",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for beginners",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app dave ramsey",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app dave ramsey",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app dave ramsey",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "rocket money alternative",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "rocket money alternative",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "rocket money alternative",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for girls",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for girls",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for girls",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for nurses",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for nurses",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for nurses",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for macbook",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for macbook",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for macbook",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for retirees",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for retirees",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for retirees",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for linux",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for linux",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for linux",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for household",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for household",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for household",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for personal use",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for personal use",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for personal use",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting banking app",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting banking app",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting banking app",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for women",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for women",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for women",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app nz",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app nz",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app nz",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app without subscription",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app without subscription",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app without subscription",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app for couples",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app for couples",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app for couples",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app nz",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app nz",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app nz",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app dollarwise",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app dollarwise",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app dollarwise",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app for overspenders",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app for overspenders",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app for overspenders",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for adhd",
+          "repeat": 1,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for adhd",
+          "repeat": 1,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "budgeting app for adhd",
+          "repeat": 1,
+          "app": "Rocket Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app free",
+          "repeat": 2,
+          "app": "Monarch Money",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app free",
+          "repeat": 2,
+          "app": "YNAB",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best budgeting app free",
+          "repeat": 2,
+          "app": "Rocket Money",
+          "judge": true,
+          "extractor": true
+        }
+      ],
+      "reason": null
+    }
+  }
+}
