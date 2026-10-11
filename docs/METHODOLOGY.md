@@ -28,7 +28,7 @@ It is **not** a recommendation score, market share, traffic, or install estimate
   - The coding-agent persona is replaced by a consumer-assistant role, with an instruction to search before answering. Without it, Codex answered "habit tracker app for iphone" with an offer to *build* one (pilot, 2/80 answers), and searched in only 34/80.
   - **Grounding is verified per answer:** Claude via `webSearchRequests`, Codex via `web_search` events. Ungrounded answers are counted and flagged.
 - **Isolation.**
-  - Codex runs with a throwaway `CODEX_HOME` that holds only `auth.json`. Claude runs with `--setting-sources ""` and no MCP.
+  - Codex runs with a throwaway `CODEX_HOME` that holds only `auth.json` and an empty `HOME` (Codex reads the user skills catalog `~/.agents/skills` via `HOME`; before 2026-10-12 that catalog leaked into answers, see `bench/DEVIATIONS.md` D5). Claude runs with `--setting-sources ""` and no MCP.
   - The user's own instructions never reach the engine; this is verified in the pilot.
 - **RAG mode** (free-tier API models): one Tavily search per prompt, cached and shared by repeats. The snippets go in front of the question.
   - This mirrors retrieve-then-answer assistants, but it is **not** the retrieval ChatGPT or Gemini use.

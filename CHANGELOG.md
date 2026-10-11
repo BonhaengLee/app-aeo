@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+- **Fix: Codex isolation.** The `codex-cli` / `codex-search` child now gets an empty `HOME` as well as an isolated `CODEX_HOME`. Before, Codex read your skills catalog from `~/.agents/skills`, so your own skill names and descriptions were in context for every answer. Regression test added. Impact on the published studies: `bench/DEVIATIONS.md` D5.
+- Comparison study results (`bench/compare/COMPARE.md`) and a README section.
+
 ## 0.3.1 — 2026-10-10
 - `init` now asks for **100 prompts** by default (was 20), and warns when autocomplete returns fewer. Why: in the benchmark, 60 prompts failed R2 in 6 of 8 cells, and at the gate's prescription (70–100) 7 of 8 passed.
 - `init` points to `check --gate` after the cost preview.

@@ -31,7 +31,7 @@ node bin/app-aeo.mjs check cfg.json --gate      # measure, add repeats until rel
 | Spec | Mode | Cost | Notes |
 |---|---|---|---|
 | `claude-search[:model]` | search | Free inside your Claude Code plan | Web search enabled. The system prompt is replaced with a consumer-assistant role (not a coding agent). Grounding is detected from `webSearchRequests` |
-| `codex-search[:model]` | search | Free inside your Codex plan | `codex --search`, isolated `CODEX_HOME`, consumer-role `developer_instructions`. Grounding is detected from `web_search` events |
+| `codex-search[:model]` | search | Free inside your Codex plan | `codex --search`, isolated `CODEX_HOME` and `HOME` (so your AGENTS.md and `~/.agents` skills stay out), consumer-role `developer_instructions`. Grounding is detected from `web_search` events |
 | `groq:` `cerebras:` `nvidia:` `openrouter:…:free` `gemini-openai:` `mistral:` | memory, or **rag** with `"ground": "tavily"` | Free tiers (keys) | Chain them with `a\|b\|c`: when one link hits 429 or quota, the rest of the run uses the next link |
 | `perplexity:` `openai:` `anthropic:` `gemini:` `gemini-search:` | search or memory | Paid or limited | Supported if you have keys |
 
@@ -54,7 +54,7 @@ What failed, and why:
 - **H1 failed on precision only.** R1 (reliability) and R3 (coding) passed in all 8 cells. R2 failed in 6: at 60 prompts the interval was ±0.10–0.13. More repeats cannot fix this; only more prompts can.
 - **Follow-up (not pre-registered, rule fixed in advance as D2).** Each category was extended to the number of prompts the gate itself prescribed. **7 of 8 cells became RELIABLE.** The exception is Korean 가계부: autocomplete ran out at 43 queries (gate asked for 55), and codex-search stayed NOT RELIABLE at ±0.113. That is why `init` now defaults to 100 prompts and warns when it finds fewer.
 - **H3 was mostly too small to decide.** Only apps named in ≥ 5% of answers are compared, which left 3–6 apps in 7 of 8 cells. With so few points the test has almost no power, so the 1/8 does not show that AI picks ignore real usage. It does not show the opposite either. The one cell with enough apps (language, claude-search, 12 apps) passed: ρ = 0.75, p = 0.008.
-- **Engines disagree with each other.** Target mention rates, claude-search vs codex-search: meditation 70% vs 43%, budgeting 63% vs 28%, language 54% vs 48%. Always report per engine; never pool them.
+- **Engines disagree with each other.** Target mention rates, claude-search vs codex-search: meditation 70% vs 43%, budgeting 63% vs 28%, language 54% vs 48%. Always report per engine; never pool them. (The codex-search answers were collected with the author's skills catalog in context, since fixed: [D5](bench/DEVIATIONS.md).)
 
 Earlier pilot (habit tracker, 20 prompts, before the benchmark): claude-search mention rate vs App Store rating count gave ρ = 0.91, p = 0.010 over 7 apps. The benchmark did not reproduce that as a general result (H3 above), so it is a single observation, not a property of the tool.
 
@@ -85,6 +85,7 @@ In the pre-committed wording: app-aeo was **closer to the measured rate than the
 
 Read with these limits:
 - **C2 rests on 10 of 14 clusters.** In 4 clusters (fasting on both engines, note taking and todo list on codex-search) the naive prompt's primary call gave no usable number after 2 retries: the assistant replied `null` per app or declined to estimate. By the rule these are missing, not imputed. If they are filled with the reference value itself (the rival's best case), C2 is **not** supported. In the worst case it still is. C1 and C3 hold under both bounds.
+- **Codex ran with the author's skills catalog in context** (found after collection, fixed since: [D5](bench/DEVIATIONS.md)). All arms of a cluster share that context, so the comparison is not biased by it, and dropping the one exposed unit (Notion, codex) leaves every result as above. The absolute `codex-search` rates are for that setup, not a clean Codex.
 - **"Closer" means closer to the same engine's own answers.** The study does not show that any estimate matches the consumer ChatGPT or Gemini apps, or that naming relates to installs.
 - Calibration (descriptive): 66 of 70 app-aeo estimates fell inside their combined 95% interval. The result is unchanged when apps with LLM-judge agreement below 0.90 are dropped.
 - The cost difference is real: app-aeo made 200 calls per category and engine; the prompts made 1.

@@ -3,7 +3,7 @@
 // Two families:
 //   - Local CLIs you are already logged into (no API key, no per-call bill beyond your plan):
 //       claude-cli[:model]   — Claude Code `claude -p`, tools disabled, user settings not loaded
-//       codex-cli[:model]    — OpenAI Codex `codex exec`, isolated CODEX_HOME so your AGENTS.md does not leak in
+//       codex-cli[:model]    — OpenAI Codex `codex exec`, isolated CODEX_HOME and HOME so your AGENTS.md and ~/.agents skills do not leak in
 //   - HTTP APIs (bring your own key):
 //       openrouter:<model>   OPENROUTER_API_KEY
 //       openai:<model>       OPENAI_API_KEY
@@ -119,6 +119,15 @@ export function isolatedCodexHome(src = process.env.CODEX_HOME || path.join(os.h
   return codexHome;
 }
 
+let userHome = null;
+/** Empty HOME for the codex child. Codex reads the user skills catalog from ~/.agents/skills regardless of CODEX_HOME,
+ *  so without this every answer is generated with the user's own skill names and descriptions in context (found 2026-10-12). */
+export function isolatedUserHome() {
+  if (userHome && fs.existsSync(userHome)) return userHome;
+  userHome = fs.mkdtempSync(path.join(os.tmpdir(), 'app-aeo-home-'));
+  return userHome;
+}
+
 /** Count web_search events and collect cited URLs from `codex exec --json` output (one JSON event per line). */
 export function codexEvents(jsonl) {
   let searches = 0;
@@ -145,7 +154,7 @@ function codexAsker({ search, system = null }) {
     args.push('-');
     const label = search ? 'codex-search' : 'codex-cli';
     try {
-      const r = await run('codex', args, { input: prompt, cwd: work, env: { CODEX_HOME: home }, timeoutMs });
+      const r = await run('codex', args, { input: prompt, cwd: work, env: { CODEX_HOME: home, HOME: isolatedUserHome() }, timeoutMs });
       if (r.timedOut) throw new ProviderError('timeout', `${label} timed out after ${timeoutMs}ms`);
       const text = fs.existsSync(out) ? fs.readFileSync(out, 'utf8').trim() : '';
       if (r.code !== 0 || !text) throw new ProviderError(classifyCliError(r.stderr + r.stdout), `${label} rc=${r.code}: ${(r.stderr || r.stdout).slice(-300)}`);

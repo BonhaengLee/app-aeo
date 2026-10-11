@@ -235,6 +235,14 @@ await t('codex engines pass consumer-role developer_instructions (coding-agent m
   assert.match(di, /^developer_instructions=".*not a coding.*Search the web/);
   assert.equal(r.grounded, true);
 });
+await t('codex child gets an empty HOME and an isolated CODEX_HOME (user ~/.agents skills leaked into answers before)', async () => {
+  let envSeen;
+  const run = async (cmd, args, opts) => { envSeen = opts.env; fs.writeFileSync(args[args.indexOf('-o') + 1], 'Streaks'); return { code: 0, stdout: '', stderr: '' }; };
+  await ask('codex-search', 'q', { run });
+  assert.notEqual(envSeen.HOME, os.homedir());
+  assert.deepEqual(fs.readdirSync(envSeen.HOME), []);
+  assert.deepEqual(fs.readdirSync(envSeen.CODEX_HOME), ['auth.json']);
+});
 await t('HTTP 429/401/402 classified as halting kinds', () => {
   assert.equal(classifyHttp(429), 'rate_limited');
   assert.equal(classifyHttp(401), 'auth');
