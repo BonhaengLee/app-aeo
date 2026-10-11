@@ -1,0 +1,693 @@
+{
+  "meta": {
+    "startedAt": "2026-10-11T15:56:48.993Z",
+    "finishedAt": "2026-10-11T15:56:49.004Z",
+    "promptSet": "e19ffff70bef",
+    "providers": [
+      "codex-search"
+    ],
+    "ground": null,
+    "groundSearches": 0,
+    "calls": 0,
+    "halted": {},
+    "skippedByBudget": 0
+  },
+  "agg": {
+    "target": "MyFitnessPal",
+    "prompts": 100,
+    "answers": 100,
+    "failed": 0,
+    "overall": {
+      "mentioned": 3,
+      "rate": 0.03,
+      "ci": [
+        0.010254338223414816,
+        0.08452078080402699
+      ]
+    },
+    "perProvider": [
+      {
+        "provider": "codex-search",
+        "mode": "search",
+        "grounded": 100,
+        "stability": null,
+        "models": [],
+        "answers": 100,
+        "failed": 0,
+        "failures": [],
+        "target": {
+          "name": "MyFitnessPal",
+          "mentioned": 3,
+          "rate": 0.03,
+          "ci": [
+            0.010254338223414816,
+            0.08452078080402699
+          ],
+          "avgRank": 1,
+          "linked": 0,
+          "byPrompt": {
+            "mean": 0.03,
+            "ci": [
+              0,
+              0.07
+            ],
+            "prompts": 100
+          }
+        },
+        "shareOfVoice": 0.08571428571428572,
+        "apps": [
+          {
+            "name": "MyFitnessPal",
+            "mentioned": 3,
+            "rate": 0.03,
+            "ci": [
+              0.010254338223414816,
+              0.08452078080402699
+            ],
+            "avgRank": 1,
+            "linked": 0,
+            "byPrompt": {
+              "mean": 0.03,
+              "ci": [
+                0,
+                0.07
+              ],
+              "prompts": 100
+            }
+          },
+          {
+            "name": "Tasty",
+            "mentioned": 0,
+            "rate": 0,
+            "ci": [
+              0,
+              0.03699480747600191
+            ],
+            "avgRank": null,
+            "linked": 0
+          },
+          {
+            "name": "ReciMe",
+            "mentioned": 0,
+            "rate": 0,
+            "ci": [
+              0,
+              0.03699480747600191
+            ],
+            "avgRank": null,
+            "linked": 0
+          },
+          {
+            "name": "HelloFresh",
+            "mentioned": 0,
+            "rate": 0,
+            "ci": [
+              0,
+              0.03699480747600191
+            ],
+            "avgRank": null,
+            "linked": 0
+          },
+          {
+            "name": "Mealime",
+            "mentioned": 32,
+            "rate": 0.32,
+            "ci": [
+              0.2366901081545688,
+              0.4166280225367919
+            ],
+            "avgRank": 1.3125,
+            "linked": 6
+          }
+        ]
+      }
+    ],
+    "perPrompt": [
+      {
+        "prompt": "best meal planning app ipad",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best monthly meal planner app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best free meal planning calendar app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planning app that is free",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best daily meal planner app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app paprika",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "free meal planner app for muscle gain",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planning app for bodybuilding",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app south africa",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app mise",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal planner app for families",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best recipe organizer app free uk",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best personalized meal plan app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "what is the best free meal planning app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal plan application bgsu",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best custom meal plan app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best diet meal plan app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best diet meal planner app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planning app for the week",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal plan app for weight gain",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planning app budget",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal planning app for mediterranean diet",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal planning app for families",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app samsung",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planning app no ai",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal plan app for free",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app india",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal plan app for bodybuilding",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app to share",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal plan app for calorie deficit",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal planning app for families free",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planning app that works with google calendar",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best gym meal plan app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planning app with pantry inventory",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planning app that syncs with google calendar",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal planner app android",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app ui",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planning app reviews",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal plan app for muscle gain",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app best",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal planning shopping list app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best free meal planner app australia",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal planning app with grocery list",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal plan app free australia",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planning app for echo show",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal plan app for pregnancy",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app free india",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planning app that works with walmart",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planning app that works with alexa",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal plan app for weight loss free",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "meal planning app healthy",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app indian",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app for kids",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best baby meal planner app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal planning app with grocery list free",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "suggest top meal planning apps their core features and user reviews",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app for iphone",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal planning app for cozyla",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app grocery list",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app shared",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal planning calorie app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planning app that tracks macros",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "dinner planner app free",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "mise meal planner app for android",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planning app for one person",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best healthy meal planner app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app with calorie counter",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal planning app for singles",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal planning app macros",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal planning app with macros",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal planning app reviews",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app for mediterranean diet",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app open source",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app free iphone",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "mise meal planner app price",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best pregnancy meal plan app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planning app with grocery list uk",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best collaborative meal planning app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best easy meal planning app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app for baby",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app names",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app ui design",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app for android",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal plan and exercise app",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "daily meal planner app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app google",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal plan app for weight gain",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app reviews",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app no subscription",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app for weight loss",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal plan app kostenlos",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "nhs meal planner app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal plan tracker app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planning apps that work with instacart",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best diet meal plan app free",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "free meal planner app nz",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal planner app nz",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app for diabetics",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "meal planner app for ipad",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best meal planning app for muscle building",
+        "answers": 1,
+        "targetMentioned": 0
+      }
+    ],
+    "otherApps": [
+      {
+        "key": "apple:1303222868",
+        "count": 6
+      },
+      {
+        "key": "name:Plan to Eat",
+        "count": 5
+      },
+      {
+        "key": "play:com.foodient.whisk",
+        "count": 4
+      },
+      {
+        "key": "name:Paprika",
+        "count": 3
+      },
+      {
+        "key": "apple:1215348056",
+        "count": 2
+      },
+      {
+        "key": "apple:981637806",
+        "count": 2
+      },
+      {
+        "key": "name:MealPing",
+        "count": 2
+      },
+      {
+        "key": "name:Eat This Much",
+        "count": 2
+      },
+      {
+        "key": "apple:1133637674",
+        "count": 2
+      },
+      {
+        "key": "play:com.mealime",
+        "count": 2
+      },
+      {
+        "key": "play:com.hindsightlabs.paprika.android.v3",
+        "count": 2
+      },
+      {
+        "key": "name:Samsung Food",
+        "count": 2
+      },
+      {
+        "key": "apple:1248495163",
+        "count": 1
+      },
+      {
+        "key": "name:PlanMyMeals",
+        "count": 1
+      },
+      {
+        "key": "name:Click2Cook",
+        "count": 1
+      }
+    ],
+    "warnings": [
+      "codex-search: no repeats — run-to-run variation unknown. Use repeats ≥ 3 before comparing runs."
+    ]
+  }
+}

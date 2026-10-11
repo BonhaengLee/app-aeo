@@ -1,0 +1,699 @@
+{
+  "meta": {
+    "startedAt": "2026-10-11T15:56:48.585Z",
+    "finishedAt": "2026-10-11T15:56:48.817Z",
+    "promptSet": "c50412e12287",
+    "providers": [
+      "claude-search"
+    ],
+    "ground": null,
+    "groundSearches": 0,
+    "calls": 0,
+    "halted": {},
+    "skippedByBudget": 0
+  },
+  "agg": {
+    "target": "BetterSleep",
+    "prompts": 100,
+    "answers": 200,
+    "failed": 0,
+    "overall": {
+      "mentioned": 36,
+      "rate": 0.18,
+      "ci": [
+        0.13294550662534108,
+        0.2391159371623843
+      ]
+    },
+    "perProvider": [
+      {
+        "provider": "claude-search",
+        "mode": "search",
+        "grounded": 199,
+        "stability": {
+          "prompts": 100,
+          "agreeing": 82,
+          "rate": 0.82
+        },
+        "models": [
+          "claude-opus-4-6[1m]"
+        ],
+        "answers": 200,
+        "failed": 0,
+        "failures": [],
+        "target": {
+          "name": "BetterSleep",
+          "mentioned": 36,
+          "rate": 0.18,
+          "ci": [
+            0.13294550662534108,
+            0.2391159371623843
+          ],
+          "avgRank": 5.25,
+          "linked": 0,
+          "byPrompt": {
+            "mean": 0.18,
+            "ci": [
+              0.12,
+              0.24
+            ],
+            "prompts": 100
+          }
+        },
+        "shareOfVoice": 0.23076923076923078,
+        "apps": [
+          {
+            "name": "BetterSleep",
+            "mentioned": 36,
+            "rate": 0.18,
+            "ci": [
+              0.13294550662534108,
+              0.2391159371623843
+            ],
+            "avgRank": 5.25,
+            "linked": 0,
+            "byPrompt": {
+              "mean": 0.18,
+              "ci": [
+                0.12,
+                0.24
+              ],
+              "prompts": 100
+            }
+          },
+          {
+            "name": "ShutEye",
+            "mentioned": 16,
+            "rate": 0.08,
+            "ci": [
+              0.04984015517626642,
+              0.12599048979512317
+            ],
+            "avgRank": 2.0625,
+            "linked": 0
+          },
+          {
+            "name": "SleepWatch",
+            "mentioned": 16,
+            "rate": 0.08,
+            "ci": [
+              0.04984015517626642,
+              0.12599048979512317
+            ],
+            "avgRank": 2.625,
+            "linked": 1
+          },
+          {
+            "name": "Pillow",
+            "mentioned": 83,
+            "rate": 0.415,
+            "ci": [
+              0.3489416917324964,
+              0.48426212927361817
+            ],
+            "avgRank": 2.0963855421686746,
+            "linked": 0
+          },
+          {
+            "name": "Rise",
+            "mentioned": 5,
+            "rate": 0.025,
+            "ci": [
+              0.010724561470787711,
+              0.05717914415161715
+            ],
+            "avgRank": 1.6,
+            "linked": 0
+          }
+        ]
+      }
+    ],
+    "perPrompt": [
+      {
+        "prompt": "sleep cycle app code",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app on apple watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app oura",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best sleep sound tracker app",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "sleep tracker app no subscription",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best sleep tracker app australia",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app kostenlos",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app picking up partners snoring",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best sleep tracker app for babies",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app without watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app for apple watch",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best free sleep tracker app snoring",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app battery drain",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app help",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "apps to track sleep",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best sleep tracking app for garmin watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app 'multiple alarms",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best sleep tracking app snoring",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "sleep tracking app free ios",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app for iphone",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best sleep cycle calculator app",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app for snoring",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "what is the most accurate sleep tracker app",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep monitor app kostenlos",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app no watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best sleep tracker app wirecutter",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best sleep tracking app for galaxy watch 7",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best sleep tracker app on iphone",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "the best sleep tracker app for iphone",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "sleep cycle app without charging",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracking app free apple watch",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "free sleep tracker app uk",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app that records sound",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app discount code",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker without app",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best free sleep tracker app no watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app explained",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app on apple watch",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best sleep cycle app iphone",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "sleep tracker app best free",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracking app without apple watch",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "sleep tracker app that wakes you up",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app google",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best sleep cycle app to wake up",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "sleep tracker app without subscription",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracking app that alters your dreams",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker with app",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app oura ring",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best sleep tracking app for apple watch ultra 2",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "activity tracker app for android phone",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app not recording sounds",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app cancel subscription",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "sleep cycle app logo",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best sleep tracker app samsung watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best sleep tracker app apnea",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "activity tracker app for apple watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best sleep tracker app for sleep apnea",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app monthly subscription",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "sleepify sleep tracker app ui kit",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best free sleep tracker app uk",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best sleep tracker app phone",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app que es",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best sleep tracker app uk",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "sleep tracker app on phone",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app for toddlers",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracking app best",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "the best sleep tracker app for android",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "which sleep tracker is most accurate",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best sleep tracking app to use with apple watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "the best sleep tracker app",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "sleep tracker app meme",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "the best free sleep tracker app for iphone",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best sleep tracking app without watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best sleep cycle alarm clock app",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "sleep tracking app for kids apple watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app for babies",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app samsung",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracking app for resmed",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app with apple watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "activity tracker app for iphone",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app on iphone",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "sleep monitor app on apple watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracking app for samsung watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app limited version",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "sleep tracking app for free",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best sleep tracker app iphone free",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app discount",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep monitor app for apple watch",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best sleep tracking app for apple watch ultra 3",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app c'est quoi",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep cycle app home assistant",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app kostenlos",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best sleep tracking app for google fit",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app for apple watch free",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "sleep tracker app contact",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app free iphone",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app cost",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracking apps that are free",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracker app with apple watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sleep tracking app that works with myair",
+        "answers": 2,
+        "targetMentioned": 0
+      }
+    ],
+    "otherApps": [
+      {
+        "key": "name:Smart alarm",
+        "count": 16
+      },
+      {
+        "key": "apple:320606217",
+        "count": 14
+      },
+      {
+        "key": "name:Fully automatic",
+        "count": 12
+      },
+      {
+        "key": "name:Phone-only apps",
+        "count": 12
+      },
+      {
+        "key": "name:Sleep Cycle",
+        "count": 11
+      },
+      {
+        "key": "name:Oura Ring",
+        "count": 7
+      },
+      {
+        "key": "name:Sleep as Android",
+        "count": 7
+      },
+      {
+        "key": "name:Already on your iPhone",
+        "count": 6
+      },
+      {
+        "key": "name:SleepScore",
+        "count": 6
+      },
+      {
+        "key": "name:Samsung Health",
+        "count": 6
+      },
+      {
+        "key": "name:Sleep stages",
+        "count": 6
+      },
+      {
+        "key": "name:Place your phone",
+        "count": 5
+      },
+      {
+        "key": "name:Sleep Score",
+        "count": 5
+      },
+      {
+        "key": "name:Blood oxygen",
+        "count": 5
+      },
+      {
+        "key": "name:Download",
+        "count": 4
+      }
+    ],
+    "warnings": [
+      "claude-search: 1/200 answers had no search results behind them (search mode)."
+    ]
+  }
+}

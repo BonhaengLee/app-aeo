@@ -1,0 +1,1616 @@
+{
+  "byProvider": {
+    "codex-search": {
+      "judge": "claude-cli",
+      "kappa": 1,
+      "agreement": 1,
+      "pairs": 200,
+      "judged": 40,
+      "failedBatches": 0,
+      "disagreements": [],
+      "codes": [
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app without subscription",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app without subscription",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app without subscription",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app without subscription",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app without subscription",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app battery drain",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app battery drain",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app battery drain",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app battery drain",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app battery drain",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "which sleep tracker is most accurate",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "which sleep tracker is most accurate",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "which sleep tracker is most accurate",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "which sleep tracker is most accurate",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "which sleep tracker is most accurate",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app snoring",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app snoring",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app snoring",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app snoring",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app snoring",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app without watch",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app without watch",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app without watch",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app without watch",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app without watch",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app for sleep apnea",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app for sleep apnea",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app for sleep apnea",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app for sleep apnea",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app for sleep apnea",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app wirecutter",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app wirecutter",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app wirecutter",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app wirecutter",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app wirecutter",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep monitor app kostenlos",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep monitor app kostenlos",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep monitor app kostenlos",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep monitor app kostenlos",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep monitor app kostenlos",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app monthly subscription",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app monthly subscription",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app monthly subscription",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app monthly subscription",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app monthly subscription",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app for google fit",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app for google fit",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app for google fit",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app for google fit",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app for google fit",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app for iphone",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app for iphone",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app for iphone",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app for iphone",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app for iphone",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app for sleep apnea",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app for sleep apnea",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app for sleep apnea",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app for sleep apnea",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app for sleep apnea",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app explained",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app explained",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app explained",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app explained",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app explained",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "the best sleep tracker app for android",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "the best sleep tracker app for android",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "the best sleep tracker app for android",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "the best sleep tracker app for android",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "the best sleep tracker app for android",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app wirecutter",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app wirecutter",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app wirecutter",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app wirecutter",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app wirecutter",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app limited version",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app limited version",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app limited version",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app limited version",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app limited version",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app meme",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app meme",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app meme",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app meme",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app meme",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep cycle app to wake up",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep cycle app to wake up",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep cycle app to wake up",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep cycle app to wake up",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep cycle app to wake up",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "the best sleep tracker app",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "the best sleep tracker app",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "the best sleep tracker app",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "the best sleep tracker app",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "the best sleep tracker app",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep sound tracker app",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep sound tracker app",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep sound tracker app",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep sound tracker app",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep sound tracker app",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app oura ring",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app oura ring",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app oura ring",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app oura ring",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app oura ring",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "activity tracker app for iphone",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "activity tracker app for iphone",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "activity tracker app for iphone",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "activity tracker app for iphone",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "activity tracker app for iphone",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app cancel subscription",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app cancel subscription",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app cancel subscription",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app cancel subscription",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app cancel subscription",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app no subscription",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app no subscription",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app no subscription",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app no subscription",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app no subscription",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app for garmin watch",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app for garmin watch",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app for garmin watch",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app for garmin watch",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app for garmin watch",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app that alters your dreams",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app that alters your dreams",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app that alters your dreams",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app that alters your dreams",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app that alters your dreams",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free sleep tracker app no watch",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free sleep tracker app no watch",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free sleep tracker app no watch",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free sleep tracker app no watch",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free sleep tracker app no watch",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app that works with myair",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app that works with myair",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app that works with myair",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app that works with myair",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app that works with myair",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app google",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app google",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app google",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app google",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app google",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app free apple watch",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app free apple watch",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app free apple watch",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app free apple watch",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app free apple watch",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app best free",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app best free",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app best free",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app best free",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app best free",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app on iphone",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app on iphone",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app on iphone",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app on iphone",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app on iphone",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app without charging",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app without charging",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app without charging",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app without charging",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app without charging",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app uk",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app uk",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app uk",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app uk",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app uk",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app meme",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app meme",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app meme",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app meme",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app meme",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app for apple watch ultra 2",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app for apple watch ultra 2",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app for apple watch ultra 2",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app for apple watch ultra 2",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracking app for apple watch ultra 2",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app australia",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app australia",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app australia",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app australia",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best sleep tracker app australia",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app for free",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app for free",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app for free",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app for free",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracking app for free",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app kostenlos",
+          "repeat": 2,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app kostenlos",
+          "repeat": 2,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app kostenlos",
+          "repeat": 2,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app kostenlos",
+          "repeat": 2,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep tracker app kostenlos",
+          "repeat": 2,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app 'multiple alarms",
+          "repeat": 1,
+          "app": "BetterSleep",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app 'multiple alarms",
+          "repeat": 1,
+          "app": "ShutEye",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app 'multiple alarms",
+          "repeat": 1,
+          "app": "SleepWatch",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app 'multiple alarms",
+          "repeat": 1,
+          "app": "Pillow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "sleep cycle app 'multiple alarms",
+          "repeat": 1,
+          "app": "Rise",
+          "judge": false,
+          "extractor": false
+        }
+      ],
+      "reason": null
+    }
+  }
+}

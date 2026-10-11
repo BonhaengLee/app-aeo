@@ -1,0 +1,695 @@
+{
+  "meta": {
+    "startedAt": "2026-10-11T16:43:44.013Z",
+    "finishedAt": "2026-10-11T17:05:27.752Z",
+    "promptSet": "84c6fbd3df15",
+    "providers": [
+      "claude-search"
+    ],
+    "ground": null,
+    "groundSearches": 0,
+    "calls": 100,
+    "halted": {},
+    "skippedByBudget": 0
+  },
+  "agg": {
+    "target": "OneNote",
+    "prompts": 100,
+    "answers": 100,
+    "failed": 0,
+    "overall": {
+      "mentioned": 78,
+      "rate": 0.78,
+      "ci": [
+        0.6892946528499969,
+        0.849988254963442
+      ]
+    },
+    "perProvider": [
+      {
+        "provider": "claude-search",
+        "mode": "search",
+        "grounded": 100,
+        "stability": null,
+        "models": [
+          "claude-opus-4-6[1m]"
+        ],
+        "answers": 100,
+        "failed": 0,
+        "failures": [],
+        "target": {
+          "name": "OneNote",
+          "mentioned": 78,
+          "rate": 0.78,
+          "ci": [
+            0.6892946528499969,
+            0.849988254963442
+          ],
+          "avgRank": 2.41025641025641,
+          "linked": 0,
+          "byPrompt": {
+            "mean": 0.78,
+            "ci": [
+              0.69,
+              0.86
+            ],
+            "prompts": 100
+          }
+        },
+        "shareOfVoice": 0.2943396226415094,
+        "apps": [
+          {
+            "name": "OneNote",
+            "mentioned": 78,
+            "rate": 0.78,
+            "ci": [
+              0.6892946528499969,
+              0.849988254963442
+            ],
+            "avgRank": 2.41025641025641,
+            "linked": 0,
+            "byPrompt": {
+              "mean": 0.78,
+              "ci": [
+                0.69,
+                0.86
+              ],
+              "prompts": 100
+            }
+          },
+          {
+            "name": "Goodnotes",
+            "mentioned": 57,
+            "rate": 0.57,
+            "ci": [
+              0.4721521169586435,
+              0.6626686099947162
+            ],
+            "avgRank": 3.6140350877192984,
+            "linked": 0
+          },
+          {
+            "name": "Notability",
+            "mentioned": 44,
+            "rate": 0.44,
+            "ci": [
+              0.34671865400968327,
+              0.537720722887437
+            ],
+            "avgRank": 3.2045454545454546,
+            "linked": 0
+          },
+          {
+            "name": "Notion",
+            "mentioned": 76,
+            "rate": 0.76,
+            "ci": [
+              0.6676748127670786,
+              0.8330878873454004
+            ],
+            "avgRank": 2.289473684210526,
+            "linked": 0
+          },
+          {
+            "name": "Otter",
+            "mentioned": 10,
+            "rate": 0.1,
+            "ci": [
+              0.05522854161313613,
+              0.1743673043676654
+            ],
+            "avgRank": 1.7,
+            "linked": 0
+          }
+        ]
+      }
+    ],
+    "perPrompt": [
+      {
+        "prompt": "free note taking app for ipad without subscription",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app on tablet",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app without subscription",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app linux",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best note taking app cute",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best note taking app",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app android",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app on ipad",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for engineering students",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for microsoft teams",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app that fixes handwriting",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "note taking app for huawei matepad",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for google",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for upsc",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app handwriting ipad",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app business",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for android free",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app university",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for lectures",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best note taking app review",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app with transcription",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app on ipad with apple pencil",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app for nursing school ipad",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "note taking app for desktop",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for hackers",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best note taking app like onenote",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app nursing school",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app ipad free",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app law school",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app similar to onenote",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for professionals",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app google drive",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best note taking app google play",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for huawei",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app galaxy",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app upsc",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for kindle fire",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app lenovo tablet",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app galaxy tab",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app for free",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app no ai",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app google",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app during meetings",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best note taking app completely free",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app handwriting android",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for engineers",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for raspberry pi",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "note taking app that syncs across devices",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app boox",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app for ipad with apple pencil",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for phone calls",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "note taking app that records lectures",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "note taking app free open source",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best note taking app college ipad",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for samsung tablet",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for math",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "note taking app for writing",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best note taking app lenovo",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for google pixel",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for online meetings",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "note taking app for oneplus pad 3",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for dyslexia",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for college",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app that corrects handwriting",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best note taking app apple pencil",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app iphone",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for surface pro",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for calls",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "what is the best free note taking app",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app for engineering students",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for meetings",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for redmi pad pro",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app hp",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app macbook",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for college students",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app with ai",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "note taking app for ipad with pencil",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app ipad 2026",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for teams",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app for kids",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for computer",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for linux",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best note taking app engineering",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for university",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for books",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for macbook",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for google meet",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "note taking app that records and transcribes",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best note taking app grad school",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app like samsung notes",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app device",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for uni",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app dnd",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best note taking app desktop",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app on samsung tablet",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app developers",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app samsung tablet",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for lenovo yoga",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best note taking app no subscription",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "note taking app for old ipad",
+        "answers": 1,
+        "targetMentioned": 1
+      }
+    ],
+    "otherApps": [
+      {
+        "key": "name:Obsidian",
+        "count": 8
+      },
+      {
+        "key": "name:Apple Notes",
+        "count": 7
+      },
+      {
+        "key": "name:Google Keep",
+        "count": 7
+      },
+      {
+        "key": "name:Evernote",
+        "count": 6
+      },
+      {
+        "key": "name:RemNote",
+        "count": 5
+      },
+      {
+        "key": "name:Anki",
+        "count": 4
+      },
+      {
+        "key": "name:NotebookLM",
+        "count": 4
+      },
+      {
+        "key": "name:Simplenote",
+        "count": 3
+      },
+      {
+        "key": "name:Audionotes",
+        "count": 3
+      },
+      {
+        "key": "name:Local-first",
+        "count": 3
+      },
+      {
+        "key": "name:Standard Notes",
+        "count": 2
+      },
+      {
+        "key": "name:Notesnook",
+        "count": 2
+      },
+      {
+        "key": "name:Less ideal for handwriting",
+        "count": 2
+      },
+      {
+        "key": "name:Freeform canvas",
+        "count": 2
+      },
+      {
+        "key": "name:Joplin",
+        "count": 2
+      }
+    ],
+    "warnings": [
+      "claude-search: no repeats — run-to-run variation unknown. Use repeats ≥ 3 before comparing runs."
+    ]
+  }
+}

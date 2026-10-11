@@ -1,0 +1,110 @@
+# App AEO report — MyFitnessPal
+
+Run 2026-10-11T15:56:49.214Z → 2026-10-11T15:56:49.222Z · 100 prompts · 100 answers · 0 failed calls
+
+## By answer engine
+
+| Engine | Mode | Model | Prompts × answers | Mention rate (95% CI over prompts) | Same answer on repeat | Avg position | Store link | Share of voice | Failed |
+|---|---|---|---|---|---|---|---|---|---|
+| claude-search | search | claude-opus-4-6[1m] | 100 × 100 | 43% (33%–53%) | no repeats | 2.8 | 0 | 33% | 0 |
+
+_Mode: **search** = answer grounded in a live web search (closest to consumer chat apps) · **memory** = model knowledge only · **agent** = coding-agent CLI. Interval = bootstrap over prompts, so repeats do not fake precision._
+
+## Competitors (mention rate per engine)
+
+| App | claude-search |
+|---|---|
+| **MyFitnessPal** | 43% @2.8 |
+| Fitbod | 30% @1.9 |
+| Gymverse | 0% |
+| Liftoff | 0% |
+| Hevy | 56% @1.3 |
+
+## Prompts where at least one answer left the app out
+
+| Prompt | Mentioned / answers |
+|---|---|
+| best workout tracking and planning app | 0/1 |
+| workout tracker app gym | 0/1 |
+| workout tracking app free ios | 0/1 |
+| workout tracking app for lifting | 0/1 |
+| fitness tracker app for kids | 0/1 |
+| best health tracker app for chronic illness | 0/1 |
+| best free workout tracker planner app | 0/1 |
+| fitness tracker app code | 0/1 |
+| best fitness tracking app and sleep monitor for apple watch | 0/1 |
+| workout tracker app design | 0/1 |
+| best fitness tracker app with heart rate monitor | 0/1 |
+| app to track workout days | 0/1 |
+| best workout builder and tracker app | 0/1 |
+| best free home workout tracker app | 0/1 |
+| workout tracker app free | 0/1 |
+| best fitness tracker app for kids | 0/1 |
+| best fitness tracker app for cycling | 0/1 |
+| fitness tracker without app | 0/1 |
+| best home workout tracker app | 0/1 |
+| best fitness tracker with app | 0/1 |
+| best workout tracker app ios | 0/1 |
+| workout tracking app for couples | 0/1 |
+| best workout log book app | 0/1 |
+| fitness tracker app.html | 0/1 |
+| best crossfit workout tracking app | 0/1 |
+| activity tracker app for kids | 0/1 |
+| best fitness tracker app for garmin | 0/1 |
+| workout tracker app with widget | 0/1 |
+| best workout log app android | 0/1 |
+| best gym workout tracker app free | 0/1 |
+| best workout tracking app gym | 0/1 |
+| workout tracking app for coaches | 0/1 |
+| best completely free workout tracker app | 0/1 |
+| best workout tracker app bodybuilding | 0/1 |
+| best workout tracker app without subscription | 0/1 |
+| fitness tracker no app | 0/1 |
+| best fitness tracker app for running | 0/1 |
+| best activity tracker app for apple watch | 0/1 |
+| workout tracker app game | 0/1 |
+| best fitness tracker app for steps | 0/1 |
+| workout tracker app with ranks | 0/1 |
+| fitness tracker app for groups | 0/1 |
+| fitness tracker app ui ux | 0/1 |
+| best free workout tracker app no subscription | 0/1 |
+| best weight lifting workout tracker app | 0/1 |
+| best workout tracker app for calisthenics | 0/1 |
+| activity tracker app not working | 0/1 |
+| workout tracker app open source | 0/1 |
+| best fitness tracker app without subscription | 0/1 |
+| fitness tracker app for running | 0/1 |
+| workout log app design | 0/1 |
+| workout tracker app ui | 0/1 |
+| best workout tracker app on ios | 0/1 |
+| best workout tracker app free iphone | 0/1 |
+| best workout tracking app weights | 0/1 |
+| best gym workout planner and tracker app | 0/1 |
+| best workout tracking app for lifting | 0/1 |
+
+## Apps the engines recommend that you did not list
+
+| App (name or store id) | Answers |
+|---|---|
+| name:Strava | 8 |
+| name:Google Fit | 6 |
+| name:Nike Training Club | 6 |
+| name:Wearable integration | 4 |
+| name:Samsung Health | 4 |
+| name:Oura Ring | 3 |
+| name:Fitbit Charge 6 | 3 |
+| name:Strong | 3 |
+| name:JEFIT | 3 |
+| name:Workout logging | 2 |
+| name:Progress tracking | 2 |
+| name:AI-powered coaching | 2 |
+| name:Nike Run Club | 2 |
+| name:Ladder | 2 |
+| name:FitOn | 2 |
+
+## Caveats
+
+- claude-search: no repeats — run-to-run variation unknown. Use repeats ≥ 3 before comparing runs.
+- claude-search: 1/100 answers had no search results behind them (search mode).
+
+_Mention = name/alias as a whole word or a store link. Position = list item number when the answer is a list. Nothing here is a market share: it is how often these engines named the app for these prompts on this day._

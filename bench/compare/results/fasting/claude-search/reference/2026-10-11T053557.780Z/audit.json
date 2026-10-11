@@ -1,0 +1,1665 @@
+{
+  "byProvider": {
+    "claude-search": {
+      "judge": "claude-cli",
+      "kappa": 0.9190064794816414,
+      "agreement": 0.97,
+      "pairs": 200,
+      "judged": 40,
+      "failedBatches": 0,
+      "disagreements": [
+        {
+          "provider": "claude-search",
+          "prompt": "app fasting diet",
+          "app": "BodyFast",
+          "extractor": true,
+          "judge": false,
+          "excerpt": "sting Apps Ranked 2026](https://unstar.app/blog/zero-simple-fastic-life-fasting-bodyfast-intermittent-fasting-apps-ranked-2026) - [Arka Softwares – Best Free In"
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app for long fasts",
+          "app": "Fastic",
+          "extractor": true,
+          "judge": false,
+          "excerpt": "ps://appetiser.com.au/blog/best-intermittent-fasting-app/) - [Simple vs Zero vs Fastic: Best Fasting Apps in 2026](https://nutrola.app/en/blog/simple-vs-zero-vs"
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best paid fasting app",
+          "app": "BodyFast",
+          "extractor": true,
+          "judge": false,
+          "excerpt": "s Ranked 2026 – Unstar](https://unstar.app/blog/zero-simple-fastic-life-fasting-bodyfast-intermittent-fasting-apps-ranked-2026) - [Simple App Review – Fortune]("
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "simple fasting app reviews for weight loss",
+          "app": "BodyFast",
+          "extractor": true,
+          "judge": false,
+          "excerpt": "sting Apps Ranked 2026](https://unstar.app/blog/zero-simple-fastic-life-fasting-bodyfast-intermittent-fasting-apps-ranked-2026) - [JustUseApp – Simple AI Weight"
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best intermittent fasting app for weight loss free",
+          "app": "BodyFast",
+          "extractor": true,
+          "judge": false,
+          "excerpt": "s Ranked 2026 – Unstar](https://unstar.app/blog/zero-simple-fastic-life-fasting-bodyfast-intermittent-fasting-apps-ranked-2026)"
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "is best me fasting app legit",
+          "app": "BodyFast",
+          "extractor": true,
+          "judge": false,
+          "excerpt": "s Ranked 2026 – Unstar](https://unstar.app/blog/zero-simple-fastic-life-fasting-bodyfast-intermittent-fasting-apps-ranked-2026)"
+        }
+      ],
+      "codes": [
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app timer",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app timer",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app timer",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app timer",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app timer",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "k fasting app review for weight loss",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "k fasting app review for weight loss",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "k fasting app review for weight loss",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "k fasting app review for weight loss",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "k fasting app review for weight loss",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "which is the best free fasting app",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "which is the best free fasting app",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "which is the best free fasting app",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "which is the best free fasting app",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "which is the best free fasting app",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best me fasting app cancel subscription",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best me fasting app cancel subscription",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best me fasting app cancel subscription",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best me fasting app cancel subscription",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best me fasting app cancel subscription",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app on apple watch",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app on apple watch",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app on apple watch",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app on apple watch",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app on apple watch",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app cute",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app cute",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app cute",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app cute",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app cute",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app free best",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app free best",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app free best",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app free best",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app free best",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app for friends",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app for friends",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app for friends",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app for friends",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app for friends",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "app fasting diet",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "app fasting diet",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "app fasting diet",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "app fasting diet",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "app fasting diet",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app for long fasts",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app for long fasts",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app for long fasts",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app for long fasts",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app for long fasts",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting best me app",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting best me app",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting best me app",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting best me app",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting best me app",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free body fasting app",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free body fasting app",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free body fasting app",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free body fasting app",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free body fasting app",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "what is the simple fasting app",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "what is the simple fasting app",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "what is the simple fasting app",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "what is the simple fasting app",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "what is the simple fasting app",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app like life",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app like life",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app like life",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app like life",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app like life",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "app for.tracking fasting hours",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "app for.tracking fasting hours",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "app for.tracking fasting hours",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "app for.tracking fasting hours",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "app for.tracking fasting hours",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app apple",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app apple",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app apple",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app apple",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app apple",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting best me.app reviews",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting best me.app reviews",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting best me.app reviews",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting best me.app reviews",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting best me.app reviews",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app apple watch",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app apple watch",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app apple watch",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app apple watch",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app apple watch",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app called life",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app called life",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app called life",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app called life",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app called life",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "intermittent fasting app for samsung watch",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "intermittent fasting app for samsung watch",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "intermittent fasting app for samsung watch",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "intermittent fasting app for samsung watch",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "intermittent fasting app for samsung watch",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free intermittent fasting app for beginners",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free intermittent fasting app for beginners",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free intermittent fasting app for beginners",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free intermittent fasting app for beginners",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free intermittent fasting app for beginners",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app tracker",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app tracker",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app tracker",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app tracker",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fasting app tracker",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best body fasting app",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best body fasting app",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best body fasting app",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best body fasting app",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best body fasting app",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free fasting app for beginners",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free fasting app for beginners",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free fasting app for beginners",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free fasting app for beginners",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free fasting app for beginners",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free fasting app for menopause",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free fasting app for menopause",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free fasting app for menopause",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free fasting app for menopause",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free fasting app for menopause",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best paid fasting app",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best paid fasting app",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best paid fasting app",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best paid fasting app",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best paid fasting app",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app life",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app life",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app life",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app life",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app life",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "simple fasting app reviews for weight loss",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "simple fasting app reviews for weight loss",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "simple fasting app reviews for weight loss",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "simple fasting app reviews for weight loss",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "simple fasting app reviews for weight loss",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app samsung health",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app samsung health",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app samsung health",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app samsung health",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app samsung health",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free fasting app for beginners",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free fasting app for beginners",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free fasting app for beginners",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free fasting app for beginners",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free fasting app for beginners",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app best",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app best",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app best",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app best",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app best",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best intermittent fasting app for weight loss free",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best intermittent fasting app for weight loss free",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best intermittent fasting app for weight loss free",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best intermittent fasting app for weight loss free",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best intermittent fasting app for weight loss free",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app that tracks calories",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app that tracks calories",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app that tracks calories",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app that tracks calories",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app that tracks calories",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "is best me fasting app legit",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "is best me fasting app legit",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "is best me fasting app legit",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "is best me fasting app legit",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "is best me fasting app legit",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app for smart watch",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app for smart watch",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app for smart watch",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app for smart watch",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app for smart watch",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "what is the best fasting app for free",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "what is the best fasting app for free",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "what is the best fasting app for free",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "what is the best fasting app for free",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "what is the best fasting app for free",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app for desktop",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app for desktop",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app for desktop",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app for desktop",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app for desktop",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app no subscription",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app no subscription",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app no subscription",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app no subscription",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app no subscription",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app that shows ketosis",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app that shows ketosis",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app that shows ketosis",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app that shows ketosis",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fasting app that shows ketosis",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "intermittent fasting app for women",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "intermittent fasting app for women",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "intermittent fasting app for women",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "intermittent fasting app for women",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "intermittent fasting app for women",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        }
+      ],
+      "reason": null
+    }
+  }
+}

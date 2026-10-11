@@ -1,0 +1,694 @@
+{
+  "meta": {
+    "startedAt": "2026-10-11T17:48:07.923Z",
+    "finishedAt": "2026-10-11T17:55:18.315Z",
+    "promptSet": "96be70139ce8",
+    "providers": [
+      "codex-search"
+    ],
+    "ground": null,
+    "groundSearches": 0,
+    "calls": 100,
+    "halted": {},
+    "skippedByBudget": 0
+  },
+  "agg": {
+    "target": "Microsoft To Do",
+    "prompts": 100,
+    "answers": 100,
+    "failed": 0,
+    "overall": {
+      "mentioned": 42,
+      "rate": 0.42,
+      "ci": [
+        0.327982249185113,
+        0.5179369200110473
+      ]
+    },
+    "perProvider": [
+      {
+        "provider": "codex-search",
+        "mode": "search",
+        "grounded": 99,
+        "stability": null,
+        "models": [],
+        "answers": 100,
+        "failed": 0,
+        "failures": [],
+        "target": {
+          "name": "Microsoft To Do",
+          "mentioned": 42,
+          "rate": 0.42,
+          "ci": [
+            0.327982249185113,
+            0.5179369200110473
+          ],
+          "avgRank": 1.3571428571428572,
+          "linked": 4,
+          "byPrompt": {
+            "mean": 0.42,
+            "ci": [
+              0.33,
+              0.52
+            ],
+            "prompts": 100
+          }
+        },
+        "shareOfVoice": 0.3111111111111111,
+        "apps": [
+          {
+            "name": "Microsoft To Do",
+            "mentioned": 42,
+            "rate": 0.42,
+            "ci": [
+              0.327982249185113,
+              0.5179369200110473
+            ],
+            "avgRank": 1.3571428571428572,
+            "linked": 4,
+            "byPrompt": {
+              "mean": 0.42,
+              "ci": [
+                0.33,
+                0.52
+              ],
+              "prompts": 100
+            }
+          },
+          {
+            "name": "Todoist",
+            "mentioned": 47,
+            "rate": 0.47,
+            "ci": [
+              0.3751065198210374,
+              0.5671131686275227
+            ],
+            "avgRank": 1.4893617021276595,
+            "linked": 2
+          },
+          {
+            "name": "Google Tasks",
+            "mentioned": 16,
+            "rate": 0.16,
+            "ci": [
+              0.10095202349473717,
+              0.24420444558894414
+            ],
+            "avgRank": 1.875,
+            "linked": 1
+          },
+          {
+            "name": "Any.do",
+            "mentioned": 2,
+            "rate": 0.02,
+            "ci": [
+              0.005501852234968185,
+              0.07001316294199365
+            ],
+            "avgRank": 1.5,
+            "linked": 0
+          },
+          {
+            "name": "TickTick",
+            "mentioned": 28,
+            "rate": 0.28,
+            "ci": [
+              0.2013955916759837,
+              0.37488212361345724
+            ],
+            "avgRank": 1.7142857142857142,
+            "linked": 2
+          }
+        ]
+      }
+    ],
+    "perPrompt": [
+      {
+        "prompt": "best to do list app phone",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app layout",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "cute todo list app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best todo list app adhd",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app for ipad free",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app for children",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app for mobile",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app for autism",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app for kids free",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best todo list app apple",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "todo list app simple",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app for phone",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "simple task list app",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app for home screen",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app not working",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app google",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app for lawyers",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best todo list app 2026",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "todo list app for ubuntu",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app that syncs with google calendar",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best todo list app android",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "which app is best for to do list",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app for both android and ios",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app with subtasks",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "daily to do list app for kids",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app no ads",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best to do list app for students free",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best to do list app iphone widget",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app for neurodivergent",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app for friends",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app for high school students",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "todo list app free",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app kya hai",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best todo list planner app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app with voice",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "todo list app logo",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "todo list app design",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app without subscription",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best to do list app that can be shared",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app for iphone free",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best todo list app with calendar",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app with eisenhower matrix",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "simple to do list app free",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app for computer",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best to do list app that integrates with outlook",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app kaise use kare",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best to do list app uk",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app for school",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "todo list app on iphone",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app iphone free",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app for business",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app by google",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app free iphone",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app for computer and phone",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "how to organize your to do list",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app online",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "todo list app shared",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best to do list app or website",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best to do list app in microsoft",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best todo list app widget",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best to do list app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "todo list app with ai",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app free no ads",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app for outlook",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best to do list app on android",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app browser",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app for gamers",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "todo list app for students",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app aesthetic",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "todo list app offline",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "todo list app store",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "todo list app html css js",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app no ads",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best free to do list app uk",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app for people with adhd",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best todo list app design",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app simple",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "todo list app for family",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app not syncing",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best to do list app ai",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best todo list app linux",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "todo list app requirements",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app completely free",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best to do list app across devices",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "todo list app for iphone",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app for personal use",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app for chores",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app for apple watch",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list application example",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app for galaxy watch",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "todo list app ui design",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "ultimate to do list app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app on play store",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app personal",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "to do list app for beginners",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "todo list app using html css and javascript",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "todo list app with notes",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "todo list app open source",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best to do list app open source",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "to do list app best free",
+        "answers": 1,
+        "targetMentioned": 1
+      }
+    ],
+    "otherApps": [
+      {
+        "key": "apple:904237743",
+        "count": 6
+      },
+      {
+        "key": "name:Apple Reminders",
+        "count": 4
+      },
+      {
+        "key": "name:Things 3",
+        "count": 4
+      },
+      {
+        "key": "play:com.google.android.apps.tasks",
+        "count": 3
+      },
+      {
+        "key": "name:Tasks.org",
+        "count": 3
+      },
+      {
+        "key": "apple:1108187841",
+        "count": 2
+      },
+      {
+        "key": "name:Vikunja",
+        "count": 2
+      },
+      {
+        "key": "apple:1681939723",
+        "count": 1
+      },
+      {
+        "key": "apple:1390028519",
+        "count": 1
+      },
+      {
+        "key": "play:com.microsoft.todos",
+        "count": 1
+      },
+      {
+        "key": "name:एक list बनाएँ",
+        "count": 1
+      },
+      {
+        "key": "name:काम जोड़ें",
+        "count": 1
+      },
+      {
+        "key": "name:आज के जरूरी काम चुनें",
+        "count": 1
+      },
+      {
+        "key": "play:com.virblue.mystudylife",
+        "count": 1
+      },
+      {
+        "key": "name:Microsoft Planner",
+        "count": 1
+      }
+    ],
+    "warnings": [
+      "codex-search: no repeats — run-to-run variation unknown. Use repeats ≥ 3 before comparing runs.",
+      "codex-search: 1/100 answers had no search results behind them (search mode)."
+    ]
+  }
+}

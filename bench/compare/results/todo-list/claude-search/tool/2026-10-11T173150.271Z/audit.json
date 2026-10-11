@@ -1,0 +1,1616 @@
+{
+  "byProvider": {
+    "claude-search": {
+      "judge": "claude-cli",
+      "kappa": 1,
+      "agreement": 1,
+      "pairs": 200,
+      "judged": 40,
+      "failedBatches": 0,
+      "disagreements": [],
+      "codes": [
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for college students",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for college students",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for college students",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for college students",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for college students",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app with widget",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app with widget",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app with widget",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app with widget",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app with widget",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app with reminders",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app with reminders",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app with reminders",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app with reminders",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app with reminders",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app in teams",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app in teams",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app in teams",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app in teams",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app in teams",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app for couples",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app for couples",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app for couples",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app for couples",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app for couples",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app name ideas",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app name ideas",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app name ideas",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app name ideas",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app name ideas",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app free",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app free",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app free",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app free",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app free",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app free",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app free",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app free",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app free",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app free",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app free for students",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app free for students",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app free for students",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app free for students",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app free for students",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app using javascript",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app using javascript",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app using javascript",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app using javascript",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app using javascript",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for adhd adults",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for adhd adults",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for adhd adults",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for adhd adults",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for adhd adults",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app name ideas",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app name ideas",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app name ideas",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app name ideas",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app name ideas",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app with reminders",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app with reminders",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app with reminders",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app with reminders",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app with reminders",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app that integrates with google calendar",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app that integrates with google calendar",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app that integrates with google calendar",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app that integrates with google calendar",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app that integrates with google calendar",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for iphone and android",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for iphone and android",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for iphone and android",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for iphone and android",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for iphone and android",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list reminder app android",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list reminder app android",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list reminder app android",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list reminder app android",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list reminder app android",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app for home",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app for home",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app for home",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app for home",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app for home",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app extension",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app extension",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app extension",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app extension",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app extension",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app sync with google calendar",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app sync with google calendar",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app sync with google calendar",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app sync with google calendar",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app sync with google calendar",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app online",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app online",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app online",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app online",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app online",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for iphone",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for iphone",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for iphone",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for iphone",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for iphone",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app background image",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app background image",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app background image",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app background image",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app background image",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app on ipad",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app on ipad",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app on ipad",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app on ipad",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app on ipad",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for samsung",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for samsung",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for samsung",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for samsung",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for samsung",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app computer",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app computer",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app computer",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app computer",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app computer",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app for multiple devices",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app for multiple devices",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app for multiple devices",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app for multiple devices",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app for multiple devices",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app for ubuntu",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app for ubuntu",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app for ubuntu",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app for ubuntu",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best todo list app for ubuntu",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "task list app for adhd",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "task list app for adhd",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "task list app for adhd",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "task list app for adhd",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "task list app for adhd",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app for people with adhd",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app for people with adhd",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app for people with adhd",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app for people with adhd",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app for people with adhd",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for home",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for home",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for home",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for home",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for home",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "task list app for teams",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "task list app for teams",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "task list app for teams",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "task list app for teams",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "task list app for teams",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for discord",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for discord",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for discord",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for discord",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for discord",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app ubuntu",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app ubuntu",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app ubuntu",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app ubuntu",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app ubuntu",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app for couples",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app for couples",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app for couples",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app for couples",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app for couples",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app sync with google calendar",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app sync with google calendar",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app sync with google calendar",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app sync with google calendar",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app sync with google calendar",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app name",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app name",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app name",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app name",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app name",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app online",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app online",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app online",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app online",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app online",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app for ipad",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app for ipad",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app for ipad",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app for ipad",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "todo list app for ipad",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for iphone widget",
+          "repeat": 2,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for iphone widget",
+          "repeat": 2,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for iphone widget",
+          "repeat": 2,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for iphone widget",
+          "repeat": 2,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "to do list app for iphone widget",
+          "repeat": 2,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app in teams",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app in teams",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app in teams",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app in teams",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best to do list app in teams",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        }
+      ],
+      "reason": null
+    }
+  }
+}

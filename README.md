@@ -71,6 +71,24 @@ Harness defects found in live runs, each fixed with a regression test:
 
 Treat improvements as hypotheses. Re-run the **same** config and compare with `trend`.
 
+## Comparison — is this better than just asking the assistant?
+
+Full results: [`bench/compare/COMPARE.md`](bench/compare/COMPARE.md). Protocol, the frozen expert prompt and the analysis code were pushed before any held-out answer existed ([`bench/compare/PREREGISTRATION.md`](bench/compare/PREREGISTRATION.md)). Setup: 7 new categories × 2 engines × 5 apps. The reference rate comes from 100 autocomplete prompts that app-aeo never saw.
+
+| Claim (pre-registered) | Sign test | Holm p | Δ RMSE (95% CI) | Result |
+|---|---|---|---|---|
+| C1 app-aeo is closer than a best-effort engineered prompt | 14 / 14 clusters | 0.0002 | 0.107 (0.081 – 0.136) | ✅ |
+| C2 app-aeo is closer than a naive prompt | 10 / 10 clusters | 0.0010 | 0.130 (0.086 – 0.177) | ✅ |
+| C3 app-aeo is closer than checking five questions | 14 / 14 clusters | 0.0002 | 0.093 (0.067 – 0.118) | ✅ |
+
+In the pre-committed wording: app-aeo was **closer to the measured rate than the engineered prompt, by 0.107 (0.081 – 0.136)**; **than the naive prompt, by 0.130 (0.086 – 0.177)**; **than a five-question check, by 0.093 (0.067 – 0.118)**. Mean absolute error: app-aeo 0.032 · engineered 0.130 · naive 0.127 · five questions 0.097. No reverse test (rival closer) came near significance.
+
+Read with these limits:
+- **C2 rests on 10 of 14 clusters.** In 4 clusters (fasting on both engines, note taking and todo list on codex-search) the naive prompt's primary call gave no usable number after 2 retries: the assistant replied `null` per app or declined to estimate. By the rule these are missing, not imputed. If they are filled with the reference value itself (the rival's best case), C2 is **not** supported. In the worst case it still is. C1 and C3 hold under both bounds.
+- **"Closer" means closer to the same engine's own answers.** The study does not show that any estimate matches the consumer ChatGPT or Gemini apps, or that naming relates to installs.
+- Calibration (descriptive): 66 of 70 app-aeo estimates fell inside their combined 95% interval. The result is unchanged when apps with LLM-judge agreement below 0.90 are dropped.
+- The cost difference is real: app-aeo made 200 calls per category and engine; the prompts made 1.
+
 ## Alternatives
 
 - **AppTweak AI Visibility** ([product page](https://www.apptweak.com/en/ai-search-visibility-tool-for-mobile-apps)): a commercial, app-specific tracker for ChatGPT and Gemini. No public price; access is through a demo. Use it if you need the consumer ChatGPT/Gemini surfaces, which this tool does not measure.

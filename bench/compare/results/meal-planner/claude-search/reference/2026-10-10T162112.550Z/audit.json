@@ -1,0 +1,1616 @@
+{
+  "byProvider": {
+    "claude-search": {
+      "judge": "claude-cli",
+      "kappa": 1,
+      "agreement": 1,
+      "pairs": 200,
+      "judged": 40,
+      "failedBatches": 0,
+      "disagreements": [],
+      "codes": [
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app grocery list",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app grocery list",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app grocery list",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app grocery list",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app grocery list",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best easy meal planning app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best easy meal planning app",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best easy meal planning app",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best easy meal planning app",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best easy meal planning app",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app paprika",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app paprika",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app paprika",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app paprika",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app paprika",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app indian",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app indian",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app indian",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app indian",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app indian",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for kids",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for kids",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for kids",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for kids",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for kids",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for ipad",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for ipad",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for ipad",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for ipad",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for ipad",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for diabetics",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for diabetics",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for diabetics",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for diabetics",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for diabetics",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app india",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app india",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app india",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app india",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app india",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "daily meal planner app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "daily meal planner app",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "daily meal planner app",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "daily meal planner app",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "daily meal planner app",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for mediterranean diet",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for mediterranean diet",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for mediterranean diet",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for mediterranean diet",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for mediterranean diet",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planning app for bodybuilding",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planning app for bodybuilding",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planning app for bodybuilding",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planning app for bodybuilding",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planning app for bodybuilding",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal plan app free australia",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal plan app free australia",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal plan app free australia",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal plan app free australia",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal plan app free australia",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "nhs meal planner app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "nhs meal planner app",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "nhs meal planner app",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "nhs meal planner app",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "nhs meal planner app",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planner app android",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planner app android",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planner app android",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planner app android",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planner app android",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app mise",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app mise",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app mise",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app mise",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app mise",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best personalized meal plan app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best personalized meal plan app",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best personalized meal plan app",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best personalized meal plan app",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best personalized meal plan app",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best gym meal plan app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best gym meal plan app",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best gym meal plan app",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best gym meal plan app",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best gym meal plan app",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app shared",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app shared",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app shared",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app shared",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app shared",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app no subscription",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app no subscription",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app no subscription",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app no subscription",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app no subscription",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best monthly meal planner app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best monthly meal planner app",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best monthly meal planner app",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best monthly meal planner app",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best monthly meal planner app",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planning app for muscle building",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planning app for muscle building",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planning app for muscle building",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planning app for muscle building",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planning app for muscle building",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app ui",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app ui",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app ui",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app ui",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app ui",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal plan application bgsu",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal plan application bgsu",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal plan application bgsu",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal plan application bgsu",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal plan application bgsu",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best baby meal planner app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best baby meal planner app",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best baby meal planner app",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best baby meal planner app",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best baby meal planner app",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app ui design",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app ui design",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app ui design",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app ui design",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app ui design",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal plan app for weight gain",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal plan app for weight gain",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal plan app for weight gain",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal plan app for weight gain",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal plan app for weight gain",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free meal planner app nz",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free meal planner app nz",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free meal planner app nz",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free meal planner app nz",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free meal planner app nz",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app to share",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app to share",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app to share",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app to share",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app to share",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best custom meal plan app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best custom meal plan app",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best custom meal plan app",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best custom meal plan app",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best custom meal plan app",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "what is the best free meal planning app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "what is the best free meal planning app",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "what is the best free meal planning app",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "what is the best free meal planning app",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "what is the best free meal planning app",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free meal planner app for muscle gain",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free meal planner app for muscle gain",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free meal planner app for muscle gain",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free meal planner app for muscle gain",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "free meal planner app for muscle gain",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for baby",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for baby",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for baby",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for baby",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planner app for baby",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best recipe organizer app free uk",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best recipe organizer app free uk",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best recipe organizer app free uk",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best recipe organizer app free uk",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best recipe organizer app free uk",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planning app for singles",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planning app for singles",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planning app for singles",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planning app for singles",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planning app for singles",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best diet meal planner app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best diet meal planner app",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best diet meal planner app",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best diet meal planner app",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best diet meal planner app",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planning app that works with walmart",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planning app that works with walmart",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planning app that works with walmart",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planning app that works with walmart",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "meal planning app that works with walmart",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free meal planning calendar app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free meal planning calendar app",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free meal planning calendar app",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free meal planning calendar app",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free meal planning calendar app",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planning shopping list app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planning shopping list app",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planning shopping list app",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planning shopping list app",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal planning shopping list app",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal plan app for weight gain",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal plan app for weight gain",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal plan app for weight gain",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal plan app for weight gain",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal plan app for weight gain",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal plan and exercise app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal plan and exercise app",
+          "repeat": 1,
+          "app": "Tasty",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal plan and exercise app",
+          "repeat": 1,
+          "app": "ReciMe",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal plan and exercise app",
+          "repeat": 1,
+          "app": "HelloFresh",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best meal plan and exercise app",
+          "repeat": 1,
+          "app": "Mealime",
+          "judge": true,
+          "extractor": true
+        }
+      ],
+      "reason": null
+    }
+  }
+}

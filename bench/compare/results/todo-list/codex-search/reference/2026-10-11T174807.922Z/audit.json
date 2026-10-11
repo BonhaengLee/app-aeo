@@ -1,0 +1,1616 @@
+{
+  "byProvider": {
+    "codex-search": {
+      "judge": "claude-cli",
+      "kappa": 1,
+      "agreement": 1,
+      "pairs": 200,
+      "judged": 40,
+      "failedBatches": 0,
+      "disagreements": [],
+      "codes": [
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app in microsoft",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app in microsoft",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app in microsoft",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app in microsoft",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app in microsoft",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app not syncing",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app not syncing",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app not syncing",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app not syncing",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app not syncing",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for children",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for children",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for children",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for children",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for children",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app by google",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app by google",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app by google",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app by google",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app by google",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app free iphone",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app free iphone",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app free iphone",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app free iphone",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app free iphone",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app open source",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app open source",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app open source",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app open source",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app open source",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app open source",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app open source",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app open source",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app open source",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app open source",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app for students free",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app for students free",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app for students free",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app for students free",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app for students free",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app for iphone",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app for iphone",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app for iphone",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app for iphone",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app for iphone",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app html css js",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app html css js",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app html css js",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app html css js",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app html css js",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for mobile",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for mobile",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for mobile",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for mobile",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for mobile",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for computer",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for computer",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for computer",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for computer",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for computer",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app on play store",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app on play store",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app on play store",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app on play store",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app on play store",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list planner app",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list planner app",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list planner app",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list planner app",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list planner app",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app apple",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app apple",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app apple",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app apple",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app apple",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "simple task list app",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "simple task list app",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "simple task list app",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "simple task list app",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "simple task list app",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app kya hai",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app kya hai",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app kya hai",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app kya hai",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app kya hai",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app widget",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app widget",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app widget",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app widget",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app widget",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list application example",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list application example",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list application example",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list application example",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list application example",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app layout",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app layout",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app layout",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app layout",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app layout",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app best free",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app best free",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app best free",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app best free",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app best free",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for iphone free",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for iphone free",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for iphone free",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for iphone free",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for iphone free",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app not working",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app not working",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app not working",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app not working",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app not working",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for computer and phone",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for computer and phone",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for computer and phone",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for computer and phone",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for computer and phone",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app completely free",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app completely free",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app completely free",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app completely free",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app completely free",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app that syncs with google calendar",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app that syncs with google calendar",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app that syncs with google calendar",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app that syncs with google calendar",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app that syncs with google calendar",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app using html css and javascript",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app using html css and javascript",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app using html css and javascript",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app using html css and javascript",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app using html css and javascript",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for neurodivergent",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for neurodivergent",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for neurodivergent",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for neurodivergent",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for neurodivergent",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app for lawyers",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app for lawyers",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app for lawyers",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app for lawyers",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app for lawyers",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for home screen",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for home screen",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for home screen",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for home screen",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for home screen",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app for kids free",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app for kids free",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app for kids free",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app for kids free",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app for kids free",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app linux",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app linux",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app linux",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app linux",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app linux",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for phone",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for phone",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for phone",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for phone",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for phone",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app for students",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app for students",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app for students",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app for students",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app for students",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app for ubuntu",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app for ubuntu",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app for ubuntu",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app for ubuntu",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app for ubuntu",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app on iphone",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app on iphone",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app on iphone",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app on iphone",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "todo list app on iphone",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "cute todo list app",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "cute todo list app",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "cute todo list app",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "cute todo list app",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "cute todo list app",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app with calendar",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app with calendar",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app with calendar",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app with calendar",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best todo list app with calendar",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for apple watch",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for apple watch",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for apple watch",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for apple watch",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "to do list app for apple watch",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app across devices",
+          "repeat": 1,
+          "app": "Microsoft To Do",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app across devices",
+          "repeat": 1,
+          "app": "Todoist",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app across devices",
+          "repeat": 1,
+          "app": "Google Tasks",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app across devices",
+          "repeat": 1,
+          "app": "Any.do",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best to do list app across devices",
+          "repeat": 1,
+          "app": "TickTick",
+          "judge": true,
+          "extractor": true
+        }
+      ],
+      "reason": null
+    }
+  }
+}

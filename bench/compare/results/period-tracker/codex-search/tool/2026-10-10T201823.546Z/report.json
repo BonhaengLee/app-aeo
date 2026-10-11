@@ -1,0 +1,697 @@
+{
+  "meta": {
+    "startedAt": "2026-10-11T15:56:49.024Z",
+    "finishedAt": "2026-10-11T15:56:49.093Z",
+    "promptSet": "c2a8bf6e85f8",
+    "providers": [
+      "codex-search"
+    ],
+    "ground": null,
+    "groundSearches": 0,
+    "calls": 0,
+    "halted": {},
+    "skippedByBudget": 0
+  },
+  "agg": {
+    "target": "Flo",
+    "prompts": 100,
+    "answers": 200,
+    "failed": 0,
+    "overall": {
+      "mentioned": 72,
+      "rate": 0.36,
+      "ci": [
+        0.29669087731339805,
+        0.42858600434373184
+      ]
+    },
+    "perProvider": [
+      {
+        "provider": "codex-search",
+        "mode": "search",
+        "grounded": 200,
+        "stability": {
+          "prompts": 100,
+          "agreeing": 70,
+          "rate": 0.7
+        },
+        "models": [],
+        "answers": 200,
+        "failed": 0,
+        "failures": [],
+        "target": {
+          "name": "Flo",
+          "mentioned": 72,
+          "rate": 0.36,
+          "ci": [
+            0.29669087731339805,
+            0.42858600434373184
+          ],
+          "avgRank": 1.7777777777777777,
+          "linked": 5,
+          "byPrompt": {
+            "mean": 0.36,
+            "ci": [
+              0.285,
+              0.435
+            ],
+            "prompts": 100
+          }
+        },
+        "shareOfVoice": 0.33962264150943394,
+        "apps": [
+          {
+            "name": "Flo",
+            "mentioned": 72,
+            "rate": 0.36,
+            "ci": [
+              0.29669087731339805,
+              0.42858600434373184
+            ],
+            "avgRank": 1.7777777777777777,
+            "linked": 5,
+            "byPrompt": {
+              "mean": 0.36,
+              "ci": [
+                0.285,
+                0.435
+              ],
+              "prompts": 100
+            }
+          },
+          {
+            "name": "Clue",
+            "mentioned": 121,
+            "rate": 0.605,
+            "ci": [
+              0.5358822087449843,
+              0.6701601300121683
+            ],
+            "avgRank": 1.2644628099173554,
+            "linked": 8
+          },
+          {
+            "name": "Stardust",
+            "mentioned": 13,
+            "rate": 0.065,
+            "ci": [
+              0.03837598764975976,
+              0.10802003749917945
+            ],
+            "avgRank": 1.6923076923076923,
+            "linked": 3
+          },
+          {
+            "name": "Eve by Glow",
+            "mentioned": 0,
+            "rate": 0,
+            "ci": [
+              0,
+              0.018846005918320894
+            ],
+            "avgRank": null,
+            "linked": 0
+          },
+          {
+            "name": "Ovia",
+            "mentioned": 6,
+            "rate": 0.03,
+            "ci": [
+              0.013820125830748327,
+              0.06389511973247333
+            ],
+            "avgRank": 1.6666666666666667,
+            "linked": 0
+          }
+        ]
+      }
+    ],
+    "perPrompt": [
+      {
+        "prompt": "best period tracker app for guys",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "period tracker app for birth control",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app secure",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best period tracker app no ai",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app owned by women",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app used in court",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "period tracker app for girlfriend",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "period tracker app for teens free",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app australia free",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best time tracking app for employers",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app not flo",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "period calendar app for android",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best period tracker app for getting pregnant",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app no subscription",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app share with partner free",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "period tracker app with no subscription",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best period tracker app for hormones",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app for samsung",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best period tracker app completely free",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "my period tracker app for android",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best period tracker app postpartum",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "period tracker app not for pregnancy",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app that doesn't share data",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app without subscription",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app how to use",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "period tracker app ui",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best period tracker app designed by women",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app for christians",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app designed by women",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "time tracker app for iphone",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "what is the best app to track menstrual cycle",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best period tracker app no ads",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app for teenage girl",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best period tracker app ttc",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app for irregular periods",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best period tracker app perimenopause",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best time tracking app apple",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "time tracker app for android",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app for conceiving",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "encrypted period tracker app",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app australia",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "period tracker app nz",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best period tracker app for women",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best period and ovulation tracker app uk",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best period tracker app pcos",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "period tracker app uk free",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "period tracker app no subscription",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "time tracker app for studying",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app for pregnancy",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "period tracker app recommendation",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app for birth control",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best period tracker app for multiple users",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "period tracker app for multiple women",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "period tracker app kya hai",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app android",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "period tracker app for friends",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "period tracker app for my daughter",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best period tracker app safe",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "which is the best app for period tracker",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "period tracker app for kids",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "free period tracker app without subscription",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "period tracker app like flo",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best period tracker app for couples",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best period tracker app with privacy",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "time tracker app for employees",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app owned by women",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app to get pregnant",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app for 10 year old",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "period tracker app uk",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best period tracker app without ads",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app luteal phase",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "period tracker app free for teens",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best period tracker app canada",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app for natural family planning",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app to prevent pregnancy",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app stardust",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracking app no data sharing",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app for symptoms",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best period tracker app iud",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best period tracking apps ireland",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "period tracker app for apple watch",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "period tracker app for men",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app for girls",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app with moon phases",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app free by women",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "time tracker app for students",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "p tracker app review",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period hormone tracking app",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "time tracker app for desktop",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app with birth control",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best period tracker app for kids",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app for mom and daughter",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best period tracker app europe",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "period tracker app for partner",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "period tracker app free for iphone",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best time tracker app ios",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracker app data privacy",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "period tracker app for dogs",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "period tracking app that shares with partner",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best period tracker app privacy",
+        "answers": 2,
+        "targetMentioned": 0
+      }
+    ],
+    "otherApps": [
+      {
+        "key": "apple:1469213846",
+        "count": 8
+      },
+      {
+        "key": "name:Apple Health Cycle Tracking",
+        "count": 6
+      },
+      {
+        "key": "play:com.clue.android",
+        "count": 5
+      },
+      {
+        "key": "name:Clockify",
+        "count": 4
+      },
+      {
+        "key": "name:Timery",
+        "count": 4
+      },
+      {
+        "key": "name:Natural Cycles",
+        "count": 4
+      },
+      {
+        "key": "name:Jibble",
+        "count": 3
+      },
+      {
+        "key": "play:org.iggymedia.periodtracker",
+        "count": 3
+      },
+      {
+        "key": "apple:1425368544",
+        "count": 3
+      },
+      {
+        "key": "name:Euki",
+        "count": 3
+      },
+      {
+        "key": "name:Toggl Track",
+        "count": 3
+      },
+      {
+        "key": "apple:1607897488",
+        "count": 3
+      },
+      {
+        "key": "name:QuickBooks Time",
+        "count": 2
+      },
+      {
+        "key": "play:com.kollectivemobile.euki",
+        "count": 2
+      },
+      {
+        "key": "apple:443919067",
+        "count": 2
+      }
+    ],
+    "warnings": [
+      "codex-search: only 70% of prompts gave the same yes/no across repeats — single answers from this engine are noisy."
+    ]
+  }
+}

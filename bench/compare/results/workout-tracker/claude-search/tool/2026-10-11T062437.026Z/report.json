@@ -1,0 +1,699 @@
+{
+  "meta": {
+    "startedAt": "2026-10-11T15:56:49.188Z",
+    "finishedAt": "2026-10-11T15:56:49.198Z",
+    "promptSet": "ce088f9db57d",
+    "providers": [
+      "claude-search"
+    ],
+    "ground": null,
+    "groundSearches": 0,
+    "calls": 0,
+    "halted": {},
+    "skippedByBudget": 0
+  },
+  "agg": {
+    "target": "MyFitnessPal",
+    "prompts": 100,
+    "answers": 200,
+    "failed": 0,
+    "overall": {
+      "mentioned": 85,
+      "rate": 0.425,
+      "ci": [
+        0.35853495209243025,
+        0.4942919487953179
+      ]
+    },
+    "perProvider": [
+      {
+        "provider": "claude-search",
+        "mode": "search",
+        "grounded": 198,
+        "stability": {
+          "prompts": 100,
+          "agreeing": 89,
+          "rate": 0.89
+        },
+        "models": [
+          "claude-opus-4-6[1m]"
+        ],
+        "answers": 200,
+        "failed": 0,
+        "failures": [],
+        "target": {
+          "name": "MyFitnessPal",
+          "mentioned": 85,
+          "rate": 0.425,
+          "ci": [
+            0.35853495209243025,
+            0.4942919487953179
+          ],
+          "avgRank": 2.8,
+          "linked": 0,
+          "byPrompt": {
+            "mean": 0.425,
+            "ci": [
+              0.335,
+              0.515
+            ],
+            "prompts": 100
+          }
+        },
+        "shareOfVoice": 0.2972027972027972,
+        "apps": [
+          {
+            "name": "MyFitnessPal",
+            "mentioned": 85,
+            "rate": 0.425,
+            "ci": [
+              0.35853495209243025,
+              0.4942919487953179
+            ],
+            "avgRank": 2.8,
+            "linked": 0,
+            "byPrompt": {
+              "mean": 0.425,
+              "ci": [
+                0.335,
+                0.515
+              ],
+              "prompts": 100
+            }
+          },
+          {
+            "name": "Fitbod",
+            "mentioned": 86,
+            "rate": 0.43,
+            "ci": [
+              0.36334204488394795,
+              0.49929639594461706
+            ],
+            "avgRank": 3.395348837209302,
+            "linked": 0
+          },
+          {
+            "name": "Gymverse",
+            "mentioned": 0,
+            "rate": 0,
+            "ci": [
+              0,
+              0.018846005918320894
+            ],
+            "avgRank": null,
+            "linked": 0
+          },
+          {
+            "name": "Liftoff",
+            "mentioned": 0,
+            "rate": 0,
+            "ci": [
+              0,
+              0.018846005918320894
+            ],
+            "avgRank": null,
+            "linked": 0
+          },
+          {
+            "name": "Hevy",
+            "mentioned": 115,
+            "rate": 0.575,
+            "ci": [
+              0.5057080512046821,
+              0.6414650479075696
+            ],
+            "avgRank": 1.617391304347826,
+            "linked": 0
+          }
+        ]
+      }
+    ],
+    "perPrompt": [
+      {
+        "prompt": "fitness tracker app name",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best workout tracking app for progressive overload",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "simple workout tracking app",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "workout tracking app for kids",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fitness tracker app for weight lifting",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "workout log app free",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fitness tracker app background",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "workout tracking app for free",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fitness tracker app best",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "fitness tracker app er diagram",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best workout tracking apps that are free",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best fitness tracker app for weight lifting",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best workout plan tracker app",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "fitness tracker app for android free",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best health tracking app for galaxy watch",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "fitness tracker app open source",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fitness tracker app for samsung phone",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best workout tracking app for garmin",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best workout tracker apps for men",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best workout tracker app",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best workout tracker app free",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "activity tracker app for apple watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fitness tracker app for apple watch",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "workout tracker app kostenlos",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "is there an app to track exercise",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best health tracking app for samsung watch",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "app to track crossfit workouts",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fitness tracker app no subscription",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best workout tracker app apple watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "workout tracker app free iphone",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best workout tracker app for weightlifting",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fitness tracker app online",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best fitness tracker app for google pixel",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "fitness tracker app name ideas",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "workout app that shows exercises",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "workout app that tells you what to do",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fitness tracker app apple",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "fitness tracker app with maps",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best workout tracker app no subscription",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fitness tracker app ui",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best workout log app ios",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fitness tracker mobile app",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best health tracking app for samsung",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best fitness tracker app for beginners",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fitness tracker app free for android",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "fitness tracker app comparison",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "fitness tracker app design",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "workout tracker app.html",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "workout tracker app for android",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "workout tracker app store",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best free workout tracker app uk",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best workout tracking app strength training",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "activity tracker without app",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best workout tracker app lifting",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "workout tracker app best",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best workout tracker app for gym",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "workout tracker app no subscription",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "workout tracking app gym",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "free workout tracker apps without subscription",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "workout tracker app for apple watch",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "workout tracker app free android",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fitness tracker app for watch",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "activity tracker app for iphone",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best workout tracking app iphone",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fitness tracker app in india",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best workout and meal tracker app",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "fitness tracker app logo",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "workout log app for personal trainers",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "workout tracker app calendar",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "free workout tracker app no subscription",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fitness tracker app for galaxy watch",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "fitness tracker app for free",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "fitness tracker app for samsung watch",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "fitness tracker app ui design",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fitness tracker app to lose weight",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "activity tracker app for work",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fitness tracker app for couples",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best health tracker app for weight loss",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "activity tracker app for android phone",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best custom workout tracker app",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fitness tracker app with friends",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "fitness tracker app for friends",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "workout tracking app garmin",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "activity tracker app free",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best fitness tracker without app",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "workout tracker app simple",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fitness tracker app for samsung galaxy watch",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best free workout tracker app apple",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "workout tracking app for progressive overload",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best workout tracking app for men",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best workout progress tracker app",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "the best workout tracking app",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "workout tracking app for beginners",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best workout tracking app for free",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best health tracker app apple watch",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "app to track gym workouts",
+        "answers": 2,
+        "targetMentioned": 2
+      },
+      {
+        "prompt": "best fitness tracker phone app",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best fitness tracker app for.motivation",
+        "answers": 2,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "workout tracker app strong",
+        "answers": 2,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "activity tracker app design",
+        "answers": 2,
+        "targetMentioned": 0
+      }
+    ],
+    "otherApps": [
+      {
+        "key": "name:Strava",
+        "count": 32
+      },
+      {
+        "key": "name:Nike Training Club",
+        "count": 17
+      },
+      {
+        "key": "name:Strong",
+        "count": 14
+      },
+      {
+        "key": "name:Google Fit",
+        "count": 13
+      },
+      {
+        "key": "name:Samsung Health",
+        "count": 13
+      },
+      {
+        "key": "name:Nike Run Club",
+        "count": 10
+      },
+      {
+        "key": "name:JEFIT",
+        "count": 7
+      },
+      {
+        "key": "apple:6758176997",
+        "count": 7
+      },
+      {
+        "key": "name:Jefit",
+        "count": 7
+      },
+      {
+        "key": "name:FitOn",
+        "count": 6
+      },
+      {
+        "key": "name:Fitbit",
+        "count": 5
+      },
+      {
+        "key": "apple:6471781855",
+        "count": 5
+      },
+      {
+        "key": "name:Start with Samsung Health",
+        "count": 5
+      },
+      {
+        "key": "name:Headspace",
+        "count": 5
+      },
+      {
+        "key": "name:Cronometer",
+        "count": 5
+      }
+    ],
+    "warnings": [
+      "claude-search: 2/200 answers had no search results behind them (search mode)."
+    ]
+  }
+}

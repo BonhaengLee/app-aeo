@@ -1,0 +1,1616 @@
+{
+  "byProvider": {
+    "codex-search": {
+      "judge": "claude-cli",
+      "kappa": 1,
+      "agreement": 1,
+      "pairs": 200,
+      "judged": 40,
+      "failedBatches": 0,
+      "disagreements": [],
+      "codes": [
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app pcos",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app pcos",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app pcos",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app pcos",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app pcos",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for getting pregnant",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for getting pregnant",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for getting pregnant",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for getting pregnant",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for getting pregnant",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app without ads",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app without ads",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app without ads",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app without ads",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app without ads",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for hormones",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for hormones",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for hormones",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for hormones",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for hormones",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app not flo",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app not flo",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app not flo",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app not flo",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app not flo",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for my daughter",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for my daughter",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for my daughter",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for my daughter",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for my daughter",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app how to use",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app how to use",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app how to use",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app how to use",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app how to use",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app without subscription",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app without subscription",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app without subscription",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app without subscription",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app without subscription",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app safe",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app safe",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app safe",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app safe",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app safe",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for partner",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for partner",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for partner",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for partner",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for partner",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app postpartum",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app postpartum",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app postpartum",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app postpartum",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app postpartum",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app safe",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app safe",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app safe",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app safe",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app safe",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app perimenopause",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app perimenopause",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app perimenopause",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app perimenopause",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app perimenopause",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for 10 year old",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for 10 year old",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for 10 year old",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for 10 year old",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for 10 year old",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app how to use",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app how to use",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app how to use",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app how to use",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app how to use",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "time tracker app for students",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "time tracker app for students",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "time tracker app for students",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "time tracker app for students",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "time tracker app for students",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app uk",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app uk",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app uk",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app uk",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app uk",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period and ovulation tracker app uk",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period and ovulation tracker app uk",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period and ovulation tracker app uk",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period and ovulation tracker app uk",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period and ovulation tracker app uk",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app luteal phase",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app luteal phase",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app luteal phase",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app luteal phase",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app luteal phase",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app no ai",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app no ai",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app no ai",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app no ai",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app no ai",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for pregnancy",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for pregnancy",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for pregnancy",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for pregnancy",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for pregnancy",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app iud",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app iud",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app iud",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app iud",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app iud",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app android",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app android",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app android",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app android",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app android",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for girlfriend",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for girlfriend",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for girlfriend",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for girlfriend",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for girlfriend",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app no subscription",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app no subscription",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app no subscription",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app no subscription",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app no subscription",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "time tracker app for studying",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "time tracker app for studying",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "time tracker app for studying",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "time tracker app for studying",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "time tracker app for studying",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best time tracking app apple",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best time tracking app apple",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best time tracking app apple",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best time tracking app apple",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best time tracking app apple",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for dogs",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for dogs",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for dogs",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for dogs",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app for dogs",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app pcos",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app pcos",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app pcos",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app pcos",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app pcos",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "what is the best app to track menstrual cycle",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "what is the best app to track menstrual cycle",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "what is the best app to track menstrual cycle",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "what is the best app to track menstrual cycle",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "what is the best app to track menstrual cycle",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for conceiving",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for conceiving",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for conceiving",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for conceiving",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for conceiving",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app designed by women",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app designed by women",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app designed by women",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app designed by women",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app designed by women",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "time tracker app for iphone",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "time tracker app for iphone",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "time tracker app for iphone",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "time tracker app for iphone",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "time tracker app for iphone",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for couples",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for couples",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for couples",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for couples",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for couples",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app without ads",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app without ads",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app without ads",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app without ads",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app without ads",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app no subscription",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app no subscription",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app no subscription",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app no subscription",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app no subscription",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app no ai",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app no ai",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app no ai",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app no ai",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app no ai",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app with moon phases",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app with moon phases",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app with moon phases",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app with moon phases",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "period tracker app with moon phases",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for kids",
+          "repeat": 2,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for kids",
+          "repeat": 2,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for kids",
+          "repeat": 2,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for kids",
+          "repeat": 2,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for kids",
+          "repeat": 2,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for hormones",
+          "repeat": 1,
+          "app": "Flo",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for hormones",
+          "repeat": 1,
+          "app": "Clue",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for hormones",
+          "repeat": 1,
+          "app": "Stardust",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for hormones",
+          "repeat": 1,
+          "app": "Eve by Glow",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best period tracker app for hormones",
+          "repeat": 1,
+          "app": "Ovia",
+          "judge": false,
+          "extractor": false
+        }
+      ],
+      "reason": null
+    }
+  }
+}

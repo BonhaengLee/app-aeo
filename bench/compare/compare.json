@@ -1,0 +1,6869 @@
+{
+  "primary": {
+    "excluded": [],
+    "underpowered": false,
+    "primary": [
+      {
+        "arm": "E",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.007339999999999999,
+            "mseT": 0.0037899999999999995,
+            "D": 0.0035499999999999998
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.06286,
+            "mseT": 0.00009500000000000009,
+            "D": 0.062765
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017860000000000004,
+            "mseT": 0.00004500000000000001,
+            "D": 0.017815000000000004
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.03152,
+            "mseT": 0.0004649999999999997,
+            "D": 0.031055
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0070199999999999985,
+            "mseT": 0.002289999999999997,
+            "D": 0.0047300000000000016
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02712,
+            "mseT": 0.0008700000000000001,
+            "D": 0.02625
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.02744,
+            "mseT": 0.003184999999999998,
+            "D": 0.024255000000000002
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0249,
+            "mseT": 0.0004850000000000005,
+            "D": 0.024415
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.018120000000000004,
+            "mseT": 0.00343,
+            "D": 0.014690000000000005
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01032,
+            "mseT": 0.000865,
+            "D": 0.009455
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017980000000000003,
+            "mseT": 0.004189999999999999,
+            "D": 0.013790000000000004
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.009500000000000003,
+            "mseT": 0.0027099999999999993,
+            "D": 0.006790000000000004
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03566000000000001,
+            "mseT": 0.004760000000000003,
+            "D": 0.030900000000000007
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.04334000000000001,
+            "mseT": 0.006030000000000002,
+            "D": 0.03731000000000001
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 14,
+          "p": 0.00006103515625
+        },
+        "effect": {
+          "delta": 0.10735852478626298,
+          "ci": [
+            0.08071465944533407,
+            0.13619398495891996
+          ]
+        },
+        "pHolm": 0.00018310546875,
+        "supported": true
+      },
+      {
+        "arm": "N",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0246,
+            "mseT": 0.0037899999999999995,
+            "D": 0.020810000000000002
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": 0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.08575999999999999,
+            "mseT": 0.00004500000000000001,
+            "D": 0.08571499999999999
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02066,
+            "mseT": 0.0004649999999999997,
+            "D": 0.020195
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027959999999999995,
+            "mseT": 0.002289999999999997,
+            "D": 0.02567
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.05658,
+            "mseT": 0.0008700000000000001,
+            "D": 0.055709999999999996
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027140000000000008,
+            "mseT": 0.00343,
+            "D": 0.02371000000000001
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0057199999999999985,
+            "mseT": 0.000865,
+            "D": 0.004854999999999998
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03749999999999999,
+            "mseT": 0.004189999999999999,
+            "D": 0.03330999999999999
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.013220000000000004,
+            "mseT": 0.004760000000000003,
+            "D": 0.008460000000000002
+          }
+        ],
+        "sign": {
+          "n": 10,
+          "pos": 10,
+          "p": 0.0009765625
+        },
+        "effect": {
+          "delta": 0.12988657262255046,
+          "ci": [
+            0.08578241400421505,
+            0.17731032940215197
+          ]
+        },
+        "pHolm": 0.0009765625,
+        "supported": true
+      },
+      {
+        "arm": "M5",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.006700000000000002,
+            "mseT": 0.0037899999999999995,
+            "D": 0.0029100000000000024
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": 0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.026760000000000006,
+            "mseT": 0.00004500000000000001,
+            "D": 0.026715000000000006
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0014600000000000006,
+            "mseT": 0.0004649999999999997,
+            "D": 0.0009950000000000009
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.01718,
+            "mseT": 0.002289999999999997,
+            "D": 0.014890000000000004
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0037800000000000012,
+            "mseT": 0.0008700000000000001,
+            "D": 0.002910000000000001
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0186,
+            "mseT": 0.003184999999999998,
+            "D": 0.015415
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02472,
+            "mseT": 0.0004850000000000005,
+            "D": 0.024235
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0561,
+            "mseT": 0.00343,
+            "D": 0.052669999999999995
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.00674,
+            "mseT": 0.000865,
+            "D": 0.005875
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.04129999999999999,
+            "mseT": 0.004189999999999999,
+            "D": 0.03710999999999999
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.023899999999999998,
+            "mseT": 0.0027099999999999993,
+            "D": 0.021189999999999997
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.02802000000000001,
+            "mseT": 0.004760000000000003,
+            "D": 0.023260000000000006
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01634,
+            "mseT": 0.006030000000000002,
+            "D": 0.010309999999999998
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 14,
+          "p": 0.00006103515625
+        },
+        "effect": {
+          "delta": 0.09282778016305979,
+          "ci": [
+            0.06731376735991458,
+            0.11776338263188228
+          ]
+        },
+        "pHolm": 0.00018310546875,
+        "supported": true
+      }
+    ],
+    "reverse": [
+      {
+        "arm": "E",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.007339999999999999,
+            "mseT": 0.0037899999999999995,
+            "D": -0.0035499999999999998
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.06286,
+            "mseT": 0.00009500000000000009,
+            "D": -0.062765
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017860000000000004,
+            "mseT": 0.00004500000000000001,
+            "D": -0.017815000000000004
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.03152,
+            "mseT": 0.0004649999999999997,
+            "D": -0.031055
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0070199999999999985,
+            "mseT": 0.002289999999999997,
+            "D": -0.0047300000000000016
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02712,
+            "mseT": 0.0008700000000000001,
+            "D": -0.02625
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.02744,
+            "mseT": 0.003184999999999998,
+            "D": -0.024255000000000002
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0249,
+            "mseT": 0.0004850000000000005,
+            "D": -0.024415
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.018120000000000004,
+            "mseT": 0.00343,
+            "D": -0.014690000000000005
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01032,
+            "mseT": 0.000865,
+            "D": -0.009455
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017980000000000003,
+            "mseT": 0.004189999999999999,
+            "D": -0.013790000000000004
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.009500000000000003,
+            "mseT": 0.0027099999999999993,
+            "D": -0.006790000000000004
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03566000000000001,
+            "mseT": 0.004760000000000003,
+            "D": -0.030900000000000007
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.04334000000000001,
+            "mseT": 0.006030000000000002,
+            "D": -0.03731000000000001
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 0,
+          "p": 1
+        },
+        "effect": {
+          "delta": 0.10735852478626298,
+          "ci": [
+            0.08071465944533407,
+            0.13619398495891996
+          ]
+        },
+        "pHolm": 1,
+        "supported": false
+      },
+      {
+        "arm": "N",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0246,
+            "mseT": 0.0037899999999999995,
+            "D": -0.020810000000000002
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": -0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.08575999999999999,
+            "mseT": 0.00004500000000000001,
+            "D": -0.08571499999999999
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02066,
+            "mseT": 0.0004649999999999997,
+            "D": -0.020195
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027959999999999995,
+            "mseT": 0.002289999999999997,
+            "D": -0.02567
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.05658,
+            "mseT": 0.0008700000000000001,
+            "D": -0.055709999999999996
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027140000000000008,
+            "mseT": 0.00343,
+            "D": -0.02371000000000001
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0057199999999999985,
+            "mseT": 0.000865,
+            "D": -0.004854999999999998
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03749999999999999,
+            "mseT": 0.004189999999999999,
+            "D": -0.03330999999999999
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.013220000000000004,
+            "mseT": 0.004760000000000003,
+            "D": -0.008460000000000002
+          }
+        ],
+        "sign": {
+          "n": 10,
+          "pos": 0,
+          "p": 1
+        },
+        "effect": {
+          "delta": 0.12988657262255046,
+          "ci": [
+            0.08578241400421505,
+            0.17731032940215197
+          ]
+        },
+        "pHolm": 1,
+        "supported": false
+      },
+      {
+        "arm": "M5",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.006700000000000002,
+            "mseT": 0.0037899999999999995,
+            "D": -0.0029100000000000024
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": -0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.026760000000000006,
+            "mseT": 0.00004500000000000001,
+            "D": -0.026715000000000006
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0014600000000000006,
+            "mseT": 0.0004649999999999997,
+            "D": -0.0009950000000000009
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.01718,
+            "mseT": 0.002289999999999997,
+            "D": -0.014890000000000004
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0037800000000000012,
+            "mseT": 0.0008700000000000001,
+            "D": -0.002910000000000001
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0186,
+            "mseT": 0.003184999999999998,
+            "D": -0.015415
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02472,
+            "mseT": 0.0004850000000000005,
+            "D": -0.024235
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0561,
+            "mseT": 0.00343,
+            "D": -0.052669999999999995
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.00674,
+            "mseT": 0.000865,
+            "D": -0.005875
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.04129999999999999,
+            "mseT": 0.004189999999999999,
+            "D": -0.03710999999999999
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.023899999999999998,
+            "mseT": 0.0027099999999999993,
+            "D": -0.021189999999999997
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.02802000000000001,
+            "mseT": 0.004760000000000003,
+            "D": -0.023260000000000006
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01634,
+            "mseT": 0.006030000000000002,
+            "D": -0.010309999999999998
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 0,
+          "p": 1
+        },
+        "effect": {
+          "delta": 0.09282778016305979,
+          "ci": [
+            0.06731376735991458,
+            0.11776338263188228
+          ]
+        },
+        "pHolm": 1,
+        "supported": false
+      }
+    ],
+    "sensitivityAudit": [
+      {
+        "arm": "E",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.007339999999999999,
+            "mseT": 0.0037899999999999995,
+            "D": 0.0035499999999999998
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.06286,
+            "mseT": 0.00009500000000000009,
+            "D": 0.062765
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017860000000000004,
+            "mseT": 0.00004500000000000001,
+            "D": 0.017815000000000004
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.03152,
+            "mseT": 0.0004649999999999997,
+            "D": 0.031055
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0070199999999999985,
+            "mseT": 0.002289999999999997,
+            "D": 0.0047300000000000016
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02712,
+            "mseT": 0.0008700000000000001,
+            "D": 0.02625
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 4,
+            "mseX": 0.023275,
+            "mseT": 0.0021749999999999985,
+            "D": 0.0211
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0249,
+            "mseT": 0.0004850000000000005,
+            "D": 0.024415
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.018120000000000004,
+            "mseT": 0.00343,
+            "D": 0.014690000000000005
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01032,
+            "mseT": 0.000865,
+            "D": 0.009455
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017980000000000003,
+            "mseT": 0.004189999999999999,
+            "D": 0.013790000000000004
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.009500000000000003,
+            "mseT": 0.0027099999999999993,
+            "D": 0.006790000000000004
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03566000000000001,
+            "mseT": 0.004760000000000003,
+            "D": 0.030900000000000007
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.04334000000000001,
+            "mseT": 0.006030000000000002,
+            "D": 0.03731000000000001
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 14,
+          "p": 0.00006103515625
+        },
+        "effect": {
+          "delta": 0.1071487906186496,
+          "ci": [
+            0.08038437511687546,
+            0.13619231771024679
+          ]
+        },
+        "pHolm": 0.00018310546875,
+        "supported": true
+      },
+      {
+        "arm": "N",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0246,
+            "mseT": 0.0037899999999999995,
+            "D": 0.020810000000000002
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": 0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.08575999999999999,
+            "mseT": 0.00004500000000000001,
+            "D": 0.08571499999999999
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02066,
+            "mseT": 0.0004649999999999997,
+            "D": 0.020195
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027959999999999995,
+            "mseT": 0.002289999999999997,
+            "D": 0.02567
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.05658,
+            "mseT": 0.0008700000000000001,
+            "D": 0.055709999999999996
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027140000000000008,
+            "mseT": 0.00343,
+            "D": 0.02371000000000001
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0057199999999999985,
+            "mseT": 0.000865,
+            "D": 0.004854999999999998
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03749999999999999,
+            "mseT": 0.004189999999999999,
+            "D": 0.03330999999999999
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.013220000000000004,
+            "mseT": 0.004760000000000003,
+            "D": 0.008460000000000002
+          }
+        ],
+        "sign": {
+          "n": 10,
+          "pos": 10,
+          "p": 0.0009765625
+        },
+        "effect": {
+          "delta": 0.12988657262255046,
+          "ci": [
+            0.08578241400421505,
+            0.17731032940215197
+          ]
+        },
+        "pHolm": 0.0009765625,
+        "supported": true
+      },
+      {
+        "arm": "M5",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.006700000000000002,
+            "mseT": 0.0037899999999999995,
+            "D": 0.0029100000000000024
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": 0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.026760000000000006,
+            "mseT": 0.00004500000000000001,
+            "D": 0.026715000000000006
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0014600000000000006,
+            "mseT": 0.0004649999999999997,
+            "D": 0.0009950000000000009
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.01718,
+            "mseT": 0.002289999999999997,
+            "D": 0.014890000000000004
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0037800000000000012,
+            "mseT": 0.0008700000000000001,
+            "D": 0.002910000000000001
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 4,
+            "mseX": 0.008849999999999992,
+            "mseT": 0.0021749999999999985,
+            "D": 0.0066749999999999934
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02472,
+            "mseT": 0.0004850000000000005,
+            "D": 0.024235
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0561,
+            "mseT": 0.00343,
+            "D": 0.052669999999999995
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.00674,
+            "mseT": 0.000865,
+            "D": 0.005875
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.04129999999999999,
+            "mseT": 0.004189999999999999,
+            "D": 0.03710999999999999
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.023899999999999998,
+            "mseT": 0.0027099999999999993,
+            "D": 0.021189999999999997
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.02802000000000001,
+            "mseT": 0.004760000000000003,
+            "D": 0.023260000000000006
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01634,
+            "mseT": 0.006030000000000002,
+            "D": 0.010309999999999998
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 14,
+          "p": 0.00006103515625
+        },
+        "effect": {
+          "delta": 0.09109203535974258,
+          "ci": [
+            0.06459225854514622,
+            0.11687119856757604
+          ]
+        },
+        "pHolm": 0.00018310546875,
+        "supported": true
+      }
+    ],
+    "calibration": {
+      "covered": 66,
+      "n": 70
+    },
+    "mae": {
+      "T": 0.03214285714285714,
+      "E": 0.1295714285714286,
+      "N": 0.12659999999999993,
+      "M5": 0.09714285714285714
+    },
+    "units": [
+      {
+        "app": "BetterSleep",
+        "R": 0.07,
+        "seR": 0.024748008000645298,
+        "T": 0.18,
+        "seT": 0.03163843775773376,
+        "M5": 0.2,
+        "E": 0.1,
+        "Emean": 0.12333333333333334,
+        "N": 0.15,
+        "Nmean": 0.19333333333333333,
+        "agreeR": 0.95,
+        "agreeT": 0.975,
+        "id": "sleep-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "ShutEye",
+        "R": 0.04,
+        "seR": 0.019974734040782635,
+        "T": 0.08,
+        "seT": 0.02210763442795269,
+        "M5": 0,
+        "E": 0.14,
+        "Emean": 0.1366666666666667,
+        "N": 0.25,
+        "Nmean": 0.19333333333333336,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "SleepWatch",
+        "R": 0.1,
+        "seR": 0.03024797513884187,
+        "T": 0.08,
+        "seT": 0.022518391927489063,
+        "M5": 0,
+        "E": 0.09,
+        "Emean": 0.11666666666666665,
+        "N": 0.2,
+        "Nmean": 0.13333333333333333,
+        "agreeR": 1,
+        "agreeT": 0.975,
+        "id": "sleep-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Pillow",
+        "R": 0.35,
+        "seR": 0.047117800245766804,
+        "T": 0.415,
+        "seT": 0.04700830877355608,
+        "M5": 0.4,
+        "E": 0.19,
+        "Emean": 0.19666666666666666,
+        "N": 0.35,
+        "Nmean": 0.31,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Rise",
+        "R": 0.05,
+        "seR": 0.021354156504062503,
+        "T": 0.025,
+        "seT": 0.012938962236207323,
+        "M5": 0,
+        "E": 0.06,
+        "Emean": 0.08,
+        "N": 0.3,
+        "Nmean": 0.29,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "BetterSleep",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.24,
+        "Emean": 0.20333333333333334,
+        "N": 0,
+        "Nmean": 0.055,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "ShutEye",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.27,
+        "Emean": 0.26,
+        "N": 0,
+        "Nmean": 0.055,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "SleepWatch",
+        "R": 0,
+        "seR": 0,
+        "T": 0.015,
+        "seT": 0.010824171735056632,
+        "M5": 0,
+        "E": 0.35,
+        "Emean": 0.25666666666666665,
+        "N": 0,
+        "Nmean": 0.11,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Pillow",
+        "R": 0.21,
+        "seR": 0.04083472756123191,
+        "T": 0.225,
+        "seT": 0.034153407498374186,
+        "M5": 0,
+        "E": 0.39,
+        "Emean": 0.33,
+        "N": 0,
+        "Nmean": 0.39,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Rise",
+        "R": 0.01,
+        "seR": 0.009631353747007784,
+        "T": 0.015,
+        "seT": 0.010978359394736462,
+        "M5": 0,
+        "E": 0.18,
+        "Emean": 0.14666666666666667,
+        "N": 0,
+        "Nmean": 0.22,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "MyFitnessPal",
+        "R": 0.19,
+        "seR": 0.038374406835806646,
+        "T": 0.19,
+        "seT": 0.03738608531258634,
+        "M5": 0,
+        "E": 0.27,
+        "Emean": 0.30333333333333334,
+        "N": 0.6,
+        "Nmean": 0.48333333333333334,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Tasty",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.07,
+        "Emean": 0.08333333333333333,
+        "N": 0.15,
+        "Nmean": 0.10000000000000002,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "claude-search"
+      },
+      {
+        "app": "ReciMe",
+        "R": 0.01,
+        "seR": 0.009899414124078111,
+        "T": 0.02,
+        "seT": 0.013697021574050207,
+        "M5": 0,
+        "E": 0.03,
+        "Emean": 0.04666666666666667,
+        "N": 0.02,
+        "Nmean": 0.016666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "claude-search"
+      },
+      {
+        "app": "HelloFresh",
+        "R": 0,
+        "seR": 0,
+        "T": 0.01,
+        "seT": 0.009944526132501321,
+        "M5": 0.2,
+        "E": 0.1,
+        "Emean": 0.09333333333333334,
+        "N": 0.35,
+        "Nmean": 0.3,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Mealime",
+        "R": 0.64,
+        "seR": 0.048119326678580765,
+        "T": 0.645,
+        "seT": 0.043450215117419005,
+        "M5": 0.4,
+        "E": 0.38,
+        "Emean": 0.3666666666666667,
+        "N": 0.3,
+        "Nmean": 0.31666666666666665,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "claude-search"
+      },
+      {
+        "app": "MyFitnessPal",
+        "R": 0.03,
+        "seR": 0.01666978104235325,
+        "T": 0.055,
+        "seT": 0.01727751989580688,
+        "M5": 0,
+        "E": 0.28,
+        "Emean": 0.26,
+        "N": 0,
+        "Nmean": 0.19,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Tasty",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.1,
+        "Emean": 0.09666666666666668,
+        "N": 0,
+        "Nmean": 0.14,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "codex-search"
+      },
+      {
+        "app": "ReciMe",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.25,
+        "Emean": 0.23333333333333336,
+        "N": 0,
+        "Nmean": 0.06,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "codex-search"
+      },
+      {
+        "app": "HelloFresh",
+        "R": 0,
+        "seR": 0,
+        "T": 0.01,
+        "seT": 0.006963134620987913,
+        "M5": 0,
+        "E": 0.15,
+        "Emean": 0.15,
+        "N": 0,
+        "Nmean": 0.125,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Mealime",
+        "R": 0.32,
+        "seR": 0.046430763239473344,
+        "T": 0.36,
+        "seT": 0.03980778786870715,
+        "M5": 0.4,
+        "E": 0.33,
+        "Emean": 0.35000000000000003,
+        "N": 0,
+        "Nmean": 0.225,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Flo",
+        "R": 0.63,
+        "seR": 0.05034180767513217,
+        "T": 0.695,
+        "seT": 0.0427260432874378,
+        "M5": 0.4,
+        "E": 0.69,
+        "Emean": 0.6733333333333333,
+        "N": 0.85,
+        "Nmean": 0.85,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Clue",
+        "R": 0.76,
+        "seR": 0.04329918446114188,
+        "T": 0.82,
+        "seT": 0.03545872591831233,
+        "M5": 0.6,
+        "E": 0.63,
+        "Emean": 0.65,
+        "N": 0.75,
+        "Nmean": 0.7666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Stardust",
+        "R": 0.13,
+        "seR": 0.03368805092313885,
+        "T": 0.135,
+        "seT": 0.031036800334441512,
+        "M5": 0.2,
+        "E": 0.17,
+        "Emean": 0.22999999999999998,
+        "N": 0.25,
+        "Nmean": 0.26666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Eve by Glow",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.09,
+        "Emean": 0.13,
+        "N": 0.12,
+        "Nmean": 0.15666666666666668,
+        "agreeR": 0.975,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Ovia",
+        "R": 0.05,
+        "seR": 0.021155214487213237,
+        "T": 0.11,
+        "seT": 0.028948238180414528,
+        "M5": 0,
+        "E": 0.12,
+        "Emean": 0.15666666666666665,
+        "N": 0.3,
+        "Nmean": 0.31666666666666665,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Flo",
+        "R": 0.36,
+        "seR": 0.04848788482703727,
+        "T": 0.36,
+        "seT": 0.038984160565542464,
+        "M5": 0.4,
+        "E": 0.53,
+        "Emean": 0.5566666666666666,
+        "N": 0.7,
+        "Nmean": 0.725,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Clue",
+        "R": 0.6,
+        "seR": 0.048774845976179246,
+        "T": 0.605,
+        "seT": 0.04081262052049575,
+        "M5": 0.6,
+        "E": 0.45,
+        "Emean": 0.47333333333333333,
+        "N": 0.75,
+        "Nmean": 0.725,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Stardust",
+        "R": 0.13,
+        "seR": 0.03409544837657945,
+        "T": 0.065,
+        "seT": 0.019558743409278656,
+        "M5": 0,
+        "E": 0.32,
+        "Emean": 0.31,
+        "N": 0.45,
+        "Nmean": 0.42500000000000004,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Eve by Glow",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.09,
+        "Emean": 0.09000000000000001,
+        "N": 0.1,
+        "Nmean": 0.15000000000000002,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Ovia",
+        "R": 0.02,
+        "seR": 0.01395465513726511,
+        "T": 0.03,
+        "seT": 0.01396477622448711,
+        "M5": 0,
+        "E": 0.22,
+        "Emean": 0.18333333333333335,
+        "N": 0.2,
+        "Nmean": 0.225,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Fastic",
+        "R": 0.57,
+        "seR": 0.049633460487860354,
+        "T": 0.485,
+        "seT": 0.04247590375730697,
+        "M5": 0.4,
+        "E": 0.57,
+        "Emean": 0.5566666666666666,
+        "N": null,
+        "Nmean": 0.35,
+        "agreeR": 0.975,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "claude-search"
+      },
+      {
+        "app": "BodyFast",
+        "R": 0.16,
+        "seR": 0.03643397281384496,
+        "T": 0.245,
+        "seT": 0.03738929250132991,
+        "M5": 0.4,
+        "E": 0.37,
+        "Emean": 0.35333333333333333,
+        "N": null,
+        "Nmean": 0.25,
+        "agreeR": 0.875,
+        "agreeT": 0.975,
+        "id": "fasting",
+        "engine": "claude-search"
+      },
+      {
+        "app": "FastEasy",
+        "R": 0.02,
+        "seR": 0.014107160415902204,
+        "T": 0.005,
+        "seT": 0.005062361109205892,
+        "M5": 0,
+        "E": 0.13,
+        "Emean": 0.18333333333333335,
+        "N": null,
+        "Nmean": 0.1,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "claude-search"
+      },
+      {
+        "app": "FastHabit",
+        "R": 0.55,
+        "seR": 0.049165107291655456,
+        "T": 0.555,
+        "seT": 0.04669096700647781,
+        "M5": 0.6,
+        "E": 0.28,
+        "Emean": 0.2833333333333334,
+        "N": null,
+        "Nmean": 0.2,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Window",
+        "R": 0.06,
+        "seR": 0.023540789600181373,
+        "T": 0.025,
+        "seT": 0.01096974219159223,
+        "M5": 0,
+        "E": 0.15,
+        "Emean": 0.13,
+        "N": null,
+        "Nmean": 0.1,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Fastic",
+        "R": 0.34,
+        "seR": 0.046532276701231876,
+        "T": 0.3,
+        "seT": 0.036904349252493314,
+        "M5": 0.6,
+        "E": 0.42,
+        "Emean": 0.35000000000000003,
+        "N": null,
+        "Nmean": 0.8,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "codex-search"
+      },
+      {
+        "app": "BodyFast",
+        "R": 0.12,
+        "seR": 0.03240124959010091,
+        "T": 0.11,
+        "seT": 0.021633856423439714,
+        "M5": 0,
+        "E": 0.32,
+        "Emean": 0.2933333333333334,
+        "N": null,
+        "Nmean": 0.7,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "codex-search"
+      },
+      {
+        "app": "FastEasy",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.21,
+        "Emean": 0.17,
+        "N": null,
+        "Nmean": 0.2,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "codex-search"
+      },
+      {
+        "app": "FastHabit",
+        "R": 0.04,
+        "seR": 0.01988437577597033,
+        "T": 0.03,
+        "seT": 0.011824212183058907,
+        "M5": 0,
+        "E": 0.16,
+        "Emean": 0.15333333333333335,
+        "N": null,
+        "Nmean": 0.4,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Window",
+        "R": 0,
+        "seR": 0,
+        "T": 0.025,
+        "seT": 0.013255417524544434,
+        "M5": 0.2,
+        "E": 0.14,
+        "Emean": 0.12333333333333334,
+        "N": null,
+        "Nmean": 0.3,
+        "agreeR": 1,
+        "agreeT": 0.975,
+        "id": "fasting",
+        "engine": "codex-search"
+      },
+      {
+        "app": "MyFitnessPal",
+        "R": 0.43,
+        "seR": 0.05013039397411491,
+        "T": 0.425,
+        "seT": 0.046534461356611864,
+        "M5": 0.6,
+        "E": 0.24,
+        "Emean": 0.22999999999999998,
+        "N": 0.3,
+        "Nmean": 0.46666666666666673,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Fitbod",
+        "R": 0.3,
+        "seR": 0.04529277977779662,
+        "T": 0.43,
+        "seT": 0.048795079413809846,
+        "M5": 0.8,
+        "E": 0.24,
+        "Emean": 0.2866666666666667,
+        "N": 0.15,
+        "Nmean": 0.2833333333333333,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Gymverse",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.04,
+        "Emean": 0.036666666666666674,
+        "N": 0.01,
+        "Nmean": 0.016666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Liftoff",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.03,
+        "Emean": 0.02666666666666667,
+        "N": 0.01,
+        "Nmean": 0.01,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Hevy",
+        "R": 0.56,
+        "seR": 0.04939157418021814,
+        "T": 0.575,
+        "seT": 0.047958341232261156,
+        "M5": 0.6,
+        "E": 0.34,
+        "Emean": 0.37666666666666665,
+        "N": 0.25,
+        "Nmean": 0.26666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "MyFitnessPal",
+        "R": 0.03,
+        "seR": 0.01657491779768451,
+        "T": 0.03,
+        "seT": 0.015393586123772523,
+        "M5": 0,
+        "E": 0.22,
+        "Emean": 0.18333333333333335,
+        "N": 0,
+        "Nmean": 0.31666666666666665,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Fitbod",
+        "R": 0.18,
+        "seR": 0.03808910474138241,
+        "T": 0.17,
+        "seT": 0.034371787486250915,
+        "M5": 0.2,
+        "E": 0.29,
+        "Emean": 0.32,
+        "N": 0.27,
+        "Nmean": 0.42333333333333334,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Gymverse",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.04,
+        "Emean": 0.056666666666666664,
+        "N": 0,
+        "Nmean": 0.043333333333333335,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Liftoff",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.03,
+        "Emean": 0.03333333333333333,
+        "N": 0,
+        "Nmean": 0.02666666666666667,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Hevy",
+        "R": 0.42,
+        "seR": 0.04924223289007099,
+        "T": 0.485,
+        "seT": 0.045419746806868146,
+        "M5": 0.6,
+        "E": 0.39,
+        "Emean": 0.3866666666666667,
+        "N": 0.28,
+        "Nmean": 0.32666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "OneNote",
+        "R": 0.78,
+        "seR": 0.04131541963964513,
+        "T": 0.775,
+        "seT": 0.03915330373991439,
+        "M5": 0.8,
+        "E": 0.7,
+        "Emean": 0.68,
+        "N": 0.5,
+        "Nmean": 0.6166666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Goodnotes",
+        "R": 0.57,
+        "seR": 0.0490188022599491,
+        "T": 0.545,
+        "seT": 0.04563040406351884,
+        "M5": 0.2,
+        "E": 0.5,
+        "Emean": 0.47333333333333333,
+        "N": 0.3,
+        "Nmean": 0.31666666666666665,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Notability",
+        "R": 0.44,
+        "seR": 0.04974810926055385,
+        "T": 0.49,
+        "seT": 0.04426538574326431,
+        "M5": 0.2,
+        "E": 0.43,
+        "Emean": 0.41999999999999993,
+        "N": 0.25,
+        "Nmean": 0.26666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Notion",
+        "R": 0.76,
+        "seR": 0.04249775729376793,
+        "T": 0.63,
+        "seT": 0.045624635888958195,
+        "M5": 0.8,
+        "E": 0.48,
+        "Emean": 0.47,
+        "N": 0.75,
+        "Nmean": 0.7833333333333333,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Otter",
+        "R": 0.1,
+        "seR": 0.029815096847067252,
+        "T": 0.07,
+        "seT": 0.02388806762800209,
+        "M5": 0,
+        "E": 0.09,
+        "Emean": 0.11333333333333334,
+        "N": 0.1,
+        "Nmean": 0.11666666666666665,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "claude-search"
+      },
+      {
+        "app": "OneNote",
+        "R": 0.52,
+        "seR": 0.049821054786104366,
+        "T": 0.48,
+        "seT": 0.04518899644825058,
+        "M5": 0.6,
+        "E": 0.39,
+        "Emean": 0.41,
+        "N": null,
+        "Nmean": null,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Goodnotes",
+        "R": 0.31,
+        "seR": 0.04675108447940018,
+        "T": 0.315,
+        "seT": 0.04442125054520654,
+        "M5": 0,
+        "E": 0.31,
+        "Emean": 0.3233333333333333,
+        "N": null,
+        "Nmean": null,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Notability",
+        "R": 0.12,
+        "seR": 0.03294172088704548,
+        "T": 0.145,
+        "seT": 0.03414164896061706,
+        "M5": 0.2,
+        "E": 0.25,
+        "Emean": 0.24333333333333332,
+        "N": null,
+        "Nmean": null,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Notion",
+        "R": 0.35,
+        "seR": 0.04785607484949016,
+        "T": 0.27,
+        "seT": 0.0387765708095751,
+        "M5": 0.4,
+        "E": 0.46,
+        "Emean": 0.41,
+        "N": null,
+        "Nmean": null,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Otter",
+        "R": 0.09,
+        "seR": 0.028546131086366305,
+        "T": 0.02,
+        "seT": 0.011937100778664856,
+        "M5": 0,
+        "E": 0.13,
+        "Emean": 0.13333333333333333,
+        "N": null,
+        "Nmean": null,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Microsoft To Do",
+        "R": 0.72,
+        "seR": 0.04620275722291916,
+        "T": 0.66,
+        "seT": 0.04087685400994067,
+        "M5": 0.8,
+        "E": 0.65,
+        "Emean": 0.6699999999999999,
+        "N": 0.7,
+        "Nmean": 0.7333333333333334,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Todoist",
+        "R": 0.92,
+        "seR": 0.027721397872401698,
+        "T": 0.9,
+        "seT": 0.027770369888606115,
+        "M5": 0.8,
+        "E": 0.77,
+        "Emean": 0.7766666666666667,
+        "N": 0.9,
+        "Nmean": 0.8833333333333333,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Google Tasks",
+        "R": 0.64,
+        "seR": 0.04817630019003141,
+        "T": 0.57,
+        "seT": 0.04610538465027705,
+        "M5": 0.4,
+        "E": 0.44,
+        "Emean": 0.5133333333333333,
+        "N": 0.6,
+        "Nmean": 0.5666666666666667,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Any.do",
+        "R": 0.24,
+        "seR": 0.04273846511048345,
+        "T": 0.34,
+        "seT": 0.04001436460822554,
+        "M5": 0.4,
+        "E": 0.49,
+        "Emean": 0.5266666666666667,
+        "N": 0.45,
+        "Nmean": 0.43333333333333335,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "claude-search"
+      },
+      {
+        "app": "TickTick",
+        "R": 0.79,
+        "seR": 0.04107674981056797,
+        "T": 0.72,
+        "seT": 0.04071721925365243,
+        "M5": 0.6,
+        "E": 0.57,
+        "Emean": 0.63,
+        "N": 0.65,
+        "Nmean": 0.6166666666666667,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Microsoft To Do",
+        "R": 0.42,
+        "seR": 0.04893176856603482,
+        "T": 0.405,
+        "seT": 0.04528799509803886,
+        "M5": 0.4,
+        "E": 0.45,
+        "Emean": 0.33666666666666667,
+        "N": null,
+        "Nmean": 0.425,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Todoist",
+        "R": 0.47,
+        "seR": 0.050490719691840456,
+        "T": 0.63,
+        "seT": 0.043340077800461056,
+        "M5": 0.6,
+        "E": 0.65,
+        "Emean": 0.5233333333333333,
+        "N": null,
+        "Nmean": 0.75,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Google Tasks",
+        "R": 0.16,
+        "seR": 0.03585562159550433,
+        "T": 0.185,
+        "seT": 0.03566273650464872,
+        "M5": 0.4,
+        "E": 0.4,
+        "Emean": 0.3166666666666667,
+        "N": null,
+        "Nmean": 0.35,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Any.do",
+        "R": 0.02,
+        "seR": 0.014030280645803262,
+        "T": 0.03,
+        "seT": 0.013852328098554457,
+        "M5": 0,
+        "E": 0.25,
+        "Emean": 0.20666666666666667,
+        "N": null,
+        "Nmean": 0.225,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "codex-search"
+      },
+      {
+        "app": "TickTick",
+        "R": 0.28,
+        "seR": 0.045151411938055754,
+        "T": 0.34,
+        "seT": 0.041538721694341925,
+        "M5": 0.2,
+        "E": 0.55,
+        "Emean": 0.42333333333333334,
+        "N": null,
+        "Nmean": 0.6,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "codex-search"
+      }
+    ]
+  },
+  "bestCase": {
+    "excluded": [],
+    "underpowered": false,
+    "primary": [
+      {
+        "arm": "E",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.007339999999999999,
+            "mseT": 0.0037899999999999995,
+            "D": 0.0035499999999999998
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.06286,
+            "mseT": 0.00009500000000000009,
+            "D": 0.062765
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017860000000000004,
+            "mseT": 0.00004500000000000001,
+            "D": 0.017815000000000004
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.03152,
+            "mseT": 0.0004649999999999997,
+            "D": 0.031055
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0070199999999999985,
+            "mseT": 0.002289999999999997,
+            "D": 0.0047300000000000016
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02712,
+            "mseT": 0.0008700000000000001,
+            "D": 0.02625
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.02744,
+            "mseT": 0.003184999999999998,
+            "D": 0.024255000000000002
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0249,
+            "mseT": 0.0004850000000000005,
+            "D": 0.024415
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.018120000000000004,
+            "mseT": 0.00343,
+            "D": 0.014690000000000005
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01032,
+            "mseT": 0.000865,
+            "D": 0.009455
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017980000000000003,
+            "mseT": 0.004189999999999999,
+            "D": 0.013790000000000004
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.009500000000000003,
+            "mseT": 0.0027099999999999993,
+            "D": 0.006790000000000004
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03566000000000001,
+            "mseT": 0.004760000000000003,
+            "D": 0.030900000000000007
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.04334000000000001,
+            "mseT": 0.006030000000000002,
+            "D": 0.03731000000000001
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 14,
+          "p": 0.00006103515625
+        },
+        "effect": {
+          "delta": 0.10735852478626298,
+          "ci": [
+            0.08071465944533407,
+            0.13619398495891996
+          ]
+        },
+        "pHolm": 0.00018310546875,
+        "supported": true
+      },
+      {
+        "arm": "N",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0246,
+            "mseT": 0.0037899999999999995,
+            "D": 0.020810000000000002
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": 0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.08575999999999999,
+            "mseT": 0.00004500000000000001,
+            "D": 0.08571499999999999
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02066,
+            "mseT": 0.0004649999999999997,
+            "D": 0.020195
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027959999999999995,
+            "mseT": 0.002289999999999997,
+            "D": 0.02567
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.05658,
+            "mseT": 0.0008700000000000001,
+            "D": 0.055709999999999996
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0,
+            "mseT": 0.003184999999999998,
+            "D": -0.003184999999999998
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0,
+            "mseT": 0.0004850000000000005,
+            "D": -0.0004850000000000005
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027140000000000008,
+            "mseT": 0.00343,
+            "D": 0.02371000000000001
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0057199999999999985,
+            "mseT": 0.000865,
+            "D": 0.004854999999999998
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03749999999999999,
+            "mseT": 0.004189999999999999,
+            "D": 0.03330999999999999
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0,
+            "mseT": 0.0027099999999999993,
+            "D": -0.0027099999999999993
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.013220000000000004,
+            "mseT": 0.004760000000000003,
+            "D": 0.008460000000000002
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0,
+            "mseT": 0.006030000000000002,
+            "D": -0.006030000000000002
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 10,
+          "p": 0.08978271484375
+        },
+        "effect": {
+          "delta": 0.0996145047150353,
+          "ci": [
+            0.051329845329605876,
+            0.14618814394285295
+          ]
+        },
+        "pHolm": 0.08978271484375,
+        "supported": false
+      },
+      {
+        "arm": "M5",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.006700000000000002,
+            "mseT": 0.0037899999999999995,
+            "D": 0.0029100000000000024
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": 0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.026760000000000006,
+            "mseT": 0.00004500000000000001,
+            "D": 0.026715000000000006
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0014600000000000006,
+            "mseT": 0.0004649999999999997,
+            "D": 0.0009950000000000009
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.01718,
+            "mseT": 0.002289999999999997,
+            "D": 0.014890000000000004
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0037800000000000012,
+            "mseT": 0.0008700000000000001,
+            "D": 0.002910000000000001
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0186,
+            "mseT": 0.003184999999999998,
+            "D": 0.015415
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02472,
+            "mseT": 0.0004850000000000005,
+            "D": 0.024235
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0561,
+            "mseT": 0.00343,
+            "D": 0.052669999999999995
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.00674,
+            "mseT": 0.000865,
+            "D": 0.005875
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.04129999999999999,
+            "mseT": 0.004189999999999999,
+            "D": 0.03710999999999999
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.023899999999999998,
+            "mseT": 0.0027099999999999993,
+            "D": 0.021189999999999997
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.02802000000000001,
+            "mseT": 0.004760000000000003,
+            "D": 0.023260000000000006
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01634,
+            "mseT": 0.006030000000000002,
+            "D": 0.010309999999999998
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 14,
+          "p": 0.00006103515625
+        },
+        "effect": {
+          "delta": 0.09282778016305979,
+          "ci": [
+            0.06731376735991458,
+            0.11776338263188228
+          ]
+        },
+        "pHolm": 0.00018310546875,
+        "supported": true
+      }
+    ],
+    "reverse": [
+      {
+        "arm": "E",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.007339999999999999,
+            "mseT": 0.0037899999999999995,
+            "D": -0.0035499999999999998
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.06286,
+            "mseT": 0.00009500000000000009,
+            "D": -0.062765
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017860000000000004,
+            "mseT": 0.00004500000000000001,
+            "D": -0.017815000000000004
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.03152,
+            "mseT": 0.0004649999999999997,
+            "D": -0.031055
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0070199999999999985,
+            "mseT": 0.002289999999999997,
+            "D": -0.0047300000000000016
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02712,
+            "mseT": 0.0008700000000000001,
+            "D": -0.02625
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.02744,
+            "mseT": 0.003184999999999998,
+            "D": -0.024255000000000002
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0249,
+            "mseT": 0.0004850000000000005,
+            "D": -0.024415
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.018120000000000004,
+            "mseT": 0.00343,
+            "D": -0.014690000000000005
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01032,
+            "mseT": 0.000865,
+            "D": -0.009455
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017980000000000003,
+            "mseT": 0.004189999999999999,
+            "D": -0.013790000000000004
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.009500000000000003,
+            "mseT": 0.0027099999999999993,
+            "D": -0.006790000000000004
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03566000000000001,
+            "mseT": 0.004760000000000003,
+            "D": -0.030900000000000007
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.04334000000000001,
+            "mseT": 0.006030000000000002,
+            "D": -0.03731000000000001
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 0,
+          "p": 1
+        },
+        "effect": {
+          "delta": 0.10735852478626298,
+          "ci": [
+            0.08071465944533407,
+            0.13619398495891996
+          ]
+        },
+        "pHolm": 1,
+        "supported": false
+      },
+      {
+        "arm": "N",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0246,
+            "mseT": 0.0037899999999999995,
+            "D": -0.020810000000000002
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": -0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.08575999999999999,
+            "mseT": 0.00004500000000000001,
+            "D": -0.08571499999999999
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02066,
+            "mseT": 0.0004649999999999997,
+            "D": -0.020195
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027959999999999995,
+            "mseT": 0.002289999999999997,
+            "D": -0.02567
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.05658,
+            "mseT": 0.0008700000000000001,
+            "D": -0.055709999999999996
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0,
+            "mseT": 0.003184999999999998,
+            "D": 0.003184999999999998
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0,
+            "mseT": 0.0004850000000000005,
+            "D": 0.0004850000000000005
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027140000000000008,
+            "mseT": 0.00343,
+            "D": -0.02371000000000001
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0057199999999999985,
+            "mseT": 0.000865,
+            "D": -0.004854999999999998
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03749999999999999,
+            "mseT": 0.004189999999999999,
+            "D": -0.03330999999999999
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0,
+            "mseT": 0.0027099999999999993,
+            "D": 0.0027099999999999993
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.013220000000000004,
+            "mseT": 0.004760000000000003,
+            "D": -0.008460000000000002
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0,
+            "mseT": 0.006030000000000002,
+            "D": 0.006030000000000002
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 4,
+          "p": 0.9713134765625
+        },
+        "effect": {
+          "delta": 0.0996145047150353,
+          "ci": [
+            0.051329845329605876,
+            0.14618814394285295
+          ]
+        },
+        "pHolm": 1,
+        "supported": false
+      },
+      {
+        "arm": "M5",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.006700000000000002,
+            "mseT": 0.0037899999999999995,
+            "D": -0.0029100000000000024
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": -0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.026760000000000006,
+            "mseT": 0.00004500000000000001,
+            "D": -0.026715000000000006
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0014600000000000006,
+            "mseT": 0.0004649999999999997,
+            "D": -0.0009950000000000009
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.01718,
+            "mseT": 0.002289999999999997,
+            "D": -0.014890000000000004
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0037800000000000012,
+            "mseT": 0.0008700000000000001,
+            "D": -0.002910000000000001
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0186,
+            "mseT": 0.003184999999999998,
+            "D": -0.015415
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02472,
+            "mseT": 0.0004850000000000005,
+            "D": -0.024235
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0561,
+            "mseT": 0.00343,
+            "D": -0.052669999999999995
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.00674,
+            "mseT": 0.000865,
+            "D": -0.005875
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.04129999999999999,
+            "mseT": 0.004189999999999999,
+            "D": -0.03710999999999999
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.023899999999999998,
+            "mseT": 0.0027099999999999993,
+            "D": -0.021189999999999997
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.02802000000000001,
+            "mseT": 0.004760000000000003,
+            "D": -0.023260000000000006
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01634,
+            "mseT": 0.006030000000000002,
+            "D": -0.010309999999999998
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 0,
+          "p": 1
+        },
+        "effect": {
+          "delta": 0.09282778016305979,
+          "ci": [
+            0.06731376735991458,
+            0.11776338263188228
+          ]
+        },
+        "pHolm": 1,
+        "supported": false
+      }
+    ],
+    "sensitivityAudit": [
+      {
+        "arm": "E",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.007339999999999999,
+            "mseT": 0.0037899999999999995,
+            "D": 0.0035499999999999998
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.06286,
+            "mseT": 0.00009500000000000009,
+            "D": 0.062765
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017860000000000004,
+            "mseT": 0.00004500000000000001,
+            "D": 0.017815000000000004
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.03152,
+            "mseT": 0.0004649999999999997,
+            "D": 0.031055
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0070199999999999985,
+            "mseT": 0.002289999999999997,
+            "D": 0.0047300000000000016
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02712,
+            "mseT": 0.0008700000000000001,
+            "D": 0.02625
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 4,
+            "mseX": 0.023275,
+            "mseT": 0.0021749999999999985,
+            "D": 0.0211
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0249,
+            "mseT": 0.0004850000000000005,
+            "D": 0.024415
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.018120000000000004,
+            "mseT": 0.00343,
+            "D": 0.014690000000000005
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01032,
+            "mseT": 0.000865,
+            "D": 0.009455
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017980000000000003,
+            "mseT": 0.004189999999999999,
+            "D": 0.013790000000000004
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.009500000000000003,
+            "mseT": 0.0027099999999999993,
+            "D": 0.006790000000000004
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03566000000000001,
+            "mseT": 0.004760000000000003,
+            "D": 0.030900000000000007
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.04334000000000001,
+            "mseT": 0.006030000000000002,
+            "D": 0.03731000000000001
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 14,
+          "p": 0.00006103515625
+        },
+        "effect": {
+          "delta": 0.1071487906186496,
+          "ci": [
+            0.08038437511687546,
+            0.13619231771024679
+          ]
+        },
+        "pHolm": 0.00018310546875,
+        "supported": true
+      },
+      {
+        "arm": "N",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0246,
+            "mseT": 0.0037899999999999995,
+            "D": 0.020810000000000002
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": 0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.08575999999999999,
+            "mseT": 0.00004500000000000001,
+            "D": 0.08571499999999999
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02066,
+            "mseT": 0.0004649999999999997,
+            "D": 0.020195
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027959999999999995,
+            "mseT": 0.002289999999999997,
+            "D": 0.02567
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.05658,
+            "mseT": 0.0008700000000000001,
+            "D": 0.055709999999999996
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 4,
+            "mseX": 0,
+            "mseT": 0.0021749999999999985,
+            "D": -0.0021749999999999985
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0,
+            "mseT": 0.0004850000000000005,
+            "D": -0.0004850000000000005
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027140000000000008,
+            "mseT": 0.00343,
+            "D": 0.02371000000000001
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0057199999999999985,
+            "mseT": 0.000865,
+            "D": 0.004854999999999998
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03749999999999999,
+            "mseT": 0.004189999999999999,
+            "D": 0.03330999999999999
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0,
+            "mseT": 0.0027099999999999993,
+            "D": -0.0027099999999999993
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.013220000000000004,
+            "mseT": 0.004760000000000003,
+            "D": 0.008460000000000002
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0,
+            "mseT": 0.006030000000000002,
+            "D": -0.006030000000000002
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 10,
+          "p": 0.08978271484375
+        },
+        "effect": {
+          "delta": 0.10036083871730306,
+          "ci": [
+            0.05240325450396709,
+            0.14683611468576915
+          ]
+        },
+        "pHolm": 0.08978271484375,
+        "supported": false
+      },
+      {
+        "arm": "M5",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.006700000000000002,
+            "mseT": 0.0037899999999999995,
+            "D": 0.0029100000000000024
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": 0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.026760000000000006,
+            "mseT": 0.00004500000000000001,
+            "D": 0.026715000000000006
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0014600000000000006,
+            "mseT": 0.0004649999999999997,
+            "D": 0.0009950000000000009
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.01718,
+            "mseT": 0.002289999999999997,
+            "D": 0.014890000000000004
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0037800000000000012,
+            "mseT": 0.0008700000000000001,
+            "D": 0.002910000000000001
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 4,
+            "mseX": 0.008849999999999992,
+            "mseT": 0.0021749999999999985,
+            "D": 0.0066749999999999934
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02472,
+            "mseT": 0.0004850000000000005,
+            "D": 0.024235
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0561,
+            "mseT": 0.00343,
+            "D": 0.052669999999999995
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.00674,
+            "mseT": 0.000865,
+            "D": 0.005875
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.04129999999999999,
+            "mseT": 0.004189999999999999,
+            "D": 0.03710999999999999
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.023899999999999998,
+            "mseT": 0.0027099999999999993,
+            "D": 0.021189999999999997
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.02802000000000001,
+            "mseT": 0.004760000000000003,
+            "D": 0.023260000000000006
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01634,
+            "mseT": 0.006030000000000002,
+            "D": 0.010309999999999998
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 14,
+          "p": 0.00006103515625
+        },
+        "effect": {
+          "delta": 0.09109203535974258,
+          "ci": [
+            0.06459225854514622,
+            0.11687119856757604
+          ]
+        },
+        "pHolm": 0.00018310546875,
+        "supported": true
+      }
+    ],
+    "calibration": {
+      "covered": 66,
+      "n": 70
+    },
+    "mae": {
+      "T": 0.03214285714285714,
+      "E": 0.1295714285714286,
+      "N": 0.12659999999999993,
+      "M5": 0.09714285714285714
+    },
+    "units": [
+      {
+        "app": "BetterSleep",
+        "R": 0.07,
+        "seR": 0.024748008000645298,
+        "T": 0.18,
+        "seT": 0.03163843775773376,
+        "M5": 0.2,
+        "E": 0.1,
+        "Emean": 0.12333333333333334,
+        "N": 0.15,
+        "Nmean": 0.19333333333333333,
+        "agreeR": 0.95,
+        "agreeT": 0.975,
+        "id": "sleep-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "ShutEye",
+        "R": 0.04,
+        "seR": 0.019974734040782635,
+        "T": 0.08,
+        "seT": 0.02210763442795269,
+        "M5": 0,
+        "E": 0.14,
+        "Emean": 0.1366666666666667,
+        "N": 0.25,
+        "Nmean": 0.19333333333333336,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "SleepWatch",
+        "R": 0.1,
+        "seR": 0.03024797513884187,
+        "T": 0.08,
+        "seT": 0.022518391927489063,
+        "M5": 0,
+        "E": 0.09,
+        "Emean": 0.11666666666666665,
+        "N": 0.2,
+        "Nmean": 0.13333333333333333,
+        "agreeR": 1,
+        "agreeT": 0.975,
+        "id": "sleep-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Pillow",
+        "R": 0.35,
+        "seR": 0.047117800245766804,
+        "T": 0.415,
+        "seT": 0.04700830877355608,
+        "M5": 0.4,
+        "E": 0.19,
+        "Emean": 0.19666666666666666,
+        "N": 0.35,
+        "Nmean": 0.31,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Rise",
+        "R": 0.05,
+        "seR": 0.021354156504062503,
+        "T": 0.025,
+        "seT": 0.012938962236207323,
+        "M5": 0,
+        "E": 0.06,
+        "Emean": 0.08,
+        "N": 0.3,
+        "Nmean": 0.29,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "BetterSleep",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.24,
+        "Emean": 0.20333333333333334,
+        "N": 0,
+        "Nmean": 0.055,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "ShutEye",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.27,
+        "Emean": 0.26,
+        "N": 0,
+        "Nmean": 0.055,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "SleepWatch",
+        "R": 0,
+        "seR": 0,
+        "T": 0.015,
+        "seT": 0.010824171735056632,
+        "M5": 0,
+        "E": 0.35,
+        "Emean": 0.25666666666666665,
+        "N": 0,
+        "Nmean": 0.11,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Pillow",
+        "R": 0.21,
+        "seR": 0.04083472756123191,
+        "T": 0.225,
+        "seT": 0.034153407498374186,
+        "M5": 0,
+        "E": 0.39,
+        "Emean": 0.33,
+        "N": 0,
+        "Nmean": 0.39,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Rise",
+        "R": 0.01,
+        "seR": 0.009631353747007784,
+        "T": 0.015,
+        "seT": 0.010978359394736462,
+        "M5": 0,
+        "E": 0.18,
+        "Emean": 0.14666666666666667,
+        "N": 0,
+        "Nmean": 0.22,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "MyFitnessPal",
+        "R": 0.19,
+        "seR": 0.038374406835806646,
+        "T": 0.19,
+        "seT": 0.03738608531258634,
+        "M5": 0,
+        "E": 0.27,
+        "Emean": 0.30333333333333334,
+        "N": 0.6,
+        "Nmean": 0.48333333333333334,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Tasty",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.07,
+        "Emean": 0.08333333333333333,
+        "N": 0.15,
+        "Nmean": 0.10000000000000002,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "claude-search"
+      },
+      {
+        "app": "ReciMe",
+        "R": 0.01,
+        "seR": 0.009899414124078111,
+        "T": 0.02,
+        "seT": 0.013697021574050207,
+        "M5": 0,
+        "E": 0.03,
+        "Emean": 0.04666666666666667,
+        "N": 0.02,
+        "Nmean": 0.016666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "claude-search"
+      },
+      {
+        "app": "HelloFresh",
+        "R": 0,
+        "seR": 0,
+        "T": 0.01,
+        "seT": 0.009944526132501321,
+        "M5": 0.2,
+        "E": 0.1,
+        "Emean": 0.09333333333333334,
+        "N": 0.35,
+        "Nmean": 0.3,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Mealime",
+        "R": 0.64,
+        "seR": 0.048119326678580765,
+        "T": 0.645,
+        "seT": 0.043450215117419005,
+        "M5": 0.4,
+        "E": 0.38,
+        "Emean": 0.3666666666666667,
+        "N": 0.3,
+        "Nmean": 0.31666666666666665,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "claude-search"
+      },
+      {
+        "app": "MyFitnessPal",
+        "R": 0.03,
+        "seR": 0.01666978104235325,
+        "T": 0.055,
+        "seT": 0.01727751989580688,
+        "M5": 0,
+        "E": 0.28,
+        "Emean": 0.26,
+        "N": 0,
+        "Nmean": 0.19,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Tasty",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.1,
+        "Emean": 0.09666666666666668,
+        "N": 0,
+        "Nmean": 0.14,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "codex-search"
+      },
+      {
+        "app": "ReciMe",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.25,
+        "Emean": 0.23333333333333336,
+        "N": 0,
+        "Nmean": 0.06,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "codex-search"
+      },
+      {
+        "app": "HelloFresh",
+        "R": 0,
+        "seR": 0,
+        "T": 0.01,
+        "seT": 0.006963134620987913,
+        "M5": 0,
+        "E": 0.15,
+        "Emean": 0.15,
+        "N": 0,
+        "Nmean": 0.125,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Mealime",
+        "R": 0.32,
+        "seR": 0.046430763239473344,
+        "T": 0.36,
+        "seT": 0.03980778786870715,
+        "M5": 0.4,
+        "E": 0.33,
+        "Emean": 0.35000000000000003,
+        "N": 0,
+        "Nmean": 0.225,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Flo",
+        "R": 0.63,
+        "seR": 0.05034180767513217,
+        "T": 0.695,
+        "seT": 0.0427260432874378,
+        "M5": 0.4,
+        "E": 0.69,
+        "Emean": 0.6733333333333333,
+        "N": 0.85,
+        "Nmean": 0.85,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Clue",
+        "R": 0.76,
+        "seR": 0.04329918446114188,
+        "T": 0.82,
+        "seT": 0.03545872591831233,
+        "M5": 0.6,
+        "E": 0.63,
+        "Emean": 0.65,
+        "N": 0.75,
+        "Nmean": 0.7666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Stardust",
+        "R": 0.13,
+        "seR": 0.03368805092313885,
+        "T": 0.135,
+        "seT": 0.031036800334441512,
+        "M5": 0.2,
+        "E": 0.17,
+        "Emean": 0.22999999999999998,
+        "N": 0.25,
+        "Nmean": 0.26666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Eve by Glow",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.09,
+        "Emean": 0.13,
+        "N": 0.12,
+        "Nmean": 0.15666666666666668,
+        "agreeR": 0.975,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Ovia",
+        "R": 0.05,
+        "seR": 0.021155214487213237,
+        "T": 0.11,
+        "seT": 0.028948238180414528,
+        "M5": 0,
+        "E": 0.12,
+        "Emean": 0.15666666666666665,
+        "N": 0.3,
+        "Nmean": 0.31666666666666665,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Flo",
+        "R": 0.36,
+        "seR": 0.04848788482703727,
+        "T": 0.36,
+        "seT": 0.038984160565542464,
+        "M5": 0.4,
+        "E": 0.53,
+        "Emean": 0.5566666666666666,
+        "N": 0.7,
+        "Nmean": 0.725,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Clue",
+        "R": 0.6,
+        "seR": 0.048774845976179246,
+        "T": 0.605,
+        "seT": 0.04081262052049575,
+        "M5": 0.6,
+        "E": 0.45,
+        "Emean": 0.47333333333333333,
+        "N": 0.75,
+        "Nmean": 0.725,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Stardust",
+        "R": 0.13,
+        "seR": 0.03409544837657945,
+        "T": 0.065,
+        "seT": 0.019558743409278656,
+        "M5": 0,
+        "E": 0.32,
+        "Emean": 0.31,
+        "N": 0.45,
+        "Nmean": 0.42500000000000004,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Eve by Glow",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.09,
+        "Emean": 0.09000000000000001,
+        "N": 0.1,
+        "Nmean": 0.15000000000000002,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Ovia",
+        "R": 0.02,
+        "seR": 0.01395465513726511,
+        "T": 0.03,
+        "seT": 0.01396477622448711,
+        "M5": 0,
+        "E": 0.22,
+        "Emean": 0.18333333333333335,
+        "N": 0.2,
+        "Nmean": 0.225,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Fastic",
+        "R": 0.57,
+        "seR": 0.049633460487860354,
+        "T": 0.485,
+        "seT": 0.04247590375730697,
+        "M5": 0.4,
+        "E": 0.57,
+        "Emean": 0.5566666666666666,
+        "N": null,
+        "Nmean": 0.35,
+        "agreeR": 0.975,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "claude-search"
+      },
+      {
+        "app": "BodyFast",
+        "R": 0.16,
+        "seR": 0.03643397281384496,
+        "T": 0.245,
+        "seT": 0.03738929250132991,
+        "M5": 0.4,
+        "E": 0.37,
+        "Emean": 0.35333333333333333,
+        "N": null,
+        "Nmean": 0.25,
+        "agreeR": 0.875,
+        "agreeT": 0.975,
+        "id": "fasting",
+        "engine": "claude-search"
+      },
+      {
+        "app": "FastEasy",
+        "R": 0.02,
+        "seR": 0.014107160415902204,
+        "T": 0.005,
+        "seT": 0.005062361109205892,
+        "M5": 0,
+        "E": 0.13,
+        "Emean": 0.18333333333333335,
+        "N": null,
+        "Nmean": 0.1,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "claude-search"
+      },
+      {
+        "app": "FastHabit",
+        "R": 0.55,
+        "seR": 0.049165107291655456,
+        "T": 0.555,
+        "seT": 0.04669096700647781,
+        "M5": 0.6,
+        "E": 0.28,
+        "Emean": 0.2833333333333334,
+        "N": null,
+        "Nmean": 0.2,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Window",
+        "R": 0.06,
+        "seR": 0.023540789600181373,
+        "T": 0.025,
+        "seT": 0.01096974219159223,
+        "M5": 0,
+        "E": 0.15,
+        "Emean": 0.13,
+        "N": null,
+        "Nmean": 0.1,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Fastic",
+        "R": 0.34,
+        "seR": 0.046532276701231876,
+        "T": 0.3,
+        "seT": 0.036904349252493314,
+        "M5": 0.6,
+        "E": 0.42,
+        "Emean": 0.35000000000000003,
+        "N": null,
+        "Nmean": 0.8,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "codex-search"
+      },
+      {
+        "app": "BodyFast",
+        "R": 0.12,
+        "seR": 0.03240124959010091,
+        "T": 0.11,
+        "seT": 0.021633856423439714,
+        "M5": 0,
+        "E": 0.32,
+        "Emean": 0.2933333333333334,
+        "N": null,
+        "Nmean": 0.7,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "codex-search"
+      },
+      {
+        "app": "FastEasy",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.21,
+        "Emean": 0.17,
+        "N": null,
+        "Nmean": 0.2,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "codex-search"
+      },
+      {
+        "app": "FastHabit",
+        "R": 0.04,
+        "seR": 0.01988437577597033,
+        "T": 0.03,
+        "seT": 0.011824212183058907,
+        "M5": 0,
+        "E": 0.16,
+        "Emean": 0.15333333333333335,
+        "N": null,
+        "Nmean": 0.4,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Window",
+        "R": 0,
+        "seR": 0,
+        "T": 0.025,
+        "seT": 0.013255417524544434,
+        "M5": 0.2,
+        "E": 0.14,
+        "Emean": 0.12333333333333334,
+        "N": null,
+        "Nmean": 0.3,
+        "agreeR": 1,
+        "agreeT": 0.975,
+        "id": "fasting",
+        "engine": "codex-search"
+      },
+      {
+        "app": "MyFitnessPal",
+        "R": 0.43,
+        "seR": 0.05013039397411491,
+        "T": 0.425,
+        "seT": 0.046534461356611864,
+        "M5": 0.6,
+        "E": 0.24,
+        "Emean": 0.22999999999999998,
+        "N": 0.3,
+        "Nmean": 0.46666666666666673,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Fitbod",
+        "R": 0.3,
+        "seR": 0.04529277977779662,
+        "T": 0.43,
+        "seT": 0.048795079413809846,
+        "M5": 0.8,
+        "E": 0.24,
+        "Emean": 0.2866666666666667,
+        "N": 0.15,
+        "Nmean": 0.2833333333333333,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Gymverse",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.04,
+        "Emean": 0.036666666666666674,
+        "N": 0.01,
+        "Nmean": 0.016666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Liftoff",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.03,
+        "Emean": 0.02666666666666667,
+        "N": 0.01,
+        "Nmean": 0.01,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Hevy",
+        "R": 0.56,
+        "seR": 0.04939157418021814,
+        "T": 0.575,
+        "seT": 0.047958341232261156,
+        "M5": 0.6,
+        "E": 0.34,
+        "Emean": 0.37666666666666665,
+        "N": 0.25,
+        "Nmean": 0.26666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "MyFitnessPal",
+        "R": 0.03,
+        "seR": 0.01657491779768451,
+        "T": 0.03,
+        "seT": 0.015393586123772523,
+        "M5": 0,
+        "E": 0.22,
+        "Emean": 0.18333333333333335,
+        "N": 0,
+        "Nmean": 0.31666666666666665,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Fitbod",
+        "R": 0.18,
+        "seR": 0.03808910474138241,
+        "T": 0.17,
+        "seT": 0.034371787486250915,
+        "M5": 0.2,
+        "E": 0.29,
+        "Emean": 0.32,
+        "N": 0.27,
+        "Nmean": 0.42333333333333334,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Gymverse",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.04,
+        "Emean": 0.056666666666666664,
+        "N": 0,
+        "Nmean": 0.043333333333333335,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Liftoff",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.03,
+        "Emean": 0.03333333333333333,
+        "N": 0,
+        "Nmean": 0.02666666666666667,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Hevy",
+        "R": 0.42,
+        "seR": 0.04924223289007099,
+        "T": 0.485,
+        "seT": 0.045419746806868146,
+        "M5": 0.6,
+        "E": 0.39,
+        "Emean": 0.3866666666666667,
+        "N": 0.28,
+        "Nmean": 0.32666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "OneNote",
+        "R": 0.78,
+        "seR": 0.04131541963964513,
+        "T": 0.775,
+        "seT": 0.03915330373991439,
+        "M5": 0.8,
+        "E": 0.7,
+        "Emean": 0.68,
+        "N": 0.5,
+        "Nmean": 0.6166666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Goodnotes",
+        "R": 0.57,
+        "seR": 0.0490188022599491,
+        "T": 0.545,
+        "seT": 0.04563040406351884,
+        "M5": 0.2,
+        "E": 0.5,
+        "Emean": 0.47333333333333333,
+        "N": 0.3,
+        "Nmean": 0.31666666666666665,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Notability",
+        "R": 0.44,
+        "seR": 0.04974810926055385,
+        "T": 0.49,
+        "seT": 0.04426538574326431,
+        "M5": 0.2,
+        "E": 0.43,
+        "Emean": 0.41999999999999993,
+        "N": 0.25,
+        "Nmean": 0.26666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Notion",
+        "R": 0.76,
+        "seR": 0.04249775729376793,
+        "T": 0.63,
+        "seT": 0.045624635888958195,
+        "M5": 0.8,
+        "E": 0.48,
+        "Emean": 0.47,
+        "N": 0.75,
+        "Nmean": 0.7833333333333333,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Otter",
+        "R": 0.1,
+        "seR": 0.029815096847067252,
+        "T": 0.07,
+        "seT": 0.02388806762800209,
+        "M5": 0,
+        "E": 0.09,
+        "Emean": 0.11333333333333334,
+        "N": 0.1,
+        "Nmean": 0.11666666666666665,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "claude-search"
+      },
+      {
+        "app": "OneNote",
+        "R": 0.52,
+        "seR": 0.049821054786104366,
+        "T": 0.48,
+        "seT": 0.04518899644825058,
+        "M5": 0.6,
+        "E": 0.39,
+        "Emean": 0.41,
+        "N": null,
+        "Nmean": null,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Goodnotes",
+        "R": 0.31,
+        "seR": 0.04675108447940018,
+        "T": 0.315,
+        "seT": 0.04442125054520654,
+        "M5": 0,
+        "E": 0.31,
+        "Emean": 0.3233333333333333,
+        "N": null,
+        "Nmean": null,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Notability",
+        "R": 0.12,
+        "seR": 0.03294172088704548,
+        "T": 0.145,
+        "seT": 0.03414164896061706,
+        "M5": 0.2,
+        "E": 0.25,
+        "Emean": 0.24333333333333332,
+        "N": null,
+        "Nmean": null,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Notion",
+        "R": 0.35,
+        "seR": 0.04785607484949016,
+        "T": 0.27,
+        "seT": 0.0387765708095751,
+        "M5": 0.4,
+        "E": 0.46,
+        "Emean": 0.41,
+        "N": null,
+        "Nmean": null,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Otter",
+        "R": 0.09,
+        "seR": 0.028546131086366305,
+        "T": 0.02,
+        "seT": 0.011937100778664856,
+        "M5": 0,
+        "E": 0.13,
+        "Emean": 0.13333333333333333,
+        "N": null,
+        "Nmean": null,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Microsoft To Do",
+        "R": 0.72,
+        "seR": 0.04620275722291916,
+        "T": 0.66,
+        "seT": 0.04087685400994067,
+        "M5": 0.8,
+        "E": 0.65,
+        "Emean": 0.6699999999999999,
+        "N": 0.7,
+        "Nmean": 0.7333333333333334,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Todoist",
+        "R": 0.92,
+        "seR": 0.027721397872401698,
+        "T": 0.9,
+        "seT": 0.027770369888606115,
+        "M5": 0.8,
+        "E": 0.77,
+        "Emean": 0.7766666666666667,
+        "N": 0.9,
+        "Nmean": 0.8833333333333333,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Google Tasks",
+        "R": 0.64,
+        "seR": 0.04817630019003141,
+        "T": 0.57,
+        "seT": 0.04610538465027705,
+        "M5": 0.4,
+        "E": 0.44,
+        "Emean": 0.5133333333333333,
+        "N": 0.6,
+        "Nmean": 0.5666666666666667,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Any.do",
+        "R": 0.24,
+        "seR": 0.04273846511048345,
+        "T": 0.34,
+        "seT": 0.04001436460822554,
+        "M5": 0.4,
+        "E": 0.49,
+        "Emean": 0.5266666666666667,
+        "N": 0.45,
+        "Nmean": 0.43333333333333335,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "claude-search"
+      },
+      {
+        "app": "TickTick",
+        "R": 0.79,
+        "seR": 0.04107674981056797,
+        "T": 0.72,
+        "seT": 0.04071721925365243,
+        "M5": 0.6,
+        "E": 0.57,
+        "Emean": 0.63,
+        "N": 0.65,
+        "Nmean": 0.6166666666666667,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Microsoft To Do",
+        "R": 0.42,
+        "seR": 0.04893176856603482,
+        "T": 0.405,
+        "seT": 0.04528799509803886,
+        "M5": 0.4,
+        "E": 0.45,
+        "Emean": 0.33666666666666667,
+        "N": null,
+        "Nmean": 0.425,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Todoist",
+        "R": 0.47,
+        "seR": 0.050490719691840456,
+        "T": 0.63,
+        "seT": 0.043340077800461056,
+        "M5": 0.6,
+        "E": 0.65,
+        "Emean": 0.5233333333333333,
+        "N": null,
+        "Nmean": 0.75,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Google Tasks",
+        "R": 0.16,
+        "seR": 0.03585562159550433,
+        "T": 0.185,
+        "seT": 0.03566273650464872,
+        "M5": 0.4,
+        "E": 0.4,
+        "Emean": 0.3166666666666667,
+        "N": null,
+        "Nmean": 0.35,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Any.do",
+        "R": 0.02,
+        "seR": 0.014030280645803262,
+        "T": 0.03,
+        "seT": 0.013852328098554457,
+        "M5": 0,
+        "E": 0.25,
+        "Emean": 0.20666666666666667,
+        "N": null,
+        "Nmean": 0.225,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "codex-search"
+      },
+      {
+        "app": "TickTick",
+        "R": 0.28,
+        "seR": 0.045151411938055754,
+        "T": 0.34,
+        "seT": 0.041538721694341925,
+        "M5": 0.2,
+        "E": 0.55,
+        "Emean": 0.42333333333333334,
+        "N": null,
+        "Nmean": 0.6,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "codex-search"
+      }
+    ]
+  },
+  "worstCase": {
+    "excluded": [],
+    "underpowered": false,
+    "primary": [
+      {
+        "arm": "E",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.007339999999999999,
+            "mseT": 0.0037899999999999995,
+            "D": 0.0035499999999999998
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.06286,
+            "mseT": 0.00009500000000000009,
+            "D": 0.062765
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017860000000000004,
+            "mseT": 0.00004500000000000001,
+            "D": 0.017815000000000004
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.03152,
+            "mseT": 0.0004649999999999997,
+            "D": 0.031055
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0070199999999999985,
+            "mseT": 0.002289999999999997,
+            "D": 0.0047300000000000016
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02712,
+            "mseT": 0.0008700000000000001,
+            "D": 0.02625
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.02744,
+            "mseT": 0.003184999999999998,
+            "D": 0.024255000000000002
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0249,
+            "mseT": 0.0004850000000000005,
+            "D": 0.024415
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.018120000000000004,
+            "mseT": 0.00343,
+            "D": 0.014690000000000005
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01032,
+            "mseT": 0.000865,
+            "D": 0.009455
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017980000000000003,
+            "mseT": 0.004189999999999999,
+            "D": 0.013790000000000004
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.009500000000000003,
+            "mseT": 0.0027099999999999993,
+            "D": 0.006790000000000004
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03566000000000001,
+            "mseT": 0.004760000000000003,
+            "D": 0.030900000000000007
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.04334000000000001,
+            "mseT": 0.006030000000000002,
+            "D": 0.03731000000000001
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 14,
+          "p": 0.00006103515625
+        },
+        "effect": {
+          "delta": 0.10735852478626298,
+          "ci": [
+            0.08071465944533407,
+            0.13619398495891996
+          ]
+        },
+        "pHolm": 0.00018310546875,
+        "supported": true
+      },
+      {
+        "arm": "N",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0246,
+            "mseT": 0.0037899999999999995,
+            "D": 0.020810000000000002
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": 0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.08575999999999999,
+            "mseT": 0.00004500000000000001,
+            "D": 0.08571499999999999
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02066,
+            "mseT": 0.0004649999999999997,
+            "D": 0.020195
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027959999999999995,
+            "mseT": 0.002289999999999997,
+            "D": 0.02567
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.05658,
+            "mseT": 0.0008700000000000001,
+            "D": 0.055709999999999996
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.10939999999999998,
+            "mseT": 0.003184999999999998,
+            "D": 0.10621499999999999
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.17631999999999998,
+            "mseT": 0.0004850000000000005,
+            "D": 0.17583499999999996
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027140000000000008,
+            "mseT": 0.00343,
+            "D": 0.02371000000000001
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0057199999999999985,
+            "mseT": 0.000865,
+            "D": 0.004854999999999998
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03749999999999999,
+            "mseT": 0.004189999999999999,
+            "D": 0.03330999999999999
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0743,
+            "mseT": 0.0027099999999999993,
+            "D": 0.07159
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.013220000000000004,
+            "mseT": 0.004760000000000003,
+            "D": 0.008460000000000002
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.08034,
+            "mseT": 0.006030000000000002,
+            "D": 0.07430999999999999
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 14,
+          "p": 0.00006103515625
+        },
+        "effect": {
+          "delta": 0.1824940902569672,
+          "ci": [
+            0.12590406605696486,
+            0.2370688387143885
+          ]
+        },
+        "pHolm": 0.00018310546875,
+        "supported": true
+      },
+      {
+        "arm": "M5",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.006700000000000002,
+            "mseT": 0.0037899999999999995,
+            "D": 0.0029100000000000024
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": 0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.026760000000000006,
+            "mseT": 0.00004500000000000001,
+            "D": 0.026715000000000006
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0014600000000000006,
+            "mseT": 0.0004649999999999997,
+            "D": 0.0009950000000000009
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.01718,
+            "mseT": 0.002289999999999997,
+            "D": 0.014890000000000004
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0037800000000000012,
+            "mseT": 0.0008700000000000001,
+            "D": 0.002910000000000001
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0186,
+            "mseT": 0.003184999999999998,
+            "D": 0.015415
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02472,
+            "mseT": 0.0004850000000000005,
+            "D": 0.024235
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0561,
+            "mseT": 0.00343,
+            "D": 0.052669999999999995
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.00674,
+            "mseT": 0.000865,
+            "D": 0.005875
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.04129999999999999,
+            "mseT": 0.004189999999999999,
+            "D": 0.03710999999999999
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.023899999999999998,
+            "mseT": 0.0027099999999999993,
+            "D": 0.021189999999999997
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.02802000000000001,
+            "mseT": 0.004760000000000003,
+            "D": 0.023260000000000006
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01634,
+            "mseT": 0.006030000000000002,
+            "D": 0.010309999999999998
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 14,
+          "p": 0.00006103515625
+        },
+        "effect": {
+          "delta": 0.09282778016305979,
+          "ci": [
+            0.06731376735991458,
+            0.11776338263188228
+          ]
+        },
+        "pHolm": 0.00018310546875,
+        "supported": true
+      }
+    ],
+    "reverse": [
+      {
+        "arm": "E",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.007339999999999999,
+            "mseT": 0.0037899999999999995,
+            "D": -0.0035499999999999998
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.06286,
+            "mseT": 0.00009500000000000009,
+            "D": -0.062765
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017860000000000004,
+            "mseT": 0.00004500000000000001,
+            "D": -0.017815000000000004
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.03152,
+            "mseT": 0.0004649999999999997,
+            "D": -0.031055
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0070199999999999985,
+            "mseT": 0.002289999999999997,
+            "D": -0.0047300000000000016
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02712,
+            "mseT": 0.0008700000000000001,
+            "D": -0.02625
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.02744,
+            "mseT": 0.003184999999999998,
+            "D": -0.024255000000000002
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0249,
+            "mseT": 0.0004850000000000005,
+            "D": -0.024415
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.018120000000000004,
+            "mseT": 0.00343,
+            "D": -0.014690000000000005
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01032,
+            "mseT": 0.000865,
+            "D": -0.009455
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017980000000000003,
+            "mseT": 0.004189999999999999,
+            "D": -0.013790000000000004
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.009500000000000003,
+            "mseT": 0.0027099999999999993,
+            "D": -0.006790000000000004
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03566000000000001,
+            "mseT": 0.004760000000000003,
+            "D": -0.030900000000000007
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.04334000000000001,
+            "mseT": 0.006030000000000002,
+            "D": -0.03731000000000001
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 0,
+          "p": 1
+        },
+        "effect": {
+          "delta": 0.10735852478626298,
+          "ci": [
+            0.08071465944533407,
+            0.13619398495891996
+          ]
+        },
+        "pHolm": 1,
+        "supported": false
+      },
+      {
+        "arm": "N",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0246,
+            "mseT": 0.0037899999999999995,
+            "D": -0.020810000000000002
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": -0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.08575999999999999,
+            "mseT": 0.00004500000000000001,
+            "D": -0.08571499999999999
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02066,
+            "mseT": 0.0004649999999999997,
+            "D": -0.020195
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027959999999999995,
+            "mseT": 0.002289999999999997,
+            "D": -0.02567
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.05658,
+            "mseT": 0.0008700000000000001,
+            "D": -0.055709999999999996
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.10939999999999998,
+            "mseT": 0.003184999999999998,
+            "D": -0.10621499999999999
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.17631999999999998,
+            "mseT": 0.0004850000000000005,
+            "D": -0.17583499999999996
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027140000000000008,
+            "mseT": 0.00343,
+            "D": -0.02371000000000001
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0057199999999999985,
+            "mseT": 0.000865,
+            "D": -0.004854999999999998
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03749999999999999,
+            "mseT": 0.004189999999999999,
+            "D": -0.03330999999999999
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0743,
+            "mseT": 0.0027099999999999993,
+            "D": -0.07159
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.013220000000000004,
+            "mseT": 0.004760000000000003,
+            "D": -0.008460000000000002
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.08034,
+            "mseT": 0.006030000000000002,
+            "D": -0.07430999999999999
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 0,
+          "p": 1
+        },
+        "effect": {
+          "delta": 0.1824940902569672,
+          "ci": [
+            0.12590406605696486,
+            0.2370688387143885
+          ]
+        },
+        "pHolm": 1,
+        "supported": false
+      },
+      {
+        "arm": "M5",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.006700000000000002,
+            "mseT": 0.0037899999999999995,
+            "D": -0.0029100000000000024
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": -0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.026760000000000006,
+            "mseT": 0.00004500000000000001,
+            "D": -0.026715000000000006
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0014600000000000006,
+            "mseT": 0.0004649999999999997,
+            "D": -0.0009950000000000009
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.01718,
+            "mseT": 0.002289999999999997,
+            "D": -0.014890000000000004
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0037800000000000012,
+            "mseT": 0.0008700000000000001,
+            "D": -0.002910000000000001
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0186,
+            "mseT": 0.003184999999999998,
+            "D": -0.015415
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02472,
+            "mseT": 0.0004850000000000005,
+            "D": -0.024235
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0561,
+            "mseT": 0.00343,
+            "D": -0.052669999999999995
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.00674,
+            "mseT": 0.000865,
+            "D": -0.005875
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.04129999999999999,
+            "mseT": 0.004189999999999999,
+            "D": -0.03710999999999999
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.023899999999999998,
+            "mseT": 0.0027099999999999993,
+            "D": -0.021189999999999997
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.02802000000000001,
+            "mseT": 0.004760000000000003,
+            "D": -0.023260000000000006
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01634,
+            "mseT": 0.006030000000000002,
+            "D": -0.010309999999999998
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 0,
+          "p": 1
+        },
+        "effect": {
+          "delta": 0.09282778016305979,
+          "ci": [
+            0.06731376735991458,
+            0.11776338263188228
+          ]
+        },
+        "pHolm": 1,
+        "supported": false
+      }
+    ],
+    "sensitivityAudit": [
+      {
+        "arm": "E",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.007339999999999999,
+            "mseT": 0.0037899999999999995,
+            "D": 0.0035499999999999998
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.06286,
+            "mseT": 0.00009500000000000009,
+            "D": 0.062765
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017860000000000004,
+            "mseT": 0.00004500000000000001,
+            "D": 0.017815000000000004
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.03152,
+            "mseT": 0.0004649999999999997,
+            "D": 0.031055
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0070199999999999985,
+            "mseT": 0.002289999999999997,
+            "D": 0.0047300000000000016
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02712,
+            "mseT": 0.0008700000000000001,
+            "D": 0.02625
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 4,
+            "mseX": 0.023275,
+            "mseT": 0.0021749999999999985,
+            "D": 0.0211
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0249,
+            "mseT": 0.0004850000000000005,
+            "D": 0.024415
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.018120000000000004,
+            "mseT": 0.00343,
+            "D": 0.014690000000000005
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01032,
+            "mseT": 0.000865,
+            "D": 0.009455
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.017980000000000003,
+            "mseT": 0.004189999999999999,
+            "D": 0.013790000000000004
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.009500000000000003,
+            "mseT": 0.0027099999999999993,
+            "D": 0.006790000000000004
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03566000000000001,
+            "mseT": 0.004760000000000003,
+            "D": 0.030900000000000007
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.04334000000000001,
+            "mseT": 0.006030000000000002,
+            "D": 0.03731000000000001
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 14,
+          "p": 0.00006103515625
+        },
+        "effect": {
+          "delta": 0.1071487906186496,
+          "ci": [
+            0.08038437511687546,
+            0.13619231771024679
+          ]
+        },
+        "pHolm": 0.00018310546875,
+        "supported": true
+      },
+      {
+        "arm": "N",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0246,
+            "mseT": 0.0037899999999999995,
+            "D": 0.020810000000000002
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": 0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.08575999999999999,
+            "mseT": 0.00004500000000000001,
+            "D": 0.08571499999999999
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02066,
+            "mseT": 0.0004649999999999997,
+            "D": 0.020195
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027959999999999995,
+            "mseT": 0.002289999999999997,
+            "D": 0.02567
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.05658,
+            "mseT": 0.0008700000000000001,
+            "D": 0.055709999999999996
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 4,
+            "mseX": 0.10785,
+            "mseT": 0.0021749999999999985,
+            "D": 0.105675
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.17631999999999998,
+            "mseT": 0.0004850000000000005,
+            "D": 0.17583499999999996
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.027140000000000008,
+            "mseT": 0.00343,
+            "D": 0.02371000000000001
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0057199999999999985,
+            "mseT": 0.000865,
+            "D": 0.004854999999999998
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.03749999999999999,
+            "mseT": 0.004189999999999999,
+            "D": 0.03330999999999999
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0743,
+            "mseT": 0.0027099999999999993,
+            "D": 0.07159
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.013220000000000004,
+            "mseT": 0.004760000000000003,
+            "D": 0.008460000000000002
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.08034,
+            "mseT": 0.006030000000000002,
+            "D": 0.07430999999999999
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 14,
+          "p": 0.00006103515625
+        },
+        "effect": {
+          "delta": 0.18300086483370379,
+          "ci": [
+            0.12623536914263345,
+            0.23842185372057437
+          ]
+        },
+        "pHolm": 0.00018310546875,
+        "supported": true
+      },
+      {
+        "arm": "M5",
+        "per": [
+          {
+            "id": "sleep-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.006700000000000002,
+            "mseT": 0.0037899999999999995,
+            "D": 0.0029100000000000024
+          },
+          {
+            "id": "sleep-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.008839999999999999,
+            "mseT": 0.00009500000000000009,
+            "D": 0.008745
+          },
+          {
+            "id": "meal-planner",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.026760000000000006,
+            "mseT": 0.00004500000000000001,
+            "D": 0.026715000000000006
+          },
+          {
+            "id": "meal-planner",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0014600000000000006,
+            "mseT": 0.0004649999999999997,
+            "D": 0.0009950000000000009
+          },
+          {
+            "id": "period-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.01718,
+            "mseT": 0.002289999999999997,
+            "D": 0.014890000000000004
+          },
+          {
+            "id": "period-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.0037800000000000012,
+            "mseT": 0.0008700000000000001,
+            "D": 0.002910000000000001
+          },
+          {
+            "id": "fasting",
+            "engine": "claude-search",
+            "n": 4,
+            "mseX": 0.008849999999999992,
+            "mseT": 0.0021749999999999985,
+            "D": 0.0066749999999999934
+          },
+          {
+            "id": "fasting",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.02472,
+            "mseT": 0.0004850000000000005,
+            "D": 0.024235
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.0561,
+            "mseT": 0.00343,
+            "D": 0.052669999999999995
+          },
+          {
+            "id": "workout-tracker",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.00674,
+            "mseT": 0.000865,
+            "D": 0.005875
+          },
+          {
+            "id": "note-taking",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.04129999999999999,
+            "mseT": 0.004189999999999999,
+            "D": 0.03710999999999999
+          },
+          {
+            "id": "note-taking",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.023899999999999998,
+            "mseT": 0.0027099999999999993,
+            "D": 0.021189999999999997
+          },
+          {
+            "id": "todo-list",
+            "engine": "claude-search",
+            "n": 5,
+            "mseX": 0.02802000000000001,
+            "mseT": 0.004760000000000003,
+            "D": 0.023260000000000006
+          },
+          {
+            "id": "todo-list",
+            "engine": "codex-search",
+            "n": 5,
+            "mseX": 0.01634,
+            "mseT": 0.006030000000000002,
+            "D": 0.010309999999999998
+          }
+        ],
+        "sign": {
+          "n": 14,
+          "pos": 14,
+          "p": 0.00006103515625
+        },
+        "effect": {
+          "delta": 0.09109203535974258,
+          "ci": [
+            0.06459225854514622,
+            0.11687119856757604
+          ]
+        },
+        "pHolm": 0.00018310546875,
+        "supported": true
+      }
+    ],
+    "calibration": {
+      "covered": 66,
+      "n": 70
+    },
+    "mae": {
+      "T": 0.03214285714285714,
+      "E": 0.1295714285714286,
+      "N": 0.12659999999999993,
+      "M5": 0.09714285714285714
+    },
+    "units": [
+      {
+        "app": "BetterSleep",
+        "R": 0.07,
+        "seR": 0.024748008000645298,
+        "T": 0.18,
+        "seT": 0.03163843775773376,
+        "M5": 0.2,
+        "E": 0.1,
+        "Emean": 0.12333333333333334,
+        "N": 0.15,
+        "Nmean": 0.19333333333333333,
+        "agreeR": 0.95,
+        "agreeT": 0.975,
+        "id": "sleep-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "ShutEye",
+        "R": 0.04,
+        "seR": 0.019974734040782635,
+        "T": 0.08,
+        "seT": 0.02210763442795269,
+        "M5": 0,
+        "E": 0.14,
+        "Emean": 0.1366666666666667,
+        "N": 0.25,
+        "Nmean": 0.19333333333333336,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "SleepWatch",
+        "R": 0.1,
+        "seR": 0.03024797513884187,
+        "T": 0.08,
+        "seT": 0.022518391927489063,
+        "M5": 0,
+        "E": 0.09,
+        "Emean": 0.11666666666666665,
+        "N": 0.2,
+        "Nmean": 0.13333333333333333,
+        "agreeR": 1,
+        "agreeT": 0.975,
+        "id": "sleep-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Pillow",
+        "R": 0.35,
+        "seR": 0.047117800245766804,
+        "T": 0.415,
+        "seT": 0.04700830877355608,
+        "M5": 0.4,
+        "E": 0.19,
+        "Emean": 0.19666666666666666,
+        "N": 0.35,
+        "Nmean": 0.31,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Rise",
+        "R": 0.05,
+        "seR": 0.021354156504062503,
+        "T": 0.025,
+        "seT": 0.012938962236207323,
+        "M5": 0,
+        "E": 0.06,
+        "Emean": 0.08,
+        "N": 0.3,
+        "Nmean": 0.29,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "BetterSleep",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.24,
+        "Emean": 0.20333333333333334,
+        "N": 0,
+        "Nmean": 0.055,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "ShutEye",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.27,
+        "Emean": 0.26,
+        "N": 0,
+        "Nmean": 0.055,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "SleepWatch",
+        "R": 0,
+        "seR": 0,
+        "T": 0.015,
+        "seT": 0.010824171735056632,
+        "M5": 0,
+        "E": 0.35,
+        "Emean": 0.25666666666666665,
+        "N": 0,
+        "Nmean": 0.11,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Pillow",
+        "R": 0.21,
+        "seR": 0.04083472756123191,
+        "T": 0.225,
+        "seT": 0.034153407498374186,
+        "M5": 0,
+        "E": 0.39,
+        "Emean": 0.33,
+        "N": 0,
+        "Nmean": 0.39,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Rise",
+        "R": 0.01,
+        "seR": 0.009631353747007784,
+        "T": 0.015,
+        "seT": 0.010978359394736462,
+        "M5": 0,
+        "E": 0.18,
+        "Emean": 0.14666666666666667,
+        "N": 0,
+        "Nmean": 0.22,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "sleep-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "MyFitnessPal",
+        "R": 0.19,
+        "seR": 0.038374406835806646,
+        "T": 0.19,
+        "seT": 0.03738608531258634,
+        "M5": 0,
+        "E": 0.27,
+        "Emean": 0.30333333333333334,
+        "N": 0.6,
+        "Nmean": 0.48333333333333334,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Tasty",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.07,
+        "Emean": 0.08333333333333333,
+        "N": 0.15,
+        "Nmean": 0.10000000000000002,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "claude-search"
+      },
+      {
+        "app": "ReciMe",
+        "R": 0.01,
+        "seR": 0.009899414124078111,
+        "T": 0.02,
+        "seT": 0.013697021574050207,
+        "M5": 0,
+        "E": 0.03,
+        "Emean": 0.04666666666666667,
+        "N": 0.02,
+        "Nmean": 0.016666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "claude-search"
+      },
+      {
+        "app": "HelloFresh",
+        "R": 0,
+        "seR": 0,
+        "T": 0.01,
+        "seT": 0.009944526132501321,
+        "M5": 0.2,
+        "E": 0.1,
+        "Emean": 0.09333333333333334,
+        "N": 0.35,
+        "Nmean": 0.3,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Mealime",
+        "R": 0.64,
+        "seR": 0.048119326678580765,
+        "T": 0.645,
+        "seT": 0.043450215117419005,
+        "M5": 0.4,
+        "E": 0.38,
+        "Emean": 0.3666666666666667,
+        "N": 0.3,
+        "Nmean": 0.31666666666666665,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "claude-search"
+      },
+      {
+        "app": "MyFitnessPal",
+        "R": 0.03,
+        "seR": 0.01666978104235325,
+        "T": 0.055,
+        "seT": 0.01727751989580688,
+        "M5": 0,
+        "E": 0.28,
+        "Emean": 0.26,
+        "N": 0,
+        "Nmean": 0.19,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Tasty",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.1,
+        "Emean": 0.09666666666666668,
+        "N": 0,
+        "Nmean": 0.14,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "codex-search"
+      },
+      {
+        "app": "ReciMe",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.25,
+        "Emean": 0.23333333333333336,
+        "N": 0,
+        "Nmean": 0.06,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "codex-search"
+      },
+      {
+        "app": "HelloFresh",
+        "R": 0,
+        "seR": 0,
+        "T": 0.01,
+        "seT": 0.006963134620987913,
+        "M5": 0,
+        "E": 0.15,
+        "Emean": 0.15,
+        "N": 0,
+        "Nmean": 0.125,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Mealime",
+        "R": 0.32,
+        "seR": 0.046430763239473344,
+        "T": 0.36,
+        "seT": 0.03980778786870715,
+        "M5": 0.4,
+        "E": 0.33,
+        "Emean": 0.35000000000000003,
+        "N": 0,
+        "Nmean": 0.225,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "meal-planner",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Flo",
+        "R": 0.63,
+        "seR": 0.05034180767513217,
+        "T": 0.695,
+        "seT": 0.0427260432874378,
+        "M5": 0.4,
+        "E": 0.69,
+        "Emean": 0.6733333333333333,
+        "N": 0.85,
+        "Nmean": 0.85,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Clue",
+        "R": 0.76,
+        "seR": 0.04329918446114188,
+        "T": 0.82,
+        "seT": 0.03545872591831233,
+        "M5": 0.6,
+        "E": 0.63,
+        "Emean": 0.65,
+        "N": 0.75,
+        "Nmean": 0.7666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Stardust",
+        "R": 0.13,
+        "seR": 0.03368805092313885,
+        "T": 0.135,
+        "seT": 0.031036800334441512,
+        "M5": 0.2,
+        "E": 0.17,
+        "Emean": 0.22999999999999998,
+        "N": 0.25,
+        "Nmean": 0.26666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Eve by Glow",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.09,
+        "Emean": 0.13,
+        "N": 0.12,
+        "Nmean": 0.15666666666666668,
+        "agreeR": 0.975,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Ovia",
+        "R": 0.05,
+        "seR": 0.021155214487213237,
+        "T": 0.11,
+        "seT": 0.028948238180414528,
+        "M5": 0,
+        "E": 0.12,
+        "Emean": 0.15666666666666665,
+        "N": 0.3,
+        "Nmean": 0.31666666666666665,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Flo",
+        "R": 0.36,
+        "seR": 0.04848788482703727,
+        "T": 0.36,
+        "seT": 0.038984160565542464,
+        "M5": 0.4,
+        "E": 0.53,
+        "Emean": 0.5566666666666666,
+        "N": 0.7,
+        "Nmean": 0.725,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Clue",
+        "R": 0.6,
+        "seR": 0.048774845976179246,
+        "T": 0.605,
+        "seT": 0.04081262052049575,
+        "M5": 0.6,
+        "E": 0.45,
+        "Emean": 0.47333333333333333,
+        "N": 0.75,
+        "Nmean": 0.725,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Stardust",
+        "R": 0.13,
+        "seR": 0.03409544837657945,
+        "T": 0.065,
+        "seT": 0.019558743409278656,
+        "M5": 0,
+        "E": 0.32,
+        "Emean": 0.31,
+        "N": 0.45,
+        "Nmean": 0.42500000000000004,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Eve by Glow",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.09,
+        "Emean": 0.09000000000000001,
+        "N": 0.1,
+        "Nmean": 0.15000000000000002,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Ovia",
+        "R": 0.02,
+        "seR": 0.01395465513726511,
+        "T": 0.03,
+        "seT": 0.01396477622448711,
+        "M5": 0,
+        "E": 0.22,
+        "Emean": 0.18333333333333335,
+        "N": 0.2,
+        "Nmean": 0.225,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "period-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Fastic",
+        "R": 0.57,
+        "seR": 0.049633460487860354,
+        "T": 0.485,
+        "seT": 0.04247590375730697,
+        "M5": 0.4,
+        "E": 0.57,
+        "Emean": 0.5566666666666666,
+        "N": null,
+        "Nmean": 0.35,
+        "agreeR": 0.975,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "claude-search"
+      },
+      {
+        "app": "BodyFast",
+        "R": 0.16,
+        "seR": 0.03643397281384496,
+        "T": 0.245,
+        "seT": 0.03738929250132991,
+        "M5": 0.4,
+        "E": 0.37,
+        "Emean": 0.35333333333333333,
+        "N": null,
+        "Nmean": 0.25,
+        "agreeR": 0.875,
+        "agreeT": 0.975,
+        "id": "fasting",
+        "engine": "claude-search"
+      },
+      {
+        "app": "FastEasy",
+        "R": 0.02,
+        "seR": 0.014107160415902204,
+        "T": 0.005,
+        "seT": 0.005062361109205892,
+        "M5": 0,
+        "E": 0.13,
+        "Emean": 0.18333333333333335,
+        "N": null,
+        "Nmean": 0.1,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "claude-search"
+      },
+      {
+        "app": "FastHabit",
+        "R": 0.55,
+        "seR": 0.049165107291655456,
+        "T": 0.555,
+        "seT": 0.04669096700647781,
+        "M5": 0.6,
+        "E": 0.28,
+        "Emean": 0.2833333333333334,
+        "N": null,
+        "Nmean": 0.2,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Window",
+        "R": 0.06,
+        "seR": 0.023540789600181373,
+        "T": 0.025,
+        "seT": 0.01096974219159223,
+        "M5": 0,
+        "E": 0.15,
+        "Emean": 0.13,
+        "N": null,
+        "Nmean": 0.1,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Fastic",
+        "R": 0.34,
+        "seR": 0.046532276701231876,
+        "T": 0.3,
+        "seT": 0.036904349252493314,
+        "M5": 0.6,
+        "E": 0.42,
+        "Emean": 0.35000000000000003,
+        "N": null,
+        "Nmean": 0.8,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "codex-search"
+      },
+      {
+        "app": "BodyFast",
+        "R": 0.12,
+        "seR": 0.03240124959010091,
+        "T": 0.11,
+        "seT": 0.021633856423439714,
+        "M5": 0,
+        "E": 0.32,
+        "Emean": 0.2933333333333334,
+        "N": null,
+        "Nmean": 0.7,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "codex-search"
+      },
+      {
+        "app": "FastEasy",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.21,
+        "Emean": 0.17,
+        "N": null,
+        "Nmean": 0.2,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "codex-search"
+      },
+      {
+        "app": "FastHabit",
+        "R": 0.04,
+        "seR": 0.01988437577597033,
+        "T": 0.03,
+        "seT": 0.011824212183058907,
+        "M5": 0,
+        "E": 0.16,
+        "Emean": 0.15333333333333335,
+        "N": null,
+        "Nmean": 0.4,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "fasting",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Window",
+        "R": 0,
+        "seR": 0,
+        "T": 0.025,
+        "seT": 0.013255417524544434,
+        "M5": 0.2,
+        "E": 0.14,
+        "Emean": 0.12333333333333334,
+        "N": null,
+        "Nmean": 0.3,
+        "agreeR": 1,
+        "agreeT": 0.975,
+        "id": "fasting",
+        "engine": "codex-search"
+      },
+      {
+        "app": "MyFitnessPal",
+        "R": 0.43,
+        "seR": 0.05013039397411491,
+        "T": 0.425,
+        "seT": 0.046534461356611864,
+        "M5": 0.6,
+        "E": 0.24,
+        "Emean": 0.22999999999999998,
+        "N": 0.3,
+        "Nmean": 0.46666666666666673,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Fitbod",
+        "R": 0.3,
+        "seR": 0.04529277977779662,
+        "T": 0.43,
+        "seT": 0.048795079413809846,
+        "M5": 0.8,
+        "E": 0.24,
+        "Emean": 0.2866666666666667,
+        "N": 0.15,
+        "Nmean": 0.2833333333333333,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Gymverse",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.04,
+        "Emean": 0.036666666666666674,
+        "N": 0.01,
+        "Nmean": 0.016666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Liftoff",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.03,
+        "Emean": 0.02666666666666667,
+        "N": 0.01,
+        "Nmean": 0.01,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Hevy",
+        "R": 0.56,
+        "seR": 0.04939157418021814,
+        "T": 0.575,
+        "seT": 0.047958341232261156,
+        "M5": 0.6,
+        "E": 0.34,
+        "Emean": 0.37666666666666665,
+        "N": 0.25,
+        "Nmean": 0.26666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "claude-search"
+      },
+      {
+        "app": "MyFitnessPal",
+        "R": 0.03,
+        "seR": 0.01657491779768451,
+        "T": 0.03,
+        "seT": 0.015393586123772523,
+        "M5": 0,
+        "E": 0.22,
+        "Emean": 0.18333333333333335,
+        "N": 0,
+        "Nmean": 0.31666666666666665,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Fitbod",
+        "R": 0.18,
+        "seR": 0.03808910474138241,
+        "T": 0.17,
+        "seT": 0.034371787486250915,
+        "M5": 0.2,
+        "E": 0.29,
+        "Emean": 0.32,
+        "N": 0.27,
+        "Nmean": 0.42333333333333334,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Gymverse",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.04,
+        "Emean": 0.056666666666666664,
+        "N": 0,
+        "Nmean": 0.043333333333333335,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Liftoff",
+        "R": 0,
+        "seR": 0,
+        "T": 0,
+        "seT": 0,
+        "M5": 0,
+        "E": 0.03,
+        "Emean": 0.03333333333333333,
+        "N": 0,
+        "Nmean": 0.02666666666666667,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Hevy",
+        "R": 0.42,
+        "seR": 0.04924223289007099,
+        "T": 0.485,
+        "seT": 0.045419746806868146,
+        "M5": 0.6,
+        "E": 0.39,
+        "Emean": 0.3866666666666667,
+        "N": 0.28,
+        "Nmean": 0.32666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "workout-tracker",
+        "engine": "codex-search"
+      },
+      {
+        "app": "OneNote",
+        "R": 0.78,
+        "seR": 0.04131541963964513,
+        "T": 0.775,
+        "seT": 0.03915330373991439,
+        "M5": 0.8,
+        "E": 0.7,
+        "Emean": 0.68,
+        "N": 0.5,
+        "Nmean": 0.6166666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Goodnotes",
+        "R": 0.57,
+        "seR": 0.0490188022599491,
+        "T": 0.545,
+        "seT": 0.04563040406351884,
+        "M5": 0.2,
+        "E": 0.5,
+        "Emean": 0.47333333333333333,
+        "N": 0.3,
+        "Nmean": 0.31666666666666665,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Notability",
+        "R": 0.44,
+        "seR": 0.04974810926055385,
+        "T": 0.49,
+        "seT": 0.04426538574326431,
+        "M5": 0.2,
+        "E": 0.43,
+        "Emean": 0.41999999999999993,
+        "N": 0.25,
+        "Nmean": 0.26666666666666666,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Notion",
+        "R": 0.76,
+        "seR": 0.04249775729376793,
+        "T": 0.63,
+        "seT": 0.045624635888958195,
+        "M5": 0.8,
+        "E": 0.48,
+        "Emean": 0.47,
+        "N": 0.75,
+        "Nmean": 0.7833333333333333,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Otter",
+        "R": 0.1,
+        "seR": 0.029815096847067252,
+        "T": 0.07,
+        "seT": 0.02388806762800209,
+        "M5": 0,
+        "E": 0.09,
+        "Emean": 0.11333333333333334,
+        "N": 0.1,
+        "Nmean": 0.11666666666666665,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "claude-search"
+      },
+      {
+        "app": "OneNote",
+        "R": 0.52,
+        "seR": 0.049821054786104366,
+        "T": 0.48,
+        "seT": 0.04518899644825058,
+        "M5": 0.6,
+        "E": 0.39,
+        "Emean": 0.41,
+        "N": null,
+        "Nmean": null,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Goodnotes",
+        "R": 0.31,
+        "seR": 0.04675108447940018,
+        "T": 0.315,
+        "seT": 0.04442125054520654,
+        "M5": 0,
+        "E": 0.31,
+        "Emean": 0.3233333333333333,
+        "N": null,
+        "Nmean": null,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Notability",
+        "R": 0.12,
+        "seR": 0.03294172088704548,
+        "T": 0.145,
+        "seT": 0.03414164896061706,
+        "M5": 0.2,
+        "E": 0.25,
+        "Emean": 0.24333333333333332,
+        "N": null,
+        "Nmean": null,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Notion",
+        "R": 0.35,
+        "seR": 0.04785607484949016,
+        "T": 0.27,
+        "seT": 0.0387765708095751,
+        "M5": 0.4,
+        "E": 0.46,
+        "Emean": 0.41,
+        "N": null,
+        "Nmean": null,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Otter",
+        "R": 0.09,
+        "seR": 0.028546131086366305,
+        "T": 0.02,
+        "seT": 0.011937100778664856,
+        "M5": 0,
+        "E": 0.13,
+        "Emean": 0.13333333333333333,
+        "N": null,
+        "Nmean": null,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "note-taking",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Microsoft To Do",
+        "R": 0.72,
+        "seR": 0.04620275722291916,
+        "T": 0.66,
+        "seT": 0.04087685400994067,
+        "M5": 0.8,
+        "E": 0.65,
+        "Emean": 0.6699999999999999,
+        "N": 0.7,
+        "Nmean": 0.7333333333333334,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Todoist",
+        "R": 0.92,
+        "seR": 0.027721397872401698,
+        "T": 0.9,
+        "seT": 0.027770369888606115,
+        "M5": 0.8,
+        "E": 0.77,
+        "Emean": 0.7766666666666667,
+        "N": 0.9,
+        "Nmean": 0.8833333333333333,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Google Tasks",
+        "R": 0.64,
+        "seR": 0.04817630019003141,
+        "T": 0.57,
+        "seT": 0.04610538465027705,
+        "M5": 0.4,
+        "E": 0.44,
+        "Emean": 0.5133333333333333,
+        "N": 0.6,
+        "Nmean": 0.5666666666666667,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Any.do",
+        "R": 0.24,
+        "seR": 0.04273846511048345,
+        "T": 0.34,
+        "seT": 0.04001436460822554,
+        "M5": 0.4,
+        "E": 0.49,
+        "Emean": 0.5266666666666667,
+        "N": 0.45,
+        "Nmean": 0.43333333333333335,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "claude-search"
+      },
+      {
+        "app": "TickTick",
+        "R": 0.79,
+        "seR": 0.04107674981056797,
+        "T": 0.72,
+        "seT": 0.04071721925365243,
+        "M5": 0.6,
+        "E": 0.57,
+        "Emean": 0.63,
+        "N": 0.65,
+        "Nmean": 0.6166666666666667,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "claude-search"
+      },
+      {
+        "app": "Microsoft To Do",
+        "R": 0.42,
+        "seR": 0.04893176856603482,
+        "T": 0.405,
+        "seT": 0.04528799509803886,
+        "M5": 0.4,
+        "E": 0.45,
+        "Emean": 0.33666666666666667,
+        "N": null,
+        "Nmean": 0.425,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Todoist",
+        "R": 0.47,
+        "seR": 0.050490719691840456,
+        "T": 0.63,
+        "seT": 0.043340077800461056,
+        "M5": 0.6,
+        "E": 0.65,
+        "Emean": 0.5233333333333333,
+        "N": null,
+        "Nmean": 0.75,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Google Tasks",
+        "R": 0.16,
+        "seR": 0.03585562159550433,
+        "T": 0.185,
+        "seT": 0.03566273650464872,
+        "M5": 0.4,
+        "E": 0.4,
+        "Emean": 0.3166666666666667,
+        "N": null,
+        "Nmean": 0.35,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "codex-search"
+      },
+      {
+        "app": "Any.do",
+        "R": 0.02,
+        "seR": 0.014030280645803262,
+        "T": 0.03,
+        "seT": 0.013852328098554457,
+        "M5": 0,
+        "E": 0.25,
+        "Emean": 0.20666666666666667,
+        "N": null,
+        "Nmean": 0.225,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "codex-search"
+      },
+      {
+        "app": "TickTick",
+        "R": 0.28,
+        "seR": 0.045151411938055754,
+        "T": 0.34,
+        "seT": 0.041538721694341925,
+        "M5": 0.2,
+        "E": 0.55,
+        "Emean": 0.42333333333333334,
+        "N": null,
+        "Nmean": 0.6,
+        "agreeR": 1,
+        "agreeT": 1,
+        "id": "todo-list",
+        "engine": "codex-search"
+      }
+    ]
+  }
+}

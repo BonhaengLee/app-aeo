@@ -1,0 +1,1616 @@
+{
+  "byProvider": {
+    "codex-search": {
+      "judge": "claude-cli",
+      "kappa": 1,
+      "agreement": 1,
+      "pairs": 200,
+      "judged": 40,
+      "failedBatches": 0,
+      "disagreements": [],
+      "codes": [
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for google pixel",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for google pixel",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for google pixel",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for google pixel",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for google pixel",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app ipad 2026",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app ipad 2026",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app ipad 2026",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app ipad 2026",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app ipad 2026",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app linux",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app linux",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app linux",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app linux",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app linux",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app free open source",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app free open source",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app free open source",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app free open source",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app free open source",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app that records lectures",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app that records lectures",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app that records lectures",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app that records lectures",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app that records lectures",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app no subscription",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app no subscription",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app no subscription",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app no subscription",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app no subscription",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for lenovo yoga",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for lenovo yoga",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for lenovo yoga",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for lenovo yoga",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for lenovo yoga",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app nursing school",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app nursing school",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app nursing school",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app nursing school",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app nursing school",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for books",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for books",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for books",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for books",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for books",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for meetings",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for meetings",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for meetings",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for meetings",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for meetings",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app android",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app android",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app android",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app android",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app android",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app completely free",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app completely free",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app completely free",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app completely free",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app completely free",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app desktop",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app desktop",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app desktop",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app desktop",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app desktop",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for huawei",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for huawei",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for huawei",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for huawei",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for huawei",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for microsoft teams",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for microsoft teams",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for microsoft teams",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for microsoft teams",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for microsoft teams",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for google",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for google",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for google",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for google",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for google",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app google play",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app google play",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app google play",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app google play",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app google play",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for oneplus pad 3",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for oneplus pad 3",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for oneplus pad 3",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for oneplus pad 3",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for oneplus pad 3",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app that records and transcribes",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app that records and transcribes",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app that records and transcribes",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app that records and transcribes",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app that records and transcribes",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app without subscription",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app without subscription",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app without subscription",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app without subscription",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app without subscription",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for old ipad",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for old ipad",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for old ipad",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for old ipad",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for old ipad",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app for free",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app for free",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app for free",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app for free",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app for free",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for upsc",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for upsc",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for upsc",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for upsc",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for upsc",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app college ipad",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app college ipad",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app college ipad",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app college ipad",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app college ipad",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app engineering",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app engineering",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app engineering",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app engineering",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app engineering",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app review",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app review",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app review",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app review",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app review",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app developers",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app developers",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app developers",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app developers",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app developers",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app law school",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app law school",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app law school",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app law school",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app law school",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for android free",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for android free",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for android free",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for android free",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for android free",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app handwriting ipad",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app handwriting ipad",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app handwriting ipad",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app handwriting ipad",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app handwriting ipad",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app on ipad",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app on ipad",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app on ipad",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app on ipad",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app on ipad",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for computer",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for computer",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for computer",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for computer",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for computer",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for huawei matepad",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for huawei matepad",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for huawei matepad",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for huawei matepad",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for huawei matepad",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app for engineering students",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app for engineering students",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app for engineering students",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app for engineering students",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app for engineering students",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for lectures",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for lectures",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for lectures",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for lectures",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for lectures",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app that syncs across devices",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app that syncs across devices",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app that syncs across devices",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app that syncs across devices",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app that syncs across devices",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app on tablet",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app on tablet",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app on tablet",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app on tablet",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best note taking app on tablet",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app no ai",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app no ai",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app no ai",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app no ai",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app no ai",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for google meet",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for google meet",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for google meet",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for google meet",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for google meet",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for university",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for university",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for university",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for university",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "note taking app for university",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        }
+      ],
+      "reason": null
+    }
+  }
+}

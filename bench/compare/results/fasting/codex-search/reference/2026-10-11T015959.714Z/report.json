@@ -1,0 +1,693 @@
+{
+  "meta": {
+    "startedAt": "2026-10-11T15:56:49.169Z",
+    "finishedAt": "2026-10-11T15:56:49.177Z",
+    "promptSet": "6fb3fead1ef4",
+    "providers": [
+      "codex-search"
+    ],
+    "ground": null,
+    "groundSearches": 0,
+    "calls": 0,
+    "halted": {},
+    "skippedByBudget": 0
+  },
+  "agg": {
+    "target": "Fastic",
+    "prompts": 100,
+    "answers": 100,
+    "failed": 0,
+    "overall": {
+      "mentioned": 34,
+      "rate": 0.34,
+      "ci": [
+        0.25461379497543,
+        0.43722454341689065
+      ]
+    },
+    "perProvider": [
+      {
+        "provider": "codex-search",
+        "mode": "search",
+        "grounded": 100,
+        "stability": null,
+        "models": [],
+        "answers": 100,
+        "failed": 0,
+        "failures": [],
+        "target": {
+          "name": "Fastic",
+          "mentioned": 34,
+          "rate": 0.34,
+          "ci": [
+            0.25461379497543,
+            0.43722454341689065
+          ],
+          "avgRank": 1.1176470588235294,
+          "linked": 12,
+          "byPrompt": {
+            "mean": 0.34,
+            "ci": [
+              0.25,
+              0.43
+            ],
+            "prompts": 100
+          }
+        },
+        "shareOfVoice": 0.68,
+        "apps": [
+          {
+            "name": "Fastic",
+            "mentioned": 34,
+            "rate": 0.34,
+            "ci": [
+              0.25461379497543,
+              0.43722454341689065
+            ],
+            "avgRank": 1.1176470588235294,
+            "linked": 12,
+            "byPrompt": {
+              "mean": 0.34,
+              "ci": [
+                0.25,
+                0.43
+              ],
+              "prompts": 100
+            }
+          },
+          {
+            "name": "BodyFast",
+            "mentioned": 12,
+            "rate": 0.12,
+            "ci": [
+              0.06999337365267776,
+              0.19812268002908368
+            ],
+            "avgRank": 1.0833333333333333,
+            "linked": 3
+          },
+          {
+            "name": "FastEasy",
+            "mentioned": 0,
+            "rate": 0,
+            "ci": [
+              0,
+              0.03699480747600191
+            ],
+            "avgRank": null,
+            "linked": 0
+          },
+          {
+            "name": "FastHabit",
+            "mentioned": 4,
+            "rate": 0.04,
+            "ci": [
+              0.015663050551848016,
+              0.09837217232607373
+            ],
+            "avgRank": 1,
+            "linked": 0
+          },
+          {
+            "name": "Window",
+            "mentioned": 0,
+            "rate": 0,
+            "ci": [
+              0,
+              0.03699480747600191
+            ],
+            "avgRank": null,
+            "linked": 0
+          }
+        ]
+      }
+    ],
+    "perPrompt": [
+      {
+        "prompt": "intermittent fasting app for samsung watch",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app for desktop",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fasting app for men",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "fasting app without account",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "which is the best free fasting app",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best intermittent fasting app simple",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "fasting best me app",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best me fasting app free",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app recommended by mindy pelz",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app best",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "app for.tracking fasting hours",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fasting app apple",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "fasting app that tracks calories",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best body fasting app",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best free fasting app for beginners",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app samsung health",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fasting tracker app for iphone",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best fasting time app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app for smart watch",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app that syncs with samsung health",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best paid fasting app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best 36 hour fasting app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "free fasting app for iphone",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app for beginners",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "fasting apps for ramadan",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app for friends",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fasting app weight loss",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "simple fasting app reviews for weight loss",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app with food tracker",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "fasting app store",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app design",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best extended fasting app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting best me.app reviews",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app like life",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app free iphone",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best intermittent fasting app apple watch",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fasting app for autophagy",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app & calorie counter",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best fasting app tracker",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "fasting app with calorie counter",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "fasting app no subscription",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app that tracks eating window",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best free body fasting app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app for weight loss free",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fasting app for losing weight",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best keto intermittent fasting app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app best free",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app online",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best intermittent fasting app australia",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "what is the best fasting app for free",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app ipa",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "free fasting app for beginners",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app on apple watch",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best me fasting app cancel subscription",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "intermittent fasting app for garmin",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best free fasting app no subscription",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app for free",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app by municorn",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fasting app timer",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best fasting app apple watch",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app shut down",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "sunrise fasting app for android",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fasting app to lose weight",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fasting keto app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app with timer",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best free fasting app on iphone",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best fasting and macro app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app no ads",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fasting app for long fasts",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "is best me fasting app legit",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app for men",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "fasting app countdown",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "fasting app free no subscription",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app for iphone",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best fasting timer app free",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best fasting app for menopause",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fasting app for seniors",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app for weight loss",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "k fasting app review for weight loss",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best intermittent fasting app apple",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best fasting diet app",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best intermittent fasting app for weight loss free",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "free fasting app for menopause",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "app fasting diet",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "intermittent fasting app for women",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best 3 day fasting app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app that shows ketosis",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app called life",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app cost",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "best fasting clock app",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best fasting app to use",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best fasting window app",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "fasting app mindy pelz",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "what is the simple fasting app",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app with notifications",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "fasting app life",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "intermittent fasting app for men",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app free best",
+        "answers": 1,
+        "targetMentioned": 0
+      },
+      {
+        "prompt": "fasting app cute",
+        "answers": 1,
+        "targetMentioned": 1
+      },
+      {
+        "prompt": "best free intermittent fasting app for beginners",
+        "answers": 1,
+        "targetMentioned": 0
+      }
+    ],
+    "otherApps": [
+      {
+        "key": "apple:1168348542",
+        "count": 24
+      },
+      {
+        "key": "play:com.zerofasting.zero",
+        "count": 7
+      },
+      {
+        "key": "apple:6738610803",
+        "count": 4
+      },
+      {
+        "key": "name:Zero",
+        "count": 3
+      },
+      {
+        "key": "apple:6444160790",
+        "count": 2
+      },
+      {
+        "key": "apple:6478773954",
+        "count": 2
+      },
+      {
+        "key": "play:com.nutramegapp",
+        "count": 2
+      },
+      {
+        "key": "apple:6448909309",
+        "count": 2
+      },
+      {
+        "key": "apple:6760961265",
+        "count": 2
+      },
+      {
+        "key": "name:Fast Fast: Fasting Timer",
+        "count": 1
+      },
+      {
+        "key": "name:One",
+        "count": 1
+      },
+      {
+        "key": "play:com.asis.fastfast",
+        "count": 1
+      },
+      {
+        "key": "apple:6759612435",
+        "count": 1
+      },
+      {
+        "key": "apple:1467464443",
+        "count": 1
+      },
+      {
+        "key": "play:cloud.nexovia.fasttrack",
+        "count": 1
+      }
+    ],
+    "warnings": [
+      "codex-search: no repeats — run-to-run variation unknown. Use repeats ≥ 3 before comparing runs."
+    ]
+  }
+}

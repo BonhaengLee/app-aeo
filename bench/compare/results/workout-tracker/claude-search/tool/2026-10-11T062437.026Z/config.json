@@ -1,0 +1,153 @@
+{
+  "country": "us",
+  "target": {
+    "name": "MyFitnessPal",
+    "aliases": [
+      "MyFitnessPal: Calorie Counter",
+      "My Fitness Pal"
+    ],
+    "appStoreId": "341232718",
+    "ratingCount": 2375090
+  },
+  "competitors": [
+    {
+      "name": "Fitbod",
+      "aliases": [
+        "Fitbod: Gym & Fitness Planner"
+      ],
+      "appStoreId": "1041517543",
+      "ratingCount": 287000
+    },
+    {
+      "name": "Gymverse",
+      "aliases": [
+        "Gymverse: Gym Workout Planner"
+      ],
+      "appStoreId": "1048454034",
+      "ratingCount": 165262
+    },
+    {
+      "name": "Liftoff",
+      "aliases": [
+        "Liftoff - Ranked Gym Workouts"
+      ],
+      "appStoreId": "6448081563",
+      "ratingCount": 98778
+    },
+    {
+      "name": "Hevy",
+      "aliases": [
+        "Hevy - Workout Tracker Gym Log"
+      ],
+      "appStoreId": "1458862350",
+      "ratingCount": 97213
+    }
+  ],
+  "prompts": [
+    "workout tracking app for kids",
+    "best workout tracking app for progressive overload",
+    "fitness tracker app name",
+    "simple workout tracking app",
+    "fitness tracker app for weight lifting",
+    "workout log app free",
+    "fitness tracker app background",
+    "workout tracking app for free",
+    "fitness tracker app er diagram",
+    "fitness tracker app best",
+    "best workout tracking apps that are free",
+    "best fitness tracker app for weight lifting",
+    "best workout plan tracker app",
+    "fitness tracker app for android free",
+    "best health tracking app for galaxy watch",
+    "fitness tracker app open source",
+    "best fitness tracker app for samsung phone",
+    "best workout tracking app for garmin",
+    "best workout tracker apps for men",
+    "best workout tracker app",
+    "best workout tracker app free",
+    "fitness tracker app for apple watch",
+    "activity tracker app for apple watch",
+    "workout tracker app kostenlos",
+    "is there an app to track exercise",
+    "best health tracking app for samsung watch",
+    "app to track crossfit workouts",
+    "fitness tracker app no subscription",
+    "best workout tracker app apple watch",
+    "workout tracker app free iphone",
+    "best workout tracker app for weightlifting",
+    "fitness tracker app online",
+    "best fitness tracker app for google pixel",
+    "fitness tracker app name ideas",
+    "workout app that shows exercises",
+    "fitness tracker app with maps",
+    "workout app that tells you what to do",
+    "best fitness tracker app apple",
+    "fitness tracker app ui",
+    "best workout tracker app no subscription",
+    "best workout log app ios",
+    "workout tracker app.html",
+    "best fitness tracker mobile app",
+    "best health tracking app for samsung",
+    "best fitness tracker app for beginners",
+    "fitness tracker app free for android",
+    "fitness tracker app comparison",
+    "fitness tracker app design",
+    "workout tracker app for android",
+    "workout tracker app store",
+    "best free workout tracker app uk",
+    "best workout tracking app strength training",
+    "activity tracker without app",
+    "best workout tracker app lifting",
+    "workout tracker app best",
+    "best workout tracker app for gym",
+    "workout tracker app no subscription",
+    "free workout tracker apps without subscription",
+    "workout tracking app gym",
+    "workout tracker app for apple watch",
+    "fitness tracker app for watch",
+    "workout tracker app free android",
+    "best workout tracking app iphone",
+    "activity tracker app for iphone",
+    "best fitness tracker app in india",
+    "best workout and meal tracker app",
+    "fitness tracker app logo",
+    "workout log app for personal trainers",
+    "workout tracker app calendar",
+    "free workout tracker app no subscription",
+    "best fitness tracker app for galaxy watch",
+    "fitness tracker app for free",
+    "fitness tracker app ui design",
+    "fitness tracker app for samsung watch",
+    "fitness tracker app for couples",
+    "activity tracker app for work",
+    "best fitness tracker app to lose weight",
+    "activity tracker app for android phone",
+    "best health tracker app for weight loss",
+    "best custom workout tracker app",
+    "fitness tracker app with friends",
+    "fitness tracker app for friends",
+    "workout tracking app garmin",
+    "activity tracker app free",
+    "best fitness tracker without app",
+    "workout tracker app simple",
+    "best fitness tracker app for samsung galaxy watch",
+    "best free workout tracker app apple",
+    "workout tracking app for progressive overload",
+    "best workout tracking app for men",
+    "best workout progress tracker app",
+    "the best workout tracking app",
+    "workout tracking app for beginners",
+    "best workout tracking app for free",
+    "best health tracker app apple watch",
+    "best fitness tracker phone app",
+    "app to track gym workouts",
+    "best fitness tracker app for.motivation",
+    "activity tracker app design",
+    "workout tracker app strong"
+  ],
+  "providers": [
+    "claude-search"
+  ],
+  "repeats": 2,
+  "fingerprint": "c507e1f68be26441"
+}

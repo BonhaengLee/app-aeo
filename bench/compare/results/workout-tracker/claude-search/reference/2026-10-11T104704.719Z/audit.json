@@ -1,0 +1,1616 @@
+{
+  "byProvider": {
+    "claude-search": {
+      "judge": "claude-cli",
+      "kappa": 1,
+      "agreement": 1,
+      "pairs": 200,
+      "judged": 40,
+      "failedBatches": 0,
+      "disagreements": [],
+      "codes": [
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app on iphone",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app on iphone",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app on iphone",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app on iphone",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app on iphone",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app ohne uhr",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app ohne uhr",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app ohne uhr",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app ohne uhr",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app ohne uhr",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app project",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app project",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app project",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app project",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app project",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best gym workout tracker app free",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best gym workout tracker app free",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best gym workout tracker app free",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best gym workout tracker app free",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best gym workout tracker app free",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "apps to track workouts free",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "apps to track workouts free",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "apps to track workouts free",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "apps to track workouts free",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "apps to track workouts free",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracking app for lifting",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracking app for lifting",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracking app for lifting",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracking app for lifting",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracking app for lifting",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout log app best",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout log app best",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout log app best",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout log app best",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout log app best",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best calorie and workout tracker app free",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best calorie and workout tracker app free",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best calorie and workout tracker app free",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best calorie and workout tracker app free",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best calorie and workout tracker app free",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout log app design",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout log app design",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout log app design",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout log app design",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout log app design",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app with ranks",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app with ranks",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app with ranks",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app with ranks",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app with ranks",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracking app for lifting",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracking app for lifting",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracking app for lifting",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracking app for lifting",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracking app for lifting",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "activity tracker app for kids",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "activity tracker app for kids",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "activity tracker app for kids",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "activity tracker app for kids",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "activity tracker app for kids",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app for iphone",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app for iphone",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app for iphone",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app for iphone",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app for iphone",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app for women",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app for women",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app for women",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app for women",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app for women",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best health tracker app for chronic illness",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best health tracker app for chronic illness",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best health tracker app for chronic illness",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best health tracker app for chronic illness",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best health tracker app for chronic illness",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracking app and sleep monitor for apple watch",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracking app and sleep monitor for apple watch",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracking app and sleep monitor for apple watch",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracking app and sleep monitor for apple watch",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracking app and sleep monitor for apple watch",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best health tracker app ios",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best health tracker app ios",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best health tracker app ios",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best health tracker app ios",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best health tracker app ios",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best completely free workout tracker app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best completely free workout tracker app",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best completely free workout tracker app",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best completely free workout tracker app",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best completely free workout tracker app",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracker app for women",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracker app for women",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracker app for women",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracker app for women",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracker app for women",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app gym",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app gym",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app gym",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app gym",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app gym",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app for smartwatch",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app for smartwatch",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app for smartwatch",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app for smartwatch",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app for smartwatch",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout log book app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout log book app",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout log book app",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout log book app",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout log book app",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app with heart rate monitor",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app with heart rate monitor",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app with heart rate monitor",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app with heart rate monitor",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app with heart rate monitor",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app watch",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app watch",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app watch",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app watch",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app watch",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app without subscription",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app without subscription",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app without subscription",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app without subscription",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app without subscription",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app development",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app development",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app development",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app development",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app development",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best gym workout planner and tracker app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best gym workout planner and tracker app",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best gym workout planner and tracker app",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best gym workout planner and tracker app",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best gym workout planner and tracker app",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best health tracker app android",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best health tracker app android",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best health tracker app android",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best health tracker app android",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best health tracker app android",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracker planner app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracker planner app",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracker planner app",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracker planner app",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracker planner app",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app design",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app design",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app design",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app design",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app design",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app for kids",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app for kids",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app for kids",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app for kids",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app for kids",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "activity tracker app not working",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "activity tracker app not working",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "activity tracker app not working",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "activity tracker app not working",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "activity tracker app not working",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app code",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app code",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app code",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app code",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app code",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app for steps",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app for steps",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app for steps",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app for steps",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best fitness tracker app for steps",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free home workout tracker app",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free home workout tracker app",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free home workout tracker app",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free home workout tracker app",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best free home workout tracker app",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app with widget",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app with widget",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app with widget",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app with widget",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app with widget",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app for iphone",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app for iphone",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app for iphone",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app for iphone",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout tracker app for iphone",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout log app for iphone",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout log app for iphone",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout log app for iphone",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout log app for iphone",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "workout log app for iphone",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracker app free iphone",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracker app free iphone",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracker app free iphone",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracker app free iphone",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best workout tracker app free iphone",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app for running",
+          "repeat": 1,
+          "app": "MyFitnessPal",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app for running",
+          "repeat": 1,
+          "app": "Fitbod",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app for running",
+          "repeat": 1,
+          "app": "Gymverse",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app for running",
+          "repeat": 1,
+          "app": "Liftoff",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "fitness tracker app for running",
+          "repeat": 1,
+          "app": "Hevy",
+          "judge": false,
+          "extractor": false
+        }
+      ],
+      "reason": null
+    }
+  }
+}

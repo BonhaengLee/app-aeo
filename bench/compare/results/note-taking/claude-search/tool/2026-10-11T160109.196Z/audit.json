@@ -1,0 +1,1616 @@
+{
+  "byProvider": {
+    "claude-search": {
+      "judge": "claude-cli",
+      "kappa": 1,
+      "agreement": 1,
+      "pairs": 200,
+      "judged": 40,
+      "failedBatches": 0,
+      "disagreements": [],
+      "codes": [
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for google drive",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for google drive",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for google drive",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for google drive",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for google drive",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for work",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for work",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for work",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for work",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for work",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for writers",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for writers",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for writers",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for writers",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for writers",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pen",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pen",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pen",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pen",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pen",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for carplay",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for carplay",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for carplay",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for carplay",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for carplay",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pencil ipad",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pencil ipad",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pencil ipad",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pencil ipad",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pencil ipad",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app samsung",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app samsung",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app samsung",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app samsung",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app samsung",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app that integrates with claude",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app that integrates with claude",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app that integrates with claude",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app that integrates with claude",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app that integrates with claude",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app on macbook",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app on macbook",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app on macbook",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app on macbook",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app on macbook",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for android phone",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for android phone",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for android phone",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for android phone",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for android phone",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for honor",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for honor",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for honor",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for honor",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for honor",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pencil ipad",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pencil ipad",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pencil ipad",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pencil ipad",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pencil ipad",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app apple watch",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app apple watch",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app apple watch",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app apple watch",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app apple watch",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app phone",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app phone",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app phone",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app phone",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app phone",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pdf",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pdf",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pdf",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pdf",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app pdf",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app android tablet",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app android tablet",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app android tablet",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app android tablet",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app android tablet",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app android stylus",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app android stylus",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app android stylus",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app android stylus",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app android stylus",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for developers",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for developers",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for developers",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for developers",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for developers",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for outlook",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for outlook",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for outlook",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for outlook",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for outlook",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app free online",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app free online",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app free online",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app free online",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app free online",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for ipad free",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for ipad free",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for ipad free",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for ipad free",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for ipad free",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app no ai",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app no ai",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app no ai",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app no ai",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app no ai",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app ipad pencil",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app ipad pencil",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app ipad pencil",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app ipad pencil",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app ipad pencil",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app stylus",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app stylus",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app stylus",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app stylus",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app stylus",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app that converts handwriting to text",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app that converts handwriting to text",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app that converts handwriting to text",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app that converts handwriting to text",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app that converts handwriting to text",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app with elephant logo",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app with elephant logo",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app with elephant logo",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app with elephant logo",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app with elephant logo",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app in android",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app in android",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app in android",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app in android",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app in android",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for blue prince",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for blue prince",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for blue prince",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for blue prince",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for blue prince",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for programmers",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for programmers",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for programmers",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for programmers",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for programmers",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app with stylus",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app with stylus",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app with stylus",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app with stylus",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app with stylus",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app free for students",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app free for students",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app free for students",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app free for students",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app free for students",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app using apple pencil",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app using apple pencil",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app using apple pencil",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app using apple pencil",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app using apple pencil",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app ai",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app ai",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app ai",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app ai",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app ai",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app without ai",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app without ai",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app without ai",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app without ai",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app without ai",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for outlook",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for outlook",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for outlook",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for outlook",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for outlook",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for hp",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for hp",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for hp",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for hp",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for hp",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for games",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for games",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for games",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for games",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app for games",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app for engineering students ipad",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app for engineering students ipad",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app for engineering students ipad",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app for engineering students ipad",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app for engineering students ipad",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app with apple pencil",
+          "repeat": 2,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app with apple pencil",
+          "repeat": 2,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app with apple pencil",
+          "repeat": 2,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app with apple pencil",
+          "repeat": 2,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "best note taking app with apple pencil",
+          "repeat": 2,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app with handwriting to text",
+          "repeat": 1,
+          "app": "OneNote",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app with handwriting to text",
+          "repeat": 1,
+          "app": "Goodnotes",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app with handwriting to text",
+          "repeat": 1,
+          "app": "Notability",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app with handwriting to text",
+          "repeat": 1,
+          "app": "Notion",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "claude-search",
+          "prompt": "note taking app with handwriting to text",
+          "repeat": 1,
+          "app": "Otter",
+          "judge": false,
+          "extractor": false
+        }
+      ],
+      "reason": null
+    }
+  }
+}

@@ -1,0 +1,1625 @@
+{
+  "byProvider": {
+    "codex-search": {
+      "judge": "claude-cli",
+      "kappa": 0.9728260869565217,
+      "agreement": 0.995,
+      "pairs": 200,
+      "judged": 40,
+      "failedBatches": 0,
+      "disagreements": [
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app name",
+          "app": "Window",
+          "extractor": true,
+          "judge": false,
+          "excerpt": "for a fasting app: - **Fastflow** — smooth, approachable, easy to remember - **Window** — a clean nod to eating windows - **Steady** — focused on building a ro"
+        }
+      ],
+      "codes": [
+        {
+          "provider": "codex-search",
+          "prompt": "best free fasting app apple",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free fasting app apple",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free fasting app apple",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free fasting app apple",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free fasting app apple",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app uk",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app uk",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app uk",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app uk",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app uk",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app kostenlos",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app kostenlos",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app kostenlos",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app kostenlos",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app kostenlos",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "intermittent fasting app without ads",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "intermittent fasting app without ads",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "intermittent fasting app without ads",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "intermittent fasting app without ads",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "intermittent fasting app without ads",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free fasting app nz",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free fasting app nz",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free fasting app nz",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free fasting app nz",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free fasting app nz",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "go fasting app reviews for weight loss",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "go fasting app reviews for weight loss",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "go fasting app reviews for weight loss",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "go fasting app reviews for weight loss",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "go fasting app reviews for weight loss",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best long term fasting app",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best long term fasting app",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best long term fasting app",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best long term fasting app",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best long term fasting app",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app for weight loss free",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app for weight loss free",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app for weight loss free",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app for weight loss free",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app for weight loss free",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app on iphone",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app on iphone",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app on iphone",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app on iphone",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app on iphone",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best intermittent fasting diet app",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best intermittent fasting diet app",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best intermittent fasting diet app",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best intermittent fasting diet app",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best intermittent fasting diet app",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best basic fasting app",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best basic fasting app",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best basic fasting app",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best basic fasting app",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best basic fasting app",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app that is actually free",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app that is actually free",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app that is actually free",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app that is actually free",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app that is actually free",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting plan app",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting plan app",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting plan app",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting plan app",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting plan app",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting and calorie counting app",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting and calorie counting app",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting and calorie counting app",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting and calorie counting app",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting and calorie counting app",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best long term fasting app",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best long term fasting app",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best long term fasting app",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best long term fasting app",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best long term fasting app",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "which fasting app is best",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "which fasting app is best",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "which fasting app is best",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "which fasting app is best",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "which fasting app is best",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "free fasting app for men",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "free fasting app for men",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "free fasting app for men",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "free fasting app for men",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "free fasting app for men",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app ketosis",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app ketosis",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app ketosis",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app ketosis",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app ketosis",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app for couples",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app for couples",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app for couples",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app for couples",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app for couples",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best app to track fasting hours",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best app to track fasting hours",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best app to track fasting hours",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best app to track fasting hours",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best app to track fasting hours",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app for samsung watch",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app for samsung watch",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app for samsung watch",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app for samsung watch",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app for samsung watch",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app no sign up",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app no sign up",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app no sign up",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app no sign up",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app no sign up",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app with racoon",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app with racoon",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app with racoon",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app with racoon",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app with racoon",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free fasting app australia",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free fasting app australia",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free fasting app australia",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free fasting app australia",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free fasting app australia",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "intermittent fasting app without subscription",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "intermittent fasting app without subscription",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "intermittent fasting app without subscription",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "intermittent fasting app without subscription",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "intermittent fasting app without subscription",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app name",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app name",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app name",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app name",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app name",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app tracker",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app tracker",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app tracker",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app tracker",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app tracker",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app for beginners",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app for beginners",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app for beginners",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app for beginners",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app for beginners",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "free fasting app without ads",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "free fasting app without ads",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "free fasting app without ads",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "free fasting app without ads",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "free fasting app without ads",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app for women",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app for women",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app for women",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app for women",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best fasting app for women",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app with widget",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app with widget",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app with widget",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app with widget",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app with widget",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best intermittent fasting schedule app",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best intermittent fasting schedule app",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best intermittent fasting schedule app",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best intermittent fasting schedule app",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best intermittent fasting schedule app",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free long fasting app",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free long fasting app",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free long fasting app",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free long fasting app",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best free long fasting app",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best calorie fasting app",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best calorie fasting app",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best calorie fasting app",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best calorie fasting app",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best calorie fasting app",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app reviews",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app reviews",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app reviews",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app reviews",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app reviews",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "is there a fasting app",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "is there a fasting app",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "is there a fasting app",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "is there a fasting app",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "is there a fasting app",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best app to track fasting hours",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best app to track fasting hours",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best app to track fasting hours",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best app to track fasting hours",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best app to track fasting hours",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best intermittent fasting app with calorie counting",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best intermittent fasting app with calorie counting",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best intermittent fasting app with calorie counting",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best intermittent fasting app with calorie counting",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "best intermittent fasting app with calorie counting",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app tracker and timer",
+          "repeat": 2,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app tracker and timer",
+          "repeat": 2,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app tracker and timer",
+          "repeat": 2,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app tracker and timer",
+          "repeat": 2,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app tracker and timer",
+          "repeat": 2,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app free uk",
+          "repeat": 1,
+          "app": "Fastic",
+          "judge": true,
+          "extractor": true
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app free uk",
+          "repeat": 1,
+          "app": "BodyFast",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app free uk",
+          "repeat": 1,
+          "app": "FastEasy",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app free uk",
+          "repeat": 1,
+          "app": "FastHabit",
+          "judge": false,
+          "extractor": false
+        },
+        {
+          "provider": "codex-search",
+          "prompt": "fasting app free uk",
+          "repeat": 1,
+          "app": "Window",
+          "judge": false,
+          "extractor": false
+        }
+      ],
+      "reason": null
+    }
+  }
+}
