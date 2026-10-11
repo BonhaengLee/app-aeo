@@ -73,7 +73,7 @@ Treat improvements as hypotheses. Re-run the **same** config and compare with `t
 
 ## Comparison — is this better than just asking the assistant?
 
-Full results: [`bench/compare/COMPARE.md`](bench/compare/COMPARE.md). Protocol, the frozen expert prompt and the analysis code were pushed before any held-out answer existed ([`bench/compare/PREREGISTRATION.md`](bench/compare/PREREGISTRATION.md)). Setup: 7 new categories × 2 engines × 5 apps. The reference rate comes from 100 autocomplete prompts that app-aeo never saw.
+Full results: [`bench/compare/COMPARE.md`](bench/compare/COMPARE.md). Protocol, the frozen expert prompt and the analysis code were pushed before any held-out answer existed ([`bench/compare/PREREGISTRATION.md`](bench/compare/PREREGISTRATION.md)). GitHub's push timestamps for both studies were lost when the repository was re-created ([D6](bench/DEVIATIONS.md)); the commit order remains. Setup: 7 new categories × 2 engines × 5 apps. The reference rate comes from 100 autocomplete prompts that app-aeo never saw.
 
 | Claim (pre-registered) | Sign test | Holm p | Δ RMSE (95% CI) | Result |
 |---|---|---|---|---|
