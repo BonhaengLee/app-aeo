@@ -170,6 +170,11 @@ export function diagnose(rows, cfg, { pages = new Map(), listing = null, engine 
     }
     const answersWithSources = R.filter((r) => (perRow.get(r) ?? []).length).length;
 
+    // Listing share: per answer, the share of its checked third-party pages that list each app, averaged over answers
+    // with ≥ 1 checked page. bench/causal: one listing among ~5 read pages did not measurably move Codex, every page did.
+    const shareRows = R.map((r) => (perRow.get(r) ?? []).filter((k) => LEVER_KINDS.includes(src.get(k).kind) && pages.get(k)?.ok)).filter((ks) => ks.length);
+    const listingShare = shareRows.length ? apps.map((a) => ({ name: a.name, share: shareRows.reduce((s, ks) => s + ks.filter((k) => pages.get(k).lists?.[a.name]).length / ks.length, 0) / shareRows.length })) : null;
+
     // levers
     const levers = sources.filter((s) => LEVER_KINDS.includes(s.kind) && s.answers >= minAnswers);
     const getListed = levers.filter((s) => s.page?.ok && !s.page.lists[target.name] && competitors.some((c) => s.page.lists[c.name]));
@@ -200,7 +205,7 @@ export function diagnose(rows, cfg, { pages = new Map(), listing = null, engine 
     engines.push({
       provider, minAnswers, answers: R.length, grounded: R.filter((r) => r.grounded).length, answersWithSources,
       targetRate: rate(R, target), competitorRates: competitors.map((c) => ({ name: c.name, rate: rate(R, c) })),
-      misses: misses.length, causes, pagesChecked: sources.filter((s) => s.page?.ok).length, pagesFailed: sources.filter((s) => s.page && !s.page.ok).length,
+      misses: misses.length, causes, listingShare, answersWithCheckedPages: shareRows.length, pagesChecked: sources.filter((s) => s.page?.ok).length, pagesFailed: sources.filter((s) => s.page && !s.page.ok).length,
       sources, getListed, working, fixPresentation, toCheck, questions, owned,
       // per grounded miss: the pages it read (for choosing which pages to fetch)
       missSources: misses.filter((r) => r.grounded).map((r) => perRow.get(r) ?? []),
@@ -361,6 +366,10 @@ export function renderDiagnosis(d, { top = 10 } = {}) {
     if (/^claude/.test(e.provider) && e.causes.selection) L.push('', '_Claude keeps only the title and URL of each search result, so "selection" here means the app is on a page the search returned; whether the model read that part of the page is not recorded._');
     if (!e.misses) L.splice(L.length - 4, 4, `### No misses — ${d.target} was named in every answer`);
     L.push('');
+    if (e.listingShare) {
+      L.push(`**Listing share** — of the checked third-party pages each answer read, the share that lists each app (${e.answersWithCheckedPages} answers):`, '', `| ${e.listingShare.map((x) => x.name).join(' | ')} |`, `|${e.listingShare.map(() => '---:').join('|')}|`, `| ${e.listingShare.map((x) => pct(x.share)).join(' | ')} |`, '');
+      L.push('_In a pre-registered controlled test (bench/causal/REPORT.md), being added to one of ~5 read pages did not measurably change whether Codex named an app; being on all of them raised it by 19 pp. Aim at the share, not at one page._', '');
+    }
     let n = 0;
     const section = (title, list, head, row) => {
       if (!list.length) return;

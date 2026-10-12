@@ -55,8 +55,11 @@ It sorts every answer that missed the app into one cause, per engine:
 
 Report from the tables, as given:
 1. **Get listed**: often-read pages that name competitors but not the app, with the "How" column. Earned media dominates AI answers (Chen et al. 2025, arXiv 2509.08919).
-2. **Fix presentation** and **Working**. "Working" pages raise the rate within the same prompts. Suggest finding more pages like them.
-3. **Questions you lose**: prompt words with a lower rate, and whether the listing says them. This is where `app-aeo lint` and listing edits apply.
+2. **Listing share**: the share of the pages engines read that list the app versus each competitor. This is the number to move.
+   - In the pre-registered controlled test (`bench/causal/REPORT.md`), one listing among ~5 read pages did not detectably change Codex's pick, while being on all of them raised it by 19 pp.
+   - Never promise that one article will fix it.
+3. **Fix presentation** and **Working**. These are descriptive. The lift ranking did not predict which page mattered in the controlled test, and moving the app's sentence up showed no detectable effect.
+4. **Questions you lose**: prompt words with a lower rate, and whether the listing says them. This is where `app-aeo lint` and listing edits apply.
 
 Rules:
 - Own pages (the app's site and store page) are read *after* the engine has decided. Never present them as a lever.

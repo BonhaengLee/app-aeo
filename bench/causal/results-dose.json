@@ -1,0 +1,45 @@
+{
+  "primary": [
+    {
+      "h": "H4",
+      "conds": [
+        "INSERT_ALL",
+        "PLACEBO_ALL"
+      ],
+      "n": 33,
+      "dropped": 0,
+      "testable": true,
+      "sign": {
+        "n": 9,
+        "pos": 9,
+        "p": 0.001953125
+      },
+      "meanDelta": 0.1919191919191919,
+      "ci": [
+        0.0808080808080808,
+        0.31313131313131315
+      ],
+      "byCategory": {
+        "budgeting": {
+          "n": 12,
+          "meanDelta": 0.1111111111111111
+        },
+        "meditation": {
+          "n": 9,
+          "meanDelta": 0.3333333333333333
+        },
+        "language": {
+          "n": 12,
+          "meanDelta": 0.16666666666666666
+        }
+      },
+      "holmP": 0.001953125,
+      "supported": true
+    }
+  ],
+  "secondary": [],
+  "answers": 198,
+  "failed": 0,
+  "searched": 8,
+  "models": []
+}

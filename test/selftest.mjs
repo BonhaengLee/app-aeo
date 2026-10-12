@@ -630,6 +630,8 @@ await t('diagnose classifies every miss: coverage / selection / ungrounded / unk
   assert.equal(e.sources.find((s) => s.key === 'habitify.me/pricing').kind, 'owned');
   assert.ok(!e.getListed.concat(e.fixPresentation, e.working, e.toCheck).some((s) => s.kind === 'owned'), 'own pages are never levers');
   assert.deepEqual(e.toCheck.map((s) => s.key), ['unchecked.com/c']);
+  // listing share: per answer over its checked third-party pages (own pages and unchecked pages excluded)
+  assert.deepEqual([e.answersWithCheckedPages, e.listingShare], [4, [{ name: 'Streaks', share: 0.5 }, { name: 'Habitify', share: 1 }]]);
 });
 await t('pagesToCheck: half most-read, then the pages that cover the most still-unclassified misses', () => {
   const d = { engines: [{ minAnswers: 2, sources: [

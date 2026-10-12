@@ -103,7 +103,13 @@ Outcomes:
 - **Causal claims need an intervention.** Change one thing, re-run the same config, and use `diff`:
   - It pairs prompts and bootstraps a 95% CI over prompts.
   - Competitors in the same table act as a drift control. If everyone moved, the engine changed.
-  - No published result yet shows that listing or page changes move these rates for apps. `diff` is how you find out for yours.
+  - **Controlled evidence** ([bench/causal/REPORT.md](../bench/causal/REPORT.md), pre-registered). On the pages live Codex answers read, with `codex-cli` answering:
+    - adding an app to every read page raised its naming rate by 19 pp (95% CI 8–31);
+    - adding it to one page, promoting its sentence, and removing the top-lift page showed no detectable effect;
+    - the lift ranking did not predict which page mattered.
+
+    Hence the listing-share line in `diagnose`.
+  - No field result yet shows that real page changes, once indexed, move these rates for an app. `diff` on your own app is how you find out.
 
 ## 8. Reproducibility
 - Every answer is stored verbatim with model, latency, grounding evidence and citations (`responses.jsonl`, append-only).

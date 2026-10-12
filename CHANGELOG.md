@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+- **Pre-registered controlled tests of `diagnose`'s advice** (`bench/causal/`, 987 calls). The answer engine was `codex-cli` without search; the contexts were the pages live Codex answers read.
+  - Adding the app to **every** read page raised its naming rate by +19.2 pp (95% CI +8.1 … +31.3, 9/9, p 0.002).
+  - Adding it to **one** page (+7.1 pp, CI reaches 0), moving its sentence up, and removing the top-lift page were not supported.
+- `diagnose` reports a **listing share** per app (the share of each answer's read pages that list it). The skill and docs say to aim at the share, and treat the lift ranking as descriptive.
+- `searchAskerWithSystem` also covers `claude-cli` / `codex-cli`.
+
 ## 0.4.0 — 2026-10-12
 - **`diagnose`: why the app is missed and what to act on.** Every answer that misses the target is classified per engine:
   - **coverage**: no page the engine read lists the app (≥ 50% of its third-party pages checked; otherwise **coverage?**);

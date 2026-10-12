@@ -130,6 +130,20 @@ How it decides:
 - Kiplinger's list (read in 101 answers) names Monarch, and reading it raised Monarch's rate by 18 pp within the same prompts. That is a page that **works**.
 - TechRadar's "best budgeting software" (read in 81 answers) names YNAB and not Monarch. That is a **get-listed** target.
 
+**Does acting on it work? Two pre-registered controlled tests** ([bench/causal/REPORT.md](bench/causal/REPORT.md)). Setup:
+- The answer engine was `codex-cli` without web search.
+- Each context was the set of pages live `codex-search` answers had actually read: budgeting, meditation, language.
+- One edit per condition; 3 answers each; 987 calls.
+
+| Edit | Effect on "names the app" | Verdict |
+|---|---|---|
+| Add the app to **one** of ~5 read pages (vs placebo) | +7.1 pp (95% CI +0.0 … +15.2) | not supported |
+| Move its sentence to the top of its page | +5.6 pp (+0.9 … +11.1), Holm p 0.09 | not supported |
+| Remove the page `diagnose` ranks higher by lift | −3.7 pp (−18.5 … +10.2) | not supported |
+| Add the app to **every** read page (vs placebo) | **+19.2 pp (+8.1 … +31.3)**, 9/9, p 0.002 | **supported** |
+
+So the mechanism is real: what the pages say changes the pick. But a single listing did not move it detectably, because picks are close to deterministic per question. That is why `diagnose` now reports a **listing share**: of the pages engines read, how many list you versus each competitor (budgeting: Monarch Money 55%, YNAB 81%). The "Working"/lift ranking did not predict which page mattered, so read it as descriptive. None of this shows that the live product would retrieve your edits. `diff` on your own app is that test.
+
 Why third-party pages: Chen et al. found AI search cites earned media far more than brand-owned pages ([arXiv 2509.08919](https://arxiv.org/abs/2509.08919)). Aggarwal et al. found that page edits such as adding statistics, quotations and citations can raise visibility in generative answers by up to 40% ([GEO, KDD 2024](https://arxiv.org/abs/2311.09735)); that is a maximum, not a typical gain. `diff` exists so that you measure the effect for your own app instead of assuming it.
 
 ## Alternatives
