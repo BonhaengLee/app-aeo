@@ -2,7 +2,8 @@
 import assert from 'node:assert/strict';
 import { analyse, contrast, rates, render } from './analyze.mjs';
 import { blurb, excerpt, insertAfterFirst, promote, sentenceAt, buildCategory, PLACEBO } from './build.mjs';
-import { pending } from './collect.mjs';
+import { pending, studyFiles } from './collect.mjs';
+import { insertEverywhere } from './dose-build.mjs';
 
 let pass = 0, fail = 0;
 async function t(name, fn) { try { await fn(); pass += 1; } catch (e) { fail += 1; console.log(`FAIL ${name}\n  ${e.message.split('\n').join('\n  ')}`); } }
@@ -96,6 +97,14 @@ await t('collect.pending: only missing or failed (job, repeat) pairs are asked a
   const jobs = [{ id: 'a' }, { id: 'b' }];
   const done = [{ id: 'a', repeat: 1, ok: true }, { id: 'a', repeat: 2, ok: false }];
   assert.deepEqual(pending(jobs, done).map((j) => `${j.id}#${j.repeat}`), ['a#2', 'a#3', 'b#1', 'b#2', 'b#3']);
+});
+
+await t('dose: the line goes into every page; pages naming no other app get it at the start; files per study', () => {
+  const pages = [{ excerpt: 'Intro. YNAB is good. Bye.' }, { excerpt: 'Nothing about apps here.' }];
+  const out = insertEverywhere(pages, [Y], 'Monarch Money: X.');
+  assert.deepEqual(out.map((x) => x.content), ['Intro. YNAB is good. Monarch Money: X. Bye.', 'Monarch Money: X. Nothing about apps here.']);
+  assert.deepEqual(studyFiles('dose'), { conditions: 'conditions-dose.json', results: 'results-dose.jsonl', summary: 'results-dose.json', report: 'RESULTS-DOSE.md' });
+  assert.equal(studyFiles().results, 'results.jsonl');
 });
 
 console.log(`=== causal analyze selftest: PASS ${pass} / FAIL ${fail} ===`);

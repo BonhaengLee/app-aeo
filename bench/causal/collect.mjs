@@ -21,9 +21,15 @@ export function pending(jobs, done) {
   return jobs.flatMap((j) => Array.from({ length: REPEATS }, (_, i) => ({ ...j, repeat: i + 1 }))).filter((j) => !ok.has(`${j.id}#${j.repeat}`));
 }
 
+/** Study files: the main study (default) or the follow-up "dose". */
+export const studyFiles = (study = 'main') => (study === 'main'
+  ? { conditions: 'conditions.json', results: 'results.jsonl', summary: 'results.json', report: 'RESULTS.md' }
+  : { conditions: `conditions-${study}.json`, results: `results-${study}.jsonl`, summary: `results-${study}.json`, report: `RESULTS-${study.toUpperCase()}.md` });
+
 async function main() {
-  const cond = JSON.parse(fs.readFileSync(path.join(HERE, 'conditions.json'), 'utf8'));
-  const out = path.join(HERE, 'results.jsonl');
+  const files = studyFiles(process.argv[2]);
+  const cond = JSON.parse(fs.readFileSync(path.join(HERE, files.conditions), 'utf8'));
+  const out = path.join(HERE, files.results);
   const done = fs.existsSync(out) ? fs.readFileSync(out, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
   const todo = pending(cond.jobs, done);
   console.log(`causal collect: ${cond.jobs.length} jobs × ${REPEATS} = ${cond.jobs.length * REPEATS}; ${todo.length} to ask (${ENGINE})`);

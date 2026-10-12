@@ -1,0 +1,794 @@
+{
+  "builtAt": "2026-10-12T06:35:17.112Z",
+  "basedOn": "conditions.json picks.H1",
+  "targets": {
+    "budgeting": {
+      "target": {
+        "name": "Monarch Money",
+        "aliases": [
+          "Monarch: Budget & Track Money",
+          "Monarch"
+        ],
+        "appStoreId": "1459319842"
+      },
+      "competitors": [
+        {
+          "name": "YNAB",
+          "aliases": [
+            "You Need A Budget"
+          ],
+          "appStoreId": "1010865877"
+        },
+        {
+          "name": "Rocket Money",
+          "aliases": [
+            "Rocket Money - Bills & Budgets"
+          ],
+          "appStoreId": "1130616675"
+        }
+      ],
+      "blurbs": {
+        "Monarch Money": "Monarch Money: Consider Monarch your home base for money clarity.",
+        "YNAB": "YNAB: Download YNAB, get good at money, and never worry about money again.",
+        "Rocket Money": "Rocket Money: Join over 10 million members in using Rocket Money, the all-in-one personal finance app."
+      }
+    },
+    "meditation": {
+      "target": {
+        "name": "Insight Timer",
+        "aliases": [
+          "Insight Timer: Meditate, Sleep"
+        ],
+        "appStoreId": "337472899"
+      },
+      "competitors": [
+        {
+          "name": "Calm",
+          "aliases": [],
+          "appStoreId": "571800810"
+        },
+        {
+          "name": "Headspace",
+          "aliases": [
+            "Headspace: Sleep & Meditation"
+          ],
+          "appStoreId": "493145008"
+        }
+      ],
+      "blurbs": {
+        "Insight Timer": "Insight Timer: Apps of the Year Winner - TIME magazine and Womens Health More time is spent meditating on Insight Timer than all other meditation apps Happiest App in the World - Tristan Harris The number 1 free",
+        "Calm": "Calm: Calm is the #1 app for sleep, meditation, and relaxation.",
+        "Headspace": "Headspace: Welcome to Headspace, your expert-led guide to mental health, mindfulness, and meditation."
+      }
+    },
+    "language": {
+      "target": {
+        "name": "Babbel",
+        "aliases": [
+          "Babbel - Language Learning"
+        ],
+        "appStoreId": "829587759"
+      },
+      "competitors": [
+        {
+          "name": "Duolingo",
+          "aliases": [
+            "Duolingo: Language Lessons"
+          ],
+          "appStoreId": "570060128"
+        },
+        {
+          "name": "Busuu",
+          "aliases": [
+            "Busuu: Language Learning App"
+          ],
+          "appStoreId": "379968583"
+        }
+      ],
+      "blurbs": {
+        "Babbel": "Babbel: Speak a new language with real-life conversations.",
+        "Duolingo": "Duolingo: Learn a new language, chess & more with the world's most downloaded education app!",
+        "Busuu": "Busuu: Busuu helps you communicate with confidence from day one."
+      }
+    }
+  },
+  "picks": {
+    "H4": [
+      [
+        "budgeting",
+        "best budgeting app philippines",
+        "Rocket Money"
+      ],
+      [
+        "budgeting",
+        "best budgeting app south africa",
+        "Rocket Money"
+      ],
+      [
+        "budgeting",
+        "best budgeting app canada free",
+        "Rocket Money"
+      ],
+      [
+        "budgeting",
+        "budgeting app for europe",
+        "Rocket Money"
+      ],
+      [
+        "budgeting",
+        "rocket money alternative",
+        "Rocket Money"
+      ],
+      [
+        "budgeting",
+        "budgeting app for kids",
+        "Rocket Money"
+      ],
+      [
+        "budgeting",
+        "budgeting app without bank sync",
+        "Rocket Money"
+      ],
+      [
+        "budgeting",
+        "budgeting app for adhd",
+        "Rocket Money"
+      ],
+      [
+        "budgeting",
+        "best budgeting app nz",
+        "Rocket Money"
+      ],
+      [
+        "budgeting",
+        "best budgeting app malaysia",
+        "Rocket Money"
+      ],
+      [
+        "budgeting",
+        "best budgeting app uk",
+        "Rocket Money"
+      ],
+      [
+        "budgeting",
+        "budgeting app for retirees",
+        "Rocket Money"
+      ],
+      [
+        "meditation",
+        "meditation app for divorce",
+        "Insight Timer"
+      ],
+      [
+        "meditation",
+        "meditation app for apple watch",
+        "Insight Timer"
+      ],
+      [
+        "meditation",
+        "meditation app for teens",
+        "Insight Timer"
+      ],
+      [
+        "meditation",
+        "meditation apps that are actually free",
+        "Calm"
+      ],
+      [
+        "meditation",
+        "best meditation app garmin",
+        "Insight Timer"
+      ],
+      [
+        "meditation",
+        "meditation app example",
+        "Insight Timer"
+      ],
+      [
+        "meditation",
+        "meditation app without subscription",
+        "Calm"
+      ],
+      [
+        "meditation",
+        "best meditation apps free",
+        "Calm"
+      ],
+      [
+        "meditation",
+        "meditation app free for a year",
+        "Calm"
+      ],
+      [
+        "language",
+        "language learning app for adults",
+        "Busuu"
+      ],
+      [
+        "language",
+        "language learning app for dutch",
+        "Busuu"
+      ],
+      [
+        "language",
+        "language learning app free no ai",
+        "Babbel"
+      ],
+      [
+        "language",
+        "language learning app for driving",
+        "Busuu"
+      ],
+      [
+        "language",
+        "language learning app for kids",
+        "Babbel"
+      ],
+      [
+        "language",
+        "language learning app for bengali",
+        "Busuu"
+      ],
+      [
+        "language",
+        "language learning app for russian",
+        "Busuu"
+      ],
+      [
+        "language",
+        "language learning app that doesn't use ai",
+        "Busuu"
+      ],
+      [
+        "language",
+        "best language learning app hindi",
+        "Busuu"
+      ],
+      [
+        "language",
+        "best language learning app offline",
+        "Busuu"
+      ],
+      [
+        "language",
+        "language learning app for urdu",
+        "Busuu"
+      ],
+      [
+        "language",
+        "language learning app owl",
+        "Babbel"
+      ]
+    ]
+  },
+  "jobs": [
+    {
+      "id": "ce3ab6419af5a07c",
+      "category": "budgeting",
+      "prompt": "best budgeting app philippines",
+      "condition": "INSERT_ALL",
+      "sha256": "e4429d15fd29093108831fc0c7a933145846116a04f31bfd2d6d8a68c5d8652b",
+      "chars": 9797
+    },
+    {
+      "id": "2b1a8dc26ccca28e",
+      "category": "budgeting",
+      "prompt": "best budgeting app philippines",
+      "condition": "PLACEBO_ALL",
+      "sha256": "23ebfbe44db4aca1e85b3803df6c2351d65020b06dcbb41b45cb04ec05f8da2c",
+      "chars": 9746
+    },
+    {
+      "id": "81d813c417798efd",
+      "category": "budgeting",
+      "prompt": "best budgeting app south africa",
+      "condition": "INSERT_ALL",
+      "sha256": "d601602a0c39c90050c7b5af5f1d01d6a48135bec9a5233b2d6ab932e1b81ee8",
+      "chars": 12988
+    },
+    {
+      "id": "59e6cd6453134029",
+      "category": "budgeting",
+      "prompt": "best budgeting app south africa",
+      "condition": "PLACEBO_ALL",
+      "sha256": "80423294304036df802d5f1cf926a0f24743c82a657ab3463aa6e3f5c9fd3473",
+      "chars": 12920
+    },
+    {
+      "id": "60c8971b3eeacc70",
+      "category": "budgeting",
+      "prompt": "best budgeting app canada free",
+      "condition": "INSERT_ALL",
+      "sha256": "69b394d29ca09e44b2a1a659c7f96eead988a85f85ca63a0ffd7cf67928c4fd2",
+      "chars": 16162
+    },
+    {
+      "id": "65219bef7ec365ad",
+      "category": "budgeting",
+      "prompt": "best budgeting app canada free",
+      "condition": "PLACEBO_ALL",
+      "sha256": "7d0ac10e193dcc813db009607b35abbb9ba0d1b41a5eac8311fa0a68f609835e",
+      "chars": 16077
+    },
+    {
+      "id": "921d3b4a9c07446f",
+      "category": "budgeting",
+      "prompt": "budgeting app for europe",
+      "condition": "INSERT_ALL",
+      "sha256": "e136677fe506452a5fbd0648a421ceb37644a002e60ce1f4dc009c257b4c63fd",
+      "chars": 16167
+    },
+    {
+      "id": "2a269728fa3e761b",
+      "category": "budgeting",
+      "prompt": "budgeting app for europe",
+      "condition": "PLACEBO_ALL",
+      "sha256": "6ae408d70456cfbbff8a67d531b48bd1001bc8aa9b9cfc61d9d5d6a528ed46f8",
+      "chars": 16082
+    },
+    {
+      "id": "33cc4e53361dc045",
+      "category": "budgeting",
+      "prompt": "rocket money alternative",
+      "condition": "INSERT_ALL",
+      "sha256": "7d78c452a54447afe1f2a980973b4af04748b015c79b52f332a969d002addc31",
+      "chars": 16202
+    },
+    {
+      "id": "6a1db378fdaf41f3",
+      "category": "budgeting",
+      "prompt": "rocket money alternative",
+      "condition": "PLACEBO_ALL",
+      "sha256": "02d63aa5fcf54baa7c5e9b301d8e12a2c6cb7c0840f3df495fd474656c788222",
+      "chars": 16117
+    },
+    {
+      "id": "bb7fcf0b867e3606",
+      "category": "budgeting",
+      "prompt": "budgeting app for kids",
+      "condition": "INSERT_ALL",
+      "sha256": "98ebba14c4e16f3774e9f1a35c2d216319c2ccd9072c8d46f032ac6aaab08363",
+      "chars": 12952
+    },
+    {
+      "id": "1396f3f03343507f",
+      "category": "budgeting",
+      "prompt": "budgeting app for kids",
+      "condition": "PLACEBO_ALL",
+      "sha256": "ca32020e2344ddc91f25815bae160c2953eb42403bee209069c1a71835fc41c3",
+      "chars": 12884
+    },
+    {
+      "id": "986ef972c76b4139",
+      "category": "budgeting",
+      "prompt": "budgeting app without bank sync",
+      "condition": "INSERT_ALL",
+      "sha256": "e65cb7c6ddef5011ab40c4da42ef3ac7e084c2138d3bb9177102772083fd9b79",
+      "chars": 9798
+    },
+    {
+      "id": "83594a774e73064b",
+      "category": "budgeting",
+      "prompt": "budgeting app without bank sync",
+      "condition": "PLACEBO_ALL",
+      "sha256": "3d40e91a2392b144f0889c1d1ff980b6e11b194b0178e2923da3db8ac3d45738",
+      "chars": 9747
+    },
+    {
+      "id": "862aca780ff7f7f5",
+      "category": "budgeting",
+      "prompt": "budgeting app for adhd",
+      "condition": "INSERT_ALL",
+      "sha256": "ffaa07c1ffda95e794efbafca4e9cba2a8d659ec6dc99bd8fb2a43244d66cfaa",
+      "chars": 16167
+    },
+    {
+      "id": "439af9123b184e5f",
+      "category": "budgeting",
+      "prompt": "budgeting app for adhd",
+      "condition": "PLACEBO_ALL",
+      "sha256": "fca78656169eaa041fcc645916e6c44aa174531f8fc41cb89b02c57789d7f482",
+      "chars": 16082
+    },
+    {
+      "id": "41e369f946575b48",
+      "category": "budgeting",
+      "prompt": "best budgeting app nz",
+      "condition": "INSERT_ALL",
+      "sha256": "3c20ef9ce322f359a7385faa9c8ac3fc5386b1e169a160f6728497a27b78fc3a",
+      "chars": 9788
+    },
+    {
+      "id": "47d045ec086ae9de",
+      "category": "budgeting",
+      "prompt": "best budgeting app nz",
+      "condition": "PLACEBO_ALL",
+      "sha256": "7f9b85ef70177f906cb30e174b77b260c423f4ecc9dcb3eb9cb83a5b34b181ad",
+      "chars": 9737
+    },
+    {
+      "id": "01d49e31df25b4ab",
+      "category": "budgeting",
+      "prompt": "best budgeting app malaysia",
+      "condition": "INSERT_ALL",
+      "sha256": "59f0ee2fc5dd3a74d84e3188546d9c2a70acc0a98b793275dcb0b195a7e131c0",
+      "chars": 9794
+    },
+    {
+      "id": "f55872482afd0806",
+      "category": "budgeting",
+      "prompt": "best budgeting app malaysia",
+      "condition": "PLACEBO_ALL",
+      "sha256": "b5d17bb39278f9ac13e016dfda28ed3cc8305f9f788bedb77b9276b9707f333c",
+      "chars": 9743
+    },
+    {
+      "id": "377ee085e18596e2",
+      "category": "budgeting",
+      "prompt": "best budgeting app uk",
+      "condition": "INSERT_ALL",
+      "sha256": "3908a0cc85763fe691a182e080d4a475f19e7d323fda1028dbdcadb56197e850",
+      "chars": 16165
+    },
+    {
+      "id": "9b212259f1bd7c3b",
+      "category": "budgeting",
+      "prompt": "best budgeting app uk",
+      "condition": "PLACEBO_ALL",
+      "sha256": "d3a350c105cc5f77ecb51fb7c7106a5fef8ecddf70ba487c237824764ec2fa52",
+      "chars": 16080
+    },
+    {
+      "id": "4d4003acdcd8a9be",
+      "category": "budgeting",
+      "prompt": "budgeting app for retirees",
+      "condition": "INSERT_ALL",
+      "sha256": "7193f253ef5ccdffde2b8d51f3026b2c75aa0aac29f8dc6c5468caf9c23940ff",
+      "chars": 12993
+    },
+    {
+      "id": "c8e3a4f457347913",
+      "category": "budgeting",
+      "prompt": "budgeting app for retirees",
+      "condition": "PLACEBO_ALL",
+      "sha256": "47986c7db9fbc4d47a3912c222c17ba40df881e4250d0d2ce4c7779b1c69f2dd",
+      "chars": 12925
+    },
+    {
+      "id": "1fc6823d301fc23b",
+      "category": "meditation",
+      "prompt": "meditation app for divorce",
+      "condition": "INSERT_ALL",
+      "sha256": "24777d5f336d93dd2f876d78829d266fb14827e8dbb77b47a6dd03a94fa0ff00",
+      "chars": 10186
+    },
+    {
+      "id": "31b4518de50c7e21",
+      "category": "meditation",
+      "prompt": "meditation app for divorce",
+      "condition": "PLACEBO_ALL",
+      "sha256": "14c66e24280a5184f3bc6ce032b77adb3e98839830362edef1ad049c667e8260",
+      "chars": 9808
+    },
+    {
+      "id": "ba2f43dd6b74ee6c",
+      "category": "meditation",
+      "prompt": "meditation app for apple watch",
+      "condition": "INSERT_ALL",
+      "sha256": "c40825de6f091a5fe2f5644a634e9ce76c4082bbeb8dff3d0eba693f66658c79",
+      "chars": 10102
+    },
+    {
+      "id": "9001bbd6ab37ef9e",
+      "category": "meditation",
+      "prompt": "meditation app for apple watch",
+      "condition": "PLACEBO_ALL",
+      "sha256": "50a834fa731074642086bfae1216d8830ef14a35fba9082a7387d6527022d418",
+      "chars": 9724
+    },
+    {
+      "id": "32120fc2fe3d21be",
+      "category": "meditation",
+      "prompt": "meditation app for teens",
+      "condition": "INSERT_ALL",
+      "sha256": "7ffb956700a37a156142ce347505e309be1061a1cde4e76aead49223a3e44cad",
+      "chars": 8016
+    },
+    {
+      "id": "f2e0d18665dc3f62",
+      "category": "meditation",
+      "prompt": "meditation app for teens",
+      "condition": "PLACEBO_ALL",
+      "sha256": "e4d6f50b33c52d256e94bb3b17ec8c7d0180a4239458c3ab5de426ff71d3e188",
+      "chars": 7638
+    },
+    {
+      "id": "84cb186953489d27",
+      "category": "meditation",
+      "prompt": "meditation apps that are actually free",
+      "condition": "INSERT_ALL",
+      "sha256": "bcec1512143b39a133f74cbca37eac0d801ec6ca63104d8fd3f59895306f68be",
+      "chars": 15694
+    },
+    {
+      "id": "207d70b07188a134",
+      "category": "meditation",
+      "prompt": "meditation apps that are actually free",
+      "condition": "PLACEBO_ALL",
+      "sha256": "21da090553dcd462f9603b06879a8bc3a957aa708207375a99f4a678e76a5333",
+      "chars": 15804
+    },
+    {
+      "id": "6db679ddabb66340",
+      "category": "meditation",
+      "prompt": "best meditation app garmin",
+      "condition": "INSERT_ALL",
+      "sha256": "d115f940459d2fa0fd3bec89ea7af457e1d5c975a8deeaf7635cd92ba8d5fc01",
+      "chars": 7468
+    },
+    {
+      "id": "b0110076f431f2e0",
+      "category": "meditation",
+      "prompt": "best meditation app garmin",
+      "condition": "PLACEBO_ALL",
+      "sha256": "4fdabe780c901cb4bfc1994bf6919ba59ac9d3bac2388ee7a60d4141819108dc",
+      "chars": 7090
+    },
+    {
+      "id": "40123094564ce2af",
+      "category": "meditation",
+      "prompt": "meditation app example",
+      "condition": "INSERT_ALL",
+      "sha256": "ee8b8875b38008e0afee8b02acffa55d8340092da3a1e79eb074455162855d50",
+      "chars": 10180
+    },
+    {
+      "id": "e39f82767f8f8c2a",
+      "category": "meditation",
+      "prompt": "meditation app example",
+      "condition": "PLACEBO_ALL",
+      "sha256": "900807814ee72df58c8d086dcc0b1a728d0184c19e3bcf86b3f2428946155a71",
+      "chars": 9802
+    },
+    {
+      "id": "eeec2ba4c3cd73aa",
+      "category": "meditation",
+      "prompt": "meditation app without subscription",
+      "condition": "INSERT_ALL",
+      "sha256": "9e7696db968ccf081ba6ffd37956fa421fa5c0c3ba46b873c745c10c1c816921",
+      "chars": 15683
+    },
+    {
+      "id": "3197832e0390c0d8",
+      "category": "meditation",
+      "prompt": "meditation app without subscription",
+      "condition": "PLACEBO_ALL",
+      "sha256": "58994dc2e445272d0be44d6358f5ba76a39daab02076a1c322f95b660c3ccb6e",
+      "chars": 15793
+    },
+    {
+      "id": "2ebb878619667f1c",
+      "category": "meditation",
+      "prompt": "best meditation apps free",
+      "condition": "INSERT_ALL",
+      "sha256": "67786ab4744411b13ff2d58c50ca45fc6765f6342f13cff6afbe5fabcc39324d",
+      "chars": 15673
+    },
+    {
+      "id": "8b3866f456271f58",
+      "category": "meditation",
+      "prompt": "best meditation apps free",
+      "condition": "PLACEBO_ALL",
+      "sha256": "5d0ba6b75f17eb577202d85c546a478b3e02f4d42ac780e3793cf54a9a15ac2d",
+      "chars": 15783
+    },
+    {
+      "id": "fc5239fbbe5da503",
+      "category": "meditation",
+      "prompt": "meditation app free for a year",
+      "condition": "INSERT_ALL",
+      "sha256": "083555138a62490d22888823d89945b0f56efbe883a18fc7279280f1b9cd5f83",
+      "chars": 15725
+    },
+    {
+      "id": "18927d525a7d9185",
+      "category": "meditation",
+      "prompt": "meditation app free for a year",
+      "condition": "PLACEBO_ALL",
+      "sha256": "1a08ca4ef3757063b1929b7938ad7b9a557ede6c235ed4dbe36d00687601a56c",
+      "chars": 15835
+    },
+    {
+      "id": "6ce12b4d5853b258",
+      "category": "language",
+      "prompt": "language learning app for adults",
+      "condition": "INSERT_ALL",
+      "sha256": "da791d96a6297c1ada4e070ac41dfe87789aba7a027ef32a7e31812e961ea028",
+      "chars": 14628
+    },
+    {
+      "id": "e923e60a362f609c",
+      "category": "language",
+      "prompt": "language learning app for adults",
+      "condition": "PLACEBO_ALL",
+      "sha256": "bd30989943ad318f02d7926496acfb76f3acb337d91d8ee912ee8db8e9f5c8cb",
+      "chars": 14733
+    },
+    {
+      "id": "783ecdf5f90c8c22",
+      "category": "language",
+      "prompt": "language learning app for dutch",
+      "condition": "INSERT_ALL",
+      "sha256": "a47b6e444292535c28ef28c2184aa1a72a56d527e53450e3d69e22281d57d499",
+      "chars": 12770
+    },
+    {
+      "id": "9a211080e1f7ce82",
+      "category": "language",
+      "prompt": "language learning app for dutch",
+      "condition": "PLACEBO_ALL",
+      "sha256": "b4da9524fc6ef29f20cd725f05fffb47913100626a303ae9d5c59697e1e7c607",
+      "chars": 12854
+    },
+    {
+      "id": "05dc8fc004d03105",
+      "category": "language",
+      "prompt": "language learning app free no ai",
+      "condition": "INSERT_ALL",
+      "sha256": "0788cae212bc3b3a76330f2ccd5639a2b20041a58c00863a34c427668ccb1bde",
+      "chars": 9662
+    },
+    {
+      "id": "8d29792f19e96751",
+      "category": "language",
+      "prompt": "language learning app free no ai",
+      "condition": "PLACEBO_ALL",
+      "sha256": "2215e03c100bec40578716285c2175189dc192db87a3daa22c8438bb053640f7",
+      "chars": 9743
+    },
+    {
+      "id": "a3755156f409524f",
+      "category": "language",
+      "prompt": "language learning app for driving",
+      "condition": "INSERT_ALL",
+      "sha256": "c386c13a9d79645c24c569519d93e1ea357f6a7f967e99fc33b183097e55cce6",
+      "chars": 12098
+    },
+    {
+      "id": "c5e5d85beabe71ba",
+      "category": "language",
+      "prompt": "language learning app for driving",
+      "condition": "PLACEBO_ALL",
+      "sha256": "66b26a36e654c7113bd7cf81a90e796a1d86a647c9230b3f86ce98f03b3c8593",
+      "chars": 12182
+    },
+    {
+      "id": "51ee2fcaf4d03fac",
+      "category": "language",
+      "prompt": "language learning app for kids",
+      "condition": "INSERT_ALL",
+      "sha256": "4cb486d62b9c2803392f45024970e113e7faccccfc1e96bfe9fdff7cbcf28996",
+      "chars": 9649
+    },
+    {
+      "id": "14b322fbf067fbc8",
+      "category": "language",
+      "prompt": "language learning app for kids",
+      "condition": "PLACEBO_ALL",
+      "sha256": "8db204b78716deec771b03b384b893fd88a7a9e0e2d08ab7056bba3cbf3f2781",
+      "chars": 9730
+    },
+    {
+      "id": "6a24a650fe6d21fb",
+      "category": "language",
+      "prompt": "language learning app for bengali",
+      "condition": "INSERT_ALL",
+      "sha256": "4ce82abc5ad4faf567dfd7cbc2c38e08b21f77a1eff97bcc35809071d1ae4309",
+      "chars": 14534
+    },
+    {
+      "id": "a0e1ab25e557804a",
+      "category": "language",
+      "prompt": "language learning app for bengali",
+      "condition": "PLACEBO_ALL",
+      "sha256": "2ca9662a02514f54980db6d7d2445591e1759436dc5d0f892b29a5cf50931767",
+      "chars": 14639
+    },
+    {
+      "id": "1469893dd41302a2",
+      "category": "language",
+      "prompt": "language learning app for russian",
+      "condition": "INSERT_ALL",
+      "sha256": "df548de6480f757e8fb3e2bf72e1bc468ee31c936616badcbf990ad553061ae5",
+      "chars": 14534
+    },
+    {
+      "id": "a475d5318ef85c83",
+      "category": "language",
+      "prompt": "language learning app for russian",
+      "condition": "PLACEBO_ALL",
+      "sha256": "1a64092bbd06259f3757f10ae759cd88744b69aa297ec888c54eaff51da4ad5c",
+      "chars": 14639
+    },
+    {
+      "id": "fd7e524a46c0e3c8",
+      "category": "language",
+      "prompt": "language learning app that doesn't use ai",
+      "condition": "INSERT_ALL",
+      "sha256": "2ed1e26a7d25d0a74d4bfb0d761414c757d98df705b78a59565fd12859a09aa8",
+      "chars": 13903
+    },
+    {
+      "id": "941a7cdc51b3450d",
+      "category": "language",
+      "prompt": "language learning app that doesn't use ai",
+      "condition": "PLACEBO_ALL",
+      "sha256": "8810716167bace41256823e4b488418970ac817be86bcd4485d0986eeef1fc33",
+      "chars": 14008
+    },
+    {
+      "id": "b8d936765ce715fe",
+      "category": "language",
+      "prompt": "best language learning app hindi",
+      "condition": "INSERT_ALL",
+      "sha256": "0bca9555b4d60817a3ede335426f501696b4feefb34f69c85d28257ce841e336",
+      "chars": 14575
+    },
+    {
+      "id": "3513792ed4fdc0fa",
+      "category": "language",
+      "prompt": "best language learning app hindi",
+      "condition": "PLACEBO_ALL",
+      "sha256": "09837cf70379b020dd553ec94f93fd475d90131b38dfa1c7f03cc2a577fe495e",
+      "chars": 14680
+    },
+    {
+      "id": "f6c5b8b3ccea5279",
+      "category": "language",
+      "prompt": "best language learning app offline",
+      "condition": "INSERT_ALL",
+      "sha256": "448dc02e219602c05dce6af0f82cd094e9173f970e5f9ba7f5a6a8dc7125cc03",
+      "chars": 12099
+    },
+    {
+      "id": "a85b060fa762237d",
+      "category": "language",
+      "prompt": "best language learning app offline",
+      "condition": "PLACEBO_ALL",
+      "sha256": "790688a464ae468db3cdd20730b94820d9092eb02aced0630bf6272092706615",
+      "chars": 12183
+    },
+    {
+      "id": "53da632ddc6ee136",
+      "category": "language",
+      "prompt": "language learning app for urdu",
+      "condition": "INSERT_ALL",
+      "sha256": "213b3f1f1d2a66690d3e810c84e1bd297a6941497859aab546514ac93febef7c",
+      "chars": 13879
+    },
+    {
+      "id": "efb1a4756c2eae4f",
+      "category": "language",
+      "prompt": "language learning app for urdu",
+      "condition": "PLACEBO_ALL",
+      "sha256": "150c20f58e7145352a9c30c407039df7207117c3e48f9b31463d0fd0c8d8e26b",
+      "chars": 13984
+    },
+    {
+      "id": "eb8fd65f110059d0",
+      "category": "language",
+      "prompt": "language learning app owl",
+      "condition": "INSERT_ALL",
+      "sha256": "452a74b544eb78330c3c1ea17b97ecef0c6535137975b68a09fb97bacfd7b004",
+      "chars": 12810
+    },
+    {
+      "id": "70f19bd055c1bfd3",
+      "category": "language",
+      "prompt": "language learning app owl",
+      "condition": "PLACEBO_ALL",
+      "sha256": "58ea20075079941667e2c19b0e20990181972581cbf5f30eb083ce662063f3d2",
+      "chars": 12918
+    }
+  ]
+}

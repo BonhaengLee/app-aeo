@@ -6,6 +6,8 @@ import { fileURLToPath } from 'node:url';
 import { signTest, holm } from '../compare/analyze.mjs';
 import { mulberry32 } from '../../src/report.mjs';
 import { HYPOTHESES } from './build.mjs';
+import { DOSE_HYPOTHESES } from './dose-build.mjs';
+import { studyFiles } from './collect.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const ALPHA = 0.05;
@@ -17,6 +19,7 @@ export const LEVER = Object.freeze({
   H1: 'adding an app to a page the engine read (vs a same-place placebo sentence)',
   H2: 'moving the sentence that names the app to the top of its page',
   H3: "removing the page `diagnose` ranks higher by lift (vs removing the lower-ranked page)",
+  H4: 'adding an app to every page the engine read (vs placebo sentences in the same places)',
 });
 
 const mean = (xs) => xs.reduce((s, x) => s + x, 0) / xs.length;
@@ -59,9 +62,9 @@ export function contrast(units, rate, [a, b]) {
   return { ds, dropped, byCat };
 }
 
-export function analyse(rows, conditions) {
+export function analyse(rows, conditions, { hypotheses = HYPOTHESES, secondary: secondaryContrasts = SECONDARY } = {}) {
   const rate = rates(rows);
-  const primary = Object.entries(HYPOTHESES).map(([h, conds]) => {
+  const primary = Object.entries(hypotheses).map(([h, conds]) => {
     const { ds, dropped, byCat } = contrast(conditions.picks[h], rate, conds);
     const st = signTest(ds);
     const testable = ds.length >= MIN_PROMPTS;
@@ -71,7 +74,7 @@ export function analyse(rows, conditions) {
   primary.forEach((p, i) => { p.holmP = adj[i]; p.supported = p.testable && p.holmP < ALPHA && p.meanDelta > 0; });
   // secondary contrasts use the target of each sampled prompt (H1 units: their H1 subject)
   const allUnits = [...new Map(Object.values(conditions.picks).flat().map((u) => [u.join('\u0000'), u])).values()];
-  const secondary = Object.entries(SECONDARY).map(([s, conds]) => {
+  const secondary = Object.entries(secondaryContrasts).map(([s, conds]) => {
     const { ds } = contrast(allUnits, rate, conds);
     // two-sided sign test: 2 × the smaller tail
     const up = signTest(ds), down = signTest(ds.map((d) => -d));
@@ -105,13 +108,14 @@ export function render(res) {
 }
 
 async function main() {
-  const conditions = JSON.parse(fs.readFileSync(path.join(HERE, 'conditions.json'), 'utf8'));
-  const file = path.join(HERE, 'results.jsonl');
-  const rows = fs.readFileSync(file, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l));
-  const res = analyse(rows, conditions);
-  fs.writeFileSync(path.join(HERE, 'results.json'), JSON.stringify(res, null, 2));
+  const study = process.argv[2] ?? 'main';
+  const files = studyFiles(study);
+  const conditions = JSON.parse(fs.readFileSync(path.join(HERE, files.conditions), 'utf8'));
+  const rows = fs.readFileSync(path.join(HERE, files.results), 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l));
+  const res = study === 'main' ? analyse(rows, conditions) : analyse(rows, conditions, { hypotheses: DOSE_HYPOTHESES, secondary: {} });
+  fs.writeFileSync(path.join(HERE, files.summary), JSON.stringify(res, null, 2));
   const md = render(res);
-  fs.writeFileSync(path.join(HERE, 'RESULTS.md'), `${md}\n`);
+  fs.writeFileSync(path.join(HERE, files.report), `${md}\n`);
   console.log(md);
   return 0;
 }
