@@ -1,6 +1,23 @@
 # Changelog
 
-## Unreleased
+## 0.4.0 — 2026-10-12
+- **`diagnose`: why the app is missed and what to act on.** Every answer that misses the target is classified per engine:
+  - **coverage**: no page the engine read lists the app (≥ 50% of its third-party pages checked; otherwise **coverage?**);
+  - **selection**: a page lists it, and the engine picked others;
+  - **ungrounded**: no search;
+  - **unknown**: pages not checked. This is never guessed.
+
+  `--fetch N` downloads the most-read pages (cached; Reddit is read through its feed and its rate-limit reset is respected) and records which configured apps each page names. The output has four tables:
+  - *Get listed*: pages that name competitors but not you, with site-appropriate how-to;
+  - *Fix presentation*;
+  - *Working*: within-prompt lift ≥ 5 pp;
+  - *Questions you lose*: prompt words with a lower rate, plus whether your listing says them, from `--store` or `--listing`.
+
+  Your own site, store page and encyclopedia article are never ranked as levers, because engines read them after deciding. Writes `diagnosis.md` and `diagnosis.json`.
+- **`diff`**: before/after Δ per app, paired by prompt, with a 95% bootstrap CI. Competitors are shown so that engine drift is visible.
+- **`claude-search` keeps its sources.** It now uses `--output-format stream-json` and records the WebSearch queries and result URLs (`citations`, `searchQueries`). Before, `citations` was always empty for Claude. `codex-search` also records its search queries.
+- MCP tools `diagnose_app_aeo_run` and `diff_app_aeo_runs`. The skill gains steps 5 (diagnose) and 6 (act, then prove it with `diff`).
+- `lookup` returns `sellerUrl`; `diagnose` uses it to recognise an app's own site.
 - **Fix: Codex isolation.** The `codex-cli` / `codex-search` child now gets an empty `HOME` as well as an isolated `CODEX_HOME`. Before, Codex read your skills catalog from `~/.agents/skills`, so your own skill names and descriptions were in context for every answer. Regression test added. Impact on the published studies: `bench/DEVIATIONS.md` D5.
 - Comparison study results (`bench/compare/COMPARE.md`) and a README section.
 

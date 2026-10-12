@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Minimal MCP server over stdio (JSON-RPC 2.0, one message per line). No dependencies.
-// Tools: run_app_aeo_check · get_app_aeo_trend · lint_app_listing · lookup_app_store · search_app_store · suggest_aeo_prompts
+// Tools: run_app_aeo_check · diagnose_app_aeo_run · diff_app_aeo_runs · get_app_aeo_trend · lint_app_listing · lookup_app_store · search_app_store · suggest_aeo_prompts
 import fs from 'node:fs';
 import path from 'node:path';
 import readline from 'node:readline';
@@ -9,6 +9,7 @@ import { hydrate, lookup, search, suggestPrompts } from '../src/store.mjs';
 import { lint, renderLint, validateListing } from '../src/lint.mjs';
 import { inspect, renderDoctor } from '../src/doctor.mjs';
 import { loadRun, popularity, renderValidation, testRetest } from '../src/validate.mjs';
+import { diagnoseRun, diffRuns, listingText, renderDiff } from '../src/diagnose.mjs';
 
 const VERSION = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version;
 const SUPPORTED = ['2025-06-18', '2025-03-26', '2024-11-05'];
@@ -39,6 +40,8 @@ export const TOOLS = [
   },
   { name: 'app_aeo_doctor', description: 'List engines usable here for free (Claude Code / Codex web search, free-tier keys, Tavily grounding) and the recommended provider list. Call this first.', inputSchema: { type: 'object', properties: {} } },
   { name: 'validate_app_aeo_runs', description: 'Check measurement validity: test–retest between two runs of the same config, and/or whether mention rates track App Store rating counts. Report the verdict as given.', inputSchema: { type: 'object', required: ['runDir'], properties: { runDir: { type: 'string' }, runDir2: { type: 'string' }, popularity: { type: 'boolean' }, engine: { type: 'string' }, country: { type: 'string' } } } },
+  { name: 'diagnose_app_aeo_run', description: 'Explain a finished run: for each engine, why the target app was missed (coverage: no page the engine read lists it · selection: a page lists it but others were picked · ungrounded: no search) and which pages to act on. fetch>0 downloads the most-read pages to check which apps they name (needed to classify misses). Report the causes and pages as given; do not invent reasons.', inputSchema: { type: 'object', required: ['runDir'], properties: { runDir: { type: 'string' }, fetch: { type: 'integer', minimum: 0, maximum: 200, description: 'Pages to fetch and check (0 = none; 40 is a good start).' }, engine: { type: 'string' }, listing: { description: 'Your store listing (lint_app_listing format) — marks question words it never mentions.' } } } },
+  { name: 'diff_app_aeo_runs', description: 'Before/after: paired by prompt, did the target mention rate change between two runs of the same config? 95% bootstrap CI per engine and app. Use after a change, with a control if possible.', inputSchema: { type: 'object', required: ['runDir', 'runDir2'], properties: { runDir: { type: 'string', description: 'before' }, runDir2: { type: 'string', description: 'after' }, engine: { type: 'string' } } } },
   { name: 'get_app_aeo_trend', description: 'Mention-rate history across previous runs in a runs directory.', inputSchema: { type: 'object', required: ['runsDir'], properties: { runsDir: { type: 'string' } } } },
   { name: 'lint_app_listing', description: 'Check App Store listing text (name, subtitle, promoText, keywords, description) against character limits and common rejection patterns. Input: one locale object or an array.', inputSchema: { type: 'object', required: ['listing'], properties: { listing: {}, avoid: { type: 'array', items: { type: 'string' } } } } },
   { name: 'lookup_app_store', description: 'Public App Store metadata (name, seller, genre, rating, rating count, price) for App Store ids.', inputSchema: { type: 'object', required: ['ids'], properties: { ids: { type: 'array', items: { type: 'string' } }, country: { type: 'string' } } } },
@@ -75,6 +78,15 @@ export async function callTool(name, args = {}, deps = {}) {
       const pop = args.popularity ? await popularity(rowsA, cfgRun, (term) => search(term, { country: ctry, limit: 10 }), { provider: args.engine, lookupImpl: (ids) => lookup(ids, { country: ctry }) }) : null;
       if (!retest && !pop) return text('nothing to validate: give runDir2 and/or popularity:true', true);
       return text(renderValidation({ retest, pop, runs: [args.runDir, args.runDir2].filter(Boolean) }));
+    }
+    case 'diagnose_app_aeo_run': {
+      const { markdown } = await diagnoseRun(args.runDir, { fetch: args.fetch ?? 0, engine: args.engine, listing: args.listing ? listingText(args.listing) : null, fetchImpl: deps.fetchImpl });
+      return text(markdown);
+    }
+    case 'diff_app_aeo_runs': {
+      const [cfgA, cfgB] = [args.runDir, args.runDir2].map((d) => JSON.parse(fs.readFileSync(path.join(d, 'config.json'), 'utf8')));
+      if (cfgA.target?.name !== cfgB.target?.name) return text(`different target apps (${cfgA.target?.name} vs ${cfgB.target?.name})`, true);
+      return text(renderDiff(diffRuns(loadRun(args.runDir), loadRun(args.runDir2), cfgA, { engine: args.engine }), [args.runDir, args.runDir2]));
     }
     case 'lint_app_listing': {
       const why = validateListing(args.listing);

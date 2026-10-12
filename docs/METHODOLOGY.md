@@ -79,7 +79,32 @@ Outcomes:
   - that listing changes move the mention rate;
   - that mention rate moves installs.
 
-## 7. Reproducibility
+## 7. Diagnosis (`diagnose`, `diff`) — what it can and cannot claim
+- **Sources.**
+  - `claude-search` records the results its WebSearch calls returned (title and URL), not pages it opened.
+  - `codex-search` records every URL in its event stream. That includes pages it opened, often after deciding: support and pricing pages of the apps it names.
+  - So the source sets of the two engines differ in kind; compare causes within an engine, not across engines.
+- **Page check.**
+  - A page "lists" an app when the app's name or alias matches as a whole word in its visible text (scripts and styles removed), using the same extractor as the answers.
+  - Presence is not prominence. A page that mentions you once at the bottom counts as listing you, and that shows up as *selection*.
+  - Pages are fetched when you run `diagnose`, not when the engine read them. For an old run, a page may have changed since.
+- **Causes.**
+  - *Selection*: a checked page of that answer lists the target. One page is proof.
+  - *Coverage*: no checked page lists the target **and** at least 50% of the answer's third-party pages were checked.
+  - *Coverage?*: no checked page lists the target, but fewer were checked. Unchecked pages (403, PDF, rate-limited, over budget) may list you.
+  - *Unknown*: none of its pages could be checked.
+  - Measured in the meditation benchmark: Codex answers read about 30 third-party pages each, and 40 fetched pages covered about 5% of them per answer. Expect "coverage?" rather than "coverage" for Codex unless the fetch budget is large.
+  - Page choice: half the budget goes to the most-read pages, half greedily to the pages that cover the most unclassified misses (53% → 12% unknown at 40 pages, same data).
+- **Lift is observational.**
+  - Comparing answers to the same prompt removes the largest confound: which questions pull a page in.
+  - It does not make the page a cause. Engines may open a review *because* they already chose the app, as they do with owned pages, which is why owned pages are excluded.
+  - Treat "Working" and the lift column as hypotheses.
+- **Causal claims need an intervention.** Change one thing, re-run the same config, and use `diff`:
+  - It pairs prompts and bootstraps a 95% CI over prompts.
+  - Competitors in the same table act as a drift control. If everyone moved, the engine changed.
+  - No published result yet shows that listing or page changes move these rates for apps. `diff` is how you find out for yours.
+
+## 8. Reproducibility
 - Every answer is stored verbatim with model, latency, grounding evidence and citations (`responses.jsonl`, append-only).
 - Re-running `gate` or `validate` re-extracts from the stored text, so extractor fixes apply retroactively and auditably.
 - The benchmark protocol is pre-registered in `bench/PREREGISTRATION.md`. The commit time precedes the data.

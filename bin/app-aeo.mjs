@@ -12,6 +12,7 @@ import { brandOf } from '../src/extract.mjs';
 import { loadRun, popularity, renderValidation, testRetest } from '../src/validate.mjs';
 import { autocompletePrompts } from '../src/store.mjs';
 import { inspect, probe, renderDoctor } from '../src/doctor.mjs';
+import { diagnoseRun, diffRuns, listingText, renderDiff } from '../src/diagnose.mjs';
 
 const HELP = `app-aeo — measure how often answer engines recommend your app
 
@@ -23,6 +24,8 @@ Usage
   app-aeo check <config.json> [--out DIR] [--resume RUN_DIR] [--max-calls N] [--timeout-ms N] [--dry-run] [--json]
   app-aeo trend <runs-dir> [--json]
   app-aeo validate <run-dir> [<run-dir-2>] [--popularity] [--engine SPEC]   (test–retest and/or mention vs real usage)
+  app-aeo diagnose <run-dir> [--fetch 40] [--listing listing.json | --store] [--engine SPEC]   (why you are missed: coverage / selection / ungrounded, and which pages to act on)
+  app-aeo diff <run-before> <run-after> [--engine SPEC]     (did a change move your rate? paired by prompt, 95% CI)
   app-aeo prompts --category "habit tracker" [--competitor NAME ...] [--locale en|ko] [--autocomplete]
   app-aeo lookup <appStoreId ...> [--country us]
   app-aeo search <term> [--country us]
@@ -50,7 +53,7 @@ export function parseArgv(argv) {
     const a = argv[i];
     if (a.startsWith('--')) {
       const [k, inline] = a.split(/=(.*)/s, 2);
-      const isFlag = ['--dry-run', '--json', '--help', '--popularity', '--autocomplete', '--live', '--no-autocomplete', '--gate', '--no-audit'].includes(k);
+      const isFlag = ['--dry-run', '--json', '--help', '--popularity', '--autocomplete', '--live', '--no-autocomplete', '--gate', '--no-audit', '--store'].includes(k);
       const v = isFlag ? true : inline ?? argv[++i];
       if (!isFlag && v === undefined) throw new Error(`${k} needs a value`);
       if (multi.has(k)) (opt[k] ??= []).push(v); else opt[k] = v;
@@ -158,6 +161,32 @@ async function main(argv) {
     const r = await search(pos.join(' '), { country });
     for (const x of r) console.log(`${x.appStoreId}\t${x.rating ?? '-'}★ (${x.ratingCount ?? 0})\t${x.name} — ${x.seller}`);
     return 0;
+  }
+  if (cmd === 'diagnose') {
+    if (pos.length !== 1) { console.error('usage: app-aeo diagnose <run-dir> [--fetch N] [--engine SPEC] [--listing listing.json | --store] [--json]'); return 2; }
+    const n = opt['--fetch'] == null ? 0 : Number(opt['--fetch']);
+    if (!Number.isInteger(n) || n < 0) { console.error('--fetch needs a whole number of pages'); return 2; }
+    const cfg = readJson(path.join(pos[0], 'config.json'));
+    let listing = opt['--listing'] ? listingText(readJson(opt['--listing'])) : null;
+    if (!listing && opt['--store']) {
+      if (!cfg.target?.appStoreId) { console.error('--store needs target.appStoreId in the run config'); return 2; }
+      const [app] = await lookup([cfg.target.appStoreId], { country: cfg.country ?? country });
+      listing = app ? [app.name, app.description].join('\n') : null;
+      if (!listing) console.error(`--store: App Store id ${cfg.target.appStoreId} not found; listing column left empty`);
+    }
+    const { d, markdown } = await diagnoseRun(pos[0], { fetch: n, engine: opt['--engine'], listing, cfg, log: (m) => console.error(m) });
+    console.log(opt['--json'] ? JSON.stringify(d, null, 2) : markdown);
+    console.error(`diagnosis: ${path.join(pos[0], 'diagnosis.md')}`);
+    return d.engines.length ? 0 : 1;
+  }
+  if (cmd === 'diff') {
+    if (pos.length !== 2) { console.error('usage: app-aeo diff <run-before> <run-after> [--engine SPEC] [--json]'); return 2; }
+    const [cfgA, cfgB] = pos.map((p) => readJson(path.join(p, 'config.json')));
+    if (cfgA.target?.name !== cfgB.target?.name) { console.error(`diff: different target apps (${cfgA.target?.name} vs ${cfgB.target?.name})`); return 2; }
+    if ((cfgA.fingerprint ?? configFingerprint(cfgA)) !== (cfgB.fingerprint ?? configFingerprint(cfgB))) console.error('diff: configs differ; only prompts and engines present in both are compared');
+    const diffs = diffRuns(loadRun(pos[0]), loadRun(pos[1]), cfgA, { engine: opt['--engine'] });
+    console.log(opt['--json'] ? JSON.stringify(diffs, null, 2) : renderDiff(diffs, pos));
+    return diffs.length ? 0 : 1;
   }
   if (cmd === 'lint') {
     if (pos.length !== 1) { console.error('usage: app-aeo lint <listing.json>'); return 2; }

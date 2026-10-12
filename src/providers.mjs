@@ -89,22 +89,49 @@ export const SEARCH_TIMEOUT_MS = 420_000;
 /** Sum of web searches Claude Code reports in modelUsage (per-model counters). */
 export const claudeSearchCount = (j) => Object.values(j.modelUsage ?? {}).reduce((n, u) => n + (u.webSearchRequests ?? 0), 0) + (j.usage?.server_tool_use?.web_search_requests ?? 0);
 
+const URL_IN_JSON = /https?:\/\/[^"\s)\\<>]+/g;
+const trimUrl = (u) => u.replace(/[.,;:'\]]+$/, '');
+
+/** Claude Code `--output-format stream-json --verbose` output: the final `result` event, the WebSearch queries it ran
+ *  and the result URLs those searches returned, in order. A single JSON object (`--output-format json`) is accepted too. */
+export function claudeStream(stdout) {
+  const s = String(stdout).trim();
+  try { const j = JSON.parse(s); if (j && typeof j === 'object' && !Array.isArray(j)) return { result: j, queries: [], urls: [] }; } catch { /* stream */ }
+  let result = null;
+  const queries = [];
+  const urls = new Set();
+  for (const line of s.split('\n')) {
+    let ev;
+    try { ev = JSON.parse(line); } catch { continue; }
+    if (ev.type === 'result') result = ev;
+    const content = ev.message?.content;
+    if (!Array.isArray(content)) continue;
+    for (const b of content) {
+      if (b.type === 'tool_use' && b.name === 'WebSearch' && typeof b.input?.query === 'string') queries.push(b.input.query);
+      if (b.type === 'tool_result' || b.type === 'web_search_tool_result') for (const m of JSON.stringify(b.content ?? '').matchAll(URL_IN_JSON)) urls.add(trimUrl(m[0]));
+    }
+  }
+  return { result, queries, urls: [...urls] };
+}
+
 function claudeAsker({ search, system = null }) {
   return async (prompt, { model, timeoutMs, run = runChild }) => {
     // Replace Claude Code's coding-agent system prompt: we want the answer a general assistant gives, not a coding agent.
-    const args = ['-p', '--output-format', 'json', '--setting-sources', '', '--strict-mcp-config', '--no-session-persistence'];
+    // stream-json (not json) so the search results — the pages the answer was built from — are kept for `diagnose`.
+    const args = ['-p', '--output-format', 'stream-json', '--verbose', '--setting-sources', '', '--strict-mcp-config', '--no-session-persistence'];
     if (search) args.push('--tools', 'WebSearch', '--allowedTools', 'WebSearch', '--system-prompt', system ?? SEARCH_SYSTEM);
     else args.push('--tools', '', '--system-prompt', system ?? MEMORY_SYSTEM);
     if (model) args.push('--model', model);
     const label = search ? 'claude-search' : 'claude-cli';
     const r = await run('claude', args, { input: prompt, cwd: os.tmpdir(), timeoutMs });
     if (r.timedOut) throw new ProviderError('timeout', `${label} timed out after ${timeoutMs}ms`);
-    let j;
-    try { j = JSON.parse(r.stdout); } catch { throw new ProviderError(classifyCliError(r.stdout + r.stderr), `${label} rc=${r.code}: ${(r.stderr || r.stdout).slice(0, 300)}`); }
+    const st = claudeStream(r.stdout);
+    const j = st.result;
+    if (!j) throw new ProviderError(classifyCliError(r.stdout + r.stderr), `${label} rc=${r.code}: ${(r.stderr || r.stdout).slice(-300)}`);
     if (j.is_error || r.code !== 0 || typeof j.result !== 'string') throw new ProviderError(classifyCliError(JSON.stringify(j)), `${label} error: ${String(j.result ?? j.subtype ?? r.stderr).slice(0, 300)}`);
     const resolved = Object.keys(j.modelUsage ?? {})[0] ?? model ?? null;
     const searches = claudeSearchCount(j);
-    return { text: j.result, model: resolved, citations: [], grounded: search && searches > 0, searches, costUsd: j.total_cost_usd ?? null };
+    return { text: j.result, model: resolved, citations: search ? st.urls : [], searchQueries: st.queries, grounded: search && searches > 0, searches, costUsd: j.total_cost_usd ?? null };
   };
 }
 
@@ -132,16 +159,20 @@ export function isolatedUserHome() {
 export function codexEvents(jsonl) {
   let searches = 0;
   const urls = new Set();
+  const queries = [];
   for (const line of String(jsonl).split('\n')) {
     if (!line.trim()) continue;
     let ev;
     try { ev = JSON.parse(line); } catch { continue; }
     const s = JSON.stringify(ev);
     // item.started and item.completed both carry the item; count a search once, when it completes.
-    if (ev.type === 'item.completed' && ev.item?.type === 'web_search') searches += 1;
+    if (ev.type === 'item.completed' && ev.item?.type === 'web_search') {
+      searches += 1;
+      if (typeof ev.item.query === 'string' && ev.item.query) queries.push(ev.item.query);
+    }
     for (const m of s.matchAll(/https?:\/\/[^"\s)\\]+/g)) urls.add(m[0]);
   }
-  return { searches, urls: [...urls] };
+  return { searches, urls: [...urls], queries };
 }
 
 function codexAsker({ search, system = null }) {
@@ -160,7 +191,7 @@ function codexAsker({ search, system = null }) {
       if (r.code !== 0 || !text) throw new ProviderError(classifyCliError(r.stderr + r.stdout), `${label} rc=${r.code}: ${(r.stderr || r.stdout).slice(-300)}`);
       const ev = codexEvents(r.stdout);
       const m = /"model":"([^"]+)"/.exec(r.stdout) ?? /^model:\s*(\S+)/m.exec(r.stderr);
-      return { text, model: m?.[1] ?? model ?? null, citations: ev.urls.filter((u) => !/openai\.com|chatgpt\.com/.test(u)), grounded: search && ev.searches > 0, searches: ev.searches, costUsd: null };
+      return { text, model: m?.[1] ?? model ?? null, citations: ev.urls.filter((u) => !/openai\.com|chatgpt\.com/.test(u)), searchQueries: ev.queries, grounded: search && ev.searches > 0, searches: ev.searches, costUsd: null };
     } finally {
       fs.rmSync(work, { recursive: true, force: true });
     }

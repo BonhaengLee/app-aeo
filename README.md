@@ -90,6 +90,48 @@ Read with these limits:
 - Calibration (descriptive): 66 of 70 app-aeo estimates fell inside their combined 95% interval. The result is unchanged when apps with LLM-judge agreement below 0.90 are dropped.
 - The cost difference is real: app-aeo made 200 calls per category and engine; the prompts made 1.
 
+## Why you are missed, and what to do: `diagnose` → act → `diff`
+
+A number alone does not say what to change. A search-grounded answer is built from the pages its searches returned, so every answer that misses your app has one of these causes:
+
+| Cause | Meaning | What moves it |
+|---|---|---|
+| **coverage** | No page the engine read lists your app (≥ 50% of its third-party pages checked) | Get onto those pages |
+| **coverage?** | None of the checked pages lists you, but fewer than half were checked | Likely coverage; not proven |
+| **selection** | A page lists you, and the engine picked others anyway | How those pages present you; the question words you lose |
+| **ungrounded** | The engine answered from memory | Broad awareness only, slowly |
+| **unknown** | Pages not checked | Run with `--fetch` — never guessed |
+
+```sh
+app-aeo diagnose <run-dir> --fetch 40 --store   # fetch the 40 most-read pages, check which apps each names
+# … change one thing, wait for re-indexing, re-run the same config …
+app-aeo diff <run-before> <run-after>           # paired by prompt, 95% CI; did you move, or did the engine?
+```
+
+How it decides:
+- **Sources.** `claude-search` now records its search results (stream-json; runs before 0.4.0 have none). `codex-search` records every URL in its event stream.
+- **Pages.** Half the `--fetch` budget goes to the most-read pages, which feed the action tables. The other half goes to the pages that cover the most still-unclassified misses: in the meditation benchmark this cut "unknown" from 53% to 12% at 40 pages. Each page is fetched once and cached in `<run>/pages/`. Reddit threads are read through their feed, about one a minute because of Reddit's rate limit. A page that cannot be fetched is "could not check", never "does not list you". PDFs are listed for a manual look.
+- **Lift is within the same prompts.** A page's mention rate depends on which questions pull it in, so the tool compares answers that read the page with answers to the *same* prompt that did not.
+- **Your own site and store page are never levers.** Engines open them *after* deciding, to look up price or features. In the benchmark (`codex-search`, budgeting), Monarch Money was named in 75% of the 36 answers that read its own site and in 8% of the others. That gap is a consequence of the decision, not a cause.
+- **Questions you lose.** These are prompt words that go with a lower rate for you ("offline", "uk", …). With `--store` or `--listing`, the tool also checks whether your listing says them.
+- **Guardrails.** The "How" column stays inside each site's rules: pitch editors, disclose yourself on forums, and never edit Wikipedia about yourself. Paid or fake reviews get removed.
+
+**Example.** The data is the benchmark's budgeting run (`codex-search`, 120 answers, collected 2026-10-09); the pages were fetched on 2026-10-12.
+- Monarch Money was named in 28% of answers and YNAB in 60%.
+- Of the 86 misses (`--fetch 15`):
+
+  | Cause | Answers |
+  |---|---:|
+  | selection | 72 |
+  | coverage? | 7 |
+  | unknown | 7 |
+
+  So the gap was mostly *how* Monarch is presented on pages engines already read, not whether it is there. One page that lists you is enough to prove selection, so this count does not depend on which pages were fetched. Coverage needs an absence across most pages. Codex answers read about 30 third-party pages each, so with a page budget coverage usually stays "coverage?".
+- Kiplinger's list (read in 101 answers) names Monarch, and reading it raised Monarch's rate by 18 pp within the same prompts. That is a page that **works**.
+- TechRadar's "best budgeting software" (read in 81 answers) names YNAB and not Monarch. That is a **get-listed** target.
+
+Why third-party pages: Chen et al. found AI search cites earned media far more than brand-owned pages ([arXiv 2509.08919](https://arxiv.org/abs/2509.08919)). Aggarwal et al. found that page edits such as adding statistics, quotations and citations can raise visibility in generative answers by up to 40% ([GEO, KDD 2024](https://arxiv.org/abs/2311.09735)); that is a maximum, not a typical gain. `diff` exists so that you measure the effect for your own app instead of assuming it.
+
 ## Alternatives
 
 - **AppTweak AI Visibility** ([product page](https://www.apptweak.com/en/ai-search-visibility-tool-for-mobile-apps)): a commercial, app-specific tracker for ChatGPT and Gemini. No public price; access is through a demo. Use it if you need the consumer ChatGPT/Gemini surfaces, which this tool does not measure.
@@ -105,6 +147,8 @@ Read with these limits:
 | `check <cfg> [--out DIR] [--resume RUN] [--max-calls N] [--dry-run]` | Runs it. Resume refuses a changed config; one writer per run directory |
 | `validate <runA> [<runB>] [--popularity] [--engine SPEC]` | Test–retest and/or usage check. Refuses to compare runs of different configs |
 | `trend <runs-dir>` | Mention-rate history; flags changed prompt sets |
+| `diagnose <run> [--fetch N] [--store \| --listing f.json] [--engine SPEC]` | Why misses happen (coverage / selection / ungrounded / unknown) and which pages to act on; writes `diagnosis.md/json` |
+| `diff <before> <after> [--engine SPEC]` | Before/after Δ per app, paired by prompt, 95% CI |
 | `prompts --category … [--autocomplete]` · `search <term>` · `lookup <id…>` | Helpers |
 | `lint <listing.json>` | App Store listing check (limits by user-perceived characters, claims, keyword waste) |
 
@@ -132,6 +176,8 @@ Tools:
 | `app_aeo_doctor` | Free engines available here |
 | `run_app_aeo_check` | Run a measurement |
 | `validate_app_aeo_runs` | Test–retest and usage check |
+| `diagnose_app_aeo_run` | Causes of misses and pages to act on |
+| `diff_app_aeo_runs` | Before/after comparison |
 | `get_app_aeo_trend` | Mention-rate history |
 | `lint_app_listing` | App Store listing check |
 | `lookup_app_store` | Look up apps by id |
@@ -140,13 +186,13 @@ Tools:
 
 ## Skills
 
-- `skills/app-aeo/SKILL.md` is the agent workflow: doctor → init (100 prompts) → `check --gate` → report the gate verdict first, and findings only from RELIABLE engines.
+- `skills/app-aeo/SKILL.md` is the agent workflow: doctor → init (100 prompts) → `check --gate` → report the gate verdict first, and findings only from RELIABLE engines → `diagnose` → act → `diff`.
 - `skills/aso-lint/SKILL.md` is the listing check.
 
 ## Development
 
 ```sh
-node test/selftest.mjs   # 62 cases, no network
+node test/selftest.mjs   # 74 cases, no network
 ```
 
 - Every fix from the live runs and from an independent Codex code review has a regression test.

@@ -1,6 +1,6 @@
 ---
 name: app-aeo
-description: Measure how often AI assistants recommend a specific mobile app for real recommendation questions, compare with competitors, and check whether the measurement is trustworthy — for free, using the user's own Claude Code / Codex web search plus optional free-tier API keys. Use when the user asks "does ChatGPT/AI recommend my app", "AI visibility / AEO / GEO for my app", or why AI suggests competitors instead.
+description: Measure how often AI assistants recommend a specific mobile app for real recommendation questions, compare with competitors, check whether the measurement is trustworthy, then diagnose why the app is missed (which pages engines read, coverage vs selection) and verify fixes before/after — for free, using the user's own Claude Code / Codex web search plus optional free-tier API keys. Use when the user asks "does ChatGPT/AI recommend my app", "AI visibility / AEO / GEO for my app", why AI suggests competitors instead, or what to do about it.
 ---
 
 # App AEO — agent workflow
@@ -43,7 +43,27 @@ Optional usage check: `app-aeo validate <run> --popularity --engine <spec>` comp
   - mix modes into one number;
   - present `rag` or memory engines as "what ChatGPT says".
 
-## 5. Improve (optional)
-- Run `app-aeo lint listing.json` on the current App Store text. It is deterministic.
-- For each missing prompt, name the attribute the winning apps are cited for (free, no ads, Android, offline, …). Check whether the app's listing or website says it.
-- Re-measure later with the **same** `cfg.json` and compare with `app-aeo trend`.
+## 5. Find the cause: `diagnose`
+Run `app-aeo diagnose <run-dir> --fetch 40 --store` (or `--listing listing.json`). It needs search engines (`claude-search`, `codex-search`); runs made before 0.4.0 have no Claude sources. Reddit pages take about a minute each (its rate limit), so 40 pages can take 10–20 minutes.
+
+It sorts every answer that missed the app into one cause, per engine:
+- **coverage**: none of the pages the engine read lists the app (at least half checked). Fix: get onto those pages.
+- **coverage?**: same, but fewer than half of those pages were checked. Say "likely", not "is".
+- **selection**: a page it read lists the app, and it still picked others. Fix: how those pages describe the app, and the question words below.
+- **ungrounded**: no search, so the answer came from memory. Only broad awareness moves this, slowly.
+- **unknown**: the pages were not checked. Never turn this into coverage or selection.
+
+Report from the tables, as given:
+1. **Get listed**: often-read pages that name competitors but not the app, with the "How" column. Earned media dominates AI answers (Chen et al. 2025, arXiv 2509.08919).
+2. **Fix presentation** and **Working**. "Working" pages raise the rate within the same prompts. Suggest finding more pages like them.
+3. **Questions you lose**: prompt words with a lower rate, and whether the listing says them. This is where `app-aeo lint` and listing edits apply.
+
+Rules:
+- Own pages (the app's site and store page) are read *after* the engine has decided. Never present them as a lever.
+- Never suggest paid or fake reviews, undisclosed self-promotion, or editing Wikipedia about the app. Sites remove them, and they can get the app delisted.
+
+## 6. Act, then prove it: `diff`
+- Change **one** thing, and wait for it to be indexed: an edited article is usually re-crawled in days to weeks.
+- Re-run the **same** `cfg.json`, then run `app-aeo diff <before> <after>`. It gives a paired-by-prompt Δ with a 95% CI.
+- Call it an effect only if the CI excludes 0 **and** competitors did not move the same way. If they did, the engine drifted.
+- `app-aeo trend` shows the history.

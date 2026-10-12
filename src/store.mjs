@@ -20,6 +20,7 @@ const pick = (r) => ({
   appStoreId: String(r.trackId),
   name: r.trackName,
   seller: r.sellerName,
+  sellerUrl: r.sellerUrl ?? null,
   genre: r.primaryGenreName,
   price: r.formattedPrice ?? r.price,
   rating: r.averageUserRating ?? null,

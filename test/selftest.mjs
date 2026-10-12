@@ -9,7 +9,9 @@ import { planJobs, runCheck, validateConfig, promptSetHash, trend } from '../src
 import { ProviderError, ask, classifyHttp, classifyCliError, parseProviderSpec } from '../src/providers.mjs';
 import { lint, length, validateListing } from '../src/lint.mjs';
 import { RateLimitedError, lookup, suggestPrompts } from '../src/store.mjs';
-import { handle } from '../mcp/server.mjs';
+import { handle, callTool, TOOLS } from '../mcp/server.mjs';
+import { sourceKey, ownerOf, sourceKind, matchedLift, diagnose, checkPages, diffRuns, renderDiff, pagesToCheck } from '../src/diagnose.mjs';
+import { claudeStream } from '../src/providers.mjs';
 import { spearman, testRetest, popularity, appRates } from '../src/validate.mjs';
 import { parseArgv, slug } from '../bin/app-aeo.mjs';
 
@@ -223,7 +225,7 @@ await t('fallback chain: exhausted link is skipped for the rest of the run; mixe
 await t('codexEvents counts web_search events and URLs; claudeSearchCount sums modelUsage', async () => {
   const { codexEvents, claudeSearchCount } = await import('../src/providers.mjs');
   const ev = codexEvents('{"type":"item.started","item":{"type":"web_search","query":"x"}}\n{"type":"item.completed","item":{"type":"web_search","query":"x"}}\n{"type":"item.completed","item":{"type":"agent_message","text":"see https://apps.apple.com/us/app/x/id1"}}\nnot json');
-  assert.deepEqual(ev, { searches: 1, urls: ['https://apps.apple.com/us/app/x/id1'] });
+  assert.deepEqual(ev, { searches: 1, urls: ['https://apps.apple.com/us/app/x/id1'], queries: ['x'] }, 'query recorded once, at completion');
   assert.equal(claudeSearchCount({ modelUsage: { a: { webSearchRequests: 0 }, b: { webSearchRequests: 2 } } }), 2);
 });
 await t('codex engines pass consumer-role developer_instructions (coding-agent misread fix)', async () => {
@@ -549,6 +551,177 @@ await t('parseArgv and slug', () => {
   assert.deepEqual(parseArgv(['check', 'c.json', '--max-calls', '5', '--dry-run', '--competitor', 'A', '--competitor=B']), { pos: ['check', 'c.json'], opt: { '--max-calls': '5', '--dry-run': true, '--competitor': ['A', 'B'] } });
   assert.equal(slug('Habitify - Habit Tracker'), 'habitify-habit-tracker');
   assert.throws(() => parseArgv(['--out']), /needs a value/);
+});
+
+// diagnose
+const CLAUDE_STREAM = [
+  { type: 'system', subtype: 'init' },
+  { type: 'assistant', message: { content: [{ type: 'tool_use', name: 'WebSearch', input: { query: 'best habit app' } }] } },
+  { type: 'user', message: { content: [{ type: 'tool_result', content: 'Web search results for query: "best habit app"\n\nLinks: [{"title":"Best","url":"https://zapier.com/blog/best-habit-tracker-app/"},{"title":"R","url":"https://www.reddit.com/r/productivity/comments/abc/x/"}]' }] } },
+  { type: 'result', result: 'Streaks.', is_error: false, modelUsage: { 'claude-x': { webSearchRequests: 1 } } },
+].map((e) => JSON.stringify(e)).join('\n');
+await t('claude-search keeps the pages its searches returned (stream-json), not an empty list', async () => {
+  let argsSeen;
+  const run = async (cmd, args) => { argsSeen = args; return { code: 0, stdout: CLAUDE_STREAM, stderr: '' }; };
+  const r = await ask('claude-search', 'q', { run });
+  assert.equal(argsSeen[argsSeen.indexOf('--output-format') + 1], 'stream-json');
+  assert.deepEqual(r.citations, ['https://zapier.com/blog/best-habit-tracker-app/', 'https://www.reddit.com/r/productivity/comments/abc/x/']);
+  assert.deepEqual(r.searchQueries, ['best habit app']);
+  assert.equal(r.text, 'Streaks.');
+  assert.equal(r.grounded, true);
+  assert.deepEqual(claudeStream('{"result":"ok"}'), { result: { result: 'ok' }, queries: [], urls: [] }, 'single JSON object still parses');
+  await assert.rejects(ask('claude-search', 'q', { run: async () => ({ code: 0, stdout: '{"type":"system"}\n', stderr: '' }) }), (e) => e instanceof ProviderError);
+});
+await t('sourceKey: one identity per page, assets dropped', () => {
+  assert.equal(sourceKey('https://www.techradar.com/best/x/').key, 'techradar.com/best/x');
+  assert.equal(sourceKey('https://m.youtube.com/watch?v=abc&t=3').key, 'youtube.com/watch?v=abc');
+  assert.equal(sourceKey('https://play.google.com/store/apps/details?id=org.x&hl=en').key, 'play.google.com/store/apps/details?id=org.x');
+  assert.equal(sourceKey('https://cdn.mos.cms.futurecdn.net/a-1280-80.jpg'), null);
+  assert.equal(sourceKey('https://www.calm.com.').key, 'calm.com');
+  assert.equal(sourceKey('not a url'), null);
+});
+await t('ownerOf: own site, store page and encyclopedia article are owned; generic first words are not', () => {
+  const apps = [{ name: 'Monarch Money', appStoreId: '1459319842' }, { name: 'YNAB', aliases: ['You Need a Budget'] }, { name: 'Simple Habit' }];
+  const own = (u) => ownerOf(sourceKey(u), apps);
+  assert.equal(own('https://www.monarch.com/pricing'), 'Monarch Money');
+  assert.equal(own('https://apps.apple.com/us/app/monarch-money/id1459319842'), 'Monarch Money');
+  assert.equal(own('https://en.wikipedia.org/wiki/YNAB'), 'YNAB');
+  assert.equal(own('https://de.wikipedia.org/wiki/You_Need_a_Budget'), 'YNAB');
+  assert.equal(own('https://en.wikipedia.org/wiki/List_of_personal_finance_software'), null);
+  assert.equal(own('https://simple.com/blog'), null, '"simple" is a generic word');
+  assert.equal(sourceKind(sourceKey('https://en.wikipedia.org/wiki/List_of_personal_finance_software'), apps), 'reference');
+  assert.equal(sourceKind(sourceKey('https://www.reddit.com/r/x/comments/1/y'), apps), 'community');
+  assert.equal(ownerOf(sourceKey('https://help.example.org/a'), [{ name: 'Ex', sellerUrl: 'https://example.org' }]), 'Ex');
+});
+await t('matchedLift compares within the same prompt, so a page read only for easy prompts gets no credit', () => {
+  const T = { name: 'T', role: 'target' };
+  const mk = (prompt, named) => ({ prompt, analysis: { target: named ? { name: 'T' } : null, mentions: [] } });
+  // prompt "easy": T always named, page always read; prompt "hard": T never named, page never read.
+  const rows = [mk('easy', 1), mk('easy', 1), mk('hard', 0), mk('hard', 0)];
+  assert.deepEqual(matchedLift(rows, new Set(rows.slice(0, 2)), T), { lift: null, prompts: 0 }, 'no prompt has both → no claim');
+  const rows2 = [mk('p', 1), mk('p', 0), mk('p', 0), mk('q', 1), mk('q', 1)];
+  const r = matchedLift(rows2, new Set([rows2[0], rows2[3]]), T);
+  assert.equal(r.prompts, 2);
+  assert.equal(r.lift, 0.5, 'p: 1 − 0 (w=1) · q: 1 − 1 (w=1)');
+});
+const DX = { target: { name: 'Streaks' }, competitors: [{ name: 'Habitify' }] };
+const drow = (prompt, text, citations, grounded = true, provider = 'codex-search') => ({ ok: true, provider, prompt, repeat: 1, grounded, citations, analysis: analyse(text, DX.target, DX.competitors) });
+const DROWS = [
+  drow('habit app without subscription', 'Habitify is good.', ['https://listicle.com/a', 'https://habitify.me/pricing']),
+  drow('habit app without subscription', 'Habitify.', ['https://listicle.com/a']),
+  drow('habit app for iphone', 'Habitify again.', ['https://other.com/b']),
+  drow('habit app for iphone', 'Streaks!', ['https://other.com/b']),
+  drow('habit app for adhd', 'Habitify.', ['https://unchecked.com/c']),
+  drow('habit app for adhd', 'Habitify.', [], false),
+];
+const DPAGES = new Map([
+  ['listicle.com/a', { ok: true, lists: { Streaks: false, Habitify: true } }],
+  ['other.com/b', { ok: true, lists: { Streaks: true, Habitify: true } }],
+  ['habitify.me/pricing', { ok: true, lists: { Streaks: false, Habitify: true } }],
+]);
+await t('diagnose classifies every miss: coverage / selection / ungrounded / unknown — never guesses', () => {
+  const [e] = diagnose(DROWS, DX, { pages: DPAGES, minAnswers: 1 }).engines;
+  assert.equal(e.misses, 5);
+  assert.deepEqual(e.causes, { ungrounded: 1, 'no-sources': 0, coverage: 2, 'coverage-partial': 0, selection: 1, unknown: 1 });
+  // One checked page of three third-party pages is not enough to call it coverage.
+  const partial = [...DROWS, drow('habit app for kids', 'Habitify.', ['https://listicle.com/a', 'https://u1.com/x', 'https://u2.com/y'])];
+  assert.deepEqual(diagnose(partial, DX, { pages: DPAGES, minAnswers: 1 }).engines[0].causes, { ungrounded: 1, 'no-sources': 0, coverage: 2, 'coverage-partial': 1, selection: 1, unknown: 1 });
+  assert.deepEqual(e.getListed.map((s) => s.key), ['listicle.com/a']);
+  assert.equal(e.sources.find((s) => s.key === 'habitify.me/pricing').kind, 'owned');
+  assert.ok(!e.getListed.concat(e.fixPresentation, e.working, e.toCheck).some((s) => s.kind === 'owned'), 'own pages are never levers');
+  assert.deepEqual(e.toCheck.map((s) => s.key), ['unchecked.com/c']);
+});
+await t('pagesToCheck: half most-read, then the pages that cover the most still-unclassified misses', () => {
+  const d = { engines: [{ minAnswers: 2, sources: [
+    { key: 'top.com/1', url: 'https://top.com/1', kind: 'earned', answers: 9 },
+    { key: 'top.com/2', url: 'https://top.com/2', kind: 'earned', answers: 8 },
+    { key: 'tail.com/a', url: 'https://tail.com/a', kind: 'earned', answers: 1 },
+    { key: 'tail.com/b', url: 'https://tail.com/b', kind: 'earned', answers: 1 },
+    { key: 'own.com', url: 'https://own.com', kind: 'owned', answers: 9 },
+    { key: 'x.com/f.pdf', url: 'https://x.com/f.pdf', kind: 'earned', answers: 9 },
+  ], missSources: [['top.com/1'], ['tail.com/a', 'own.com'], ['tail.com/a'], ['tail.com/b']] }] };
+  assert.deepEqual(pagesToCheck(d, 2).map((x) => x.key), ['top.com/1', 'tail.com/a'], 'most-read, then the page covering 2 open misses (not top.com/2, which covers none)');
+  assert.deepEqual(pagesToCheck(d, 4).map((x) => x.key), ['top.com/1', 'top.com/2', 'tail.com/a', 'tail.com/b']);
+});
+await t('diagnose without pages says "unknown", and old Claude rows say "no sources recorded"', () => {
+  const [e] = diagnose(DROWS, DX, { minAnswers: 1 }).engines;
+  assert.deepEqual(e.causes, { ungrounded: 1, 'no-sources': 0, coverage: 0, 'coverage-partial': 0, selection: 0, unknown: 4 });
+  const [c] = diagnose([drow('q', 'Habitify', [], true, 'claude-search')], DX).engines;
+  assert.equal(c.causes['no-sources'], 1);
+});
+await t('diagnose questions you lose: word, rates, and whether the listing says it', () => {
+  const rows = ['offline', 'offline', 'offline', 'widget', 'widget', 'widget', 'icloud', 'icloud', 'icloud'].map((w, i) => drow(`habit ${w} ${i}`, w === 'offline' ? 'Habitify' : 'Streaks', ['https://x.com/1']));
+  const [e] = diagnose(rows, DX, { listing: 'Streaks — widgets, iCloud sync' }).engines;
+  const q = e.questions.find((x) => x.word === 'offline');
+  assert.deepEqual([q.prompts, q.targetRate, q.otherRate, q.leader.name, q.inListing], [3, 0, 1, 'Habitify', false]);
+  assert.equal(e.questions.length, 1, 'words where you do as well or better are not listed');
+});
+await t('checkPages: reddit via feed, failures are "could not check", 429 stops that host, cache is reused', async () => {
+  const seen = [];
+  const page = (body, type = 'text/html') => ({ ok: true, status: 200, headers: { get: () => type }, text: async () => body });
+  const fetchImpl = async (url) => {
+    seen.push(url);
+    if (url.includes('reddit.com')) return page(`<feed><entry><content>&lt;p&gt;I use Streaks daily&lt;/p&gt;${'x '.repeat(200)}</content></entry></feed>`, 'application/atom+xml');
+    if (url.includes('blocked.com')) return { ok: false, status: 403, headers: { get: () => '' }, text: async () => '' };
+    if (url.includes('limited.com')) return { ok: false, status: 429, headers: { get: () => '' }, text: async () => '' };
+    return page(`<html><script>Streaks</script><p>Habitify is great. ${'y '.repeat(200)}</p></html>`);
+  };
+  const list = ['https://www.reddit.com/r/a/comments/1/t/', 'https://blocked.com/x', 'https://limited.com/1', 'https://limited.com/2', 'https://ok.com/p'].map((u) => ({ key: sourceKey(u).key, url: u }));
+  const cacheDir = path.join(tmp, 'pages');
+  const c = await checkPages(list, DX, { fetchImpl, cacheDir, concurrency: 1, hostGapMs: 0 });
+  assert.equal(seen[0], 'https://www.reddit.com/r/a/comments/1/t.rss');
+  assert.deepEqual(c.pages.get('reddit.com/r/a/comments/1/t').lists, { Streaks: true, Habitify: false });
+  assert.deepEqual(c.pages.get('ok.com/p').lists, { Streaks: false, Habitify: true }, 'script text is not page text');
+  assert.deepEqual(c.pages.get('blocked.com/x'), { ok: false, status: 403 });
+  assert.equal(seen.filter((u) => u.includes('limited.com')).length, 1, 'second page on a 429 host is not requested');
+  assert.deepEqual(c.rateLimitedHosts, ['limited.com']);
+  assert.deepEqual([c.fetched, c.failed], [2, 3]);
+  // A 429 that says when the window resets is waited out and retried, not written off.
+  let calls = 0;
+  const hdr = (h) => ({ get: (k) => h[k] ?? null });
+  const resetFetch = async () => (calls++ === 0
+    ? { ok: false, status: 429, headers: hdr({ 'x-ratelimit-remaining': '0', 'x-ratelimit-reset': '0.05' }), text: async () => '' }
+    : { ok: true, status: 200, headers: hdr({ 'content-type': 'text/html' }), text: async () => `<p>Streaks ${'z '.repeat(200)}</p>` });
+  const w = await checkPages([{ key: 'r.com/1', url: 'https://r.com/1' }], DX, { fetchImpl: resetFetch, hostGapMs: 0 });
+  assert.deepEqual([calls, w.pages.get('r.com/1').ok, w.rateLimitedHosts], [2, true, []]);
+  // While one host waits out its reset, other hosts proceed (even with a single request slot).
+  const order = [];
+  let rCalls = 0;
+  const mixed = async (url) => {
+    order.push(new URL(url).hostname);
+    if (url.includes('r.com') && rCalls++ === 0) return { ok: false, status: 429, headers: hdr({ 'x-ratelimit-remaining': '0', 'x-ratelimit-reset': '0.05' }), text: async () => '' };
+    return { ok: true, status: 200, headers: hdr({ 'content-type': 'text/html' }), text: async () => `<p>Streaks ${'z '.repeat(200)}</p>` };
+  };
+  await checkPages([{ key: 'r.com/1', url: 'https://r.com/1' }, { key: 's.com/1', url: 'https://s.com/1' }], DX, { fetchImpl: mixed, hostGapMs: 0, concurrency: 1 });
+  assert.deepEqual(order, ['r.com', 's.com', 'r.com']);
+  seen.length = 0;
+  const again = await checkPages(list.filter((x) => !/blocked|limited/.test(x.url)), DX, { fetchImpl, cacheDir, hostGapMs: 0 });
+  assert.deepEqual([seen.length, again.cached], [0, 2]);
+});
+await t('diffRuns: paired by prompt; a real rise is "up", no change has a CI around 0', () => {
+  const mkRows = (named) => ['a', 'b', 'c', 'd', 'e', 'f'].flatMap((p) => [1, 2].map((repeat) => drow(p, named(p) ? 'Streaks' : 'Habitify', [])).map((r, i) => ({ ...r, repeat: i + 1 })));
+  const before = mkRows(() => false);
+  const after = mkRows((p) => p !== 'f');
+  const [d] = diffRuns(before, after, DX);
+  const s = d.apps.find((a) => a.name === 'Streaks');
+  assert.deepEqual([d.prompts, s.before, Number(s.after.toFixed(3)), s.verdict], [6, 0, 0.833, 'up']);
+  assert.ok(s.lo > 0);
+  const [same] = diffRuns(before, before, DX);
+  assert.deepEqual(same.apps.map((a) => a.verdict), ['no detectable change', 'no detectable change']);
+  assert.match(renderDiff([d], ['r1', 'r2']), /\*\*Streaks\*\* \| 0% \| 83% \| \+83 pp/);
+});
+await t('diagnoseRun writes diagnosis.md/json; MCP exposes diagnose and diff', async () => {
+  const dir = path.join(tmp, 'diag-run');
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, 'config.json'), JSON.stringify(DX));
+  fs.writeFileSync(path.join(dir, 'responses.jsonl'), DROWS.map((r, i) => JSON.stringify({ ...r, repeat: i + 1 })).join('\n'));
+  const res = await callTool('diagnose_app_aeo_run', { runDir: dir });
+  assert.match(res.content[0].text, /Why the 5 misses happened/);
+  assert.ok(fs.existsSync(path.join(dir, 'diagnosis.md')) && fs.existsSync(path.join(dir, 'diagnosis.json')));
+  const names = TOOLS.map((x) => x.name);
+  assert.ok(names.includes('diagnose_app_aeo_run') && names.includes('diff_app_aeo_runs'), names.join(','));
+  const diff = await callTool('diff_app_aeo_runs', { runDir: dir, runDir2: dir });
+  assert.match(diff.content[0].text, /no detectable change/);
 });
 
 fs.rmSync(tmp, { recursive: true, force: true });
