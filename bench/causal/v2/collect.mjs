@@ -12,7 +12,7 @@ import { findMention } from '../../../src/extract.mjs';
 import { PRIMARY, REPEATS, REPLICATION, askWithBackoff, seedOf, sha, shuffle } from './lib.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-export const CONCURRENCY = 3;
+export const CONCURRENCY = Number(process.env.V2_WORKERS ?? 3); // D9: raised by env when the provider allows
 export const TIMEOUT_MS = 300_000;
 const readJsonl = (f) => (fs.existsSync(f) ? fs.readFileSync(f, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : []);
 

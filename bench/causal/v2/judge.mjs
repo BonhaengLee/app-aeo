@@ -18,7 +18,7 @@ export const JUDGES = {
   codex: { engine: 'codex-cli', model: PRIMARY.model, config: [`model_reasoning_effort="${PRIMARY.effort}"`] },
   claude: { engine: 'claude-cli', model: REPLICATION.model, config: [] },
 };
-export const CONCURRENCY = 3;
+export const CONCURRENCY = Number(process.env.V2_WORKERS ?? 3); // D9: raised by env when the provider allows
 const readJsonl = (f) => (fs.existsSync(f) ? fs.readFileSync(f, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : []);
 
 export const itemKey = (r, entity) => `${r.id}#${r.repeat}#${entity}`;
