@@ -23,8 +23,14 @@ export function parseVerdict(text, apps) {
   if (!m) return null;
   let j;
   try { j = JSON.parse(m[0]); } catch { return null; }
+  // The prompt lists products as "Name (kind)"; 7 of 480 replies echoed that form as the key (deviation D8). Accept the
+  // exact name, or the name followed by the listed " (kind)"; nothing else.
   const out = {};
-  for (const a of apps) { if (typeof j[a.name] !== 'boolean') return null; out[a.name] = j[a.name]; }
+  for (const a of apps) {
+    const v = typeof j[a.name] === 'boolean' ? j[a.name] : Object.entries(j).find(([k, x]) => typeof x === 'boolean' && /^(.*) \([^()]*\)$/.test(k) && k.replace(/ \([^()]*\)$/, '') === a.name)?.[1];
+    if (typeof v !== 'boolean') return null;
+    out[a.name] = v;
+  }
   return out;
 }
 

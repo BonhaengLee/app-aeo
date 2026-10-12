@@ -50,3 +50,8 @@ D1 and D2 were written down **before** their data was collected. The pre-registe
 - **Exposure.** Only the causal study (`bench/causal/`) used `codex-cli`. 32 of its 987 answers searched (24 main, 8 dose). They were already reported, and kept as pre-registered. The benchmark and comparison studies used `codex-search`, `claude-search` and API engines, so they are not affected.
 - **Sensitivity.** H4 without the 32 searched answers: +19.7 pp (95% CI +8.6 … +31.8), 9/9, p 0.002, against +19.2 pp with them.
 - **Fix.** Memory mode now passes `-c web_search="disabled"`. A regression test checks that the flag is present for `codex-cli` and absent for `codex-search`; it fails on the old code.
+
+**D8 — v2 fitness-judge parser accepted the "Name (kind)" form (2026-10-12, during collection, before any answer to an edited context existed).**
+- **What happened.** The fitness prompt lists products as "Name (kind)". In 7 of 480 replies, the judge used that form as the JSON key. The registered parser accepted only the exact name, so the 7 prompts had no eligibility after 3 attempts each, and the run stopped as designed.
+- **Change.** `parseVerdict` also accepts the exact name followed by the listed " (kind)". Any other key is still rejected. The judge, the prompt and every decision already recorded are unchanged. A test covers both cases and fails on the registered code.
+- **Effect.** The 7 prompts are judged again by the same judge. No outcome data existed when this was changed; the corpus and eligibility do not involve the edited contexts or the answer engine. The registered file's sha256 in `v2/MANIFEST.sha256` no longer matches `eligibility.mjs`; this entry is why.

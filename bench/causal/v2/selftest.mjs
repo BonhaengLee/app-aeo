@@ -75,6 +75,8 @@ await t('holm and kappa', () => {
 await t('eligibility / judge parsers are strict', () => {
   assert.deepEqual(parseVerdict('x {"Streaks": true, "Habitify": false, "Loop Habit Tracker": true} y', CAT.apps), { Streaks: true, Habitify: false, 'Loop Habit Tracker': true });
   assert.equal(parseVerdict('{"Streaks": true}', CAT.apps), null, 'missing app');
+  assert.deepEqual(parseVerdict('{"Streaks (habit tracker app)": true, "Habitify (habit tracker app)": false, "Loop Habit Tracker": true}', CAT.apps), { Streaks: true, Habitify: false, 'Loop Habit Tracker': true }, 'D8: the listed "Name (kind)" form');
+  assert.equal(parseVerdict('{"Streaksy": true, "Habitify": false, "Loop Habit Tracker": true}', CAT.apps), null, 'other keys are not accepted');
   assert.equal(parseVerdict('{"Streaks": "yes", "Habitify": false, "Loop Habit Tracker": true}', CAT.apps), null, 'non-boolean');
   assert.equal(parseLabel('{"label": "RECOMMENDED"}'), 'RECOMMENDED');
   assert.equal(parseLabel('{"label": "maybe"}'), null);
