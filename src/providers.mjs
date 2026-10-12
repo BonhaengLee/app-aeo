@@ -197,7 +197,7 @@ export function codexEvents(jsonl) {
 }
 
 function codexAsker({ search, system = null }) {
-  return async (prompt, { model, timeoutMs, run = runChild }) => {
+  return async (prompt, { model, timeoutMs, run = runChild, config = [] }) => {
     const home = isolatedCodexHome();
     const work = fs.mkdtempSync(path.join(os.tmpdir(), 'app-aeo-codex-'));
     const out = path.join(work, 'answer.txt');
@@ -206,6 +206,7 @@ function codexAsker({ search, system = null }) {
     // question). Only web_search="disabled" stopped it (0/2), so memory mode must say so explicitly.
     if (!search) args.push('-c', 'web_search="disabled"');
     if (model) args.push('-m', model);
+    for (const kv of config) args.push('-c', kv); // e.g. model_reasoning_effort="medium": the isolated home has no config.toml
     args.push('-');
     const label = search ? 'codex-search' : 'codex-cli';
     try {

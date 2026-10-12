@@ -1,0 +1,932 @@
+{
+  "builtAt": "2026-10-12T08:35:14.606Z",
+  "perCategory": 40,
+  "categories": [
+    {
+      "id": "meditation",
+      "kind": "meditation app",
+      "apps": [
+        {
+          "name": "Insight Timer",
+          "aliases": [
+            "Insight Timer: Meditate, Sleep"
+          ]
+        },
+        {
+          "name": "Calm",
+          "aliases": []
+        },
+        {
+          "name": "Headspace",
+          "aliases": [
+            "Headspace: Sleep & Meditation"
+          ]
+        }
+      ],
+      "source": "bench/results/meditation/extended/config.json",
+      "prompts": [
+        "best meditation app balance",
+        "best meditation learning app",
+        "meditation app free for a year",
+        "meditation app example",
+        "meditation app with orange branding",
+        "meditation app for anxiety",
+        "meditation app for sleep free",
+        "is waking up the best meditation app",
+        "meditation app for pregnancy",
+        "best meditation app kids",
+        "best meditation app garmin",
+        "best meditation app calm or headspace",
+        "meditation app for men",
+        "meditation without app",
+        "meditation app without subscription",
+        "meditation app for co parenting",
+        "meditation app for garmin watch",
+        "meditation apps that are actually free",
+        "best meditation app meta quest",
+        "meditation app for teens",
+        "best meditation app for depression",
+        "meditation app recommendations",
+        "calm alternative free",
+        "best meditation app android",
+        "meditation app for children",
+        "meditation app for kids",
+        "meditation app for sleep",
+        "meditation app for iphone",
+        "best meditation apps canada",
+        "meditation apps that are completely free",
+        "meditation app for black women",
+        "best meditation app sleep",
+        "meditation app ui",
+        "meditation app for oculus",
+        "best meditation app meta quest 3",
+        "best meditation app reviews",
+        "meditation app for healing",
+        "meditation app that is free",
+        "calm alternative songs",
+        "meditation app for weight loss"
+      ],
+      "poolSize": 99
+    },
+    {
+      "id": "budgeting",
+      "kind": "budgeting app",
+      "apps": [
+        {
+          "name": "Monarch Money",
+          "aliases": [
+            "Monarch: Budget & Track Money",
+            "Monarch"
+          ]
+        },
+        {
+          "name": "YNAB",
+          "aliases": [
+            "You Need A Budget"
+          ]
+        },
+        {
+          "name": "Rocket Money",
+          "aliases": [
+            "Rocket Money - Bills & Budgets"
+          ]
+        }
+      ],
+      "source": "bench/results/budgeting/extended/config.json",
+      "prompts": [
+        "best budgeting app nz",
+        "budgeting app for freelancers",
+        "best budgeting app for overspenders",
+        "budgeting app for dummies",
+        "budgeting app that links to bank account",
+        "budgeting app for college students",
+        "budgeting app for personal use",
+        "best budgeting app free",
+        "budgeting app for teens",
+        "best budgeting app uk",
+        "best budgeting app like mint",
+        "best budgeting app india",
+        "budgeting app for nurses",
+        "budgeting app for biweekly pay",
+        "budgeting app that connects to bank free",
+        "best budget building app",
+        "ynab alternative free",
+        "budgeting app for household",
+        "best budgeting apps free",
+        "best budgeting app android",
+        "best budgeting app with bank sync",
+        "budgeting app for students",
+        "best budgeting app philippines",
+        "budgeting app for women",
+        "budgeting app with no subscription",
+        "best budgeting app canada",
+        "budgeting app for uk",
+        "best budgeting app kenya",
+        "best budgeting app hong kong",
+        "budgeting app for kids",
+        "best budgeting app australia",
+        "budgeting app without subscription",
+        "best budgeting app ireland",
+        "best budgeting app germany",
+        "best budget grocery app",
+        "best budgeting app malaysia",
+        "budgeting app for girls",
+        "best budgeting app europe",
+        "best budgeting app eu",
+        "best budgeting app for couples"
+      ],
+      "poolSize": 70
+    },
+    {
+      "id": "language",
+      "kind": "language learning app",
+      "apps": [
+        {
+          "name": "Babbel",
+          "aliases": [
+            "Babbel - Language Learning"
+          ]
+        },
+        {
+          "name": "Duolingo",
+          "aliases": [
+            "Duolingo: Language Lessons"
+          ]
+        },
+        {
+          "name": "Busuu",
+          "aliases": [
+            "Busuu: Language Learning App"
+          ]
+        }
+      ],
+      "source": "bench/results/language/extended/config.json",
+      "prompts": [
+        "language learning apps for beginners",
+        "language learning app for urdu",
+        "best language learning app in the world",
+        "best language learning app ai",
+        "language learning app for japanese",
+        "language learning app for afrikaans",
+        "language learning app with blue cat",
+        "language learning app for reading",
+        "best language learning app greek",
+        "best language learning app",
+        "language learning app for dutch",
+        "is busuu free good",
+        "language learning app for german",
+        "best language learning app that is free",
+        "language learning app for children",
+        "language learning app for bengali",
+        "language learning app for kids free",
+        "best language learning app in 2026",
+        "best language learning apps mango",
+        "language learning app for english",
+        "language learning app for kids",
+        "language learning app free with library card",
+        "best language learning app dutch",
+        "best language learning app kids",
+        "language learning app offline",
+        "language learning app for russian",
+        "best language learning app better than duolingo",
+        "language learning app for mandarin",
+        "language learning app for latin",
+        "language learning app without ai",
+        "language learning app for arabic",
+        "language learning app for couples",
+        "best language learning app android",
+        "best language learning app with ai",
+        "best language learning app speaking",
+        "language learning app for thai",
+        "language learning app for speaking",
+        "best language learning app conversation",
+        "language learning app that insults you",
+        "language learning app for hebrew"
+      ],
+      "poolSize": 100
+    },
+    {
+      "id": "sleep-tracker",
+      "kind": "sleep tracker app",
+      "apps": [
+        {
+          "name": "BetterSleep",
+          "aliases": [
+            "BetterSleep: Relax and Sleep",
+            "Better Sleep"
+          ]
+        },
+        {
+          "name": "ShutEye",
+          "aliases": [
+            "ShutEye®: Sleep Tracker, Sound",
+            "ShutEye®"
+          ]
+        },
+        {
+          "name": "SleepWatch",
+          "aliases": [
+            "SleepWatch - Top Sleep Tracker"
+          ]
+        },
+        {
+          "name": "Pillow",
+          "aliases": [
+            "Pillow: Sleep Tracker"
+          ]
+        },
+        {
+          "name": "Rise",
+          "aliases": [
+            "RISE: Sleep Tracker",
+            "Rise Science"
+          ]
+        }
+      ],
+      "source": "compare/results/sleep-tracker/codex-search/tool/2026-10-10T102031.855Z/config.json",
+      "prompts": [
+        "best sleep cycle alarm clock app",
+        "best sleep tracker app wirecutter",
+        "sleep cycle app discount",
+        "sleep cycle app que es",
+        "sleep tracker app for apple watch free",
+        "sleep tracker app that wakes you up",
+        "sleep tracker app no subscription",
+        "best sleep tracker app iphone free",
+        "sleep tracker without app",
+        "best sleep cycle calculator app",
+        "best sleep tracker app apnea",
+        "best sleep tracking app to use with apple watch",
+        "sleep cycle app oura",
+        "best sleep tracker app uk",
+        "best sleep tracker app for sleep apnea",
+        "sleep tracking app for free",
+        "sleep cycle app logo",
+        "sleep tracker app for snoring",
+        "sleep tracker app kostenlos",
+        "sleep tracking app for resmed",
+        "best sleep tracking app snoring",
+        "activity tracker app for android phone",
+        "best sleep tracker app for babies",
+        "best sleep cycle app iphone",
+        "sleep tracking app best",
+        "sleep cycle app oura ring",
+        "best sleep tracker app on iphone",
+        "sleep cycle app home assistant",
+        "sleep tracking app that works with myair",
+        "best sleep tracking app for apple watch ultra 3",
+        "sleep monitor app kostenlos",
+        "sleep cycle app 'multiple alarms",
+        "sleep cycle app kostenlos",
+        "sleep cycle app on apple watch",
+        "sleep cycle app picking up partners snoring",
+        "sleep tracker app for toddlers",
+        "sleep cycle app battery drain",
+        "sleep tracking app for kids apple watch",
+        "sleep tracking app free apple watch",
+        "best free sleep tracker app no watch"
+      ],
+      "poolSize": 100
+    },
+    {
+      "id": "meal-planner",
+      "kind": "meal planner app",
+      "apps": [
+        {
+          "name": "MyFitnessPal",
+          "aliases": [
+            "MyFitnessPal: Calorie Counter",
+            "My Fitness Pal"
+          ]
+        },
+        {
+          "name": "Tasty",
+          "aliases": [
+            "Tasty: Recipes, Cooking Videos"
+          ]
+        },
+        {
+          "name": "ReciMe",
+          "aliases": [
+            "ReciMe: Recipes & Meal Planner"
+          ]
+        },
+        {
+          "name": "HelloFresh",
+          "aliases": [
+            "HelloFresh: Meal Kit & Recipes",
+            "Hello Fresh"
+          ]
+        },
+        {
+          "name": "Mealime",
+          "aliases": [
+            "Mealime Meal Plans & Recipes"
+          ]
+        }
+      ],
+      "source": "compare/results/meal-planner/codex-search/tool/2026-10-10T154024.629Z/config.json",
+      "prompts": [
+        "best meal planner app with recipes",
+        "best meal planner app for ipad",
+        "meal planner app calories",
+        "best meal planner grocery list app",
+        "meal plans for app state",
+        "best budget meal planner app",
+        "best meal planning app weight loss",
+        "best diet plan app for weight gain",
+        "best meal planner app for couples",
+        "best meal planning grocery app",
+        "best diet plan app india",
+        "best meal planning and tracking app",
+        "best healthy meal planning app free",
+        "meal planner app import recipes",
+        "meal planner app own recipes",
+        "free meal planning app for couples",
+        "best meal planner app with grocery list",
+        "meal planner app lidl",
+        "best shared meal planning app",
+        "best meal planner app iphone",
+        "best ai meal planning app",
+        "meal planning app or website",
+        "meal planning app development",
+        "weekly meal planner app uk",
+        "meal planning app for macros",
+        "best free meal planning app android",
+        "best meal planner app with shopping list",
+        "potto meal planner app for android",
+        "best meal planning app for athletes",
+        "meal planner app with recipes and grocery list",
+        "meal planner app for adhd",
+        "meal plan app for nutritionist",
+        "diet planner app free",
+        "meal plan app gatech",
+        "best meal planning app canada",
+        "meal planner app for family",
+        "best family meal planning app uk",
+        "best meal planner and calorie counter app",
+        "meal planning app without recipes",
+        "best meal planner app australia"
+      ],
+      "poolSize": 100
+    },
+    {
+      "id": "period-tracker",
+      "kind": "period tracker app",
+      "apps": [
+        {
+          "name": "Flo",
+          "aliases": [
+            "Flo Cycle & Period Tracker",
+            "Flo Health"
+          ]
+        },
+        {
+          "name": "Clue",
+          "aliases": [
+            "Clue Period & Cycle Tracker"
+          ]
+        },
+        {
+          "name": "Stardust",
+          "aliases": [
+            "Stardust Period Tracker"
+          ]
+        },
+        {
+          "name": "Eve by Glow",
+          "aliases": [
+            "Glow Eve Period Tracker",
+            "Glow Eve"
+          ]
+        },
+        {
+          "name": "Ovia",
+          "aliases": [
+            "Ovia Cycle & Pregnancy Tracker",
+            "Ovia Fertility"
+          ]
+        }
+      ],
+      "source": "compare/results/period-tracker/codex-search/tool/2026-10-10T201823.546Z/config.json",
+      "prompts": [
+        "best period tracker app australia",
+        "period tracker app for kids",
+        "period tracker app free for teens",
+        "best period tracker app for kids",
+        "period tracker app how to use",
+        "period tracker app recommendation",
+        "best time tracking app apple",
+        "period tracker app for men",
+        "best period tracker app no subscription",
+        "best period tracker app iud",
+        "period tracker app owned by women",
+        "period tracker app for apple watch",
+        "period tracker app for 10 year old",
+        "best period tracker app canada",
+        "time tracker app for students",
+        "best time tracker app ios",
+        "best period tracker app designed by women",
+        "best period tracker app for symptoms",
+        "period tracker app stardust",
+        "period tracker app for friends",
+        "best period tracker app free by women",
+        "best period tracker app without ads",
+        "best period tracker app not flo",
+        "time tracker app for employees",
+        "period tracker app free for iphone",
+        "best period tracker app for teenage girl",
+        "time tracker app for desktop",
+        "best period tracker app with privacy",
+        "best period tracker app safe",
+        "period tracker app with no subscription",
+        "time tracker app for studying",
+        "what is the best app to track menstrual cycle",
+        "period tracker app uk",
+        "my period tracker app for android",
+        "period tracker app for dogs",
+        "best period tracker app no ai",
+        "best period tracker app europe",
+        "best period tracker app secure",
+        "period tracker app that doesn't share data",
+        "best period tracker app to get pregnant"
+      ],
+      "poolSize": 100
+    },
+    {
+      "id": "fasting",
+      "kind": "fasting app",
+      "apps": [
+        {
+          "name": "Fastic",
+          "aliases": [
+            "Fastic Weight Loss & Fasting"
+          ]
+        },
+        {
+          "name": "BodyFast",
+          "aliases": [
+            "BodyFast: Intermittent Fasting"
+          ]
+        },
+        {
+          "name": "FastEasy",
+          "aliases": [
+            "FastEasy: Intermittent Fasting"
+          ]
+        },
+        {
+          "name": "FastHabit",
+          "aliases": [
+            "FastHabit Intermittent Fasting"
+          ]
+        },
+        {
+          "name": "Window",
+          "aliases": [
+            "Window - Intermittent Fasting"
+          ]
+        }
+      ],
+      "source": "compare/results/fasting/codex-search/tool/2026-10-11T014418.359Z/config.json",
+      "prompts": [
+        "best fasting app for shift workers",
+        "fasting app for garmin watch",
+        "intermittent fasting app for free",
+        "intermittent fasting app without subscription",
+        "app for extended fasting",
+        "best fasting app that's free",
+        "go fasting app reviews for weight loss",
+        "best app for extended fasting",
+        "best fasting app on android",
+        "best fasting app in baku",
+        "best fasting app on iphone",
+        "fasting app simple",
+        "fasting app with racoon",
+        "best fasting tracker app free",
+        "best long term fasting app",
+        "which fasting app is best",
+        "fasting app reviews uk",
+        "best fasting app reviews",
+        "best fasting app for weight loss free",
+        "fasting app no account",
+        "free fasting app for men",
+        "best omad fasting app",
+        "fasting app on iphone",
+        "fasting app 72 hours",
+        "best fasting app nz",
+        "water fasting app for android",
+        "fasting app tracker free",
+        "best intermittent fasting app for weight loss",
+        "fasting app raccoon",
+        "best prolonged fasting app",
+        "best fasting app android",
+        "best free fasting app nz",
+        "best app to track fasting hours",
+        "best free long fasting app",
+        "best fasting app",
+        "best basic fasting app",
+        "best fasting app for perimenopause",
+        "fasting app tracker",
+        "free fasting app without ads",
+        "best intermittent fasting app uk free"
+      ],
+      "poolSize": 100
+    },
+    {
+      "id": "workout-tracker",
+      "kind": "workout tracker app",
+      "apps": [
+        {
+          "name": "MyFitnessPal",
+          "aliases": [
+            "MyFitnessPal: Calorie Counter",
+            "My Fitness Pal"
+          ]
+        },
+        {
+          "name": "Fitbod",
+          "aliases": [
+            "Fitbod: Gym & Fitness Planner"
+          ]
+        },
+        {
+          "name": "Gymverse",
+          "aliases": [
+            "Gymverse: Gym Workout Planner"
+          ]
+        },
+        {
+          "name": "Liftoff",
+          "aliases": [
+            "Liftoff - Ranked Gym Workouts"
+          ]
+        },
+        {
+          "name": "Hevy",
+          "aliases": [
+            "Hevy - Workout Tracker Gym Log"
+          ]
+        }
+      ],
+      "source": "compare/results/workout-tracker/codex-search/tool/2026-10-11T062437.059Z/config.json",
+      "prompts": [
+        "activity tracker app for iphone",
+        "workout tracker app no subscription",
+        "activity tracker app for apple watch",
+        "app to track gym workouts",
+        "best fitness tracker app for.motivation",
+        "workout tracking app for kids",
+        "free workout tracker apps without subscription",
+        "best fitness tracker without app",
+        "fitness tracker app open source",
+        "best fitness tracker app for samsung galaxy watch",
+        "fitness tracker app online",
+        "activity tracker app for work",
+        "fitness tracker app name ideas",
+        "best fitness tracker app for google pixel",
+        "best workout tracker app for weightlifting",
+        "workout tracking app for free",
+        "best health tracking app for galaxy watch",
+        "workout log app for personal trainers",
+        "best fitness tracker app to lose weight",
+        "free workout tracker app no subscription",
+        "best free workout tracker app apple",
+        "workout tracking app for beginners",
+        "fitness tracker app for apple watch",
+        "best health tracker app for weight loss",
+        "best workout tracking app for garmin",
+        "best fitness tracker app for weight lifting",
+        "workout tracking app for progressive overload",
+        "workout tracker app for android",
+        "best custom workout tracker app",
+        "fitness tracker app ui design",
+        "fitness tracker app no subscription",
+        "best workout tracking app for men",
+        "fitness tracker app free for android",
+        "best workout tracker app apple watch",
+        "best workout plan tracker app",
+        "best health tracking app for samsung watch",
+        "best workout and meal tracker app",
+        "fitness tracker app name",
+        "workout log app free",
+        "fitness tracker app for couples"
+      ],
+      "poolSize": 100
+    },
+    {
+      "id": "note-taking",
+      "kind": "note taking app",
+      "apps": [
+        {
+          "name": "OneNote",
+          "aliases": [
+            "Microsoft OneNote"
+          ]
+        },
+        {
+          "name": "Goodnotes",
+          "aliases": [
+            "Goodnotes: AI Notes, Docs, PDF",
+            "GoodNotes"
+          ]
+        },
+        {
+          "name": "Notability",
+          "aliases": [
+            "Notability: AI Note Journal"
+          ]
+        },
+        {
+          "name": "Notion",
+          "aliases": [
+            "Notion: Notes, Tasks, AI"
+          ]
+        },
+        {
+          "name": "Otter",
+          "aliases": [
+            "Otter.ai",
+            "Otter Transcribe Voice Notes"
+          ]
+        }
+      ],
+      "source": "compare/results/note-taking/codex-search/tool/2026-10-11T160109.199Z/config.json",
+      "prompts": [
+        "best keyboard note taking app",
+        "best note taking app pen",
+        "note taking app for students free",
+        "note taking app that listens to lectures",
+        "note taking app for macbook air",
+        "best note taking app medical school",
+        "note taking app for android tablet handwriting",
+        "note taking app for apple watch",
+        "note taking app for pen tablet",
+        "note taking app that converts handwriting to text",
+        "note taking app for computer science",
+        "best note taking app handwriting",
+        "note taking app for chromebook",
+        "best note taking app huawei",
+        "note taking app for kali linux",
+        "note taking app for kindle",
+        "best free note taking app for ipad without subscription",
+        "best note taking app kindle fire",
+        "best note taking app on android",
+        "notes making app for free",
+        "note taking app for hp",
+        "note taking app for carplay",
+        "best note taking app apple watch",
+        "note taking app for android phone",
+        "best note taking app on macbook",
+        "best note taking app no ai",
+        "note taking app with stylus",
+        "note taking app for teams meetings",
+        "best note taking app in android",
+        "note taking app free android",
+        "best note taking app with sync",
+        "note taking app for redmi pad 2",
+        "note taking app for developers",
+        "best note taking app goodnotes",
+        "note taking app for programmers",
+        "note taking app for lenovo tablet",
+        "note taking app with palm rejection",
+        "note taking app for discord",
+        "note taking app for dnd",
+        "best note taking app stylus"
+      ],
+      "poolSize": 100
+    },
+    {
+      "id": "todo-list",
+      "kind": "todo list app",
+      "apps": [
+        {
+          "name": "Microsoft To Do",
+          "aliases": []
+        },
+        {
+          "name": "Todoist",
+          "aliases": [
+            "Todoist: To Do List & Calendar"
+          ]
+        },
+        {
+          "name": "Google Tasks",
+          "aliases": [
+            "Google Tasks: Get Things Done"
+          ]
+        },
+        {
+          "name": "Any.do",
+          "aliases": [
+            "Any.do: To do list & Planner",
+            "Anydo"
+          ]
+        },
+        {
+          "name": "TickTick",
+          "aliases": [
+            "TickTick:To-Do List & Calendar"
+          ]
+        }
+      ],
+      "source": "compare/results/todo-list/codex-search/tool/2026-10-11T173150.285Z/config.json",
+      "prompts": [
+        "best to do list app shared",
+        "to do list app by day",
+        "best to do list app with google calendar",
+        "task list app for desktop",
+        "best to do list app that integrates with google calendar",
+        "best to do list app on ipad",
+        "to do list app for employees",
+        "to do list app for sharing",
+        "to do list app for google",
+        "todo list app for adhd",
+        "to do list app like a game",
+        "todo list app for couples",
+        "todo list app best",
+        "best to do list app that works with siri",
+        "best to do list app for kids",
+        "best todo list app free",
+        "best todo list calendar app",
+        "todo list app example",
+        "to do list app for students free",
+        "best to do list reminder app android",
+        "to do list app for microsoft",
+        "to do list app for college students",
+        "todo list app game",
+        "best to do list calendar app free",
+        "to do list app for office",
+        "todo list app for linux",
+        "to do list app for iphone and android",
+        "to do list app free for students",
+        "best todo list app with ai",
+        "best to do list diary app",
+        "todo list app for ipad",
+        "to do list app for phone and computer",
+        "best task list sharing app",
+        "to do list app for multiple users",
+        "task list app for adhd",
+        "to do list app for study",
+        "todo list app using javascript",
+        "to do list app for adhd adults",
+        "to do list app for iphone",
+        "best to do list app for multiple devices"
+      ],
+      "poolSize": 100
+    },
+    {
+      "id": "robot-vacuum",
+      "kind": "robot vacuum brand",
+      "apps": [
+        {
+          "name": "Roborock",
+          "aliases": []
+        },
+        {
+          "name": "Roomba",
+          "aliases": [
+            "iRobot"
+          ]
+        },
+        {
+          "name": "Ecovacs",
+          "aliases": [
+            "Deebot"
+          ]
+        },
+        {
+          "name": "Eufy",
+          "aliases": [
+            "eufy"
+          ]
+        },
+        {
+          "name": "Dreame",
+          "aliases": []
+        }
+      ],
+      "source": "Google autocomplete, 2026-10-12",
+      "prompts": [
+        "best robot vacuum brand",
+        "robot vacuum for stairs",
+        "best robot vacuum philippines",
+        "best robot vacuum without mop",
+        "best robot vacuum cleaner uk",
+        "best robot vacuum uk under 300",
+        "best robot vacuum roborock",
+        "best robot vacuum cleaner in india",
+        "best robot vacuum in south africa",
+        "best robot vacuum dyson",
+        "best robot vacuum kids",
+        "best robot vacuum of 2026",
+        "best robot vacuum korea",
+        "best robot vacuum list",
+        "robot vacuum under $150",
+        "best robot vacuum no mop reddit",
+        "best robot vacuum wirecutter",
+        "best robot vacuum dog hair reddit",
+        "best robot vacuum australia",
+        "best robot vacuum mop for pet hair",
+        "best robot vacuum suction power",
+        "best robot vacuum brand uk",
+        "best robot vacuum uk",
+        "best robot vacuum and mop for pet hair",
+        "robot vacuum under $400",
+        "best robot vacuum that empties itself",
+        "best robot vacuum that self empties",
+        "best robot vacuum without mop for pet hair",
+        "best robot vacuum with self empty",
+        "best robot vacuum lidar",
+        "best robot vacuum 2026 consumer reports",
+        "best robot vacuum and mop 2026",
+        "best robot vacuum uk for pet hair",
+        "best robot vacuum labor day sale",
+        "best robot vacuum shark",
+        "best robot vacuum names",
+        "best robot vacuum brand reddit",
+        "best robot vacuum and mop australia 2026",
+        "best robot vacuum large house",
+        "best robot vacuum to avoid pet waste"
+      ],
+      "poolSize": 238
+    },
+    {
+      "id": "running-shoes",
+      "kind": "running shoe brand",
+      "apps": [
+        {
+          "name": "Hoka",
+          "aliases": [
+            "HOKA",
+            "Hoka One One"
+          ]
+        },
+        {
+          "name": "Brooks",
+          "aliases": [
+            "Brooks Running"
+          ]
+        },
+        {
+          "name": "Asics",
+          "aliases": [
+            "ASICS"
+          ]
+        },
+        {
+          "name": "Saucony",
+          "aliases": []
+        },
+        {
+          "name": "New Balance",
+          "aliases": []
+        }
+      ],
+      "source": "Google autocomplete, 2026-10-12",
+      "prompts": [
+        "best running shoes in budget",
+        "best running shoes 2026 women",
+        "best running shoes post acl surgery",
+        "best running shoes for men",
+        "best running shoes black",
+        "best running shoes name",
+        "best running shoes under 10000",
+        "running shoes under 100",
+        "best running shoes ever",
+        "running shoes under 1500",
+        "running shoes for men nike",
+        "best running shoes easy runs",
+        "best running shoes knee pain women",
+        "running shoes with carbon plate for men",
+        "best running shoes today",
+        "best running shoes without carbon plate",
+        "best running shoes in bangladesh",
+        "best running shoes asics",
+        "best running shoes philippines",
+        "best running shoes kaun sa hai",
+        "running shoes with spikes",
+        "best running shoes nike women",
+        "best running shoes of 2026",
+        "running shoes under 1000",
+        "best running shoes men under 5000",
+        "best running shoes nike",
+        "running shoes with carbon plate",
+        "best running shoes heel strikers",
+        "running shoes for flat feet",
+        "best running shoes to buy",
+        "best running shoes men 2026",
+        "best running shoes hyrox",
+        "best running shoes wirecutter",
+        "running shoes under 5000",
+        "best running shoes for plantar fasciitis",
+        "best running shoes to protect knees",
+        "running shoes for boys",
+        "best running shoes in pakistan",
+        "running shoes without laces",
+        "best running shoes puma"
+      ],
+      "poolSize": 234
+    }
+  ]
+}

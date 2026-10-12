@@ -247,6 +247,13 @@ await t('codex-cli (memory) disables web search explicitly; codex-search does no
   assert.equal(seen['codex-cli'].filter((x) => x === 'web_search="disabled"').length, 1);
   assert.equal(seen['codex-search'].includes('web_search="disabled"'), false);
 });
+await t('codex: model and extra config are passed through (pinned model and reasoning effort)', async () => {
+  let a;
+  const run = async (cmd, args) => { a = args; fs.writeFileSync(args[args.indexOf('-o') + 1], 'x'); return { code: 0, stdout: '', stderr: '' }; };
+  await ask('codex-cli', 'q', { run, model: 'm1', config: ['model_reasoning_effort="medium"'] });
+  assert.equal(a[a.indexOf('-m') + 1], 'm1');
+  assert.ok(a.some((x, i) => x === 'model_reasoning_effort="medium"' && a[i - 1] === '-c'));
+});
 await t('codex child gets an empty HOME and an isolated CODEX_HOME (user ~/.agents skills leaked into answers before)', async () => {
   let envSeen;
   const run = async (cmd, args, opts) => { envSeen = opts.env; fs.writeFileSync(args[args.indexOf('-o') + 1], 'Streaks'); return { code: 0, stdout: '', stderr: '' }; };

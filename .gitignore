@@ -4,3 +4,5 @@ aeo-runs/
 .env
 .env.*
 bench/causal/contexts/
+bench/causal/v2/contexts/
+bench/causal/v2pilot/
