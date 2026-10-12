@@ -70,6 +70,7 @@ The unedited 3.0% is one unit, "rocket money alternative", where the question na
 6. **Recording.**
    - The model was not recorded: `model` is null in all rows.
    - The follow-up was collected in a later session than the main study.
+   - "Without web search" was not enforced. `codex-cli` searched by default (`bench/DEVIATIONS.md` D7). Without the 32 searched answers, H4 is +19.7 pp (95% CI +8.6 … +31.8), 9/9.
 7. **Analysis bug (fixed 2026-10-12).**
    - The secondary contrasts S1–S3 were computed over every sampled unit, so 7 H2/H3 units were scored against INSERT/PLACEBO contexts built for a different subject.
    - They now use their own units (H1 for S1/S2, H3 for S3).

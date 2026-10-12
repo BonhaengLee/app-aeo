@@ -202,6 +202,9 @@ function codexAsker({ search, system = null }) {
     const work = fs.mkdtempSync(path.join(os.tmpdir(), 'app-aeo-codex-'));
     const out = path.join(work, 'answer.txt');
     const args = [...(search ? ['--search'] : []), 'exec', '--skip-git-repo-check', '--ephemeral', '-s', 'read-only', '--json', '-c', `developer_instructions=${JSON.stringify(system ?? (search ? SEARCH_SYSTEM : MEMORY_SYSTEM))}`, '-o', out];
+    // Without --search Codex still searched by default (measured 2026-10-12, codex-cli 0.156.1: 2/2 answers to a news
+    // question). Only web_search="disabled" stopped it (0/2), so memory mode must say so explicitly.
+    if (!search) args.push('-c', 'web_search="disabled"');
     if (model) args.push('-m', model);
     args.push('-');
     const label = search ? 'codex-search' : 'codex-cli';

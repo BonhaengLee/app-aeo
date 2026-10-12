@@ -238,6 +238,15 @@ await t('codex engines pass consumer-role developer_instructions (coding-agent m
   assert.match(di, /^developer_instructions=".*not a coding.*Search the web/);
   assert.equal(r.grounded, true);
 });
+await t('codex-cli (memory) disables web search explicitly; codex-search does not', async () => {
+  const seen = {};
+  for (const e of ['codex-cli', 'codex-search']) {
+    const run = async (cmd, args) => { seen[e] = args; fs.writeFileSync(args[args.indexOf('-o') + 1], 'Streaks'); return { code: 0, stdout: '', stderr: '' }; };
+    await ask(e, 'q', { run });
+  }
+  assert.equal(seen['codex-cli'].filter((x) => x === 'web_search="disabled"').length, 1);
+  assert.equal(seen['codex-search'].includes('web_search="disabled"'), false);
+});
 await t('codex child gets an empty HOME and an isolated CODEX_HOME (user ~/.agents skills leaked into answers before)', async () => {
   let envSeen;
   const run = async (cmd, args, opts) => { envSeen = opts.env; fs.writeFileSync(args[args.indexOf('-o') + 1], 'Streaks'); return { code: 0, stdout: '', stderr: '' }; };
