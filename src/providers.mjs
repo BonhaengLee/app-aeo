@@ -96,10 +96,11 @@ const trimUrl = (u) => u.replace(/[.,;:'\]]+$/, '');
  *  and the result URLs those searches returned, in order. A single JSON object (`--output-format json`) is accepted too. */
 export function claudeStream(stdout) {
   const s = String(stdout).trim();
-  try { const j = JSON.parse(s); if (j && typeof j === 'object' && !Array.isArray(j)) return { result: j, queries: [], urls: [] }; } catch { /* stream */ }
+  try { const j = JSON.parse(s); if (j && typeof j === 'object' && !Array.isArray(j)) return { result: j, queries: [], urls: [], seen: [] }; } catch { /* stream */ }
   let result = null;
   const queries = [];
   const urls = new Set();
+  const seen = [];
   for (const line of s.split('\n')) {
     let ev;
     try { ev = JSON.parse(line); } catch { continue; }
@@ -108,10 +109,13 @@ export function claudeStream(stdout) {
     if (!Array.isArray(content)) continue;
     for (const b of content) {
       if (b.type === 'tool_use' && b.name === 'WebSearch' && typeof b.input?.query === 'string') queries.push(b.input.query);
-      if (b.type === 'tool_result' || b.type === 'web_search_tool_result') for (const m of JSON.stringify(b.content ?? '').matchAll(URL_IN_JSON)) urls.add(trimUrl(m[0]));
+      if (b.type === 'tool_result' || b.type === 'web_search_tool_result') {
+        for (const m of JSON.stringify(b.content ?? '').matchAll(URL_IN_JSON)) urls.add(trimUrl(m[0]));
+        seen.push({ url: null, text: typeof b.content === 'string' ? b.content : JSON.stringify(b.content ?? '') });
+      }
     }
   }
-  return { result, queries, urls: [...urls] };
+  return { result, queries, urls: [...urls], seen };
 }
 
 function claudeAsker({ search, system = null }) {
@@ -131,7 +135,7 @@ function claudeAsker({ search, system = null }) {
     if (j.is_error || r.code !== 0 || typeof j.result !== 'string') throw new ProviderError(classifyCliError(JSON.stringify(j)), `${label} error: ${String(j.result ?? j.subtype ?? r.stderr).slice(0, 300)}`);
     const resolved = Object.keys(j.modelUsage ?? {})[0] ?? model ?? null;
     const searches = claudeSearchCount(j);
-    return { text: j.result, model: resolved, citations: search ? st.urls : [], searchQueries: st.queries, grounded: search && searches > 0, searches, costUsd: j.total_cost_usd ?? null };
+    return { text: j.result, model: resolved, citations: search ? st.urls : [], seen: search ? st.seen : [], searchQueries: st.queries, grounded: search && searches > 0, searches, costUsd: j.total_cost_usd ?? null };
   };
 }
 
@@ -155,24 +159,41 @@ export function isolatedUserHome() {
   return userHome;
 }
 
-/** Count web_search events and collect cited URLs from `codex exec --json` output (one JSON event per line). */
+/**
+ * Read `codex exec --json` output (one JSON event per line).
+ * - `results`: what the model received from its searches — each web_search item's results {url, title, snippet}.
+ * - `urls`: the result URLs, in order (plus any other URL inside a web_search item).
+ * - `answerUrls`: links the model wrote in its answer. Kept apart: before 0.4.1 they were mixed into the sources,
+ *   so a link chosen *after* deciding counted as a page "read" (adversarial review, 2026-10-12).
+ */
 export function codexEvents(jsonl) {
   let searches = 0;
   const urls = new Set();
+  const answerUrls = new Set();
   const queries = [];
+  const results = new Map();
   for (const line of String(jsonl).split('\n')) {
     if (!line.trim()) continue;
     let ev;
     try { ev = JSON.parse(line); } catch { continue; }
-    const s = JSON.stringify(ev);
-    // item.started and item.completed both carry the item; count a search once, when it completes.
-    if (ev.type === 'item.completed' && ev.item?.type === 'web_search') {
-      searches += 1;
-      if (typeof ev.item.query === 'string' && ev.item.query) queries.push(ev.item.query);
+    const item = ev.item ?? {};
+    if (item.type === 'web_search') {
+      // item.started and item.completed both carry the item; count a search once, when it completes.
+      if (ev.type === 'item.completed') {
+        searches += 1;
+        const qs = Array.isArray(item.action?.queries) ? item.action.queries : [];
+        for (const q of qs.length ? qs : [item.query]) if (typeof q === 'string' && q && !queries.includes(q)) queries.push(q);
+      }
+      for (const r of Array.isArray(item.results) ? item.results : []) {
+        if (typeof r?.url !== 'string') continue;
+        if (!results.has(r.url)) results.set(r.url, { url: r.url, title: String(r.title ?? ''), snippet: String(r.snippet ?? '') });
+      }
+      for (const m of JSON.stringify(item).matchAll(/https?:\/\/[^"\s)\\]+/g)) urls.add(m[0]);
+    } else if (item.type === 'agent_message') {
+      for (const m of String(item.text ?? '').matchAll(/https?:\/\/[^\s)\]>"']+/g)) answerUrls.add(m[0].replace(/[.,;:]+$/, ''));
     }
-    for (const m of s.matchAll(/https?:\/\/[^"\s)\\]+/g)) urls.add(m[0]);
   }
-  return { searches, urls: [...urls], queries };
+  return { searches, urls: [...urls], queries, results: [...results.values()], answerUrls: [...answerUrls] };
 }
 
 function codexAsker({ search, system = null }) {
@@ -191,7 +212,7 @@ function codexAsker({ search, system = null }) {
       if (r.code !== 0 || !text) throw new ProviderError(classifyCliError(r.stderr + r.stdout), `${label} rc=${r.code}: ${(r.stderr || r.stdout).slice(-300)}`);
       const ev = codexEvents(r.stdout);
       const m = /"model":"([^"]+)"/.exec(r.stdout) ?? /^model:\s*(\S+)/m.exec(r.stderr);
-      return { text, model: m?.[1] ?? model ?? null, citations: ev.urls.filter((u) => !/openai\.com|chatgpt\.com/.test(u)), searchQueries: ev.queries, grounded: search && ev.searches > 0, searches: ev.searches, costUsd: null };
+      return { text, model: m?.[1] ?? model ?? null, citations: ev.urls.filter((u) => !/openai\.com|chatgpt\.com/.test(u)), answerUrls: ev.answerUrls, seen: ev.results.map((x) => ({ url: x.url, text: `${x.title}\n${x.snippet}` })), searchQueries: ev.queries, grounded: search && ev.searches > 0, searches: ev.searches, costUsd: null };
     } finally {
       fs.rmSync(work, { recursive: true, force: true });
     }

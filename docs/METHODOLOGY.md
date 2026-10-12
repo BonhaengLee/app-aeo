@@ -81,10 +81,10 @@ Outcomes:
 
 ## 7. Diagnosis (`diagnose`, `diff`) — what it can and cannot claim
 - **Sources.**
-  - `claude-search` records the results its WebSearch calls returned (title and URL), not pages it opened.
-  - `codex-search` records every URL in its event stream. That includes pages it opened, often after deciding: support and pricing pages of the apps it names.
-  - So the source sets of the two engines differ in kind; compare causes within an engine, not across engines.
-  - For `claude-search` the stored result is a title and a URL. Whether the model saw the page body is not recorded. So a Claude "selection" says the app is on a page the search returned, not that the model read it there. Codex opens pages, so its selection is the stronger claim.
+  - **What the engines receive is search results, not pages.** Measured 2026-10-12 from raw `codex exec --json` events (3 prompts): every web_search action was `search` (no `open_page`), each answer got about 35 results, and each result is a title and a snippet (median 145 characters, max 194). `claude-search` receives its WebSearch tool results (links and a search-side summary).
+  - **Correction (0.4.1).** Earlier docs said Codex "opens pages" and "reads ~30 third-party pages per answer". Both were wrong: those were search results. Codex `citations` before 0.4.1 also included links the model wrote in its own answer (decided after choosing); `diagnose` now drops them for old runs.
+  - From 0.4.1, rows record `seen`: the text each engine received from its searches. With `seen`, causes are exact: the app is in that text (*selection*) or it is not (*coverage*). Older runs fall back to fetching pages, which only approximates what the engine saw.
+  - Own pages: an app's own site appears among results mostly when the engine searched the app's name, i.e. after it was already a candidate.
 - **Page check.**
   - A page "lists" an app when the app's name or alias matches as a whole word in its visible text (scripts and styles removed), using the same extractor as the answers.
   - Presence is not prominence. A page that mentions you once at the bottom counts as listing you, and that shows up as *selection*.
@@ -94,21 +94,19 @@ Outcomes:
   - *Coverage*: no checked page lists the target **and** at least 50% of the answer's third-party pages were checked.
   - *Coverage?*: no checked page lists the target, but fewer were checked. Unchecked pages (403, PDF, rate-limited, over budget) may list you.
   - *Unknown*: none of its pages could be checked.
-  - Measured in the meditation benchmark: Codex answers read about 30 third-party pages each, and 40 fetched pages covered about 5% of them per answer. Expect "coverage?" rather than "coverage" for Codex unless the fetch budget is large.
+  - (Old runs only.) In the meditation benchmark, Codex answers received about 30 third-party results each, and 40 fetched pages covered about 5% of them per answer. Expect "coverage?" rather than "coverage" unless the fetch budget is large. Note that a fetched page body is not what the engine saw; its snippet was.
   - Page choice: half the budget goes to the most-read pages, half greedily to the pages that cover the most unclassified misses (53% → 12% unknown at 40 pages, same data).
 - **Lift is observational.**
   - Comparing answers to the same prompt removes the largest confound: which questions pull a page in.
-  - It does not make the page a cause. Engines may open a review *because* they already chose the app, as they do with owned pages, which is why owned pages are excluded.
+  - It does not make the page a cause. A result may appear *because* the engine already favoured the app (e.g. a second search with its name), as with owned pages, which is why owned pages are excluded.
   - Treat "Working" and the lift column as hypotheses.
 - **Causal claims need an intervention.** Change one thing, re-run the same config, and use `diff`:
   - It pairs prompts and bootstraps a 95% CI over prompts.
   - Competitors in the same table act as a drift control. If everyone moved, the engine changed.
-  - **Controlled evidence** ([bench/causal/REPORT.md](../bench/causal/REPORT.md), pre-registered). On the pages live Codex answers read, with `codex-cli` answering:
-    - adding an app to every read page raised its naming rate by 19 pp (95% CI 8–31);
-    - adding it to one page, promoting its sentence, and removing the top-lift page showed no detectable effect;
-    - the lift ranking did not predict which page mattered.
-
-    Hence the listing-share line in `diagnose`.
+  - **Controlled evidence, exploratory** ([bench/causal/REPORT.md](../bench/causal/REPORT.md), pre-registered). Contexts were ≤ 5 page excerpts (3000 characters each) from results of live Codex answers — longer than the snippets the live engine receives — answered by `codex-cli` without search:
+    - repeating one sentence naming the app in each of those excerpts raised its naming rate by 19 pp (95% CI 8–31), but the effect came from 3 of the apps (app-level sign test 3/3, p 0.125) and is confounded with repetition and position;
+    - adding it to one excerpt, promoting its sentence, and removing the top-lift page showed no detectable effect at this sample size (H1 had about 6 informative units, so this is not evidence of no effect);
+    - a confirmatory study is in `bench/causal/v2/`.
   - No field result yet shows that real page changes, once indexed, move these rates for an app. `diff` on your own app is how you find out.
 
 ## 8. Reproducibility

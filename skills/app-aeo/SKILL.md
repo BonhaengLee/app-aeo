@@ -44,25 +44,27 @@ Optional usage check: `app-aeo validate <run> --popularity --engine <spec>` comp
   - present `rag` or memory engines as "what ChatGPT says".
 
 ## 5. Find the cause: `diagnose`
-Run `app-aeo diagnose <run-dir> --fetch 40 --store` (or `--listing listing.json`). It needs search engines (`claude-search`, `codex-search`); runs made before 0.4.0 have no Claude sources. Reddit pages take about a minute each (its rate limit), so 40 pages can take 10–20 minutes.
+Run `app-aeo diagnose <run-dir> --store` (or `--listing listing.json`). It needs search engines (`claude-search`, `codex-search`).
+- Runs from 0.4.1 record what each engine received from its searches, so causes are exact and no fetching is needed.
+- For older runs add `--fetch 40`: it downloads the most-read pages instead. Reddit pages take about a minute each (rate limit), so 40 pages can take 10–20 minutes.
 
 It sorts every answer that missed the app into one cause, per engine:
-- **coverage**: none of the pages the engine read lists the app (at least half checked). Fix: get onto those pages.
-- **coverage?**: same, but fewer than half of those pages were checked. Say "likely", not "is".
-- **selection**: a page it read lists the app, and it still picked others. Fix: how those pages describe the app, and the question words below.
+- **coverage**: no search result the engine received names the app (old runs: none of its pages, at least half checked). Fix: get onto the pages that rank for those questions.
+- **coverage?** (old runs only): same, but fewer than half of those pages were checked. Say "likely", not "is".
+- **selection**: a result it received names the app, and it still picked others. Fix: how those pages describe the app, and the question words below.
 - **ungrounded**: no search, so the answer came from memory. Only broad awareness moves this, slowly.
 - **unknown**: the pages were not checked. Never turn this into coverage or selection.
 
 Report from the tables, as given:
 1. **Get listed**: often-read pages that name competitors but not the app, with the "How" column. Earned media dominates AI answers (Chen et al. 2025, arXiv 2509.08919).
-2. **Listing share**: the share of the pages engines read that list the app versus each competitor. This is the number to move.
-   - In the pre-registered controlled test (`bench/causal/REPORT.md`), one listing among ~5 read pages did not detectably change Codex's pick, while being on all of them raised it by 19 pp.
-   - Never promise that one article will fix it.
-3. **Fix presentation** and **Working**. These are descriptive. The lift ranking did not predict which page mattered in the controlled test, and moving the app's sentence up showed no detectable effect.
+2. **Listing share**: of the results engines received, the share that name the app versus each competitor. It describes exposure. It is not a proven lever.
+   - The controlled test (`bench/causal/REPORT.md`) is exploratory. One added listing showed no detectable effect. Repeating the app in every text the model was given helped in 3 of 5 apps, without search.
+   - Never promise that one article, or any number of articles, will fix it. Only `diff` on the user's own app can show an effect.
+3. **Fix presentation** and **Working**. These are descriptive. In the controlled test, the lift ranking did not predict which page mattered, and moving the app's sentence up showed no detectable effect.
 4. **Questions you lose**: prompt words with a lower rate, and whether the listing says them. This is where `app-aeo lint` and listing edits apply.
 
 Rules:
-- Own pages (the app's site and store page) are read *after* the engine has decided. Never present them as a lever.
+- Own pages (the app's site and store page) mostly come up *after* the engine has favoured the app. Never present them as a lever.
 - Never suggest paid or fake reviews, undisclosed self-promotion, or editing Wikipedia about the app. Sites remove them, and they can get the app delisted.
 
 ## 6. Act, then prove it: `diff`

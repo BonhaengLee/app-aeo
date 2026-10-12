@@ -157,7 +157,7 @@ export async function runCheck(cfg, o) {
       }
       const r = await askImpl(provider, prompt, { timeoutMs: o.timeoutMs, chainState });
       const grounded = j.mode === 'rag' ? sources.length > 0 : !!r.grounded;
-      row = { ...j, ok: true, at: new Date().toISOString(), model: r.model, via: r.via ?? provider, ms: r.ms, costUsd: r.costUsd ?? null, citations: j.mode === 'rag' ? sources.map((x) => x.url) : r.citations ?? [], searchQueries: r.searchQueries ?? [], searches: r.searches ?? null, grounded, text: r.text, analysis: analyse(r.text, cfg.target, cfg.competitors ?? []) };
+      row = { ...j, ok: true, at: new Date().toISOString(), model: r.model, via: r.via ?? provider, ms: r.ms, costUsd: r.costUsd ?? null, citations: j.mode === 'rag' ? sources.map((x) => x.url) : r.citations ?? [], searchQueries: r.searchQueries ?? [], seen: r.seen ?? null, answerUrls: r.answerUrls ?? [], searches: r.searches ?? null, grounded, text: r.text, analysis: analyse(r.text, cfg.target, cfg.competitors ?? []) };
       log(`  ${provider} #${j.repeat} ${row.analysis.target ? 'MENTIONED' : '-'}${j.mode === 'search' && !grounded ? ' (no search)' : ''} ${j.prompt.slice(0, 70)}`);
     } catch (e) {
       const kind = e instanceof ProviderError ? e.kind : 'failed';

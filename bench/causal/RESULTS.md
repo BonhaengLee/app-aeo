@@ -26,6 +26,6 @@ Secondary (manipulation checks, two-sided, not corrected):
 
 | Contrast | Prompts | Mean Δ (95% CI) | p |
 |---|---:|---|---:|
-| S1: PLACEBO − BASE | 40 | +2.5 pp (+0.0 pp … +6.7 pp) | 0.5000 |
-| S2: INSERT − BASE | 40 | +6.7 pp (+1.7 pp … +13.3 pp) | 0.0625 |
-| S3: ABLATE_HI − BASE | 40 | +0.8 pp (-7.5 pp … +10.0 pp) | 0.7539 |
+| S1: PLACEBO − BASE | 33 | +1.0 pp (+0.0 pp … +3.0 pp) | 1.0000 |
+| S2: INSERT − BASE | 33 | +8.1 pp (+2.0 pp … +16.2 pp) | 0.0625 |
+| S3: ABLATE_HI − BASE | 36 | +0.9 pp (-8.3 pp … +11.1 pp) | 0.7539 |

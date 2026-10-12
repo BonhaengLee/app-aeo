@@ -14,7 +14,10 @@ export const ALPHA = 0.05;
 export const MIN_PROMPTS = 10;
 export const B = 10_000;
 export const SEED = 13;
-export const SECONDARY = Object.freeze({ S1: ['PLACEBO', 'BASE'], S2: ['INSERT', 'BASE'], S3: ['ABLATE_HI', 'BASE'] });
+// Each secondary contrast is computed over the units of the hypothesis whose conditions it uses (H1 for INSERT/PLACEBO,
+// H3 for ABLATE_HI). Before 2026-10-12 16:40 KST they ran over the union of all sampled units, so 7 H2/H3 units were
+// scored against an INSERT/PLACEBO built for a different subject (found by the adversarial statistics review).
+export const SECONDARY = Object.freeze({ S1: { conds: ['PLACEBO', 'BASE'], over: 'H1' }, S2: { conds: ['INSERT', 'BASE'], over: 'H1' }, S3: { conds: ['ABLATE_HI', 'BASE'], over: 'H3' } });
 export const LEVER = Object.freeze({
   H1: 'adding an app to a page the engine read (vs a same-place placebo sentence)',
   H2: 'moving the sentence that names the app to the top of its page',
@@ -72,10 +75,9 @@ export function analyse(rows, conditions, { hypotheses = HYPOTHESES, secondary: 
   });
   const adj = holm(primary.map((p) => (p.testable ? p.sign.p : 1)));
   primary.forEach((p, i) => { p.holmP = adj[i]; p.supported = p.testable && p.holmP < ALPHA && p.meanDelta > 0; });
-  // secondary contrasts use the target of each sampled prompt (H1 units: their H1 subject)
-  const allUnits = [...new Map(Object.values(conditions.picks).flat().map((u) => [u.join('\u0000'), u])).values()];
-  const secondary = Object.entries(secondaryContrasts).map(([s, conds]) => {
-    const { ds } = contrast(allUnits, rate, conds);
+  const secondary = Object.entries(secondaryContrasts).map(([s, { conds, over }]) => {
+    if (!Array.isArray(conditions.picks[over])) throw new Error(`secondary ${s}: no units for ${over} in conditions`);
+    const { ds } = contrast(conditions.picks[over], rate, conds);
     // two-sided sign test: 2 × the smaller tail
     const up = signTest(ds), down = signTest(ds.map((d) => -d));
     return { s, conds, n: ds.length, meanDelta: ds.length ? mean(ds) : null, ci: ds.length ? bootMean(ds) : null, pTwoSided: Math.min(1, 2 * Math.min(up.p, down.p)) };

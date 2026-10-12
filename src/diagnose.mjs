@@ -1,15 +1,16 @@
 // Why an engine does (not) name your app, and what to change — from answers already collected.
 //
-// A search-grounded answer is built from the pages its searches returned. So a miss has one of three causes:
+// A search-grounded answer is built from the search results it received (titles and snippets; measured 2026-10-12,
+// live Codex never opened a page). So a miss has one of three causes:
 //   ungrounded — the engine answered from memory (no search): only general brand awareness moves it;
-//   coverage   — none of the pages it read lists your app: get onto those pages (or the ones that rank for the query);
-//   selection  — a page it read lists your app, yet it picked others: change how those pages present you.
-// Which one applies is decided by fetching the pages and looking for each app name (`checkPages`). Without pages a
-// miss is "unknown", never guessed.
+//   coverage   — none of the results it received names your app: get onto the pages that rank for the query;
+//   selection  — a result names your app, yet it picked others: change how those pages present you.
+// Runs from 0.4.1 record the received text (`seen`), so the cause is read directly. Older runs fall back to fetching
+// the result pages (`checkPages`), which approximates it; without pages a miss is "unknown", never guessed.
 //
 // Two traps this module avoids:
-// - Owned pages (your site, your store page) are mostly read *after* the engine decided to name an app, to look up
-//   price or features. Their retrieval rate tracks mentions as a consequence, so they are never ranked as levers.
+// - Owned pages (your site, your store page) mostly come up *after* the engine favoured an app (a second search with
+//   its name, for price or features). Their retrieval rate tracks mentions as a consequence, so they are never ranked as levers.
 // - A page's mention rate depends on which questions retrieve it. Lift is therefore compared within the same
 //   prompts (answers that read the page vs answers to the same prompt that did not).
 import crypto from 'node:crypto';
@@ -123,11 +124,23 @@ export function diagnose(rows, cfg, { pages = new Map(), listing = null, engine 
     // sources
     const src = new Map();
     const perRow = new Map();
+    // Runs from 0.4.1 record what the engine received from its searches (`seen`). Then causes are exact: the app is in
+    // that text or it is not. Older runs fall back to pages fetched now.
+    const basis = R.filter((r) => r.grounded).length && R.filter((r) => r.grounded).every((r) => Array.isArray(r.seen) && r.seen.length) ? 'seen' : 'pages';
+    const evidence = new Map(pages);
+    if (basis === 'seen') {
+      for (const r of R) for (const x of r.seen ?? []) {
+        const k = x.url ? sourceKey(x.url)?.key : null;
+        if (k && !evidence.has(k)) evidence.set(k, { ok: true, status: 'snippet', lists: Object.fromEntries(apps.map((a) => [a.name, !!findMention(x.text, a)])) });
+      }
+    }
     for (const r of R) {
       const keys = new Set();
+      // Before 0.4.1, Codex's citations also held links the model wrote in its answer — chosen after deciding. Drop them.
+      const written = Array.isArray(r.seen) ? new Set() : new Set([...String(r.text ?? '').matchAll(/https?:\/\/[^\s)\]>"']+/g)].map((m) => sourceKey(m[0].replace(/[.,;:]+$/, ''))?.key).filter(Boolean));
       for (const u of r.citations ?? []) {
         const s = sourceKey(u);
-        if (!s || keys.has(s.key)) continue;
+        if (!s || keys.has(s.key) || written.has(s.key)) continue;
         keys.add(s.key);
         const e = src.get(s.key) ?? { ...s, kind: sourceKind(s, apps), owner: ownerOf(s, apps), rows: new Set() };
         e.rows.add(r);
@@ -137,7 +150,7 @@ export function diagnose(rows, cfg, { pages = new Map(), listing = null, engine 
     }
     const sources = [...src.values()].map((e) => {
       const rr = [...e.rows];
-      const page = pages.get(e.key) ?? null;
+      const page = evidence.get(e.key) ?? null;
       const comp = competitors.map((c) => ({ name: c.name, rate: rate(rr, c) }));
       const best = comp.reduce((m, c) => (c.rate > (m?.rate ?? -1) ? c : m), null);
       return {
@@ -149,7 +162,8 @@ export function diagnose(rows, cfg, { pages = new Map(), listing = null, engine 
     }).sort((a, b) => b.answers - a.answers || a.key.localeCompare(b.key));
 
     // misses → cause
-    const listsTarget = (k) => pages.get(k)?.ok ? !!pages.get(k).lists?.[target.name] : null;
+    const listsTarget = (k) => evidence.get(k)?.ok ? !!evidence.get(k).lists?.[target.name] : null;
+    const seenText = (r) => (r.seen ?? []).map((x) => x.text).join('\n');
     const causes = { ungrounded: 0, 'no-sources': 0, coverage: 0, 'coverage-partial': 0, selection: 0, unknown: 0 };
     const misses = R.filter((r) => !names(r, target));
     // One page that lists you proves selection. Coverage needs the absence on most pages: an unchecked page may list
@@ -157,6 +171,7 @@ export function diagnose(rows, cfg, { pages = new Map(), listing = null, engine 
     // ~5% of them, so "none of the checked pages" alone would overstate coverage.
     for (const r of misses) {
       if (!r.grounded) { causes.ungrounded += 1; continue; }
+      if (basis === 'seen') { causes[findMention(seenText(r), target) ? 'selection' : 'coverage'] += 1; continue; }
       const keys = perRow.get(r) ?? [];
       if (!keys.length) { causes['no-sources'] += 1; continue; }
       const checked = keys.map(listsTarget).filter((x) => x !== null);
@@ -171,9 +186,13 @@ export function diagnose(rows, cfg, { pages = new Map(), listing = null, engine 
     const answersWithSources = R.filter((r) => (perRow.get(r) ?? []).length).length;
 
     // Listing share: per answer, the share of its checked third-party pages that list each app, averaged over answers
-    // with ≥ 1 checked page. bench/causal: one listing among ~5 read pages did not measurably move Codex, every page did.
-    const shareRows = R.map((r) => (perRow.get(r) ?? []).filter((k) => LEVER_KINDS.includes(src.get(k).kind) && pages.get(k)?.ok)).filter((ks) => ks.length);
-    const listingShare = shareRows.length ? apps.map((a) => ({ name: a.name, share: shareRows.reduce((s, ks) => s + ks.filter((k) => pages.get(k).lists?.[a.name]).length / ks.length, 0) / shareRows.length })) : null;
+    // with ≥ 1 checked page. Descriptive exposure, not a proven lever (bench/causal/REPORT.md, exploratory).
+    // With `seen`: per answer, the share of the search results (or result texts) it received that name each app.
+    const shareRows = basis === 'seen'
+      ? R.filter((r) => r.grounded && r.seen?.length).map((r) => r.seen.map((x) => x.text))
+      : R.map((r) => (perRow.get(r) ?? []).filter((k) => LEVER_KINDS.includes(src.get(k).kind) && pages.get(k)?.ok)).filter((ks) => ks.length);
+    const names_ = (item, a) => (basis === 'seen' ? !!findMention(item, a) : !!pages.get(item).lists?.[a.name]);
+    const listingShare = shareRows.length ? apps.map((a) => ({ name: a.name, share: shareRows.reduce((s, xs) => s + xs.filter((x) => names_(x, a)).length / xs.length, 0) / shareRows.length })) : null;
 
     // levers
     const levers = sources.filter((s) => LEVER_KINDS.includes(s.kind) && s.answers >= minAnswers);
@@ -203,7 +222,7 @@ export function diagnose(rows, cfg, { pages = new Map(), listing = null, engine 
     });
 
     engines.push({
-      provider, minAnswers, answers: R.length, grounded: R.filter((r) => r.grounded).length, answersWithSources,
+      provider, basis, minAnswers, answers: R.length, grounded: R.filter((r) => r.grounded).length, answersWithSources,
       targetRate: rate(R, target), competitorRates: competitors.map((c) => ({ name: c.name, rate: rate(R, c) })),
       misses: misses.length, causes, listingShare, answersWithCheckedPages: shareRows.length, pagesChecked: sources.filter((s) => s.page?.ok).length, pagesFailed: sources.filter((s) => s.page && !s.page.ok).length,
       sources, getListed, working, fixPresentation, toCheck, questions, owned,
@@ -354,7 +373,13 @@ export function renderDiagnosis(d, { top = 10 } = {}) {
     L.push(`${d.target} is named in ${pct(e.targetRate)} of ${e.answers} answers (${e.competitorRates.map((c) => `${c.name} ${pct(c.rate)}`).join(' · ') || 'no competitors configured'}).`);
     L.push(`${e.grounded}/${e.answers} answers searched; ${e.answersWithSources} kept their sources. Pages checked: ${e.pagesChecked}${e.pagesFailed ? ` (${e.pagesFailed} could not be fetched)` : ''}.${e.pagesChecked ? ' Pages are checked as they are now; the answers saw them at run time.' : ''}`, '');
     L.push(`### Why the ${e.misses} misses happened`, '', '| Cause | Answers | Share | What moves it |', '|---|---:|---:|---|');
-    const rowsC = [
+    const seenBasis = e.basis === 'seen';
+    if (seenBasis) L.push('_Causes are read from what the engine received from its searches (recorded per answer), so they are exact for this run; no page was re-fetched._', '');
+    const rowsC = seenBasis ? [
+      ['coverage — no search result it received names you', e.causes.coverage, 'get onto the pages that rank for these questions (table below)'],
+      ['selection — a result it received names you, it picked others', e.causes.selection, 'how those results describe you; the question words you lose'],
+      ['ungrounded — answered from memory', e.causes.ungrounded, 'only broad awareness (reference pages, press) — slow'],
+    ] : [
       [`coverage — none of its third-party pages lists you (≥ ${pct(COVERAGE_MIN_CHECKED)} checked)`, e.causes.coverage, 'get onto the pages engines read for these questions (table below)'],
       [`coverage? — none of the checked pages lists you, but < ${pct(COVERAGE_MIN_CHECKED)} were checked`, e.causes['coverage-partial'], 'likely coverage; a larger `--fetch` decides'],
       ['selection — a page lists you, it picked others', e.causes.selection, 'change how those pages describe you; answer the question words you lose'],
@@ -363,12 +388,12 @@ export function renderDiagnosis(d, { top = 10 } = {}) {
       ['unknown — pages not checked', e.causes.unknown, 'run `diagnose --fetch N` to classify'],
     ];
     for (const [c, n, w] of rowsC) if (n) L.push(`| ${c} | ${n} | ${pct(n / m)} | ${w} |`);
-    if (/^claude/.test(e.provider) && e.causes.selection) L.push('', '_Claude keeps only the title and URL of each search result, so "selection" here means the app is on a page the search returned; whether the model read that part of the page is not recorded._');
+    if (!seenBasis && /^claude/.test(e.provider) && e.causes.selection) L.push('', '_Claude keeps only the title and URL of each search result, so "selection" here means the app is on a page the search returned; whether the model read that part of the page is not recorded._');
     if (!e.misses) L.splice(L.length - 4, 4, `### No misses — ${d.target} was named in every answer`);
     L.push('');
     if (e.listingShare) {
-      L.push(`**Listing share** — of the checked third-party pages each answer read, the share that lists each app (${e.answersWithCheckedPages} answers):`, '', `| ${e.listingShare.map((x) => x.name).join(' | ')} |`, `|${e.listingShare.map(() => '---:').join('|')}|`, `| ${e.listingShare.map((x) => pct(x.share)).join(' | ')} |`, '');
-      L.push('_In a pre-registered controlled test (bench/causal/REPORT.md), being added to one of ~5 read pages did not measurably change whether Codex named an app; being on all of them raised it by 19 pp. Aim at the share, not at one page._', '');
+      L.push(`**Listing share** — ${seenBasis ? 'of the search results each answer received' : 'of the checked third-party pages each answer read'}, the share that names each app (${e.answersWithCheckedPages} answers):`, '', `| ${e.listingShare.map((x) => x.name).join(' | ')} |`, `|${e.listingShare.map(() => '---:').join('|')}|`, `| ${e.listingShare.map((x) => pct(x.share)).join(' | ')} |`, '');
+      L.push('_A descriptive measure of exposure. In an exploratory controlled test (bench/causal/REPORT.md), one added listing showed no detectable effect, and repeating the app in every text the model was given raised its naming rate (3 of 5 apps). Neither has been shown on live search answers; measure your own change with `diff`._', '');
     }
     let n = 0;
     const section = (title, list, head, row) => {

@@ -96,23 +96,23 @@ A number alone does not say what to change. A search-grounded answer is built fr
 
 | Cause | Meaning | What moves it |
 |---|---|---|
-| **coverage** | No page the engine read lists your app (≥ 50% of its third-party pages checked) | Get onto those pages |
-| **coverage?** | None of the checked pages lists you, but fewer than half were checked | Likely coverage; not proven |
-| **selection** | A page lists you, and the engine picked others anyway | How those pages present you; the question words you lose |
+| **coverage** | No search result the engine received names your app | Get onto the pages that rank for those questions |
+| **coverage?** | (Runs before 0.4.1) none of the checked pages lists you, but fewer than half were checked | Likely coverage; not proven |
+| **selection** | A result names you, and the engine picked others anyway | How those pages present you; the question words you lose |
 | **ungrounded** | The engine answered from memory | Broad awareness only, slowly |
-| **unknown** | Pages not checked | Run with `--fetch` — never guessed |
+| **unknown** | (Runs before 0.4.1) pages not checked | Run with `--fetch` — never guessed |
 
 ```sh
-app-aeo diagnose <run-dir> --fetch 40 --store   # fetch the 40 most-read pages, check which apps each names
+app-aeo diagnose <run-dir> --store              # runs before 0.4.1: add --fetch 40 to check pages instead
 # … change one thing, wait for re-indexing, re-run the same config …
 app-aeo diff <run-before> <run-after>           # paired by prompt, 95% CI; did you move, or did the engine?
 ```
 
 How it decides:
-- **Sources.** `claude-search` now records its search results (stream-json; runs before 0.4.0 have none). `codex-search` records every URL in its event stream.
-- **Pages.** Half the `--fetch` budget goes to the most-read pages, which feed the action tables. The other half goes to the pages that cover the most still-unclassified misses: in the meditation benchmark this cut "unknown" from 53% to 12% at 40 pages. Each page is fetched once and cached in `<run>/pages/`. Reddit threads are read through their feed, about one a minute because of Reddit's rate limit. A page that cannot be fetched is "could not check", never "does not list you". PDFs are listed for a manual look.
+- **What the engine received.** Both engines answer from search *results*, not from opened pages. Measured on raw Codex events: one search per answer, about 35 results, each a title and a snippet (median 145 characters), and no page opened. From 0.4.1 every answer records that text (`seen`), so the cause is read directly from it. (Docs before 0.4.1 said Codex "opens pages"; that was wrong.)
+- **Pages (runs before 0.4.1).** Half the `--fetch` budget goes to the most-read pages, which feed the action tables. The other half goes to the pages that cover the most still-unclassified misses: in the meditation benchmark this cut "unknown" from 53% to 12% at 40 pages. Each page is fetched once and cached in `<run>/pages/`. Reddit threads are read through their feed, about one a minute because of Reddit's rate limit. A page that cannot be fetched is "could not check", never "does not list you". PDFs are listed for a manual look.
 - **Lift is within the same prompts.** A page's mention rate depends on which questions pull it in, so the tool compares answers that read the page with answers to the *same* prompt that did not.
-- **Your own site and store page are never levers.** Engines open them *after* deciding, to look up price or features. In the benchmark (`codex-search`, budgeting), Monarch Money was named in 75% of the 36 answers that read its own site and in 8% of the others. That gap is a consequence of the decision, not a cause.
+- **Your own site and store page are never levers.** They mostly come up *after* the engine favoured the app, in a second search with its name for price or features. In the benchmark (`codex-search`, budgeting), Monarch Money was named in 75% of the 36 answers whose results included its own site and in 8% of the others. That gap is a consequence of the decision, not a cause.
 - **Questions you lose.** These are prompt words that go with a lower rate for you ("offline", "uk", …). With `--store` or `--listing`, the tool also checks whether your listing says them.
 - **Guardrails.** The "How" column stays inside each site's rules: pitch editors, disclose yourself on forums, and never edit Wikipedia about yourself. Paid or fake reviews get removed.
 
@@ -126,13 +126,13 @@ How it decides:
   | coverage? | 7 |
   | unknown | 7 |
 
-  So the gap was mostly *how* Monarch is presented on pages engines already read, not whether it is there. One page that lists you is enough to prove selection, so this count does not depend on which pages were fetched. Coverage needs an absence across most pages. Codex answers read about 30 third-party pages each, so with a page budget coverage usually stays "coverage?".
-- Kiplinger's list (read in 101 answers) names Monarch, and reading it raised Monarch's rate by 18 pp within the same prompts. That is a page that **works**.
-- TechRadar's "best budgeting software" (read in 81 answers) names YNAB and not Monarch. That is a **get-listed** target.
+  This run predates 0.4.1, so pages were fetched instead of reading the recorded results. "Selection" there means a fetched page names Monarch; whether its snippet did is not known. Each Codex answer had about 30 third-party results, so with a page budget coverage usually stays "coverage?". Runs from 0.4.1 decide this from the results themselves.
+- Kiplinger's list (in the results of 101 answers) names Monarch, and answers that got it named Monarch 18 pp more often within the same prompts. That is an association, not a proven cause.
+- TechRadar's "best budgeting software" (in the results of 81 answers) names YNAB and not Monarch. That is a **get-listed** candidate.
 
-**Does acting on it work? Two pre-registered controlled tests** ([bench/causal/REPORT.md](bench/causal/REPORT.md)). Setup:
+**Does acting on it work? Not shown yet.** Two pre-registered controlled tests are exploratory ([bench/causal/REPORT.md](bench/causal/REPORT.md)). Setup:
 - The answer engine was `codex-cli` without web search.
-- Each context was the set of pages live `codex-search` answers had actually read: budgeting, meditation, language.
+- Each context was up to 5 page excerpts (3000 characters each) from the results of live `codex-search` answers: budgeting, meditation, language. Live answers see ~35 short snippets instead.
 - One edit per condition; 3 answers each; 987 calls.
 
 | Edit | Effect on "names the app" | Verdict |
@@ -140,11 +140,22 @@ How it decides:
 | Add the app to **one** of ~5 read pages (vs placebo) | +7.1 pp (95% CI +0.0 … +15.2) | not supported |
 | Move its sentence to the top of its page | +5.6 pp (+0.9 … +11.1), Holm p 0.09 | not supported |
 | Remove the page `diagnose` ranks higher by lift | −3.7 pp (−18.5 … +10.2) | not supported |
-| Add the app to **every** read page (vs placebo) | **+19.2 pp (+8.1 … +31.3)**, 9/9, p 0.002 | **supported** |
+| Repeat the app's sentence in **every** excerpt (vs placebo) | **+19.2 pp (+8.1 … +31.3)**, 9/9, p 0.002 | supported as pre-registered |
 
-So the mechanism is real: what the pages say changes the pick. But a single listing did not move it detectably, because picks are close to deterministic per question. That is why `diagnose` now reports a **listing share**: of the pages engines read, how many list you versus each competitor (budgeting: Monarch Money 55%, YNAB 81%). The "Working"/lift ranking did not predict which page mattered, so read it as descriptive. None of this shows that the live product would retrieve your edits. `diff` on your own app is that test.
+What this does and does not show:
+- **What it shows.** Text put in front of a model can change what it names. That much is expected.
+- **The supported effect is narrow.**
+  - It came from 3 of 5 apps (app-level 3/3, p 0.125); 21 of 33 questions never moved.
+  - It is confounded with repetition and position.
+  - One answer gave the inserted app another listing's rating.
+- **"Not supported" is not "no effect".** H1 had only 6 informative questions.
+- **The wider literature is sobering.** C-SEO Bench ([NeurIPS 2025](https://arxiv.org/abs/2506.11097)) found most methods that rewrite a document to be picked "largely ineffective" and often harmful, while raising the document's rank in the results was "significantly more effective"; gains shrank as more competitors adopted them.
+- **What `diagnose` reports instead.** The **listing share**: of the results engines received, how many name you versus each competitor (budgeting, from fetched pages: Monarch Money 55%, YNAB 81%). It is a measure of exposure, not a promise.
+- **What is still open.**
+  - A confirmatory study is in `bench/causal/v2/`.
+  - Whether an edit reaches live answers is measured by `bench/canary/` and, for your app, by `diff`.
 
-Why third-party pages: Chen et al. found AI search cites earned media far more than brand-owned pages ([arXiv 2509.08919](https://arxiv.org/abs/2509.08919)). Aggarwal et al. found that page edits such as adding statistics, quotations and citations can raise visibility in generative answers by up to 40% ([GEO, KDD 2024](https://arxiv.org/abs/2311.09735)); that is a maximum, not a typical gain. `diff` exists so that you measure the effect for your own app instead of assuming it.
+Why third-party pages: Chen et al. found AI search cites earned media far more than brand-owned pages ([arXiv 2509.08919](https://arxiv.org/abs/2509.08919)). Aggarwal et al. found that page edits such as adding statistics, quotations and citations can raise visibility in generative answers by up to 40% ([GEO, KDD 2024](https://arxiv.org/abs/2311.09735)); that is a maximum on their benchmark, and C-SEO Bench later found most such rewriting methods largely ineffective across domains. `diff` exists so that you measure the effect for your own app instead of assuming it.
 
 ## Alternatives
 

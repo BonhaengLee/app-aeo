@@ -99,6 +99,14 @@ await t('collect.pending: only missing or failed (job, repeat) pairs are asked a
   assert.deepEqual(pending(jobs, done).map((j) => `${j.id}#${j.repeat}`), ['a#2', 'a#3', 'b#1', 'b#2', 'b#3']);
 });
 
+await t('secondary contrasts use their own hypothesis units (an H2 unit is never scored on INSERT built for another subject)', () => {
+  const row = (prompt, condition, named) => ({ ok: true, category: 'c', prompt, condition, named });
+  const rows = [row('p1', 'BASE', []), row('p1', 'INSERT', ['A']), row('p2', 'BASE', []), row('p2', 'INSERT', ['B'])];
+  // p1 is an H1 unit for A; p2 is an H2 unit for B, and its INSERT context was built for someone else
+  const cond = { picks: { H1: [['c', 'p1', 'A']], H2: [['c', 'p2', 'B']], H3: [] } };
+  const s2 = analyse(rows, cond, { hypotheses: {} }).secondary.find((x) => x.s === 'S2');
+  assert.deepEqual([s2.n, s2.meanDelta], [1, 1]);
+});
 await t('dose: the line goes into every page; pages naming no other app get it at the start; files per study', () => {
   const pages = [{ excerpt: 'Intro. YNAB is good. Bye.' }, { excerpt: 'Nothing about apps here.' }];
   const out = insertEverywhere(pages, [Y], 'Monarch Money: X.');

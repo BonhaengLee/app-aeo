@@ -224,8 +224,9 @@ await t('fallback chain: exhausted link is skipped for the rest of the run; mixe
 });
 await t('codexEvents counts web_search events and URLs; claudeSearchCount sums modelUsage', async () => {
   const { codexEvents, claudeSearchCount } = await import('../src/providers.mjs');
-  const ev = codexEvents('{"type":"item.started","item":{"type":"web_search","query":"x"}}\n{"type":"item.completed","item":{"type":"web_search","query":"x"}}\n{"type":"item.completed","item":{"type":"agent_message","text":"see https://apps.apple.com/us/app/x/id1"}}\nnot json');
-  assert.deepEqual(ev, { searches: 1, urls: ['https://apps.apple.com/us/app/x/id1'], queries: ['x'] }, 'query recorded once, at completion');
+  const ev = codexEvents('{"type":"item.started","item":{"type":"web_search","query":"x"}}\n{"type":"item.completed","item":{"type":"web_search","query":"x","action":{"type":"search","queries":["x","x2"]},"results":[{"url":"https://r.com/a","title":"Best apps","snippet":"Streaks is great"}]}}\n{"type":"item.completed","item":{"type":"agent_message","text":"see https://apps.apple.com/us/app/x/id1."}}\nnot json');
+  // Links the model wrote in its answer are NOT sources (they were before 0.4.1 — chosen after deciding).
+  assert.deepEqual(ev, { searches: 1, urls: ['https://r.com/a'], queries: ['x', 'x2'], results: [{ url: 'https://r.com/a', title: 'Best apps', snippet: 'Streaks is great' }], answerUrls: ['https://apps.apple.com/us/app/x/id1'] });
   assert.equal(claudeSearchCount({ modelUsage: { a: { webSearchRequests: 0 }, b: { webSearchRequests: 2 } } }), 2);
 });
 await t('codex engines pass consumer-role developer_instructions (coding-agent misread fix)', async () => {
@@ -569,7 +570,9 @@ await t('claude-search keeps the pages its searches returned (stream-json), not 
   assert.deepEqual(r.searchQueries, ['best habit app']);
   assert.equal(r.text, 'Streaks.');
   assert.equal(r.grounded, true);
-  assert.deepEqual(claudeStream('{"result":"ok"}'), { result: { result: 'ok' }, queries: [], urls: [] }, 'single JSON object still parses');
+  assert.deepEqual(claudeStream('{"result":"ok"}'), { result: { result: 'ok' }, queries: [], urls: [], seen: [] }, 'single JSON object still parses');
+  assert.equal(r.seen.length, 1, 'the search result text the model received is kept');
+  assert.match(r.seen[0].text, /zapier\.com/);
   await assert.rejects(ask('claude-search', 'q', { run: async () => ({ code: 0, stdout: '{"type":"system"}\n', stderr: '' }) }), (e) => e instanceof ProviderError);
 });
 await t('sourceKey: one identity per page, assets dropped', () => {
@@ -644,6 +647,26 @@ await t('pagesToCheck: half most-read, then the pages that cover the most still-
   ], missSources: [['top.com/1'], ['tail.com/a', 'own.com'], ['tail.com/a'], ['tail.com/b']] }] };
   assert.deepEqual(pagesToCheck(d, 2).map((x) => x.key), ['top.com/1', 'tail.com/a'], 'most-read, then the page covering 2 open misses (not top.com/2, which covers none)');
   assert.deepEqual(pagesToCheck(d, 4).map((x) => x.key), ['top.com/1', 'top.com/2', 'tail.com/a', 'tail.com/b']);
+});
+await t('diagnose with recorded search results (0.4.1+): exact causes, share over results, answer links never sources', () => {
+  const seenRow = (prompt, text, results, links = '') => ({ ...drow(prompt, text + links, results.map((x) => x.url)), seen: results.map((x) => ({ url: x.url, text: x.text })) });
+  const rows = [
+    seenRow('q1', 'Habitify.', [{ url: 'https://a.com/1', text: 'Best apps: Habitify, Streaks' }, { url: 'https://b.com/1', text: 'Habitify review' }]),
+    seenRow('q2', 'Habitify.', [{ url: 'https://b.com/1', text: 'Habitify review' }]),
+    seenRow('q3', 'Streaks!', [{ url: 'https://a.com/1', text: 'Best apps: Habitify, Streaks' }]),
+  ];
+  const [e] = diagnose(rows, DX).engines;
+  assert.equal(e.basis, 'seen');
+  assert.deepEqual([e.causes.selection, e.causes.coverage, e.causes.unknown], [1, 1, 0], 'q1: named in a result → selection; q2: in none → coverage');
+  assert.deepEqual(e.listingShare.map((x) => [x.name, Number(x.share.toFixed(3))]), [['Streaks', 0.5], ['Habitify', 1]]);
+  // Claude rows: the received text has no URL of its own; the cause still comes from that text, not from fetched pages
+  const claudeRow = { ...drow('q4', 'Habitify.', ['https://c.com/1'], true, 'claude-search'), seen: [{ url: null, text: 'Links: c.com/1 — Streaks and Habitify compared' }] };
+  const [c] = diagnose([claudeRow], DX).engines;
+  assert.deepEqual([c.basis, c.causes.selection, c.causes.unknown], ['seen', 1, 0], 'target in the received text → selection, even with no page fetched');
+  // pre-0.4.1 Codex rows: a link the model wrote in its answer is not a source
+  const oldText = 'Habitify — see https://habitify.me/x and https://w.com/y.';
+  const old = { ...drow('q', oldText, ['https://r.com/1', 'https://w.com/y']), text: oldText };
+  assert.deepEqual(diagnose([old], DX, { minAnswers: 1 }).engines[0].sources.map((x) => x.key), ['r.com/1']);
 });
 await t('diagnose without pages says "unknown", and old Claude rows say "no sources recorded"', () => {
   const [e] = diagnose(DROWS, DX, { minAnswers: 1 }).engines;

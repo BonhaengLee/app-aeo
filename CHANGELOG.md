@@ -1,10 +1,24 @@
 # Changelog
 
-## Unreleased
-- **Pre-registered controlled tests of `diagnose`'s advice** (`bench/causal/`, 987 calls). The answer engine was `codex-cli` without search; the contexts were the pages live Codex answers read.
-  - Adding the app to **every** read page raised its naming rate by +19.2 pp (95% CI +8.1 … +31.3, 9/9, p 0.002).
-  - Adding it to **one** page (+7.1 pp, CI reaches 0), moving its sentence up, and removing the top-lift page were not supported.
-- `diagnose` reports a **listing share** per app (the share of each answer's read pages that list it). The skill and docs say to aim at the share, and treat the lift ranking as descriptive.
+## 0.4.1 — 2026-10-12
+- **Correction: engines read search results, not pages.**
+  - Raw `codex exec --json` events (3 prompts) show one `search` action per answer and no `open_page`. Each answer receives about 35 results: a title and a snippet, median 145 characters.
+  - Docs before this version said Codex "opens pages" and "reads ~30 third-party pages". Both statements are corrected in README, METHODOLOGY §7, the skill and the code comments.
+- **Every answer records what it received (`seen`).**
+  - Codex: the result titles and snippets.
+  - Claude: its WebSearch tool results.
+  - `diagnose` reads causes directly from `seen` (selection if the target is in it, coverage if not) and computes the listing share over the results. No fetching is needed.
+  - Older runs fall back to fetched pages, as before.
+- **Fix: Codex answer links were counted as sources.** Links the model wrote in its own answer were counted as sources, although they are chosen after deciding. They are now kept apart (`answerUrls`), and `diagnose` drops them from older runs. Regression and mutation tests added.
+- **Controlled tests (`bench/causal/`, 987 calls) relabelled exploratory.** Results are unchanged as pre-registered (H1–H3 not supported; H4 +19.2 pp, 95% CI +8.1 … +31.3). An adversarial review found:
+  - the contexts were 3000-character page excerpts, not the snippets live answers see;
+  - H4 comes from 3 of 5 apps (app-level 3/3, p 0.125) and is confounded with repetition and position;
+  - "named" includes caveats and one misattribution;
+  - H1 had only 6 informative units.
+
+  See `bench/causal/REPORT.md` § Limits.
+- **Fix: secondary contrasts S1–S3 used the wrong units.** They ran over every sampled unit, so 7 units were scored against contexts built for another subject. They now use their hypothesis's units; S2 moved from +6.7 to +8.1 pp. Primary results were unaffected. Regression test added; it fails on the old code.
+- The listing share is described as exposure, not as a proven lever. C-SEO Bench (NeurIPS 2025) is cited next to the GEO result.
 - `searchAskerWithSystem` also covers `claude-cli` / `codex-cli`.
 
 ## 0.4.0 — 2026-10-12
