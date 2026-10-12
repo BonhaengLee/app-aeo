@@ -84,6 +84,7 @@ Outcomes:
   - `claude-search` records the results its WebSearch calls returned (title and URL), not pages it opened.
   - `codex-search` records every URL in its event stream. That includes pages it opened, often after deciding: support and pricing pages of the apps it names.
   - So the source sets of the two engines differ in kind; compare causes within an engine, not across engines.
+  - For `claude-search` the stored result is a title and a URL. Whether the model saw the page body is not recorded. So a Claude "selection" says the app is on a page the search returned, not that the model read it there. Codex opens pages, so its selection is the stronger claim.
 - **Page check.**
   - A page "lists" an app when the app's name or alias matches as a whole word in its visible text (scripts and styles removed), using the same extractor as the answers.
   - Presence is not prominence. A page that mentions you once at the bottom counts as listing you, and that shows up as *selection*.

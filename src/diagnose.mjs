@@ -358,6 +358,7 @@ export function renderDiagnosis(d, { top = 10 } = {}) {
       ['unknown — pages not checked', e.causes.unknown, 'run `diagnose --fetch N` to classify'],
     ];
     for (const [c, n, w] of rowsC) if (n) L.push(`| ${c} | ${n} | ${pct(n / m)} | ${w} |`);
+    if (/^claude/.test(e.provider) && e.causes.selection) L.push('', '_Claude keeps only the title and URL of each search result, so "selection" here means the app is on a page the search returned; whether the model read that part of the page is not recorded._');
     if (!e.misses) L.splice(L.length - 4, 4, `### No misses — ${d.target} was named in every answer`);
     L.push('');
     let n = 0;

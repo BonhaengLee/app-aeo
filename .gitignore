@@ -3,3 +3,4 @@ aeo-runs/
 .DS_Store
 .env
 .env.*
+bench/causal/contexts/

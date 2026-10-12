@@ -312,5 +312,7 @@ export const HALTING_KINDS = Object.freeze(new Set(['rate_limited', 'auth', 'quo
 export function searchAskerWithSystem(engine, system) {
   if (engine === 'claude-search') return claudeAsker({ search: true, system });
   if (engine === 'codex-search') return codexAsker({ search: true, system });
+  if (engine === 'claude-cli') return claudeAsker({ search: false, system });
+  if (engine === 'codex-cli') return codexAsker({ search: false, system });
   throw new Error(`searchAskerWithSystem: unknown engine ${engine}`);
 }
