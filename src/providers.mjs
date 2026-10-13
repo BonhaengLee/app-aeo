@@ -140,12 +140,30 @@ function claudeAsker({ search, system = null }) {
 }
 
 let codexHome = null;
+// The isolated homes are per process and Codex fills them with caches and sqlite logs (~6–40 MB each). Before
+// 2026-10-13 they were never removed: 148 of them (~0.9 GB) piled up in the temp dir. Remove them when the process ends.
+// fs.rmSync does not follow symlinks, so the linked auth.json itself is never touched.
+const ownedTmp = new Set();
+let cleanupHooked = false;
+export function cleanupIsolatedHomes() {
+  for (const d of ownedTmp) { try { fs.rmSync(d, { recursive: true, force: true }); } catch { /* best effort */ } }
+  ownedTmp.clear();
+}
+function own(dir) {
+  ownedTmp.add(dir);
+  if (!cleanupHooked) {
+    cleanupHooked = true;
+    process.once('exit', cleanupIsolatedHomes);
+    for (const [sig, code] of [['SIGINT', 130], ['SIGTERM', 143]]) process.once(sig, () => { cleanupIsolatedHomes(); process.exit(code); });
+  }
+  return dir;
+}
 /** Isolated CODEX_HOME holding only auth.json — keeps the user's AGENTS.md / config out of the answers. */
 export function isolatedCodexHome(src = process.env.CODEX_HOME || path.join(os.homedir(), '.codex')) {
   if (codexHome && fs.existsSync(path.join(codexHome, 'auth.json'))) return codexHome;
   const auth = path.join(src, 'auth.json');
   if (!fs.existsSync(auth)) throw new ProviderError('auth', `codex-cli: ${auth} not found — run "codex login" first`);
-  codexHome = fs.mkdtempSync(path.join(os.tmpdir(), 'app-aeo-codexhome-'));
+  codexHome = own(fs.mkdtempSync(path.join(os.tmpdir(), 'app-aeo-codexhome-')));
   fs.symlinkSync(auth, path.join(codexHome, 'auth.json'));
   return codexHome;
 }
@@ -155,7 +173,7 @@ let userHome = null;
  *  so without this every answer is generated with the user's own skill names and descriptions in context (found 2026-10-12). */
 export function isolatedUserHome() {
   if (userHome && fs.existsSync(userHome)) return userHome;
-  userHome = fs.mkdtempSync(path.join(os.tmpdir(), 'app-aeo-home-'));
+  userHome = own(fs.mkdtempSync(path.join(os.tmpdir(), 'app-aeo-home-')));
   return userHome;
 }
 

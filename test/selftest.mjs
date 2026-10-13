@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { execFileSync } from 'node:child_process';
 import { analyse, findMention, listItemStarts, listRankAt, listedNames, storeLinks, aliasesOf, brandOf } from '../src/extract.mjs';
 import { aggregate, wilson, renderMarkdown, promptBootstrap } from '../src/report.mjs';
 import { planJobs, runCheck, validateConfig, promptSetHash, trend } from '../src/run.mjs';
@@ -261,6 +263,16 @@ await t('codex child gets an empty HOME and an isolated CODEX_HOME (user ~/.agen
   assert.notEqual(envSeen.HOME, os.homedir());
   assert.deepEqual(fs.readdirSync(envSeen.HOME), []);
   assert.deepEqual(fs.readdirSync(envSeen.CODEX_HOME), ['auth.json']);
+});
+await t('isolated homes are removed when the process ends, and the linked auth.json survives', async () => {
+  const src = fs.mkdtempSync(path.join(os.tmpdir(), 'aeo-auth-src-'));
+  fs.writeFileSync(path.join(src, 'auth.json'), '{}');
+  const code = `import('${pathToFileURL(path.resolve('src/providers.mjs')).href}').then((m) => { const h = m.isolatedCodexHome(${JSON.stringify(src)}); const u = m.isolatedUserHome(); console.log(JSON.stringify([h, u])); });`;
+  const out = execFileSync(process.execPath, ['-e', code], { encoding: 'utf8' });
+  const [h, u] = JSON.parse(out.trim().split('\n').pop());
+  assert.equal(fs.existsSync(h), false, 'codex home removed');
+  assert.equal(fs.existsSync(u), false, 'user home removed');
+  assert.equal(fs.readFileSync(path.join(src, 'auth.json'), 'utf8'), '{}', 'auth.json untouched');
 });
 await t('HTTP 429/401/402 classified as halting kinds', () => {
   assert.equal(classifyHttp(429), 'rate_limited');
