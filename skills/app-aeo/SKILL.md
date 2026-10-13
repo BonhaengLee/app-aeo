@@ -57,9 +57,15 @@ It sorts every answer that missed the app into one cause, per engine:
 
 Report from the tables, as given:
 1. **Get listed**: often-read pages that name competitors but not the app, with the "How" column. Earned media dominates AI answers (Chen et al. 2025, arXiv 2509.08919).
-2. **Listing share**: of the results engines received, the share that name the app versus each competitor. It describes exposure. It is not a proven lever.
-   - The controlled test (`bench/causal/REPORT.md`) is exploratory. One added listing showed no detectable effect. Repeating the app in every text the model was given helped in 3 of 5 apps, without search.
-   - Never promise that one article, or any number of articles, will fix it. Only `diff` on the user's own app can show an effect.
+2. **Listing share**: of the results engines received, the share that name the app versus each competitor. This is the number to move.
+   - In the pre-registered confirmatory study (`bench/causal/v2/REPORT.md`), with the received results held fixed, a sentence naming a known app raised how often it was recommended:
+     - in 1 result: +9 pp;
+     - in 3 results: +14 pp;
+     - in 10 results: +23 pp (52 apps; replicated with Claude).
+   - The added app usually came in as a lower "also consider" item, not the top pick.
+   - A fictional app gained nothing, so this does not create awareness.
+   - Whether a real page gets retrieved and shown is a separate, slower step.
+   - Never promise a size of effect for the user's app. Only `diff` on their own app can show it.
 3. **Fix presentation** and **Working**. These are descriptive. In the controlled test, the lift ranking did not predict which page mattered, and moving the app's sentence up showed no detectable effect.
 4. **Questions you lose**: prompt words with a lower rate, and whether the listing says them. This is where `app-aeo lint` and listing edits apply.
 

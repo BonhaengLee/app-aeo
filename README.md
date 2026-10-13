@@ -130,32 +130,36 @@ How it decides:
 - Kiplinger's list (in the results of 101 answers) names Monarch, and answers that got it named Monarch 18 pp more often within the same prompts. That is an association, not a proven cause.
 - TechRadar's "best budgeting software" (in the results of 81 answers) names YNAB and not Monarch. That is a **get-listed** candidate.
 
-**Does acting on it work? Not shown yet.** Two pre-registered controlled tests are exploratory ([bench/causal/REPORT.md](bench/causal/REPORT.md)). Setup:
-- The answer engine was `codex-cli` without web search.
-- Each context was up to 5 page excerpts (3000 characters each) from the results of live `codex-search` answers: budgeting, meditation, language. Live answers see ~35 short snippets instead.
-- One edit per condition; 3 answers each; 987 calls.
+**Does being listed work? A pre-registered confirmatory study says yes, for known products, inside the results the engine receives** ([bench/causal/v2/REPORT.md](bench/causal/v2/REPORT.md)).
 
-| Edit | Effect on "names the app" | Verdict |
-|---|---|---|
-| Add the app to **one** of ~5 read pages (vs placebo) | +7.1 pp (95% CI +0.0 … +15.2) | not supported |
-| Move its sentence to the top of its page | +5.6 pp (+0.9 … +11.1), Holm p 0.09 | not supported |
-| Remove the page `diagnose` ranks higher by lift | −3.7 pp (−18.5 … +10.2) | not supported |
-| Repeat the app's sentence in **every** excerpt (vs placebo) | **+19.2 pp (+8.1 … +31.3)**, 9/9, p 0.002 | supported as pre-registered |
+How the study was run:
+- It was registered and RFC 3161 time-stamped before any data.
+- The contexts were the exact search results live `codex-search` received for 480 real queries, with 310 units and 52 apps and brands in 12 categories.
+- The answer engine was `codex-cli` without search, with a `claude-cli` replication.
+- The outcome was "recommended", judged blind (κ = 0.965).
+- Inference was at the app level.
+- An independent audit recomputed every number from the raw files and found them consistent.
 
-What this does and does not show:
-- **What it shows.** Text put in front of a model can change what it names. That much is expected.
-- **The supported effect is narrow.**
-  - It came from 3 of 5 apps (app-level 3/3, p 0.125); 21 of 33 questions never moved.
-  - It is confounded with repetition and position.
-  - One answer gave the inserted app another listing's rating.
-- **"Not supported" is not "no effect".** H1 had only 6 informative questions.
-- **The wider literature is sobering.** C-SEO Bench ([NeurIPS 2025](https://arxiv.org/abs/2506.11097)) found most methods that rewrite a document to be picked "largely ineffective" and often harmful, while raising the document's rank in the results was "significantly more effective"; gains shrank as more competitors adopted them.
-- **What `diagnose` reports instead.** The **listing share**: of the results engines received, how many name you versus each competitor (budgeting, from fetched pages: Monarch Money 55%, YNAB 81%). It is a measure of exposure, not a promise.
-- **What is still open.**
-  - A confirmatory study is in `bench/causal/v2/`.
-  - Whether an edit reaches live answers is measured by `bench/canary/` and, for your app, by `diff`.
+| A sentence naming the app ("Another {kind} option is {name}.") in … | Change in how often it is recommended (app-weighted, 95% CI) |
+|---|---|
+| 1 of ~39 results (vs no edit) | +9.2 pp (+4.9 … +13.6) |
+| 3 results (vs an unrelated brand in the same slots) | **+13.9 pp (+6.3 … +21.5)**: 26 apps up / 2 down; pre-registered, supported and robust |
+| 10 results | **+23.2 pp (+16.5 … +29.8)**: 40 up / 0 down; supported and robust |
+| Placebo brand vs no edit | +0.7 pp (−3.2 … +4.9) |
+| A *fictional* product in the same 3 slots | recommended in 0.6% of answers |
 
-Why third-party pages: Chen et al. found AI search cites earned media far more than brand-owned pages ([arXiv 2509.08919](https://arxiv.org/abs/2509.08919)). Aggarwal et al. found that page edits such as adding statistics, quotations and citations can raise visibility in generative answers by up to 40% ([GEO, KDD 2024](https://arxiv.org/abs/2311.09735)); that is a maximum on their benchmark, and C-SEO Bench later found most such rewriting methods largely ineffective across domains. `diff` exists so that you measure the effect for your own app instead of assuming it.
+Replicated with Claude (+35.5 / +22.3 pp), and in product categories (robot vacuums, running shoes) as well as apps.
+
+What it does **not** show:
+- **Rank.** The added app usually appears as a later "also consider" item, not the top pick. At 10 listings it is still absent from about 73% of answers.
+- **Unknown products.** It moves products the model already knows. A fictional one gained almost nothing, so this is not a way to create awareness.
+- **The real-world chain.** Whether a real page would carry the sentence, and whether the live engine would retrieve that page and show the sentence, is not tested. `bench/canary/` measures how long a published edit takes to reach a live engine; on 2026-10-12 a new page was not visible to Codex search within 6 hours.
+- **Installs.** No effect on installs is shown.
+- **Scope.** One primary model, on one day.
+
+So `diagnose`'s **listing share** (of the results engines received, how many name you versus each competitor) is now a measured lever. In this setting the dose-response is about +9 pp for 1 listing and about +23 pp for 10. Moving it in the real world still depends on pages that rank for the query. The earlier exploratory study ([bench/causal/REPORT.md](bench/causal/REPORT.md)) used long page excerpts and could not detect a one-page effect; v2 measured in the format engines actually receive.
+
+Why third-party pages: Chen et al. found AI search cites earned media far more than brand-owned pages ([arXiv 2509.08919](https://arxiv.org/abs/2509.08919)). Aggarwal et al. found that page edits such as adding statistics, quotations and citations can raise visibility in generative answers by up to 40% ([GEO, KDD 2024](https://arxiv.org/abs/2311.09735)); that is a maximum on their benchmark, and C-SEO Bench later found most such *rewriting* methods largely ineffective, while ranking in the context mattered — consistent with v2, where *being present* in the results is what moved recommendations. `diff` exists so that you measure the effect for your own app instead of assuming it.
 
 ## Alternatives
 

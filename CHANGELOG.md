@@ -1,5 +1,18 @@
 # Changelog
 
+## Unreleased
+- **Confirmatory causal study (`bench/causal/v2/`).** It was pre-registered and RFC 3161 time-stamped before any data, and independently audited afterwards.
+  - Setting: the exact search results live Codex received, 310 units, 52 apps and brands, 12 categories, about 5,500 answers.
+  - A presence-only sentence naming a known app in 3 / 10 of ~39 results raised how often it was recommended by +13.9 / +23.2 pp, against an unrelated brand in the same slots. Both were supported and robust.
+  - One listing raised it by +9.2 pp.
+  - A fictional app gained almost nothing (0.6%).
+  - The result replicated with Claude and held in product categories.
+  - Limits are in the report: lower-ranked mentions, known products only, retrieval chain untested.
+  - Deviations D8 and D9.
+- Docs (README, METHODOLOGY, skill, `diagnose` note) state the measured effect and its limits. The v1 report is marked as superseded.
+- **Fix: Codex and user temp homes are removed at exit.** 148 leaked homes (~0.9 GB) had accumulated.
+- `codex-cli` passes extra config (pinned reasoning effort).
+
 ## 0.4.1 — 2026-10-12
 - **Correction: engines read search results, not pages.**
   - Raw `codex exec --json` events (3 prompts) show one `search` action per answer and no `open_page`. Each answer receives about 35 results: a title and a snippet, median 145 characters.

@@ -186,7 +186,7 @@ export function diagnose(rows, cfg, { pages = new Map(), listing = null, engine 
     const answersWithSources = R.filter((r) => (perRow.get(r) ?? []).length).length;
 
     // Listing share: per answer, the share of its checked third-party pages that list each app, averaged over answers
-    // with ≥ 1 checked page. Descriptive exposure, not a proven lever (bench/causal/REPORT.md, exploratory).
+    // with ≥ 1 checked page. A measured lever inside received results (bench/causal/v2/REPORT.md, confirmatory).
     // With `seen`: per answer, the share of the search results (or result texts) it received that name each app.
     const shareRows = basis === 'seen'
       ? R.filter((r) => r.grounded && r.seen?.length).map((r) => r.seen.map((x) => x.text))
@@ -393,7 +393,7 @@ export function renderDiagnosis(d, { top = 10 } = {}) {
     L.push('');
     if (e.listingShare) {
       L.push(`**Listing share** — ${seenBasis ? 'of the search results each answer received' : 'of the checked third-party pages each answer read'}, the share that names each app (${e.answersWithCheckedPages} answers):`, '', `| ${e.listingShare.map((x) => x.name).join(' | ')} |`, `|${e.listingShare.map(() => '---:').join('|')}|`, `| ${e.listingShare.map((x) => pct(x.share)).join(' | ')} |`, '');
-      L.push('_A descriptive measure of exposure. In an exploratory controlled test (bench/causal/REPORT.md), one added listing showed no detectable effect, and repeating the app in every text the model was given raised its naming rate (3 of 5 apps). Neither has been shown on live search answers; measure your own change with `diff`._', '');
+      L.push('_In a pre-registered controlled study (bench/causal/v2/REPORT.md), holding the received results fixed, being named in 1 / 3 / 10 of them raised how often a known app was recommended by about +9 / +14 / +23 pp, usually as a lower option. Whether a real page is retrieved and shown is a separate step; measure your own change with `diff`._', '');
     }
     let n = 0;
     const section = (title, list, head, row) => {

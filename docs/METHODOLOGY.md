@@ -103,10 +103,17 @@ Outcomes:
 - **Causal claims need an intervention.** Change one thing, re-run the same config, and use `diff`:
   - It pairs prompts and bootstraps a 95% CI over prompts.
   - Competitors in the same table act as a drift control. If everyone moved, the engine changed.
-  - **Controlled evidence, exploratory** ([bench/causal/REPORT.md](../bench/causal/REPORT.md), pre-registered). Contexts were ≤ 5 page excerpts (3000 characters each) from results of live Codex answers — longer than the snippets the live engine receives — answered by `codex-cli` without search:
-    - repeating one sentence naming the app in each of those excerpts raised its naming rate by 19 pp (95% CI 8–31), but the effect came from 3 of the apps (app-level sign test 3/3, p 0.125) and is confounded with repetition and position;
-    - adding it to one excerpt, promoting its sentence, and removing the top-lift page showed no detectable effect at this sample size (H1 had about 6 informative units, so this is not evidence of no effect);
-    - a confirmatory study is in `bench/causal/v2/`.
+  - **Controlled evidence, confirmatory** ([bench/causal/v2/REPORT.md](../bench/causal/v2/REPORT.md); pre-registered and time-stamped before data; independently audited).
+    - Contexts were the exact search results live `codex-search` received (310 units, 52 apps and brands, 12 categories). The answer engine was `codex-cli` without search.
+    - A presence-only sentence naming the app, in 3 of ~39 results versus an unrelated brand in the same slots, raised recommendations by +13.9 pp (95% CI +6.3 … +21.5; 26 apps up / 2 down). In 10 results: +23.2 pp (+16.5 … +29.8; 40 / 0). In 1 result versus no edit: +9.2 pp.
+    - The result was robust to fictional-product and no-edit controls and to either judge, and it replicated with `claude-cli`.
+    - A fictional product listed the same way was recommended in 0.6% of answers.
+    - Limits:
+      - the added app is usually a lower "also consider" item;
+      - known products only;
+      - the real-world retrieval chain and installs are untested;
+      - one model and one day.
+    - The earlier exploratory study ([bench/causal/REPORT.md](../bench/causal/REPORT.md)) used page excerpts and could not detect the one-page effect.
   - No field result yet shows that real page changes, once indexed, move these rates for an app. `diff` on your own app is how you find out.
 
 ## 8. Reproducibility

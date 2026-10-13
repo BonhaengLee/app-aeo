@@ -1,6 +1,6 @@
 # Does acting on `diagnose` change whether an engine names the app? — two pre-registered controlled tests (exploratory)
 
-**Status: exploratory.** The pre-registered results stand as reported below. An adversarial review (2026-10-12) and our own re-measurement found that the setting differs from the live engine and that the one supported result is confounded. Read "Limits" before citing anything here. A confirmatory study that addresses these is in [`v2/`](v2/).
+**Status: exploratory — superseded by the confirmatory study [`v2/REPORT.md`](v2/REPORT.md).** The pre-registered results stand as reported below. An adversarial review (2026-10-12) and our own re-measurement found that the setting differs from the live engine and that the one supported result is confounded. Read "Limits" before citing anything here. A confirmatory study that addresses these is in [`v2/`](v2/).
 
 **Setting.**
 - **Contexts**: up to 5 page excerpts per prompt (3000 characters each, starting 400 characters before the first app mention). The pages were chosen from the results of live `codex-search` answers (budgeting, meditation, language; 2026-10-09 runs) and fetched on 2026-10-12.
