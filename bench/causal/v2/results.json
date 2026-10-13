@@ -1,0 +1,580 @@
+{
+ "primary": [
+  {
+   "h": "H1",
+   "conds": [
+    "I3",
+    "P3"
+   ],
+   "n": 310,
+   "apps": 52,
+   "dropped": 0,
+   "appMeanDelta": 0.1391282328782329,
+   "ci": [
+    0.0632048911849327,
+    0.21547385529204685
+   ],
+   "meanDelta": 0.13870967741935483,
+   "unitCi": [
+    0.08576051779935275,
+    0.19833333333333333
+   ],
+   "appsUp": 26,
+   "appsDown": 2,
+   "appsMoved": 28,
+   "unitsMoved": 66,
+   "p": 0.0000899991000089999,
+   "holmP": 0.0000899991000089999,
+   "supported": true,
+   "belowPlannedSize": false,
+   "cannotReachAlpha": false,
+   "robust": true
+  },
+  {
+   "h": "H2",
+   "conds": [
+    "I10",
+    "P10"
+   ],
+   "n": 310,
+   "apps": 52,
+   "dropped": 0,
+   "appMeanDelta": 0.2316835941835942,
+   "ci": [
+    0.1653783616353807,
+    0.2984610942984966
+   ],
+   "meanDelta": 0.2161290322580645,
+   "unitCi": [
+    0.1524390243902439,
+    0.2857142857142857
+   ],
+   "appsUp": 40,
+   "appsDown": 0,
+   "appsMoved": 40,
+   "unitsMoved": 89,
+   "p": 0.00000999990000099999,
+   "holmP": 0.00001999980000199998,
+   "supported": true,
+   "belowPlannedSize": false,
+   "cannotReachAlpha": false,
+   "robust": true
+  }
+ ],
+ "sensitivity": [
+  {
+   "t": "T1 H1 vs fictional: I3 − F3",
+   "h": "H1",
+   "n": 310,
+   "apps": 52,
+   "dropped": 0,
+   "appMeanDelta": 0.11860396547896547,
+   "ci": [
+    0.061526761185727245,
+    0.17605824800267544
+   ],
+   "meanDelta": 0.12741935483870967,
+   "unitCi": [
+    0.0756578947368421,
+    0.18561872909698995
+   ],
+   "appsUp": 24,
+   "appsDown": 2,
+   "appsMoved": 26,
+   "unitsMoved": 63,
+   "p": 0.00013999860001399987
+  },
+  {
+   "t": "T2 H1 vs unedited: I3 − BASE",
+   "h": "H1",
+   "n": 310,
+   "apps": 52,
+   "dropped": 0,
+   "appMeanDelta": 0.1461066711066711,
+   "ci": [
+    0.09140358170204363,
+    0.20171605721074717
+   ],
+   "meanDelta": 0.13870967741935483,
+   "unitCi": [
+    0.08598726114649681,
+    0.1989795918367347
+   ],
+   "appsUp": 25,
+   "appsDown": 1,
+   "appsMoved": 26,
+   "unitsMoved": 62,
+   "p": 0.00001999980000199998
+  },
+  {
+   "t": "T3 H1, outcome = both judges",
+   "h": "H1",
+   "n": 310,
+   "apps": 52,
+   "dropped": 0,
+   "appMeanDelta": 0.13720515595515595,
+   "ci": [
+    0.06099353112368858,
+    0.21340535977186062
+   ],
+   "meanDelta": 0.13709677419354838,
+   "unitCi": [
+    0.08388157894736842,
+    0.19732441471571907
+   ],
+   "appsUp": 25,
+   "appsDown": 2,
+   "appsMoved": 27,
+   "unitsMoved": 67,
+   "p": 0.00033999660003399966
+  },
+  {
+   "t": "T4 H1, outcome = codex judge",
+   "h": "H1",
+   "n": 310,
+   "apps": 52,
+   "dropped": 0,
+   "appMeanDelta": 0.13720515595515595,
+   "ci": [
+    0.06099353112368858,
+    0.21340535977186062
+   ],
+   "meanDelta": 0.13709677419354838,
+   "unitCi": [
+    0.08388157894736842,
+    0.19732441471571907
+   ],
+   "appsUp": 25,
+   "appsDown": 2,
+   "appsMoved": 27,
+   "unitsMoved": 67,
+   "p": 0.00033999660003399966
+  },
+  {
+   "t": "T1 H2 vs fictional: I10 − F10",
+   "h": "H2",
+   "n": 310,
+   "apps": 52,
+   "dropped": 0,
+   "appMeanDelta": 0.21501692751692755,
+   "ci": [
+    0.1499055467576586,
+    0.2811348865029285
+   ],
+   "meanDelta": 0.20806451612903226,
+   "unitCi": [
+    0.14554794520547945,
+    0.2766990291262136
+   ],
+   "appsUp": 37,
+   "appsDown": 0,
+   "appsMoved": 37,
+   "unitsMoved": 87,
+   "p": 0.00001999980000199998
+  },
+  {
+   "t": "T2 H2 vs unedited: I10 − BASE",
+   "h": "H2",
+   "n": 310,
+   "apps": 52,
+   "dropped": 0,
+   "appMeanDelta": 0.23362540237540236,
+   "ci": [
+    0.16819446520107223,
+    0.2996728225320143
+   ],
+   "meanDelta": 0.21774193548387097,
+   "unitCi": [
+    0.1555232558139535,
+    0.2866666666666667
+   ],
+   "appsUp": 39,
+   "appsDown": 0,
+   "appsMoved": 39,
+   "unitsMoved": 90,
+   "p": 0.00001999980000199998
+  },
+  {
+   "t": "T3 H2, outcome = both judges",
+   "h": "H2",
+   "n": 310,
+   "apps": 52,
+   "dropped": 0,
+   "appMeanDelta": 0.2316835941835942,
+   "ci": [
+    0.1653783616353807,
+    0.2984610942984966
+   ],
+   "meanDelta": 0.2161290322580645,
+   "unitCi": [
+    0.1524390243902439,
+    0.2857142857142857
+   ],
+   "appsUp": 40,
+   "appsDown": 0,
+   "appsMoved": 40,
+   "unitsMoved": 89,
+   "p": 0.00001999980000199998
+  },
+  {
+   "t": "T4 H2, outcome = codex judge",
+   "h": "H2",
+   "n": 310,
+   "apps": 52,
+   "dropped": 0,
+   "appMeanDelta": 0.2316835941835942,
+   "ci": [
+    0.1653783616353807,
+    0.2984610942984966
+   ],
+   "meanDelta": 0.2161290322580645,
+   "unitCi": [
+    0.1524390243902439,
+    0.2857142857142857
+   ],
+   "appsUp": 40,
+   "appsDown": 0,
+   "appsMoved": 40,
+   "unitsMoved": 89,
+   "p": 0.00001999980000199998
+  }
+ ],
+ "secondary": [
+  {
+   "s": "S1 one listing: I1 − BASE",
+   "n": 310,
+   "apps": 52,
+   "dropped": 0,
+   "appMeanDelta": 0.09226710789210789,
+   "ci": [
+    0.04926709052208778,
+    0.13575894873101754
+   ],
+   "meanDelta": 0.06935483870967742,
+   "unitCi": [
+    0.038461538461538464,
+    0.10652920962199312
+   ],
+   "appsUp": 19,
+   "appsDown": 0,
+   "appsMoved": 19,
+   "unitsMoved": 37,
+   "p": 0.000003814697265625
+  },
+  {
+   "s": "S2 placebo check: P3 − BASE",
+   "n": 310,
+   "apps": 52,
+   "dropped": 0,
+   "appMeanDelta": 0.006978438228438229,
+   "ci": [
+    -0.03223373484222483,
+    0.048798804294257175
+   ],
+   "meanDelta": 0,
+   "unitCi": [
+    -0.012779552715654952,
+    0.012987012987012988
+   ],
+   "appsUp": 5,
+   "appsDown": 5,
+   "appsMoved": 10,
+   "unitsMoved": 18,
+   "p": 0.81640625
+  },
+  {
+   "s": "S3 dose: I10 − I3",
+   "n": 310,
+   "apps": 52,
+   "dropped": 0,
+   "appMeanDelta": 0.08751873126873125,
+   "ci": [
+    0.033288823831807826,
+    0.1429337008968814
+   ],
+   "meanDelta": 0.07903225806451612,
+   "unitCi": [
+    0.0429042904290429,
+    0.1185064935064935
+   ],
+   "appsUp": 26,
+   "appsDown": 5,
+   "appsMoved": 31,
+   "unitsMoved": 65,
+   "p": 0.000919990800091999
+  },
+  {
+   "s": "S4 real minus fictional gain at k=3: (I3−P3)subject − (F3−P3)fictional",
+   "n": 310,
+   "apps": 52,
+   "dropped": 0,
+   "appMeanDelta": 0.1351322288822289,
+   "ci": [
+    0.06009876917278957,
+    0.21040697507448605
+   ],
+   "meanDelta": 0.13225806451612904,
+   "unitCi": [
+    0.0818452380952381,
+    0.18976897689768976
+   ],
+   "appsUp": 26,
+   "appsDown": 2,
+   "appsMoved": 28,
+   "unitsMoved": 67,
+   "p": 0.0001799982000179998,
+   "ci90": [
+    0.07153045971023878,
+    0.199321633769876
+   ],
+   "equivalent": false
+  },
+  {
+   "s": "S5a H1 on \"named\": I3 − P3",
+   "n": 310,
+   "apps": 52,
+   "dropped": 0,
+   "appMeanDelta": 0.1503461815961816,
+   "ci": [
+    0.06869013855441165,
+    0.23150513092491543
+   ],
+   "meanDelta": 0.14193548387096774,
+   "unitCi": [
+    0.08928571428571429,
+    0.20189274447949526
+   ],
+   "appsUp": 27,
+   "appsDown": 2,
+   "appsMoved": 29,
+   "unitsMoved": 67,
+   "p": 0.0001999980000199998
+  },
+  {
+   "s": "S5b H2 on \"named\": I10 − P10",
+   "n": 310,
+   "apps": 52,
+   "dropped": 0,
+   "appMeanDelta": 0.22731469918969915,
+   "ci": [
+    0.1667879488878634,
+    0.28834099186844236
+   ],
+   "meanDelta": 0.22096774193548388,
+   "unitCi": [
+    0.1558219178082192,
+    0.29193548387096774
+   ],
+   "appsUp": 40,
+   "appsDown": 0,
+   "appsMoved": 40,
+   "unitsMoved": 92,
+   "p": 0.00001999980000199998
+  },
+  {
+   "s": "S6 replication (claude-cli) H1: I3 − P3",
+   "n": 100,
+   "apps": 46,
+   "dropped": 0,
+   "appMeanDelta": 0.3550724637681159,
+   "ci": [
+    0.23216977326766303,
+    0.4772560009057971
+   ],
+   "meanDelta": 0.35,
+   "unitCi": [
+    0.24489795918367346,
+    0.46226415094339623
+   ],
+   "appsUp": 23,
+   "appsDown": 0,
+   "appsMoved": 23,
+   "unitsMoved": 35,
+   "p": 2.384185791015625e-7
+  },
+  {
+   "s": "S6 replication (claude-cli) H2: I10 − P10",
+   "n": 100,
+   "apps": 46,
+   "dropped": 0,
+   "appMeanDelta": 0.22282608695652178,
+   "ci": [
+    0.10609635062839678,
+    0.3397057574728261
+   ],
+   "meanDelta": 0.25,
+   "unitCi": [
+    0.15789473684210525,
+    0.34951456310679613
+   ],
+   "appsUp": 19,
+   "appsDown": 1,
+   "appsMoved": 20,
+   "unitsMoved": 29,
+   "p": 0.000274658203125
+  },
+  {
+   "s": "S7 app categories: I10 − P10",
+   "n": 272,
+   "apps": 43,
+   "dropped": 0,
+   "appMeanDelta": 0.2148654317258968,
+   "ci": [
+    0.1467961893965283,
+    0.2827213001753677
+   ],
+   "meanDelta": 0.2113970588235294,
+   "unitCi": [
+    0.14261168384879724,
+    0.287593984962406
+   ],
+   "appsUp": 33,
+   "appsDown": 0,
+   "appsMoved": 33,
+   "unitsMoved": 77,
+   "p": 0.00001999980000199998
+  },
+  {
+   "s": "S7 product categories: I10 − P10",
+   "n": 38,
+   "apps": 9,
+   "dropped": 0,
+   "appMeanDelta": 0.31203703703703706,
+   "ci": [
+    0.08340753625940397,
+    0.5624649612991899
+   ],
+   "meanDelta": 0.25,
+   "unitCi": [
+    0.12121212121212122,
+    0.38461538461538464
+   ],
+   "appsUp": 7,
+   "appsDown": 0,
+   "appsMoved": 7,
+   "unitsMoved": 12,
+   "p": 0.015625
+  },
+  {
+   "s": "S8 I10 − P10, result lists ≤ 39",
+   "n": 167,
+   "apps": 46,
+   "dropped": 0,
+   "appMeanDelta": 0.24365942028985504,
+   "ci": [
+    0.15742912845335144,
+    0.33007724043251807
+   ],
+   "meanDelta": 0.2215568862275449,
+   "unitCi": [
+    0.14423076923076922,
+    0.31097560975609756
+   ],
+   "appsUp": 27,
+   "appsDown": 0,
+   "appsMoved": 27,
+   "unitsMoved": 50,
+   "p": 0.00001999980000199998
+  },
+  {
+   "s": "S8 I10 − P10, result lists > 39",
+   "n": 143,
+   "apps": 42,
+   "dropped": 0,
+   "appMeanDelta": 0.24441609977324263,
+   "ci": [
+    0.1470441857162787,
+    0.34255346181441326
+   ],
+   "meanDelta": 0.2097902097902098,
+   "unitCi": [
+    0.13513513513513514,
+    0.2937062937062937
+   ],
+   "appsUp": 23,
+   "appsDown": 0,
+   "appsMoved": 23,
+   "unitsMoved": 39,
+   "p": 2.384185791015625e-7
+  }
+ ],
+ "rates": {
+  "BASE": {
+   "answers": 620,
+   "subjectNamed": 0.05161290322580645,
+   "subjectRec": 0.05,
+   "fictionalRec": 0
+  },
+  "I1": {
+   "answers": 620,
+   "subjectNamed": 0.12096774193548387,
+   "subjectRec": 0.11935483870967742,
+   "fictionalRec": 0
+  },
+  "I3": {
+   "answers": 620,
+   "subjectNamed": 0.19193548387096773,
+   "subjectRec": 0.18870967741935485,
+   "fictionalRec": 0
+  },
+  "I10": {
+   "answers": 620,
+   "subjectNamed": 0.27419354838709675,
+   "subjectRec": 0.267741935483871,
+   "fictionalRec": 0
+  },
+  "P3": {
+   "answers": 620,
+   "subjectNamed": 0.05,
+   "subjectRec": 0.05,
+   "fictionalRec": 0
+  },
+  "P10": {
+   "answers": 620,
+   "subjectNamed": 0.0532258064516129,
+   "subjectRec": 0.05161290322580645,
+   "fictionalRec": 0
+  },
+  "F3": {
+   "answers": 620,
+   "subjectNamed": 0.06290322580645161,
+   "subjectRec": 0.06129032258064516,
+   "fictionalRec": 0.0064516129032258064
+  },
+  "F10": {
+   "answers": 620,
+   "subjectNamed": 0.06129032258064516,
+   "subjectRec": 0.05967741935483871,
+   "fictionalRec": 0.0064516129032258064
+  }
+ },
+ "resultsLength": {
+  "min": 12,
+  "median": 39,
+  "max": 75
+ },
+ "partial": false,
+ "problems": {
+  "missingAnswers": 0,
+  "missingJudgments": 0,
+  "duplicates": 0,
+  "stale": 0
+ },
+ "failedJudgments": 0,
+ "answers": 4960,
+ "excludedSearched": 0,
+ "replicationAnswers": 500,
+ "models": [
+  "gpt-5.6-terra",
+  "claude-sonnet-5-5"
+ ],
+ "agreement": {
+  "items": 679,
+  "kappa3": 0.9647718036075611,
+  "kappaRec": 0.9646654755503132,
+  "notProduct": {
+   "codex": 2,
+   "claude": 2
+  }
+ }
+}
